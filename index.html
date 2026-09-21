@@ -10,14 +10,15 @@
 :root[data-theme="dark"]{--bg:#151515;--card:#20201f;--ink:#f2f2f1;--soft:#9d9d9b;--line:#373736}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.wrap{max-width:800px;margin:0 auto;padding:0 20px}
 nav{display:flex;justify-content:space-between;align-items:center;padding:30px 0}
 nav a{color:var(--ink);text-decoration:none;font-size:.95rem}
 nav .logo{font-weight:600;font-size:1.1rem;letter-spacing:-.01em}
 nav .right{display:flex;align-items:center;gap:28px}
 nav .right a{color:var(--soft);display:inline-flex;align-items:center;gap:6px}
 .ico{width:16px;height:16px;flex:none}
-nav .right a:hover,nav .right a.on{color:var(--ink)}
+nav .right a.on{color:var(--ink)}
+@media (hover:hover){nav .right a:hover{color:var(--ink)}}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .switch{width:48px;height:27px;border-radius:999px;border:0;background:#3a3a40;position:relative;cursor:pointer;padding:0;transition:background .25s;flex:none}
 .switch::after{content:"";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .25s}
@@ -51,6 +52,25 @@ h1 .fade{color:var(--soft);opacity:.5}
 .post a:hover{text-decoration:underline}
 .bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin:6px 0 18px}
 .bar div{height:100%;background:var(--ink)}
+.prose{max-width:660px}
+.prose p{color:var(--ink);line-height:1.75}
+.prose h3{font-size:1.05rem;font-weight:600;margin:32px 0 8px}
+.prose strong{font-weight:600}
+.lt{position:relative;--h:108px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lt-scroll{height:var(--h);overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.lt-scroll::-webkit-scrollbar{display:none}
+.lt-scroll:focus-visible{outline:2px solid var(--ink);outline-offset:-2px}
+.lt-item{display:flex;gap:14px;align-items:center;height:var(--h);padding:12px 34px 12px 12px;scroll-snap-align:start;scroll-snap-stop:always;color:var(--ink);text-decoration:none}
+.lt-item img,.lt-ph{width:144px;aspect-ratio:16/9;object-fit:cover;border-radius:6px;flex:none;background:var(--line);display:block}
+.lt-ph{display:flex;align-items:center;justify-content:center;color:var(--soft)}
+.lt-ph svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lt-title{font-size:.9rem;font-weight:500;line-height:1.35}
+.lt-dots{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:2px}
+.lt-dot{width:16px;height:16px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lt-dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
+.lt-dot.on::after{background:var(--ink);transform:scale(1.25)}
+.lt-dot:focus-visible{outline:2px solid var(--ink);border-radius:50%}
+@media (prefers-reduced-motion:no-preference){.lt-scroll{scroll-behavior:smooth}}
 .video{position:relative;padding-top:56.25%;margin-bottom:16px}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px}
 footer{margin-top:72px;padding:26px 0 44px;border-top:1px solid var(--line);font-size:.85rem;color:var(--soft)}
@@ -67,7 +87,7 @@ footer{margin-top:72px;padding:26px 0 44px;border-top:1px solid var(--line);font
 .cat{color:var(--ink);display:block}
 .socials a{color:var(--ink);text-decoration:none;margin-left:16px}
 .socials a:first-child{margin-left:0}
-@media (max-width:480px){nav{padding:22px 0}nav .right{gap:14px}.ico{display:none}.hero{grid-template-columns:1fr}.hero .pic{max-width:160px}.latest img{width:104px}}
+@media (max-width:480px){nav{padding:22px 0}nav .right{gap:14px}.ico{display:none}.hero{grid-template-columns:1fr}.hero .pic{max-width:160px}.lt-item img,.lt-ph{width:104px}}
 @media (prefers-reduced-motion:reduce){.switch,.switch::after{transition:none}}
 </style>
 </head>
@@ -85,7 +105,7 @@ footer{margin-top:72px;padding:26px 0 44px;border-top:1px solid var(--line);font
 const BRAND = "Etharic";               // top-left site name
 const NAME = "ryan";                   // the name you go by
 const FULLNAME = "suryanarayan";       // full name, shown under the greeting. empty = hidden
-const INTRO = "i work on personal projects that make life better: less busywork, better habits, more done with less effort. this is where i write it down, track how it's going, and share what i make.";
+const INTRO = "i build systems that make my life better: automate the boring stuff, build better habits, get more done with less effort. some start as quick experiments, some turn into routines i keep. this is where i write it down, track how it's going, and share what i make.";
 const ABOUT = "write a few sentences about yourself here.\n\nleave a blank line to start a new paragraph.";
 const YEAR = "2026";                      // the year page in the top menu
 const YEAR_INTRO = "what this year is about for me, and how it's going.";
@@ -101,8 +121,7 @@ const CITY = "your city";                 // shown in the footer, e.g. "frankfur
 const TIMEZONE = "Europe/Berlin";         // your local time in the footer. change to yours, e.g. "Asia/Kolkata"
 const SUBSCRIBE_URL = "";                 // form address from a free email service (see my notes). empty = not connected yet
 const PHOTO = "";                         // empty = use the built-in photo. or type a file name like "me.jpg" (saved next to this file)
-const PHOTO_CAPTION = "add a caption";    // small text under your photo
-const LATEST_VIDEO = { id: "", title: "" };   // id = the part after v= in the YouTube link. empty id = hidden
+const PHOTO_CAPTION = "FFM, circa 2024";    // small text under your photo
 const FAVORITE_VIDEOS = [                 // add as many as you like
   // { id: "YOUTUBE_ID", title: "video title" },
 ];
@@ -115,12 +134,17 @@ const HOBBIES = [
   { name: "my first hobby", done: 6, goal: 20 },
   { name: "my second hobby", done: 12, goal: 30 }
 ];
-// Posts, newest first. Copy a block to add one. "video" is optional.
+// Posts, newest first. Copy a block to add one. "video" and "image" are optional.
+// In the text: a line starting with "## " is a heading, **double stars** make bold, *single stars* make italic.
+// The 3 newest posts appear in the "latest upload" tile. Its picture is "image" (a file name or address),
+// or the video's thumbnail if there is a video, or a plain box if neither.
 const POSTS = [
-  { id: "welcome", title: "welcome to my notebook", date: "21 sep 2026", video: "",
+  { id: "welcome", title: "welcome to my notebook", date: "21 sep 2026", video: "", image: "",
     body: "this is my first post. i'm keeping this space for my thoughts and for tracking how my hobbies are going.\n\ncome back soon for more." },
-  { id: "why-i-started", title: "why i started this site", date: "21 sep 2026", video: "",
-    body: "write your second post here.\n\neach blank line starts a new paragraph." }
+  { id: "third-post", title: "a placeholder for your next post", date: "21 sep 2026", video: "", image: "",
+    body: "write your next post here." },
+  { id: "why-i-started-this-website", title: "why i started this website", date: "28 nov 2024", video: "", image: "",
+    body: "I have been a long-time subscriber of **Reysu (Eric Su)** on YouTube. His approach to documenting his life and work eventually made me want to build a website of my own.\n\nAt the time of writing this, my website is a near-exact imitation of his, and I intend to keep it that way for the foreseeable future. I could spend weeks designing my own website, but honestly, that feels like a side-quest. Besides, the website itself isn't really the point. I want to turn it into a **record of how I figure things out.**\n\n## A Personal Laboratory\n\nThere are countless things I want to change about the way I live: how I exercise, how I organize my time, what I eat, and what I pay attention to.\n\nI try things all the time. The problem is, I rarely keep track of them.\n\nWe all start a new habits, try some productivity system we found online, change the way we work for a few weeks, and eventually move on. A few months later, we remember that we tried *something*, but not why we tried it, what happened, or why we stopped.\n\nI want this website to keep that record. When I try something new, I want to be able to write down what it is, where I found it, why I'm trying it, what happened, and whether I ended up keeping it. Some things will work. Some won't. That's part of the experiment.\n\n## Learning From My Own History\n\nI also want to be able to look back. It's surprisingly easy to forget how different your life was a year ago. You remember where you are now, but not always how you got there.\n\nWriting things down gives me a way to see that. I can look back at what I tried, what I abandoned, what stuck, and what I eventually came back to. Hopefully, that means I can learn from previous versions of myself instead of repeatedly starting from zero.\n\n## From Imitation to Adaptation\n\nI'm also interested in what happens between copying something and making it your own.\n\n**Imitation → Emulation → Adaptation → Innovation.**\n\nI can copy something, figure out why it works, change what doesn't fit, and eventually arrive at something that works for me.\n\nThat's the process I want this website to document.\n\n## What This Website Is For\n\nSo this isn't meant to be a collection of definitive advice. It's a record of my experiments. And progress rarely looks like a straight line when you're actually living through it. It's mostly trying things, changing your mind, keeping what works, and throwing away what doesn't. Maybe years from now I'll have a fairly coherent system for how I live and work. Or maybe I'll just have a very long list of things I tried and discarded.\n\nEither way, **I'll have the record.**" }
 ];
 /* ============ END OF EDITABLE PART ============ */
 
@@ -129,7 +153,8 @@ const BUILT_IN_PHOTO = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDA
 
 const app = document.getElementById("app");
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const paras = t => t.split(/\n\s*\n/).map(x => `<p>${esc(x)}</p>`).join("");
+const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+const paras = t => t.split(/\n\s*\n/).map(x => x.startsWith("## ") ? `<h3>${inline(x.slice(3))}</h3>` : `<p>${inline(x)}</p>`).join("");
 const thumb = id => `https://img.youtube.com/vi/${esc(id)}/mqdefault.jpg`;
 const watch = id => `https://www.youtube.com/watch?v=${esc(id)}`;
 function nameHtml() {
@@ -139,16 +164,38 @@ function nameHtml() {
   const fade = t => t ? `<span class="fade">${esc(t)}</span>` : "";
   return fade(full.slice(0, i)) + esc(full.slice(i, i + NAME.length)) + fade(full.slice(i + NAME.length));
 }
+function postThumb(p) {
+  if (p.image) return `<img src="${esc(p.image)}" alt="">`;
+  if (p.video) return `<img src="${thumb(p.video)}" alt="">`;
+  return `<div class="lt-ph"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS.blog}</svg></div>`;
+}
+function latestTile() {
+  const list = POSTS.slice(0, 3);
+  if (!list.length) return "";
+  const items = list.map(p => `<a class="lt-item" href="#${esc(p.id)}">${postThumb(p)}<div><div class="lt-title">${esc(p.title)}</div><div class="sub">${esc(p.date)}</div></div></a>`).join("");
+  const dots = list.length > 1 ? `<div class="lt-dots">` + list.map((p, i) => `<button class="lt-dot${i === 0 ? " on" : ""}" aria-label="post ${i + 1} of ${list.length}"></button>`).join("") + `</div>` : "";
+  return `<div class="lt"><div class="lt-scroll" tabindex="0" aria-label="latest posts">${items}</div>${dots}</div>`;
+}
+function initTile() {
+  const sc = document.querySelector(".lt-scroll");
+  if (!sc) return;
+  const dots = document.querySelectorAll(".lt-dot");
+  const h = () => sc.clientHeight || 1;
+  sc.addEventListener("scroll", () => {
+    const i = Math.round(sc.scrollTop / h());
+    dots.forEach((d, k) => d.classList.toggle("on", k === i));
+  });
+  dots.forEach((d, k) => { d.onclick = () => sc.scrollTo({ top: k * h() }); });
+}
 const postRow = p => `<div class="post"><a href="#${esc(p.id)}">${esc(p.title)}</a><span class="sub">${esc(p.date)}</span></div>`;
 
 function home() {
   const src = PHOTO || BUILT_IN_PHOTO;
   const pic = src ? `<img class="photo" src="${esc(src)}" alt="photo of ${esc(NAME)}">` : `<div class="photo ph">your photo here</div>`;
   let h = `<div class="hero"><div><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><p>${esc(INTRO)}</p><a class="btn" href="#contact">let's connect</a></div><div class="pic">${pic}<div class="cap">${esc(PHOTO_CAPTION)}</div></div></div>`;
-  if (LATEST_VIDEO.id) h += `<div class="label">latest upload</div><a class="card latest" href="${watch(LATEST_VIDEO.id)}"><img src="${thumb(LATEST_VIDEO.id)}" alt=""><span>${esc(LATEST_VIDEO.title)}</span></a>`;
+  h += `<div class="label">latest upload</div>` + latestTile();
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
-  h += `<div class="label">latest posts</div>` + POSTS.slice(0,3).map(postRow).join("");
   h += `<div class="label">hobby progress</div>` + HOBBIES.map(x => {
     const pct = Math.min(100, Math.round(x.done / x.goal * 100));
     return `<div style="font-size:.9rem">${esc(x.name)} <span class="sub">&nbsp;${x.done} of ${x.goal}</span><div class="bar" role="progressbar" aria-label="${esc(x.name)}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><div style="width:${pct}%"></div></div></div>`;
@@ -165,7 +212,7 @@ const about = () => `<h1>about</h1>` + paras(ABOUT);
 const contact = () => `<h1>contact</h1><p>the best way to reach me is email.</p><a class="btn" href="mailto:${esc(EMAIL)}">${esc(EMAIL)}</a>`;
 function post(p) {
   const v = p.video ? `<div class="video"><iframe src="https://www.youtube.com/embed/${esc(p.video)}" title="video" allowfullscreen></iframe></div>` : "";
-  return `<h1>${esc(p.title)}</h1><div class="sub" style="margin-bottom:20px">${esc(p.date)}</div>${v}${paras(p.body)}`;
+  return `<div class="prose"><h1>${esc(p.title)}</h1><div class="sub" style="margin-bottom:20px">${esc(p.date)}</div>${v}${paras(p.body)}</div>`;
 }
 
 function route(forced) {
@@ -173,8 +220,9 @@ function route(forced) {
   const p = POSTS.find(x => x.id === id);
   const pages = { "": home, [YEAR]: year, blog, about, contact };
   app.innerHTML = p ? post(p) : (pages[id] || home)();
+  initTile();
   document.title = p ? p.title + " | " + BRAND : BRAND;
-  document.querySelectorAll("nav .right a").forEach(a => a.classList.toggle("on", a.dataset.r === id || (p && a.dataset.r === "blog")));
+  document.querySelectorAll("nav .right a").forEach(a => a.classList.toggle("on", a.dataset.r === id || (!!p && a.dataset.r === "blog")));
   window.scrollTo(0, 0);
 }
 
