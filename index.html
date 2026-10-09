@@ -52,9 +52,10 @@ h1{font-size:2.2rem;line-height:1.2;margin:40px 0 12px;font-weight:700;letter-sp
 p{margin:0 0 14px;color:var(--soft)}
 main p a,.link{color:var(--ink)}
 .label{font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-weight:400;margin:64px 0 16px}
-.hero{display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 60px);margin-top:0;padding-top:60px}
+.hero{isolation:isolate;display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 60px);margin-top:0;padding-top:60px}
 .hero h1{margin:8px 0 24px;font-size:3rem}
-.spores{position:absolute;z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse closest-side at center,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse closest-side at center,#000 55%,transparent 100%)}
+.spores{position:absolute;z-index:0;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 58% 34% at center,#000 42%,rgba(0,0,0,.82) 58%,rgba(0,0,0,.30) 74%,transparent 100%);mask-image:radial-gradient(ellipse 58% 34% at center,#000 42%,rgba(0,0,0,.82) 58%,rgba(0,0,0,.30) 74%,transparent 100%)}
+.hero>h1,.hero>.for-bar,.hero>.for-intro,.hero>.more-about{position:relative;z-index:1}
 .intro{line-height:1.8}
 .for-bar{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px}
 .for-bar span{color:var(--soft);cursor:pointer;font-size:.85rem;transition:color .18s}
@@ -147,9 +148,48 @@ footer{margin-top:auto;padding-top:26px;padding-bottom:44px;border-top:1px solid
 .socials a:first-child{margin-left:0}
 @media (max-width:680px){nav{position:relative;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:16px 80px 16px 20px;gap:12px}nav .right{flex-wrap:wrap;gap:14px}body:not(.home) .wrap{padding-top:0}.wrap{margin-left:0;width:100%;padding:0 20px}.ico{display:none}.hero h1{font-size:2rem}.for-intro{font-size:1.2rem}.hero-where{position:static;transform:none;margin-top:16px}.hero-actions{position:static;transform:none;flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px;margin-top:32px}.switch{top:18px;right:16px}.lt-item img,.lt-ph{width:104px}}
 @media (prefers-reduced-motion:reduce){.switch,.switch::after{transition:none}}
+
+/* Cursor halo: desktop/fine pointers only */
+@media (hover:hover) and (pointer:fine){
+  html,body,a,button,[role="button"],[role="switch"],.for-bar span,.lt-dot{cursor:none!important}
+  .cursor-halo{position:fixed;left:0;top:0;width:66px;height:66px;z-index:10000;pointer-events:none;opacity:0;transform:translate3d(-50%,-50%,0);transition:opacity .18s ease;will-change:left,top,transform;contain:layout paint style}
+  .cursor-halo.show{opacity:1}
+  .cursor-halo svg{width:100%;height:100%;display:block;overflow:visible}
+  .cursor-halo text{font-family:Inter,system-ui,sans-serif;font-size:9.5px;font-weight:500;letter-spacing:2.2px;text-transform:uppercase;fill:var(--soft);transition:fill .18s ease,filter .18s ease}
+  .cursor-halo.click text{font-size:8.5px;letter-spacing:1.7px;fill:#111;filter:drop-shadow(0 0 2px rgba(0,0,0,.55)) drop-shadow(0 0 5px rgba(0,0,0,.25))}
+  :root[data-theme="dark"] .cursor-halo.click text{fill:#fff;filter:drop-shadow(0 0 2px rgba(255,255,255,.9)) drop-shadow(0 0 6px rgba(255,255,255,.45))}
+  .cursor-halo-dot{fill:var(--soft);opacity:.85;transition:fill .18s ease,filter .18s ease}
+  .cursor-halo.click .cursor-halo-dot{fill:#111;filter:drop-shadow(0 0 2px rgba(0,0,0,.45))}
+  :root[data-theme="dark"] .cursor-halo.click .cursor-halo-dot{fill:#fff;filter:drop-shadow(0 0 2px rgba(255,255,255,.75))}
+}
+@media (hover:none),(pointer:coarse){.cursor-halo{display:none!important}}
+
+
+/* About page only */
+.about-page{max-width:760px;margin:0 auto;padding-top:8px}
+.about-page h1{margin:18px 0 16px;font-size:2rem}
+.about-copy{font-size:.91rem;line-height:1.62;color:var(--ink)}
+.about-copy p{color:var(--ink);margin:0 0 12px;text-transform:lowercase}
+.about-photo{float:right;width:176px;margin:2px 0 10px 28px}
+.about-photo .photo{width:100%;aspect-ratio:3/4}
+.about-photo .cap{margin-top:6px}
+.about-copy::after{content:"";display:block;clear:both}
+@media (max-width:680px){.about-page{padding-top:0}.about-photo{float:none;width:min(210px,65vw);margin:0 auto 18px}}
+
 </style>
 </head>
 <body>
+
+<div class="cursor-halo" id="cursorHalo" aria-hidden="true">
+  <svg viewBox="0 0 100 100">
+    <defs><path id="cursorHaloPath" d="M50,50 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"/></defs>
+    <g id="cursorHaloRing">
+      <text><textPath href="#cursorHaloPath" startOffset="0%" textLength="213" lengthAdjust="spacing">MOVE · MOVE · MOVE · MOVE · </textPath></text>
+    </g>
+    <circle class="cursor-halo-dot" cx="50" cy="50" r="2.4"/>
+  </svg>
+</div>
+
 <nav><a class="logo" id="logo" href="#">Etharic</a>
 <div class="right"><a href="#2026" data-r="2026" id="yearlink">2026</a><a href="#work" data-r="work">work</a><a href="#contact" data-r="contact">contact</a>
 </div></nav>
@@ -165,9 +205,9 @@ const BRAND = "Etharic";               // top-left site name
 const NAME = "ryan";                   // the name you go by
 const FULLNAME = "suryanarayan";       // full name, shown under the greeting. empty = hidden
 // The intro renders as two paragraphs, so keep the break between INTRO_1 and INTRO_2.
-const INTRO_1 = "lately i'm scattered across a few things: my own habits and health, apps and scripts i build for myself, the occasional hardware project, and the odd essay on markets and macro i can't help writing.";
-const INTRO_2 = "most of it starts the same way, i copy something that already works and take it apart to see why. some of it turns into something worth keeping. this is where i write it down, track how it's going, and share what i make.";
-const ABOUT = "write a few sentences about yourself here.\n\nleave a blank line to start a new paragraph.";
+const INTRO_1 = "i started out studying electrical engineering in india, somehow found my way into finance in germany, and have spent much of the time since exploring everything in between. these days, i'm job hunting, experimenting with vibe coding, and finding ways to make ai genuinely useful in everyday life.";
+const INTRO_2 = "i have a habit of getting curious about things i have no business knowing, then going a little too far trying to understand them. sometimes that leads somewhere useful. sometimes just to better questions. i like people who challenge my thinking, ideas that survive being pulled apart, and doing things that don't necessarily come with a payoff. i believe in being resourceful before asking for more, having opinions without getting attached to them, and following through when the novelty wears off. i'm still figuring plenty out, but i'd rather have a few interesting detours than a perfectly straight line.";
+const ABOUT = "";
 const YEAR = "2026";                      // the year page in the top menu
 const YEAR_INTRO = "what this year is about for me, and how it's going.";
 const YEAR_GOALS = [                      // done: true shows a filled dot. Visitors can only look.
@@ -389,10 +429,10 @@ function initForBar() {
 const postRow = p => `<div class="post"><a href="#${esc(p.id)}">${esc(p.title)}</a><span class="sub">${esc(p.date)}</span></div>`;
 
 const FOR_CATEGORIES = [
-  { label: "for anyone", text: "I'm a lifehacker who cares about building/adopting minimal and long-lasting systems that help me optimize my life." },
-  { label: "recruiters", text: "I'm a finance student with internship experience across capital markets advisory and internal audit, at firms large and small. I'm actively looking for entry level roles in corporate finance." },
-  { label: "finance professionals", text: "I use named ranges and INDEX/MATCH over VLOOKUP. Also, I'd rather get the unit economics and DD right than just build a fancy model — a precise model still fails on a weak thesis." },
-  { label: "engineers", text: "I’m {highly_technical} and while (I’m ≠ developer) I know my way /around & can speak “fluently” with you; I built (this.site) from scratch + (this.project) && (this.too)." }
+  { label: "for anyone", text: "i’m a lifehacker who builds (and borrows) minimal systems that last. read this.essay or browse my.projects, and i’ll bet you a.coffee you’ll find something useful for free ;)" },
+  { label: "recruiters", text: "i’m a finance student who has seen the numbers from both sides: advising on capital markets and auditing from the inside, at firms large and small. i’m looking for an entry-level role in corporate finance." },
+  { label: "finance professionals", text: "i’m→ NPV > 0, {aspiring_analyst} and while (i <> expert [yet]) i know my way =AROUND(A1:XFD1048576) & can add alpha to your work at minimal tracking error; i recently built (this.model) from t=0 + (this.deck) & gave (this.pitch)." },
+  { label: "engineers", text: "i’m {highly_technical} and while (i’m ≠ developer) i know my way /around & can speak “fluently” with you; i built (this.site) from scratch + (this.project) && (this.too)." }
 ];
 function home() {
   const forTabs = FOR_CATEGORIES.map((c, i) => `<span data-for="${i}" class="${i === 0 ? 'active' : ''}">${esc(c.label)}</span>`).join("");
@@ -440,7 +480,7 @@ function notebookPage(id) {
 const about = () => {
   const src = PHOTO || BUILT_IN_PHOTO;
   const pic = src ? `<img class="photo" src="${esc(src)}" alt="photo of ${esc(NAME)}">` : `<div class="photo ph">your photo here</div>`;
-  return `<h1>about</h1><div style="display:grid;grid-template-columns:1fr 176px;gap:32px;align-items:start"><div><p class="intro">${esc(INTRO_1)}</p><p class="intro">${esc(INTRO_2)}</p>` + paras(ABOUT) + `</div><div class="pic">${pic}<div class="cap">${esc(PHOTO_CAPTION)}</div></div></div>`;
+  return `<section class="about-page"><h1>about</h1><div class="about-copy"><div class="about-photo">${pic}<div class="cap">${esc(PHOTO_CAPTION)}</div></div><p>${esc(INTRO_1)}</p><p>${esc(INTRO_2)}</p>` + paras(ABOUT) + `</div></section>`;
 };
 const contact = () => `<h1>contact</h1><p>the best way to reach me is email.</p><a class="btn" href="mailto:${esc(EMAIL)}">${esc(EMAIL)}</a>`;
 function post(p) {
@@ -579,5 +619,54 @@ document.addEventListener("click", e => {
 });
 route();
 </script>
+
+<script>
+(() => {
+  if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  const halo = document.getElementById('cursorHalo');
+  const ring = document.getElementById('cursorHaloRing');
+  const textPath = halo.querySelector('textPath');
+  const actionable = 'a,button,[role="button"],[role="switch"],input,select,textarea,.for-bar span,.lt-dot,[tabindex]:not([tabindex="-1"])';
+  let x = -100, y = -100, angle = 0, lastX = null, lastY = null, clicking = false, lastT = performance.now();
+  const moveRate = 0.58;       // degrees per pixel of pointer travel
+  const clickRate = 38;        // degrees per second
+
+  function setMode(target){
+    const isClick = !!(target && target.closest && target.closest(actionable));
+    if (isClick !== clicking){
+      clicking = isClick;
+      halo.classList.toggle('click', clicking);
+      textPath.textContent = clicking ? 'CLICK · CLICK · CLICK · CLICK · ' : 'MOVE · MOVE · MOVE · MOVE · ';
+      textPath.setAttribute('textLength', '213');
+    }
+  }
+
+  document.addEventListener('pointermove', e => {
+    x = e.clientX; y = e.clientY;
+    halo.style.left = x + 'px';
+    halo.style.top = y + 'px';
+    halo.classList.add('show');
+    setMode(e.target);
+    if (!clicking && lastX !== null){
+      angle += Math.hypot(x - lastX, y - lastY) * moveRate;
+    }
+    lastX = x; lastY = y;
+  }, {passive:true});
+
+  document.addEventListener('pointerover', e => setMode(e.target), {passive:true});
+  document.addEventListener('pointerleave', () => halo.classList.remove('show'));
+  window.addEventListener('blur', () => halo.classList.remove('show'));
+
+  function frame(now){
+    const dt = Math.min((now - lastT) / 1000, .05);
+    lastT = now;
+    if (clicking) angle += clickRate * dt;
+    ring.setAttribute('transform', `rotate(${angle} 50 50)`);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
 </body>
 </html>
