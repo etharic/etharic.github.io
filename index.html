@@ -106,8 +106,8 @@ h1 .fade{color:var(--soft);opacity:.5}
 .seg button.on{background:var(--ink);color:var(--bg)}
 @media (hover:hover){.seg button:not(.on):hover{color:var(--ink)}}
 @media (prefers-reduced-motion:reduce){.seg button{transition:none}}
-.prose{max-width:660px}
-.prose p{color:var(--ink);line-height:1.75}
+.prose{max-width:660px;font-size:var(--reading-font-size);line-height:1.65}
+.prose p{color:var(--ink);line-height:1.65}
 .prose h3{font-size:1.05rem;font-weight:600;margin:32px 0 8px}
 .prose strong{font-weight:600}
 .lt{position:relative;--h:108px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -165,16 +165,30 @@ footer{margin-top:auto;padding-top:26px;padding-bottom:44px;border-top:1px solid
 @media (hover:none),(pointer:coarse){.cursor-halo{display:none!important}}
 
 
-/* About page only */
-.about-page{max-width:760px;margin:0 auto;padding-top:8px}
-.about-page h1{margin:18px 0 16px;font-size:2rem}
-.about-copy{font-size:.91rem;line-height:1.62;color:var(--ink)}
-.about-copy p{color:var(--ink);margin:0 0 12px;text-transform:lowercase}
-.about-photo{float:right;width:176px;margin:2px 0 10px 28px}
+/* Shared long-form reading typography: About and full blog posts */
+:root{--reading-font-size:1.125rem}
+/* About page only — aligned to the site's 760px inner content grid */
+.about-page{width:100%;max-width:760px;margin:0 auto;padding-top:0}
+.about-page h1{margin:8px 0 12px;font-size:2rem}
+.about-copy{font-size:var(--reading-font-size);line-height:1.65;color:var(--ink);display:grid;grid-template-columns:minmax(0,1fr) 196px;column-gap:28px;align-items:start}
+.about-copy p{color:var(--ink);margin:0 0 16px;text-transform:lowercase;grid-column:1}
+.about-photo{grid-column:2;grid-row:1 / span 3;width:196px;margin:0}
 .about-photo .photo{width:100%;aspect-ratio:3/4}
-.about-photo .cap{margin-top:6px}
-.about-copy::after{content:"";display:block;clear:both}
-@media (max-width:680px){.about-page{padding-top:0}.about-photo{float:none;width:min(210px,65vw);margin:0 auto 18px}}
+.about-photo .cap{margin-top:4px}
+body.about-route main{padding-bottom:8px}
+@media (min-width:681px) and (max-height:820px){
+  .about-page h1{margin:2px 0 8px}
+  .about-copy p{margin-bottom:14px}
+  
+}
+@media (min-width:681px) and (max-height:720px){
+  .about-copy p{margin-bottom:12px}
+}
+@media (max-width:680px){
+  .about-page{padding-top:0}
+  .about-copy{display:block}.about-photo{width:min(210px,65vw);margin:0 auto 18px}
+  body.about-route main{padding-bottom:24px}
+}
 
 </style>
 </head>
@@ -205,8 +219,8 @@ const BRAND = "Etharic";               // top-left site name
 const NAME = "ryan";                   // the name you go by
 const FULLNAME = "suryanarayan";       // full name, shown under the greeting. empty = hidden
 // The intro renders as two paragraphs, so keep the break between INTRO_1 and INTRO_2.
-const INTRO_1 = "i started out studying electrical engineering in india, somehow found my way into finance in germany, and have spent much of the time since exploring everything in between. these days, i'm job hunting, experimenting with vibe coding, and finding ways to make ai genuinely useful in everyday life.";
-const INTRO_2 = "i have a habit of getting curious about things i have no business knowing, then going a little too far trying to understand them. sometimes that leads somewhere useful. sometimes just to better questions. i like people who challenge my thinking, ideas that survive being pulled apart, and doing things that don't necessarily come with a payoff. i believe in being resourceful before asking for more, having opinions without getting attached to them, and following through when the novelty wears off. i'm still figuring plenty out, but i'd rather have a few interesting detours than a perfectly straight line.";
+const INTRO_1 = "i got my first finance lesson from a stranger at a resort gym, the morning after receiving my acceptance letter to study electrical engineering. funny how things work out. i've been exploring both worlds (and plenty in between) ever since. these days, i'm job hunting, experimenting with vibe coding, and writing well-researched essays without ai's help.";
+const INTRO_2 = "i tend to get curious about things i have no business knowing, then go a little too far trying to understand them. i like people who challenge my assumptions, ideas that survive scrutiny, and systems that outlast the initial novelty. i'm still figuring plenty out, but i've never been one to shy away from an interesting detour.";
 const ABOUT = "";
 const YEAR = "2026";                      // the year page in the top menu
 const YEAR_INTRO = "what this year is about for me, and how it's going.";
@@ -510,6 +524,7 @@ function route(forced) {
   const isHome = !p && (pages[id] || home) === home;
   document.getElementById("foot").hidden = isHome;
   document.body.classList.toggle("home", isHome);
+  document.body.classList.toggle("about-route", !p && id === "about");
   initTile();
   initForBar();
   initSpores();
