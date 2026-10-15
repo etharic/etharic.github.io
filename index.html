@@ -190,6 +190,14 @@ body.about-route main{padding-bottom:8px}
   body.about-route main{padding-bottom:24px}
 }
 
+
+/* Work section sticker headings */
+.work-section-head{text-align:center;margin:18px 0 0}
+.work-sticker-wrap{height:250px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;overflow:visible}
+.work-sticker{display:block;height:250px;width:auto;max-width:100%;object-fit:contain}
+.work-section-head h1{margin:0 0 12px}
+.work-section-head p{margin:0}
+@media (max-width:680px){.work-sticker-wrap{height:190px;margin-bottom:14px}.work-sticker{height:190px}}
 </style>
 </head>
 <body>
@@ -512,12 +520,13 @@ function route(forced) {
     window.scrollTo(0, 0); return;
   }
   if (id === "bin") id = "blog";
-  if (id === "work") id = "work-series";
+  if (id === "work") id = "work-fireplace";
   const p = POSTS.find(x => x.id === id);
   const pages = { "": home, [YEAR]: year, blog: () => blog(currentView), about, contact, projects: () => `<h1>projects</h1><p>coming soon &mdash; a showcase of things i've built and am building.</p><div class="label">currently learning</div><div class="tiles">` + CURRENT.map(tile).join("") + `</div><div class="linkrow"><a class="arrow-link" href="#activities">all activities &rarr;</a></div>`, videos: () => `<h1>videos</h1><p>coming soon &mdash; a collection of videos i've made or recommend.</p>`, cv: () => `<h1>get cv</h1><p>coming soon &mdash; my resume will be available for download here.</p>`, activities: () => `<h1>all activities</h1><p>coming soon &mdash; this will list everything you've started, archived, or plan to start.</p><p class="linkrow"><a class="arrow-link" href="#recommendations">any recommendation? &rarr;</a></p>`, recommendations: () => soon("any recommendation?") };
-  const WORK_SECTIONS = [["series","series"],["thrive","thrive"],["technology","technology"],["macro-market","macro&market"],["fireplace","fireplace"],["summaries","summaries"]];
+  const WORK_SECTIONS = [["fireplace","fireplace"],["thrive","thrive"],["macro-market","macro&market"],["technology","technology"],["series","series"],["summaries","summaries"]];
+  const WORK_STICKERS = {fireplace:"fireplace-sticker.png",thrive:"thrive-sticker.png","macro-market":"macro-market-sticker.png",technology:"technology-sticker.png",series:"series-sticker.png",summaries:"summaries-sticker.png"};
   const svg = k => `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
-  WORK_SECTIONS.forEach(([k, label]) => { pages["work-" + k] = () => `<div class="work-side" role="navigation" aria-label="work">` + WORK_SECTIONS.map(([k2, l2]) => `<a href="#work-${k2}" class="${k2 === k ? "on" : ""}">${svg(k2)}${esc(l2)}</a>`).join("") + `</div><h1>${esc(label)}</h1><p>coming soon.</p>`; });
+  WORK_SECTIONS.forEach(([k, label]) => { pages["work-" + k] = () => `<div class="work-side" role="navigation" aria-label="work">` + WORK_SECTIONS.map(([k2, l2]) => `<a href="#work-${k2}" class="${k2 === k ? "on" : ""}">${svg(k2)}${esc(l2)}</a>`).join("") + `</div><div class="work-section-head"><div class="work-sticker-wrap"><img class="work-sticker" src="${WORK_STICKERS[k]}" alt=""></div><h1>${esc(label)}</h1><p>coming soon.</p></div>`; });
   app.innerHTML = p ? post(p) : (pages[id] || home)();
   const WORK = ["blog", "projects", "videos"];
   if (!p && WORK.includes(id)) app.insertAdjacentHTML("afterbegin", `<div class="work-tabs">` + WORK.map(w => `<a href="#${w}" class="${w === id ? "on" : ""}"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[w]}</svg>${w}</a>`).join("") + `</div>`);
