@@ -63,6 +63,7 @@ main p a,.link{color:var(--ink)}
 .for-bar span{color:var(--soft);cursor:pointer;font-size:.85rem;transition:color .18s}
 .for-bar span:hover,.for-bar span.active{color:var(--ink);font-weight:600}
 .for-intro{font-size:1.6rem;line-height:1.5;font-weight:400;min-height:3.2em;color:var(--ink)}
+.for-intro .intro-em{font-family:"Times New Roman",Times,serif;font-style:italic;font-weight:300;font-synthesis:none;display:inline-block;transform:skewX(-9deg) scaleX(.94);transform-origin:center}
 .hero-where{position:absolute;left:24px;top:calc(100vh - 30px);transform:translateY(-100%);display:flex;align-items:center;gap:8px;min-height:30px;color:var(--soft);font-size:.95rem;z-index:50}
 .hero-actions{position:absolute;right:30px;top:calc(100vh - 30px);transform:translateY(-100%);display:flex;flex-direction:column;align-items:flex-end;gap:20px;z-index:50}
 .hero-actions a{color:#cf8c06;display:inline-flex;align-items:center;min-height:30px;gap:6px;text-decoration:none;font-size:.95rem;transition:color .18s}
@@ -504,12 +505,18 @@ function initForBar() {
   const tabs = [...bar.querySelectorAll("span[data-for]")];
   // Reserve the longest intro height so switching audiences never shifts the page.
   const fit = () => {
-    const cur = intro.textContent; intro.style.minHeight = "0px"; let h = 0;
-    FOR_CATEGORIES.forEach(c => { intro.textContent = c.text; h = Math.max(h, intro.offsetHeight); });
-    intro.textContent = cur; intro.style.minHeight = h + "px";
+    const curHTML = intro.innerHTML;
+    intro.style.minHeight = "0px";
+    let h = 0;
+    FOR_CATEGORIES.forEach(c => {
+      intro.textContent = c.text;
+      h = Math.max(h, intro.offsetHeight);
+    });
+    intro.innerHTML = curHTML;
+    intro.style.minHeight = h + "px";
   };
   const activate = i => {
-    intro.textContent = FOR_CATEGORIES[i].text;
+    intro.innerHTML = formatForIntro(FOR_CATEGORIES[i].text);
     tabs.forEach((tab,k) => tab.classList.toggle("active", k === i));
   };
   const handlers = tabs.map(tab => {
@@ -541,9 +548,19 @@ const FOR_CATEGORIES = [
   { label: "finance professionals", text: "i’m→ NPV > 0, {aspiring_analyst} and while (i <> expert [yet]) i know my way =AROUND(A1:XFD1048576) & can add alpha to your work at minimal tracking error; i recently built (this.model) from t=0 + (this.deck) & gave (this.pitch)." },
   { label: "engineers", text: "i’m {highly_technical} and while (i’m ≠ developer) i know my way /around & can speak “fluently” with you; i built (this.site) from scratch + (this.project) && (this.too)." }
 ];
+
+const FOR_ITALIC_TERMS = ["this.essay","my.projects","a.coffee","this.model","this.deck","this.pitch","this.site","this.project","this.too"];
+function formatForIntro(text) {
+  let safe = esc(text);
+  FOR_ITALIC_TERMS.forEach(term => {
+    safe = safe.split(term).join(`<em class="intro-em">${term}</em>`);
+  });
+  return safe;
+}
+
 function home() {
   const forTabs = FOR_CATEGORIES.map((c, i) => `<span data-for="${i}" class="${i === 0 ? 'active' : ''}">${esc(c.label)}</span>`).join("");
-  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar">${forTabs}</div><p class="for-intro">${esc(FOR_CATEGORIES[0].text)}</p><a class="more-about" href="#about"><span>more about me</span>&rarr;</a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
+  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar">${forTabs}</div><p class="for-intro">${formatForIntro(FOR_CATEGORIES[0].text)}</p><a class="more-about" href="#about"><span>more about me</span>&rarr;</a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
   return h;
@@ -659,20 +676,15 @@ function renderArticleRoute(article){
 
 const WORK_SECTION_CONFIG = [
   {key:"fireplace",label:"fireplace",sticker:"fireplace-sticker.png",description:"a collection of bite-sized life lessons and learnings from everyday stories and moments."},
-  {key:"thrive",label:"thrive",sticker:"thrive-sticker.png",description:"self improvement is an ongoing process. here, you’ll find articles that will help you down the path."},
   {key:"macro-market",label:"macro&market",sticker:"macro-market-sticker.png",description:"bulls, bears and ballots: my evolving take on a world that won’t sit still."},
   {key:"technology",label:"technology",sticker:"technology-sticker.png",description:"tools and systems i’ve built or borrowed to automate the boring parts of life."},
+  {key:"thrive",label:"thrive",sticker:"thrive-sticker.png",description:"self improvement is an ongoing process. here, you’ll find articles that will help you down the path."},
   {key:"series",label:"series",sticker:"series-sticker.png",description:"fancy a good series? find curated collections of articles, stories, and guides that share a theme or a goal."},
   {key:"summaries",label:"summaries",sticker:"summaries-sticker.png",description:"you read a good book but didn't make notes? no worries. find a collection of my book notes and accompanying resources over here."}
 ];
 const WORK_POSTS = {
   fireplace: [
-    { title:"why i started a personal website", date:"15 oct 2026", id:"why-i-started-a-personal-website", image:"why-personal-website-thumb.png" },
-    { title:"placeholder article five", date:"08 oct 2026" },
-    { title:"placeholder article four", date:"01 oct 2026" },
-    { title:"placeholder article three", date:"24 sep 2026" },
-    { title:"placeholder article two", date:"17 sep 2026" },
-    { title:"placeholder article one", date:"10 sep 2026" }
+    { title:"why i started a personal website", date:"15 oct 2026", id:"why-i-started-a-personal-website", image:"why-personal-website-thumb.png" }
   ],
   technology: [
     { title:"clearline: why i built my own productivity system", date:"28 sep 2026", id:"clearline-why-i-built-it", image:"clearline-featured.jpg" },
