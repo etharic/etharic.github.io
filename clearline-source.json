@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.1.1",
+          "date": "2026-10-28",
+          "localizedDescription": "Physical-iPhone startup diagnostic candidate, build 4. Built from dual-green source commit bee806d47fd535dda021835d8b796487dec63fbd. Includes one-time empty-startup reload and visible WKWebView/JavaScript diagnostics; compiled version/build, main web bundle, and both extensions passed remote and direct IPA verification.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-1.1.1-b4.ipa",
+          "size": 1154348,
+          "minOSVersion": "16.4"
+        },
+        {
           "version": "1.1",
           "date": "2026-10-28",
           "localizedDescription": "Diagnostic physical-iPhone candidate, build 3. Built from dual-green source commit 12904d0080b9670b7324b7188595208bae374354. Includes one-time empty-startup reload plus visible WKWebView/JavaScript startup diagnostics; main web bundle and both extensions passed remote and direct IPA verification.",
