@@ -20,9 +20,9 @@
         {
           "version": "1.0",
           "date": "2026-10-28",
-          "localizedDescription": "Extension-validated iPhone acceptance candidate. Built from dual-green source commit ef0f68e35d3508bd9ecc9e299acf2b72ec7f4d30. Compiled Widgets/Controls and Share extension metadata, display names, extension point identifiers, and Share principal class passed the remote installability gate before publication.",
+          "localizedDescription": "Web-embedded physical-iPhone retest candidate. Built from dual-green source commit e7e64d2101c7e04d90acc1faf8e05f7a104cce04. Main app www/index.html and compiled assets, Widgets/Controls metadata, and Share extension metadata all passed remote artifact gates and direct IPA inspection before publication.",
           "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-unsigned.ipa",
-          "size": 915660,
+          "size": 1150390,
           "minOSVersion": "16.4"
         }
       ]
