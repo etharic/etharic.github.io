@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.1.2",
+          "date": "2026-10-28",
+          "localizedDescription": "Stable-origin physical-iPhone candidate, build 5. Built from dual-green source commit 8310155dca5e2322e9de71ec437619bf728877ff. Embedded Clearline is served through a native clearline-local WKURLSchemeHandler rather than file://; untouched Actions artifact provenance, 72/72 payload hashes, main web bundle, and both extensions were verified before publication.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-1.1.2-b5.ipa",
+          "size": 1158617,
+          "minOSVersion": "16.4"
+        },
+        {
           "version": "1.1.1",
           "date": "2026-10-28",
           "localizedDescription": "Physical-iPhone startup diagnostic candidate, build 4. Built from dual-green source commit bee806d47fd535dda021835d8b796487dec63fbd. Includes one-time empty-startup reload and visible WKWebView/JavaScript diagnostics; compiled version/build, main web bundle, and both extensions passed remote and direct IPA verification.",
