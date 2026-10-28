@@ -1,0 +1,31 @@
+{
+  "name": "Clearline",
+  "identifier": "com.clearline.sidestore.source",
+  "sourceURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/clearline-source.json",
+  "apps": [
+    {
+      "name": "Clearline",
+      "bundleIdentifier": "com.clearline.ios",
+      "developerName": "etharic",
+      "subtitle": "Private offline-first task management for iPhone and Windows.",
+      "localizedDescription": "Clearline is a private, offline-first task manager with native iPhone integrations, widgets and controls, Share Sheet capture, Shortcuts/App Intents, reminders, calendar interoperability, and encrypted cross-device synchronization.",
+      "iconURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/clearline-thumbnail.png",
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/etharic/etharic.github.io/main/clearline-today.webp",
+        "https://raw.githubusercontent.com/etharic/etharic.github.io/main/clearline-inbox.webp",
+        "https://raw.githubusercontent.com/etharic/etharic.github.io/main/clearline-upcoming.webp",
+        "https://raw.githubusercontent.com/etharic/etharic.github.io/main/clearline-projects-areas.webp"
+      ],
+      "versions": [
+        {
+          "version": "1.1",
+          "date": "2026-10-28",
+          "localizedDescription": "First remotely compiled iPhone acceptance candidate. Built from dual-green source commit 53d957fbceaf1cb901996bbc85231baa6d7aaf0d with main app, Widgets/Controls extension, and Share extension.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-unsigned.ipa",
+          "size": 915384,
+          "minOSVersion": "16.4"
+        }
+      ]
+    }
+  ]
+}
