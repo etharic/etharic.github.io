@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.1",
+          "date": "2026-10-28",
+          "localizedDescription": "Physical-iPhone cache-busting retest candidate, build 2. Built from dual-green source commit b5c188c687cdf4dbfe7bf8354f9c603d7210e80e. Main app web bundle, version metadata, URL/privacy/background properties, Widgets/Controls extension, and Share extension passed remote and direct IPA verification.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-1.1-b2.ipa",
+          "size": 1150678,
+          "minOSVersion": "16.4"
+        },
+        {
           "version": "1.0",
           "date": "2026-10-28",
           "localizedDescription": "Web-embedded physical-iPhone retest candidate. Built from dual-green source commit e7e64d2101c7e04d90acc1faf8e05f7a104cce04. Main app www/index.html and compiled assets, Widgets/Controls metadata, and Share extension metadata all passed remote artifact gates and direct IPA inspection before publication.",
