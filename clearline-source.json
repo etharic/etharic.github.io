@@ -20,9 +20,9 @@
         {
           "version": "1.0",
           "date": "2026-10-28",
-          "localizedDescription": "First remotely compiled iPhone acceptance candidate. Built from dual-green source commit 53d957fbceaf1cb901996bbc85231baa6d7aaf0d with main app, Widgets/Controls extension, and Share extension.",
+          "localizedDescription": "Installability-repaired iPhone acceptance candidate. Built from dual-green source commit d069a4443d66202444f2041ddb7ae3ff7d853311 with main app, Widgets/Controls extension, and Share extension; compiled extension metadata verified before publication.",
           "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-unsigned.ipa",
-          "size": 915384,
+          "size": 915511,
           "minOSVersion": "16.4"
         }
       ]
