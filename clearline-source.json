@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.2.4",
+          "date": "2026-10-30",
+          "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 5. Preserves the Clearline App Group entitlement in the main app, Widgets and Share extension for SideStore resigning so native widgets can access the shared task projection. Exact Codemagic artifact independently verified before publication.",
+          "downloadURL": "https://github.com/etharic/etharic.github.io/releases/download/v1.2.4-build5-planner-ios/Clearline-1.2.4-build5-sidestore.ipa",
+          "size": 32089526,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.2.3",
           "date": "2026-10-30",
           "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 4. Repairs the startup Room database-path regression by keeping the canonical planner.db in the main app sandbox, restores the Clearline AppIcon asset pipeline, preserves Widgets/Share projection architecture, and passed the full Codemagic build-4 validation and unsigned packaging lane.",
