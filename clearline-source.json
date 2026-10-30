@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.2.1",
+          "date": "2026-10-30",
+          "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 2. Repairs the physical launch crash by packaging Compose resources/fonts into the final iPhone app and keeps main app, Widgets and Share extension at one coherent version. Codemagic green through Kotlin/Native, Swift bridge, Xcode and SideStore packaging.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-1.2.1-build2-unsigned.ipa",
+          "size": 16526968,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.2.0",
           "date": "2026-10-30",
           "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 1. KMP/Compose + Room client with Clearline integration; Codemagic green through Kotlin/Native, Swift bridge, main app, Widgets, Share extension and unsigned SideStore packaging. Verified candidate SHA-256: 9fa292f067a434277ee8e82d029f3cb47611716a6dc931cc1f004662f74812d5.",
