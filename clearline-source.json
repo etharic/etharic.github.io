@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.2.0",
+          "date": "2026-10-30",
+          "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 1. KMP/Compose + Room client with Clearline integration; Codemagic green through Kotlin/Native, Swift bridge, main app, Widgets, Share extension and unsigned SideStore packaging. Verified candidate SHA-256: 9fa292f067a434277ee8e82d029f3cb47611716a6dc931cc1f004662f74812d5.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-1.2.0-build1-unsigned-verified.ipa",
+          "size": 15311011,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.1.2",
           "date": "2026-10-28",
           "localizedDescription": "Stable-origin physical-iPhone candidate, build 5. Built from dual-green source commit 8310155dca5e2322e9de71ec437619bf728877ff. Embedded Clearline is served through a native clearline-local WKURLSchemeHandler rather than file://; untouched Actions artifact provenance, 72/72 payload hashes, main web bundle, and both extensions were verified before publication.",
