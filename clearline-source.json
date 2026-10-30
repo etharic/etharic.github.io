@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.2.2",
+          "date": "2026-10-30",
+          "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 3. Home/Settings/About refinement tranche plus configurable Things-style Clearline widgets, interactive completion, deep links, Progress/New To-Do surfaces and App Intent controls. Verified Codemagic candidate.",
+          "downloadURL": "https://github.com/etharic/etharic.github.io/releases/download/clearline-1.2.2-build3/Clearline-1.2.2-build3-unsigned.ipa",
+          "size": 31835952,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.2.1",
           "date": "2026-10-30",
           "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 2. Repairs the physical launch crash by packaging Compose resources/fonts into the final iPhone app and keeps main app, Widgets and Share extension at one coherent version. Codemagic green through Kotlin/Native, Swift bridge, Xcode and SideStore packaging.",
