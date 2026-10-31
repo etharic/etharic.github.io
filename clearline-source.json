@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.2.5",
+          "date": "2026-10-31",
+          "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 6. Repairs SideStore-adjusted App Group resolution so widgets can access the native task projection, routes Home New To-Do through an editable composer instead of persisting an empty Inbox task, and adds release-blocking validation of Clearline's native encrypted relay/sync protocol.",
+          "downloadURL": "https://github.com/etharic/etharic.github.io/releases/download/v1.2.5-build6-planner-ios/Clearline-1.2.5-build6-sidestore.ipa",
+          "size": 32105842,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.2.4",
           "date": "2026-10-30",
           "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 5. Preserves the Clearline App Group entitlement in the main app, Widgets and Share extension for SideStore resigning so native widgets can access the shared task projection. Exact Codemagic artifact independently verified before publication.",
