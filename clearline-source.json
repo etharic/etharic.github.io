@@ -18,6 +18,14 @@
       ],
       "versions": [
         {
+          "version": "1.2.6",
+          "date": "2026-11-03",
+          "localizedDescription": "Clearline iPhone physical-test candidate, build 7. Repairs pairing wire format and widget shared-container diagnostics.",
+          "downloadURL": "https://raw.githubusercontent.com/etharic/etharic.github.io/main/Clearline-1.2.6-build7-sidestore.ipa",
+          "size": 16765839,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.2.5",
           "date": "2026-10-31",
           "localizedDescription": "Planner-derived Clearline iPhone physical-test candidate, build 6. Repairs SideStore-adjusted App Group resolution so widgets can access the native task projection, routes Home New To-Do through an editable composer instead of persisting an empty Inbox task, and adds release-blocking validation of Clearline's native encrypted relay/sync protocol.",
