@@ -4,7 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Etharic</title>
+<meta name="description" content="ryan (suryanarayan): finance student in frankfurt writing researched essays on macro, markets and companies, plus the tools and systems i build.">
+<meta name="author" content="Suryanarayan">
+<link rel="canonical" href="https://etharic.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Etharic">
+<meta property="og:title" content="Etharic: hey, i'm ryan">
+<meta property="og:description" content="researched essays on macro, markets and companies, plus the tools and systems i build.">
+<meta property="og:url" content="https://etharic.com/">
+<meta property="og:image" content="https://etharic.com/etharic-about-photo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f0f1f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -275,6 +288,9 @@ body.about-route main{padding-bottom:8px}
 @media (max-width:680px){
  .work-article.clearline-article .clearline-feature-row{grid-template-columns:1fr;gap:12px;margin:20px 0 24px}
  .work-article.clearline-article .clearline-feature-row .article-figure{width:min(240px,72vw);height:190px;margin:0 auto}
+ .work-article.clearline-article .clearline-feature-row:nth-of-type(even){grid-template-columns:minmax(0,1fr)}
+ .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .article-figure{grid-column:1}
+ .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .clearline-feature-copy{grid-column:1;grid-row:auto}
  .work-article.clearline-article .clearline-feature-copy{text-align:left}
 }
 </style>
@@ -454,8 +470,9 @@ function initSpores() {
   let mx = 0, my = 0, inside = false, ox = 0, oy = 0;
   function layout() {
     const parts = [".hero h1", ".for-bar", ".for-intro", ".more-about"].map(q => hero.querySelector(q)).filter(Boolean).map(e => e.getBoundingClientRect());
-    const x0 = Math.min(...parts.map(r => r.left)) - PAD, y0 = Math.min(...parts.map(r => r.top)) - PAD;
-    const x1 = Math.max(...parts.map(r => r.right)) + PAD, y1 = Math.max(...parts.map(r => r.bottom)) + PAD;
+    let x0 = Math.min(...parts.map(r => r.left)) - PAD; const y0 = Math.min(...parts.map(r => r.top)) - PAD;
+    let x1 = Math.max(...parts.map(r => r.right)) + PAD; const y1 = Math.max(...parts.map(r => r.bottom)) + PAD;
+    const vw = document.documentElement.clientWidth; x0 = Math.max(x0, 0); x1 = Math.min(x1, vw);
     L = x0 + scrollX; T = y0 + scrollY; const nw = x1 - x0, nh = y1 - y0;
     Object.assign(cv.style, { left: L + "px", top: T + "px", width: nw + "px", height: nh + "px" });
     const dpr = window.devicePixelRatio || 1;
@@ -675,33 +692,33 @@ function renderArticleRoute(article){
 }
 
 const WORK_SECTION_CONFIG = [
-  {key:"fireplace",label:"fireplace",sticker:"fireplace-sticker.png",description:"a collection of bite-sized life lessons and learnings from everyday stories and moments."},
-  {key:"macro-market",label:"macro&market",sticker:"macro-market-sticker.png",description:"bulls, bears and ballots: my evolving take on a world that won’t sit still."},
-  {key:"technology",label:"technology",sticker:"technology-sticker.png",description:"tools and systems i’ve built or borrowed to automate the boring parts of life."},
-  {key:"thrive",label:"thrive",sticker:"thrive-sticker.png",description:"self improvement is an ongoing process. here, you’ll find articles that will help you down the path."},
-  {key:"series",label:"series",sticker:"series-sticker.png",description:"fancy a good series? find curated collections of articles, stories, and guides that share a theme or a goal."},
-  {key:"summaries",label:"summaries",sticker:"summaries-sticker.png",description:"you read a good book but didn't make notes? no worries. find a collection of my book notes and accompanying resources over here."}
+  {key:"fireplace",label:"fireplace",sticker:"fireplace-sticker.webp",description:"a collection of bite-sized life lessons and learnings from everyday stories and moments."},
+  {key:"macro-market",label:"macro&market",sticker:"macro-market-sticker.webp",description:"bulls, bears and ballots: my evolving take on a world that won’t sit still."},
+  {key:"technology",label:"technology",sticker:"technology-sticker.webp",description:"tools and systems i’ve built or borrowed to automate the boring parts of life."},
+  {key:"thrive",label:"thrive",sticker:"thrive-sticker.webp",description:"self improvement is an ongoing process. here, you’ll find articles that will help you down the path."},
+  {key:"series",label:"series",sticker:"series-sticker.webp",description:"fancy a good series? find curated collections of articles, stories, and guides that share a theme or a goal."},
+  {key:"summaries",label:"summaries",sticker:"summaries-sticker.webp",description:"you read a good book but didn't make notes? no worries. find a collection of my book notes and accompanying resources over here."}
 ];
 const WORK_POSTS = {
   fireplace: [
-    { title:"why i started a personal website", date:"15 oct 2026", id:"why-i-started-a-personal-website", image:"why-personal-website-thumb.png" }
+    { title:"why i started a personal website", date:"15 oct 2026", id:"why-i-started-a-personal-website", image:"why-personal-website-thumb.webp" }
   ],
   technology: [
-    { title:"clearline: why i built my own productivity system", date:"28 sep 2026", id:"clearline-why-i-built-it", image:"clearline-featured.jpg" },
-    { title:"habitkit: making self-improvement feel like a github contribution graph", date:"6 aug 2026", id:"habitkit-small-habits-big-changes", image:"habitkit-thumbnail.png" }
+    { title:"clearline: why i built my own productivity system", date:"28 sep 2026", id:"clearline-why-i-built-it", image:"clearline-featured.webp" },
+    { title:"habitkit: making self-improvement feel like a github contribution graph", date:"6 aug 2026", id:"habitkit-small-habits-big-changes", image:"habitkit-thumbnail.webp" }
   ],
   "macro-market": [
-    { title:"netflix–warner bros.: the value of certainty in a contested acquisition", date:"9 dec 2025", id:"netflix-warner-ma", image:"netflix-warner-thumbnail.png" },
-    { title:"crude oil: a supply surplus with limited near-term price support", date:"23 jan 2026", id:"crude-oil-2026", image:"crude-oil-thumbnail.png" },
-    { title:"spacex: starlink's cash-generating potential and the limits of ipo valuation", date:"22 may 2026", id:"spacex-ipo-2026", image:"spacex-ipo-thumbnail.png" },
-    { title:"the energy shock: why lower crude prices may not restore disinflation", date:"11 jul 2026", id:"energy-inflation-2026", image:"energy-inflation-thumbnail.png" },
-    { title:"electronic arts: reassessing the economics of the $55 billion take-private", date:"2 oct 2025", id:"ea-55bn-take-private", image:"ea-take-private-thumbnail.png" },
-    { title:"novo nordisk: competitive pressures challenge the earnings outlook", date:"31 jul 2025", id:"novo-nordisk-competitive-pressures", image:"novo-nordisk-thumbnail.png" },
-    { title:"silver’s relative-value opportunity amid gold’s record rally", date:"3 feb 2025", id:"silver-relative-value-opportunity", image:"silver-relative-value-thumbnail.png" },
-    { title:"palantir’s stock has soared. has its business caught up?", date:"28 oct 2024", id:"palantir-stock-business-caught-up", image:"palantir-thumbnail.png" },
-    { title:"why tesla’s political future could matter more than its car sales", date:"20 sep 2024", id:"tesla-political-future-2024", image:"tesla-political-future-thumbnail.png" },
-    { title:"why i remain cautious about the us economy in 2024", date:"26 oct 2023", id:"us-economy-2024", image:"us-recession-2024-thumbnail.png" },
-    { title:"why nvidia's ai boom might eventually work against it", date:"15 feb 2023", id:"nvidia-ai-boom-might-work-against-it", image:"nvidia-ai-thumbnail.png" }
+    { title:"netflix–warner bros.: the value of certainty in a contested acquisition", date:"9 dec 2025", id:"netflix-warner-ma", image:"netflix-warner-thumbnail.webp" },
+    { title:"crude oil: a supply surplus with limited near-term price support", date:"23 jan 2026", id:"crude-oil-2026", image:"crude-oil-thumbnail.webp" },
+    { title:"spacex: starlink's cash-generating potential and the limits of ipo valuation", date:"22 may 2026", id:"spacex-ipo-2026", image:"spacex-ipo-thumbnail.webp" },
+    { title:"the energy shock: why lower crude prices may not restore disinflation", date:"11 jul 2026", id:"energy-inflation-2026", image:"energy-inflation-thumbnail.webp" },
+    { title:"electronic arts: reassessing the economics of the $55 billion take-private", date:"2 oct 2025", id:"ea-55bn-take-private", image:"ea-take-private-thumbnail.webp" },
+    { title:"novo nordisk: competitive pressures challenge the earnings outlook", date:"31 jul 2025", id:"novo-nordisk-competitive-pressures", image:"novo-nordisk-thumbnail.webp" },
+    { title:"silver’s relative-value opportunity amid gold’s record rally", date:"3 feb 2025", id:"silver-relative-value-opportunity", image:"silver-relative-value-thumbnail.webp" },
+    { title:"palantir’s stock has soared. has its business caught up?", date:"28 oct 2024", id:"palantir-stock-business-caught-up", image:"palantir-thumbnail.webp" },
+    { title:"why tesla’s political future could matter more than its car sales", date:"20 sep 2024", id:"tesla-political-future-2024", image:"tesla-political-future-thumbnail.webp" },
+    { title:"why i remain cautious about the us economy in 2024", date:"26 oct 2023", id:"us-economy-2024", image:"us-recession-2024-thumbnail.webp" },
+    { title:"why nvidia's ai boom might eventually work against it", date:"15 feb 2023", id:"nvidia-ai-boom-might-work-against-it", image:"nvidia-ai-thumbnail.webp" }
   ]
 };
 
