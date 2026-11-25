@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T12:05:38.060Z",
+  "generatedAt": "2026-11-25T12:22:23.245Z",
   "title": "Design System: Etharic",
   "extensions": {
     "colorMeta": {
@@ -197,7 +197,7 @@
         ]
       },
       "burnt-amber": {
-        "role": "tertiary",
+        "role": "primary",
         "displayName": "Burnt Amber",
         "canonical": "#8f5d00",
         "oklch": "oklch(52.0% 0.111 72.9)",
@@ -213,7 +213,7 @@
         ]
       },
       "burnt-amber-dark": {
-        "role": "tertiary",
+        "role": "primary",
         "displayName": "Lamplit Amber",
         "canonical": "#cf8c06",
         "oklch": "oklch(69.0% 0.145 74.8)",
@@ -260,431 +260,27 @@
           "oklch(95.0% 0.002 285.9)"
         ]
       },
-      "switch-on": {
+      "gunmetal": {
         "role": "neutral",
-        "displayName": "Switch On",
-        "canonical": "#4a4b52",
-        "oklch": "oklch(41.4% 0.012 279.4)",
+        "displayName": "Gunmetal",
+        "canonical": "#5d6068",
+        "oklch": "oklch(47.0% 0.012 271)",
         "tonalRamp": [
-          "oklch(15.0% 0.002 279.4)",
-          "oklch(25.0% 0.007 279.4)",
-          "oklch(35.0% 0.009 279.4)",
-          "oklch(48.0% 0.011 279.4)",
-          "oklch(60.0% 0.012 279.4)",
-          "oklch(72.0% 0.010 279.4)",
-          "oklch(84.0% 0.007 279.4)",
-          "oklch(95.0% 0.002 279.4)"
-        ]
-      },
-      "acc-anyone": {
-        "role": "primary",
-        "displayName": "Graphite Accent",
-        "canonical": "#1d1e22",
-        "oklch": "oklch(23.6% 0.008 274.6)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 274.6)",
-          "oklch(25.0% 0.004 274.6)",
-          "oklch(35.0% 0.006 274.6)",
-          "oklch(48.0% 0.008 274.6)",
-          "oklch(60.0% 0.008 274.6)",
-          "oklch(72.0% 0.007 274.6)",
-          "oklch(84.0% 0.005 274.6)",
-          "oklch(95.0% 0.002 274.6)"
-        ]
-      },
-      "acc-anyone-dark": {
-        "role": "primary",
-        "displayName": "Chalk Accent",
-        "canonical": "#f2f2f1",
-        "oklch": "oklch(96.1% 0.001 106.4)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 106.4)",
-          "oklch(25.0% 0.001 106.4)",
-          "oklch(35.0% 0.001 106.4)",
-          "oklch(48.0% 0.001 106.4)",
-          "oklch(60.0% 0.001 106.4)",
-          "oklch(72.0% 0.001 106.4)",
-          "oklch(84.0% 0.001 106.4)",
-          "oklch(95.0% 0.000 106.4)"
-        ]
-      },
-      "acc-recruiters": {
-        "role": "primary",
-        "displayName": "Signal Blue",
-        "canonical": "#2f6fe0",
-        "oklch": "oklch(56.4% 0.185 260.8)",
-        "tonalRamp": [
-          "oklch(15.0% 0.039 260.8)",
-          "oklch(25.0% 0.103 260.8)",
-          "oklch(35.0% 0.148 260.8)",
-          "oklch(48.0% 0.181 260.8)",
-          "oklch(60.0% 0.185 260.8)",
-          "oklch(72.0% 0.161 260.8)",
-          "oklch(84.0% 0.109 260.8)",
-          "oklch(95.0% 0.039 260.8)"
-        ]
-      },
-      "acc-recruiters-dark": {
-        "role": "primary",
-        "displayName": "Night Signal Blue",
-        "canonical": "#7aa7ff",
-        "oklch": "oklch(73.3% 0.137 262.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.029 262.9)",
-          "oklch(25.0% 0.077 262.9)",
-          "oklch(35.0% 0.110 262.9)",
-          "oklch(48.0% 0.135 262.9)",
-          "oklch(60.0% 0.137 262.9)",
-          "oklch(72.0% 0.120 262.9)",
-          "oklch(84.0% 0.081 262.9)",
-          "oklch(95.0% 0.029 262.9)"
-        ]
-      },
-      "acc-finance": {
-        "role": "primary",
-        "displayName": "Marigold",
-        "canonical": "#e6a817",
-        "oklch": "oklch(77.0% 0.155 81.1)",
-        "tonalRamp": [
-          "oklch(15.0% 0.033 81.1)",
-          "oklch(25.0% 0.087 81.1)",
-          "oklch(35.0% 0.124 81.1)",
-          "oklch(48.0% 0.152 81.1)",
-          "oklch(60.0% 0.155 81.1)",
-          "oklch(72.0% 0.135 81.1)",
-          "oklch(84.0% 0.091 81.1)",
-          "oklch(95.0% 0.033 81.1)"
-        ]
-      },
-      "acc-finance-dark": {
-        "role": "primary",
-        "displayName": "Night Marigold",
-        "canonical": "#f2b93b",
-        "oklch": "oklch(81.7% 0.150 82.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.031 82.9)",
-          "oklch(25.0% 0.084 82.9)",
-          "oklch(35.0% 0.120 82.9)",
-          "oklch(48.0% 0.147 82.9)",
-          "oklch(60.0% 0.150 82.9)",
-          "oklch(72.0% 0.130 82.9)",
-          "oklch(84.0% 0.088 82.9)",
-          "oklch(95.0% 0.031 82.9)"
-        ]
-      },
-      "acc-engineers": {
-        "role": "primary",
-        "displayName": "Jade",
-        "canonical": "#2fb57a",
-        "oklch": "oklch(68.8% 0.143 159.2)",
-        "tonalRamp": [
-          "oklch(15.0% 0.030 159.2)",
-          "oklch(25.0% 0.080 159.2)",
-          "oklch(35.0% 0.115 159.2)",
-          "oklch(48.0% 0.140 159.2)",
-          "oklch(60.0% 0.143 159.2)",
-          "oklch(72.0% 0.125 159.2)",
-          "oklch(84.0% 0.084 159.2)",
-          "oklch(95.0% 0.030 159.2)"
-        ]
-      },
-      "acc-engineers-dark": {
-        "role": "primary",
-        "displayName": "Night Jade",
-        "canonical": "#4fd08f",
-        "oklch": "oklch(77.0% 0.148 157.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.031 157.9)",
-          "oklch(25.0% 0.083 157.9)",
-          "oklch(35.0% 0.118 157.9)",
-          "oklch(48.0% 0.145 157.9)",
-          "oklch(60.0% 0.148 157.9)",
-          "oklch(72.0% 0.129 157.9)",
-          "oklch(84.0% 0.087 157.9)",
-          "oklch(95.0% 0.031 157.9)"
-        ]
-      },
-      "on-anyone": {
-        "role": "neutral",
-        "displayName": "On Graphite",
-        "canonical": "#ffffff",
-        "oklch": "oklch(100.0% 0.000 89.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 89.9)",
-          "oklch(25.0% 0.000 89.9)",
-          "oklch(35.0% 0.000 89.9)",
-          "oklch(48.0% 0.000 89.9)",
-          "oklch(60.0% 0.000 89.9)",
-          "oklch(72.0% 0.000 89.9)",
-          "oklch(84.0% 0.000 89.9)",
-          "oklch(95.0% 0.000 89.9)"
-        ]
-      },
-      "on-recruiters": {
-        "role": "neutral",
-        "displayName": "On Signal Blue",
-        "canonical": "#ffffff",
-        "oklch": "oklch(100.0% 0.000 89.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 89.9)",
-          "oklch(25.0% 0.000 89.9)",
-          "oklch(35.0% 0.000 89.9)",
-          "oklch(48.0% 0.000 89.9)",
-          "oklch(60.0% 0.000 89.9)",
-          "oklch(72.0% 0.000 89.9)",
-          "oklch(84.0% 0.000 89.9)",
-          "oklch(95.0% 0.000 89.9)"
-        ]
-      },
-      "on-finance": {
-        "role": "neutral",
-        "displayName": "On Marigold",
-        "canonical": "#1d1e22",
-        "oklch": "oklch(23.6% 0.008 274.6)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 274.6)",
-          "oklch(25.0% 0.004 274.6)",
-          "oklch(35.0% 0.006 274.6)",
-          "oklch(48.0% 0.008 274.6)",
-          "oklch(60.0% 0.008 274.6)",
-          "oklch(72.0% 0.007 274.6)",
-          "oklch(84.0% 0.005 274.6)",
-          "oklch(95.0% 0.002 274.6)"
-        ]
-      },
-      "on-engineers": {
-        "role": "neutral",
-        "displayName": "On Jade",
-        "canonical": "#1d1e22",
-        "oklch": "oklch(23.6% 0.008 274.6)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 274.6)",
-          "oklch(25.0% 0.004 274.6)",
-          "oklch(35.0% 0.006 274.6)",
-          "oklch(48.0% 0.008 274.6)",
-          "oklch(60.0% 0.008 274.6)",
-          "oklch(72.0% 0.007 274.6)",
-          "oklch(84.0% 0.005 274.6)",
-          "oklch(95.0% 0.002 274.6)"
-        ]
-      },
-      "on-acc-dark": {
-        "role": "neutral",
-        "displayName": "Night On-Accent",
-        "canonical": "#111111",
-        "oklch": "oklch(17.8% 0.000 89.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 89.9)",
-          "oklch(25.0% 0.000 89.9)",
-          "oklch(35.0% 0.000 89.9)",
-          "oklch(48.0% 0.000 89.9)",
-          "oklch(60.0% 0.000 89.9)",
-          "oklch(72.0% 0.000 89.9)",
-          "oklch(84.0% 0.000 89.9)",
-          "oklch(95.0% 0.000 89.9)"
-        ]
-      },
-      "board-anyone": {
-        "role": "secondary",
-        "displayName": "Graphite Ink",
-        "canonical": "#1d1e22",
-        "oklch": "oklch(23.6% 0.008 274.6)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 274.6)",
-          "oklch(25.0% 0.004 274.6)",
-          "oklch(35.0% 0.006 274.6)",
-          "oklch(48.0% 0.008 274.6)",
-          "oklch(60.0% 0.008 274.6)",
-          "oklch(72.0% 0.007 274.6)",
-          "oklch(84.0% 0.005 274.6)",
-          "oklch(95.0% 0.002 274.6)"
-        ]
-      },
-      "board-anyone-dark": {
-        "role": "secondary",
-        "displayName": "Night Ink",
-        "canonical": "#f2f2f1",
-        "oklch": "oklch(96.1% 0.001 106.4)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 106.4)",
-          "oklch(25.0% 0.001 106.4)",
-          "oklch(35.0% 0.001 106.4)",
-          "oklch(48.0% 0.001 106.4)",
-          "oklch(60.0% 0.001 106.4)",
-          "oklch(72.0% 0.001 106.4)",
-          "oklch(84.0% 0.001 106.4)",
-          "oklch(95.0% 0.000 106.4)"
-        ]
-      },
-      "board-recruiters": {
-        "role": "secondary",
-        "displayName": "Deep Blue",
-        "canonical": "#2a5fc4",
-        "oklch": "oklch(50.9% 0.168 261.7)",
-        "tonalRamp": [
-          "oklch(15.0% 0.036 261.7)",
-          "oklch(25.0% 0.094 261.7)",
-          "oklch(35.0% 0.134 261.7)",
-          "oklch(48.0% 0.165 261.7)",
-          "oklch(60.0% 0.168 261.7)",
-          "oklch(72.0% 0.146 261.7)",
-          "oklch(84.0% 0.099 261.7)",
-          "oklch(95.0% 0.036 261.7)"
-        ]
-      },
-      "board-recruiters-dark": {
-        "role": "secondary",
-        "displayName": "Sky",
-        "canonical": "#8fb4ff",
-        "oklch": "oklch(77.2% 0.115 263.8)",
-        "tonalRamp": [
-          "oklch(15.0% 0.025 263.8)",
-          "oklch(25.0% 0.065 263.8)",
-          "oklch(35.0% 0.092 263.8)",
-          "oklch(48.0% 0.113 263.8)",
-          "oklch(60.0% 0.115 263.8)",
-          "oklch(72.0% 0.100 263.8)",
-          "oklch(84.0% 0.068 263.8)",
-          "oklch(95.0% 0.025 263.8)"
-        ]
-      },
-      "board-finance": {
-        "role": "secondary",
-        "displayName": "Umber",
-        "canonical": "#8a5a00",
-        "oklch": "oklch(50.8% 0.108 73.3)",
-        "tonalRamp": [
-          "oklch(15.0% 0.023 73.3)",
-          "oklch(25.0% 0.061 73.3)",
-          "oklch(35.0% 0.086 73.3)",
-          "oklch(48.0% 0.106 73.3)",
-          "oklch(60.0% 0.108 73.3)",
-          "oklch(72.0% 0.094 73.3)",
-          "oklch(84.0% 0.064 73.3)",
-          "oklch(95.0% 0.023 73.3)"
-        ]
-      },
-      "board-finance-dark": {
-        "role": "secondary",
-        "displayName": "Marigold",
-        "canonical": "#f2b93b",
-        "oklch": "oklch(81.7% 0.150 82.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.032 82.9)",
-          "oklch(25.0% 0.084 82.9)",
-          "oklch(35.0% 0.119 82.9)",
-          "oklch(48.0% 0.147 82.9)",
-          "oklch(60.0% 0.150 82.9)",
-          "oklch(72.0% 0.130 82.9)",
-          "oklch(84.0% 0.088 82.9)",
-          "oklch(95.0% 0.032 82.9)"
-        ]
-      },
-      "board-engineers": {
-        "role": "secondary",
-        "displayName": "Forest",
-        "canonical": "#1a7a4f",
-        "oklch": "oklch(51.5% 0.110 158.4)",
-        "tonalRamp": [
-          "oklch(15.0% 0.024 158.4)",
-          "oklch(25.0% 0.062 158.4)",
-          "oklch(35.0% 0.088 158.4)",
-          "oklch(48.0% 0.108 158.4)",
-          "oklch(60.0% 0.110 158.4)",
-          "oklch(72.0% 0.096 158.4)",
-          "oklch(84.0% 0.065 158.4)",
-          "oklch(95.0% 0.024 158.4)"
-        ]
-      },
-      "board-engineers-dark": {
-        "role": "secondary",
-        "displayName": "Mint",
-        "canonical": "#5fd39a",
-        "oklch": "oklch(78.5% 0.135 159.5)",
-        "tonalRamp": [
-          "oklch(15.0% 0.029 159.5)",
-          "oklch(25.0% 0.076 159.5)",
-          "oklch(35.0% 0.107 159.5)",
-          "oklch(48.0% 0.132 159.5)",
-          "oklch(60.0% 0.135 159.5)",
-          "oklch(72.0% 0.117 159.5)",
-          "oklch(84.0% 0.079 159.5)",
-          "oklch(95.0% 0.029 159.5)"
-        ]
-      },
-      "board-tile": {
-        "role": "secondary",
-        "displayName": "Paper Tile",
-        "canonical": "#fbfbfa",
-        "oklch": "oklch(98.8% 0.001 106.4)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 106.4)",
-          "oklch(25.0% 0.001 106.4)",
-          "oklch(35.0% 0.001 106.4)",
-          "oklch(48.0% 0.001 106.4)",
-          "oklch(60.0% 0.001 106.4)",
-          "oklch(72.0% 0.001 106.4)",
-          "oklch(84.0% 0.001 106.4)",
-          "oklch(95.0% 0.000 106.4)"
-        ]
-      },
-      "board-tile-dark": {
-        "role": "secondary",
-        "displayName": "Night Tile",
-        "canonical": "#232325",
-        "oklch": "oklch(25.7% 0.004 286.1)",
-        "tonalRamp": [
-          "oklch(15.0% 0.001 286.1)",
-          "oklch(25.0% 0.002 286.1)",
-          "oklch(35.0% 0.003 286.1)",
-          "oklch(48.0% 0.004 286.1)",
-          "oklch(60.0% 0.004 286.1)",
-          "oklch(72.0% 0.003 286.1)",
-          "oklch(84.0% 0.002 286.1)",
-          "oklch(95.0% 0.001 286.1)"
-        ]
-      },
-      "board-split": {
-        "role": "secondary",
-        "displayName": "Split Line",
-        "canonical": "rgba(29,30,34,.10)",
-        "oklch": "oklch(23.6% 0.008 274.6)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 274.6)",
-          "oklch(25.0% 0.004 274.6)",
-          "oklch(35.0% 0.006 274.6)",
-          "oklch(48.0% 0.008 274.6)",
-          "oklch(60.0% 0.008 274.6)",
-          "oklch(72.0% 0.007 274.6)",
-          "oklch(84.0% 0.005 274.6)",
-          "oklch(95.0% 0.002 274.6)"
-        ]
-      },
-      "board-split-dark": {
-        "role": "secondary",
-        "displayName": "Night Split",
-        "canonical": "rgba(0,0,0,.55)",
-        "oklch": "oklch(0.0% 0.000 0.0)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 0.0)",
-          "oklch(25.0% 0.000 0.0)",
-          "oklch(35.0% 0.000 0.0)",
-          "oklch(48.0% 0.000 0.0)",
-          "oklch(60.0% 0.000 0.0)",
-          "oklch(72.0% 0.000 0.0)",
-          "oklch(84.0% 0.000 0.0)",
-          "oklch(95.0% 0.000 0.0)"
+          "oklch(15.0% 0.003 271)",
+          "oklch(25.0% 0.007 271)",
+          "oklch(35.0% 0.010 271)",
+          "oklch(48.0% 0.012 271)",
+          "oklch(60.0% 0.012 271)",
+          "oklch(72.0% 0.010 271)",
+          "oklch(84.0% 0.007 271)",
+          "oklch(95.0% 0.003 271)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Homepage name only (Archivo, width 112); also scales with viewport height so the hero fits one screen."
-      },
-      "board-glyph": {
-        "displayName": "Board Glyph",
-        "purpose": "One character per board tile (Archivo 600 semi-expanded), 58% of the tile height, centred; drawn into a 128 x 187px atlas cell, one atlas per audience colour, repainted per theme."
+        "purpose": "Homepage greeting only; name parts around \"ryan\" faded to 50% soft graphite."
       },
       "headline": {
         "displayName": "Headline",
@@ -692,15 +288,15 @@
       },
       "section-head": {
         "displayName": "Section Head",
-        "purpose": "Homepage 'picked for' heading (Archivo, width 112); audience name with a 3px accent underline."
+        "purpose": "Homepage \"picked for <audience>\" heading."
       },
       "intro": {
         "displayName": "Intro",
-        "purpose": "Homepage audience panel, max 40rem."
+        "purpose": "Homepage audience paragraph; 1.2rem on phones."
       },
       "intro-term": {
         "displayName": "Intro Term",
-        "purpose": "Inter italic code-like terms inside homepage intros; linked ones carry a 2px accent underline."
+        "purpose": "JetBrains Mono code-like terms inside homepage intros; linked ones underlined in soft graphite at 5px."
       },
       "title": {
         "displayName": "Title",
@@ -713,6 +309,10 @@
       "reading": {
         "displayName": "Reading",
         "purpose": "About page and long-form prose, 660px measure."
+      },
+      "tab": {
+        "displayName": "Tab",
+        "purpose": "Homepage audience tabs; active is graphite ink at 600."
       },
       "label": {
         "displayName": "Label",
@@ -748,49 +348,34 @@
         "purpose": "Color, border and background hovers."
       },
       {
-        "name": "audience-select",
-        "value": "420ms ease-out (indicator transform/width; accent background-color)",
-        "purpose": "Switch indicator slide and accent recolour."
+        "name": "intro-swap",
+        "value": "200ms cubic-bezier(.23,1,.32,1) from opacity .35 + blur(3px); opacity .5 -> 1 only under reduced motion",
+        "purpose": "Homepage intro on tab hover preview or selection."
       },
       {
-        "name": "panel-swap",
-        "value": "460ms ease-out from translateY(10px) + blur(4px) + opacity 0; 160ms opacity only under reduced motion",
-        "purpose": "Intro panel and picked cards on audience change."
+        "name": "particles-fade-in",
+        "value": "800ms ease opacity",
+        "purpose": "Particle canvas appears once the scene is ready."
       },
       {
-        "name": "board-flap",
-        "value": "120ms per flap, rotation 0 -> PI with progress squared (gravity); 12ms between flaps; at most 8 flaps through the drum; a same letter in a new colour gets one repaint flap",
-        "purpose": "One tile flipping to its next character."
+        "name": "particle-drift",
+        "value": "5-15px/s in x/y, +-3px/s in z, wrapping at the field edges; depth bounces between -320 and 160px",
+        "purpose": "Ambient drift behind the greeting."
       },
       {
-        "name": "board-stagger",
-        "value": "34ms per column, 110ms per row",
-        "purpose": "The flip sweeps across and down the board on audience change."
+        "name": "particle-follow",
+        "value": "field offset eases toward cursor * .09 at rate 3/s while the pointer is over the field; offset scaled by 1 + z/400 for depth parallax",
+        "purpose": "The field leans toward the cursor; none under reduced motion."
       },
       {
-        "name": "board-arrival",
-        "value": "every page load: blank tiles, flip-in after 450ms; returning home inside the site shows the line directly",
-        "purpose": "Fresh loads only; none under reduced motion."
+        "name": "link-arrow",
+        "value": "200ms ease-out translateX(3px)",
+        "purpose": "\"more about me\" arrow nudge (fine pointers, motion allowed)."
       },
       {
-        "name": "board-parallax",
-        "value": "mouse only: yaw +-.025 rad, pitch +-.02 rad (about +-1.5 deg) from a straight-on view, eased at rate 6/s",
-        "purpose": "Barely-there parallax toward the pointer; none under reduced motion."
-      },
-      {
-        "name": "board-fade-in",
-        "value": "700ms ease opacity",
-        "purpose": "Canvas appears once the scene is ready."
-      },
-      {
-        "name": "picks-cue",
-        "value": "scrollIntoView smooth (auto under reduced motion)",
-        "purpose": "The hero cue scrolls to the picks."
-      },
-      {
-        "name": "card-in",
-        "value": "320ms ease-out from translateY(8px); 40-130ms stagger",
-        "purpose": "Work grid cards entering."
+        "name": "card-lift",
+        "value": "300ms ease-out translateY(-3px)",
+        "purpose": "Picked card image on hover."
       }
     ],
     "breakpoints": [
@@ -809,49 +394,36 @@
       {
         "name": "rail",
         "value": "max-width: 1100px"
-      },
-      {
-        "name": "board-narrow",
-        "value": "canvas width < 560px: 4 x 12 grid"
-      },
-      {
-        "name": "short",
-        "value": "max-height: 560px: hero height auto, stage 160px"
       }
     ],
     "scene": {
-      "renderer": "three.js r170, WebGL, transparent canvas, low-power, pixel ratio max 2, no tone mapping, sRGB output; lazy-loaded, optional",
-      "board": "split-flap grid, 2 rows x 18 cols (desktop) or 4 x 12 (canvas < 560px); tile .26 x .38 world units, gaps .03 x .05; nothing built around or behind the tiles",
-      "tile": "fixed top half + fixed bottom half + hinged flap (front = current top, back = next bottom, pre-rotated); MeshStandardMaterial roughness .85, metalness 0, atlas as both map and emissive map (emissive intensity .45 light / .72 dark), alphaTest .5 for the rounded corners",
-      "glyphs": "one canvas atlas per audience colour, 8 columns, 128 x 187px cells; cell = rounded tile (10px radius) #fbfbfa light / #232325 dark, glyph Archivo 600 semi-expanded at 58% of cell height, split line 2px at mid-height rgba(29,30,34,.10) light / rgba(0,0,0,.55) dark",
-      "drum": " abcdefghijklmnopqrstuvwxyz0123456789.,’'!?→>={}_()&-NPV",
-      "inks": {
-        "anyone": {
-          "light": "#1d1e22",
-          "dark": "#f2f2f1"
-        },
-        "recruiters": {
-          "light": "#2a5fc4",
-          "dark": "#8fb4ff"
-        },
-        "finance": {
-          "light": "#8a5a00",
-          "dark": "#f2b93b"
-        },
-        "engineers": {
-          "light": "#1a7a4f",
-          "dark": "#5fd39a"
-        }
-      },
-      "text": "each audience's lead (opening of its intro sentence); long words break after '_' or hard at the row width; a single row over 10 chars splits at the space nearest the middle; rows centred, block centred vertically",
-      "lighting": "faces self-lit (emissive); soft overhead key light from (0, 6, 4), .6 light / .35 dark; RoomEnvironment (pmrem .04), intensity .5 light / .25 dark; light only shades flaps as they fall",
-      "view": "PerspectiveCamera fov 22, straight on at (0, 0, d) looking at the origin; d fits board + .3 margin to the stage",
-      "theme": "atlas repainted with the theme's tile, split and inks; emissive, key and environment intensities step down in dark",
-      "stage": "min(100%, 980px) wide, flex height: min 110px, max min(380px, (min(100vw,1120px) - 48px) / 3.4); phones full-bleed, min 150px, max 100vw / 1.85; 12px tall without WebGL",
-      "pauses": "render loop stops when settled, off screen (IntersectionObserver), in hidden tabs"
+      "renderer": "three.js r170, WebGL, transparent canvas (.spores), antialias, low-power, pixel ratio max 2, ACES filmic tone mapping (exposure 1 light / .9 dark), sRGB output; lazy-loaded, optional; removed if WebGL or the import fails",
+      "placement": "absolute canvas around the hero h1, tabs, intro and \"more about me\" bounds plus 120px padding (clamped to the viewport width), under the text; radial ellipse mask 58% x 34%: solid to 42%, .82 at 58%, .30 at 74%, transparent at 100%",
+      "field": "one particle per 2400px2 of canvas, 60 to 420; ~14% chrome beads; one world unit = one CSS pixel on the text plane; PerspectiveCamera fov 32",
+      "dots": "InstancedMesh spheres, radius 1-1.9px, MeshStandardMaterial roughness .7 metalness 0, colour = live --soft",
+      "beads": "InstancedMesh spheres, radius 2.8-5.6px, MeshStandardMaterial metalness 1 roughness .08; white + envMapIntensity 1.25 in dark, gunmetal #5d6068 + envMapIntensity 1.6 on light paper",
+      "lighting": "RoomEnvironment via PMREM (.03), environment intensity 1 light / .7 dark; one directional key light 1.2 from (-1, 1.4, 1.2)",
+      "depth": "z from -320px (behind) to 160px (in front of) the text plane",
+      "pauses": "render loop stops off screen (IntersectionObserver) and in hidden tabs; reduced motion draws one static frame and redraws only on theme change"
     }
   },
   "components": [
+    {
+      "name": "Audience Tabs",
+      "kind": "nav",
+      "refersTo": "audience-tab",
+      "description": "Homepage tablist under the greeting: plain text tabs, the active one bold ink; each reserves its bold width.",
+      "html": "<div class=\"ds-for\" role=\"tablist\" aria-label=\"who is reading\"><button role=\"tab\" aria-selected=\"true\" class=\"ds-active\" data-label=\"for anyone\">for anyone</button><button role=\"tab\" aria-selected=\"false\" data-label=\"recruiters\">recruiters</button><button role=\"tab\" aria-selected=\"false\" data-label=\"finance professionals\">finance professionals</button><button role=\"tab\" aria-selected=\"false\" data-label=\"engineers\">engineers</button></div>",
+      "css": ".ds-for{display:flex;gap:20px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif}.ds-for button{display:inline-grid;font:inherit;font-size:.85rem;color:var(--soft,#646873);background:none;border:0;padding:4px 0;cursor:pointer;transition:color .18s}.ds-for button::after{content:attr(data-label);font-weight:600;height:0;visibility:hidden;overflow:hidden}.ds-for button:hover{color:var(--ink,#1d1e22)}.ds-for button.ds-active{color:var(--ink,#1d1e22);font-weight:600}.ds-for button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px;border-radius:3px}"
+    },
+    {
+      "name": "Homepage Intro",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Large intro paragraph; code-like terms in JetBrains Mono, linked ones underlined in soft graphite at 5px.",
+      "html": "<p class=\"ds-intro\">read <a class=\"ds-em\" href=\"#\">this.essay</a> or browse <a class=\"ds-em\" href=\"#\">my.projects</a>, and i’ll bet you <em class=\"ds-em\">a.coffee</em> you’ll find something useful</p>",
+      "css": ".ds-intro{font:400 1.6rem/1.5 Inter,system-ui,sans-serif;color:var(--ink,#1d1e22);margin:0}.ds-em{font-family:\"JetBrains Mono\",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-style:normal;font-weight:400;font-size:.84em;letter-spacing:-.02em}a.ds-em{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--soft,#646873);transition:text-decoration-color .18s}a.ds-em:hover{text-decoration-color:var(--ink,#1d1e22)}a.ds-em:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
     {
       "name": "Button",
       "kind": "button",
@@ -861,20 +433,12 @@
       "css": ".ds-btn{display:inline-block;border:1px solid var(--line,#dcdee3);color:var(--ink,#1d1e22);background:var(--card,#f8f9fa);padding:8px 16px;border-radius:8px;text-decoration:none;font:400 .85rem/1.6 Inter,system-ui,sans-serif;transition:background .18s,border-color .18s,color .18s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-btn:hover{background:var(--ink,#1d1e22);border-color:var(--ink,#1d1e22);color:var(--bg,#f0f1f3);transform:translateY(-1px)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
-      "name": "Primary Action",
-      "kind": "button",
-      "refersTo": "cta-primary",
-      "description": "One audience-specific action per audience; accent pill with its paired on-colour.",
-      "html": "<a class=\"ds-cta\" href=\"#\">start with this essay<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
-      "css": ".ds-cta{display:inline-flex;align-items:center;gap:8px;background:var(--acc,#2f6fe0);color:var(--on-acc,#fff);text-decoration:none;font:600 .95rem Inter,system-ui,sans-serif;padding:0 22px;min-height:48px;border-radius:999px;transition:transform .16s cubic-bezier(.23,1,.32,1),background-color .42s ease,color .42s ease}.ds-cta svg{transition:transform .2s cubic-bezier(.23,1,.32,1)}.ds-cta:hover svg{transform:translateX(3px)}.ds-cta:active{transform:scale(.97)}.ds-cta:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
-    },
-    {
-      "name": "Audience Switch",
+      "name": "Two-way Toggle",
       "kind": "chip",
-      "refersTo": "audience-switch-on",
-      "description": "Homepage tablist under \"who's reading?\"; accent pill indicator slides to the selected audience.",
-      "html": "<div class=\"ds-aud\" role=\"tablist\"><span class=\"ds-ind\"></span><button role=\"tab\" aria-selected=\"false\">anyone</button><button role=\"tab\" aria-selected=\"true\">recruiters</button><button role=\"tab\" aria-selected=\"false\">finance</button><button role=\"tab\" aria-selected=\"false\">engineers</button></div>",
-      "css": ".ds-aud{--acc:#2f6fe0;--on-acc:#fff;position:relative;display:inline-flex;padding:4px;border-radius:999px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3)}.ds-aud button{position:relative;z-index:1;font:500 .92rem Inter,system-ui,sans-serif;color:var(--soft,#646873);background:none;border:0;padding:0 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:color .3s ease}.ds-aud button:hover{color:var(--ink,#1d1e22)}.ds-aud button[aria-selected=\"true\"]{color:var(--on-acc,#fff)}.ds-aud button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}.ds-ind{position:absolute;top:4px;bottom:4px;left:79px;width:104px;border-radius:999px;background:var(--acc);transition:transform .42s cubic-bezier(.23,1,.32,1),width .42s cubic-bezier(.23,1,.32,1),background-color .42s ease}"
+      "refersTo": "toggle-on",
+      "description": "Two-way switch on the blog route (recent / notebooks).",
+      "html": "<div class=\"ds-tog\"><button class=\"ds-on\">recent</button><button>notebooks</button></div>",
+      "css": ".ds-tog{display:inline-flex;gap:2px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:8px;padding:3px}.ds-tog button{font:400 .82rem Inter,system-ui,sans-serif;background:none;border:0;border-radius:6px;padding:6px 16px;color:var(--soft,#646873);cursor:pointer;transition:background .15s,color .15s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-tog button.ds-on{background:var(--ink,#1d1e22);color:var(--bg,#f0f1f3)}.ds-tog button:not(.ds-on):hover{color:var(--ink,#1d1e22)}.ds-tog button:active{transform:scale(.96)}.ds-tog button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
       "name": "Picked Card",
@@ -883,22 +447,6 @@
       "description": "Homepage hand-picked writing: 4:3 image, meta with reading time, title.",
       "html": "<a class=\"ds-pick\" href=\"#\"><div class=\"ds-pick-img\"></div><div class=\"ds-pick-meta\">technology · 6 min read</div><div class=\"ds-pick-t\">clearline: why i built it</div></a>",
       "css": ".ds-pick{display:inline-grid;width:240px;text-decoration:none;color:var(--ink,#1d1e22);font-family:Inter,system-ui,sans-serif}.ds-pick-img{aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line,#dcdee3);background:var(--card,#f8f9fa);transition:transform .3s cubic-bezier(.23,1,.32,1)}.ds-pick:hover .ds-pick-img{transform:translateY(-3px)}.ds-pick:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}.ds-pick-meta{font-size:.8rem;color:var(--soft,#646873);margin:12px 0 4px}.ds-pick-t{font-weight:600;font-size:1.02rem;line-height:1.35}"
-    },
-    {
-      "name": "Intro Link",
-      "kind": "custom",
-      "refersTo": "",
-      "description": "Linked code-like term inside a homepage intro: Inter italic, 2px accent underline.",
-      "html": "<p class=\"ds-intro\">read <a class=\"ds-em\" href=\"#\">this.essay</a> or browse <a class=\"ds-em\" href=\"#\">my.projects</a></p>",
-      "css": ".ds-intro{--acc:#2f6fe0;font:400 1.15rem/1.6 Inter,system-ui,sans-serif;color:var(--ink,#1d1e22);margin:0}.ds-em{color:inherit;font-style:italic;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:4px}.ds-em:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
-    },
-    {
-      "name": "Segmented Control",
-      "kind": "chip",
-      "refersTo": "segmented-on",
-      "description": "Small multi-way switch on reading routes.",
-      "html": "<div class=\"ds-seg\"><button class=\"ds-on\">all</button><button>essays</button><button>tools</button></div>",
-      "css": ".ds-seg{display:inline-flex;gap:2px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:8px;padding:3px}.ds-seg button{font:400 .82rem Inter,system-ui,sans-serif;background:none;border:0;border-radius:6px;padding:6px 16px;color:var(--soft,#646873);cursor:pointer;transition:background .15s,color .15s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-seg button.ds-on{background:var(--ink,#1d1e22);color:var(--bg,#f0f1f3)}.ds-seg button:not(.ds-on):hover{color:var(--ink,#1d1e22)}.ds-seg button:active{transform:scale(.96)}.ds-seg button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
       "name": "Card",
@@ -925,12 +473,12 @@
       "css": ".ds-nav{display:flex;justify-content:space-between;align-items:center;padding:30px 24px;background:var(--bg,#f0f1f3);font-family:Inter,system-ui,sans-serif}.ds-nav a{text-decoration:none;font-size:.95rem}.ds-logo{color:var(--ink,#1d1e22);font-weight:600;font-size:1.1rem;letter-spacing:-.01em}.ds-right{display:flex;gap:24px}.ds-right a{color:var(--soft,#646873);transition:color .18s}.ds-right a.ds-on,.ds-right a:hover{color:var(--ink,#1d1e22)}.ds-nav a:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
-      "name": "CV Link",
+      "name": "Get CV",
       "kind": "button",
       "refersTo": "cv-link",
-      "description": "'get cv' on the homepage closing row: graphite ink, underline on hover.",
+      "description": "'get cv' pinned bottom-right of the homepage first screen: burnt amber, ink on hover.",
       "html": "<a class=\"ds-cv\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/></svg>get cv</a>",
-      "css": ".ds-cv{color:var(--ink,#1d1e22);display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:44px;font:500 .92rem Inter,system-ui,sans-serif}.ds-cv:hover{text-decoration:underline;text-underline-offset:3px}.ds-cv:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+      "css": ".ds-cv{color:var(--accent,#8f5d00);display:inline-flex;align-items:center;gap:6px;min-height:30px;text-decoration:none;font:400 .95rem Inter,system-ui,sans-serif;transition:color .18s}.ds-cv:hover{color:var(--ink,#1d1e22)}.ds-cv:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
       "name": "Theme Switch",
@@ -938,43 +486,38 @@
       "refersTo": "theme-switch",
       "description": "Light/dark toggle, fixed top right.",
       "html": "<button class=\"ds-switch\" role=\"switch\" aria-checked=\"false\" aria-label=\"dark theme\"></button>",
-      "css": ".ds-switch{position:relative;width:48px;height:27px;border-radius:999px;border:0;background:var(--track,#3a3a40);cursor:pointer;padding:0;transition:background .26s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-switch::after{content:\"\";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .26s cubic-bezier(.23,1,.32,1)}.ds-switch[aria-checked=\"true\"]{background:#4a4b52}.ds-switch[aria-checked=\"true\"]::after{transform:translateX(21px)}.ds-switch:active{transform:scale(.94)}.ds-switch:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+      "css": ".ds-switch{position:relative;width:48px;height:27px;border-radius:999px;border:0;background:var(--track,#3a3a40);cursor:pointer;padding:0;transition:background .26s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-switch::after{content:\"\";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .26s cubic-bezier(.23,1,.32,1)}.ds-switch[aria-checked=\"true\"]{background:var(--on,#34c759)}.ds-switch[aria-checked=\"true\"]::after{transform:translateX(21px)}.ds-switch:active{transform:scale(.94)}.ds-switch:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     }
   ],
   "narrative": {
-    "northStar": "One Object on a Quiet Desk",
-    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a split-flap board, a grid of matte hinged tiles in the page's own tone, seen straight on like a departures board set into the desk. It shows the opening of the chosen audience's own sentence (\"i'm a finance student\") in Archivo glyphs; the intro directly under the board finishes the sentence. Choosing an audience makes every tile flip through its drum to the new character, and the characters take that audience's colour as they land.\n\nThe homepage hero is exactly one screen, one centred vertical axis: name, \"who's reading?\" and the audience switch, the board, the intro, one audience-specific action plus \"more about me\", and a small \"essays picked for you\" cue. Below the fold sit only the \"picked for\" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the \"picked for\" underline together, and flips the board, so the whole axis shifts at once.\n\nThe voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The board is the one rendered object and it is kept quiet: matte tiles in the page's tone with nothing built around them; everything else is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
+    "northStar": "A Quiet Desk with Dust in the Light",
+    "overview": "Etharic is one calm reading system: cool paper, graphite ink, hairline borders, Inter at reading sizes and flat surfaces on every route. The homepage keeps that desk and lets a little air move over it. A left-aligned column says \"hey, i'm suryanarayan!\", lets the visitor pick who they are from a row of plain text tabs, and answers in a large intro paragraph written for that reader. Behind the greeting a sparse field of tiny particles drifts in real 3D, most of them matte grey dots in the page's own soft tone and a few small chrome beads that catch the light. It is atmosphere, not an object: no frame, no colour, fading out at its edges.\n\nThe first screen is the greeting alone. The \"currently in\" line with its clock, green dot and pixel dog sits pinned to the bottom-left corner of that screen, and \"get cv\" in burnt amber to the bottom-right. Below the fold, \"picked for <audience>\" lists three hand-picked pieces of writing that follow the selected tab.\n\nThe voice is personal and playful (lowercase copy, code-like terms such as `this.essay` set in a mono face, a pixel dog, a live clock) while the surfaces stay restrained. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
     "keyCharacteristics": [
-      "Flat tonal surfaces with 1px hairlines; no elevation shadows anywhere, the board included.",
-      "One audience accent live at a time on the homepage, carried by a single variable with its own on-colour.",
-      "Inter for everything readable; Archivo expanded only for the homepage name, the board's glyphs and the \"picked for\" heading.",
-      "The hero is one screen on a single centred column; the board is decorative and its text is also in the page as plain text.",
-      "Motion is short and ease-out; the board flips fast with a gravity fall, staggered across the grid, then stops rendering; reduced motion changes the characters at once."
+      "Flat tonal surfaces with 1px hairlines; no elevation shadows.",
+      "Graphite carries everything; burnt amber is the one action colour (\"get cv\"), signal green the one status colour.",
+      "Inter for everything, with JetBrains Mono only for the code-like terms inside homepage intros.",
+      "The audience choice changes words, not colours: the intro text and the picked cards swap, nothing is recoloured.",
+      "The particle field is the one rendered effect: grey and chrome, slow, behind the text, paused when unseen, static under reduced motion."
     ],
     "rules": [
       {
-        "name": "The One Voice Rule",
-        "body": "One audience accent is live at a time, and every accent-bearing element reads it through the shared variable, never a fixed audience colour. If an element should not change with the audience, it is not accent-coloured.",
+        "name": "The Words-Not-Colours Rule",
+        "body": "Choosing an audience changes what the page says, never its palette. Tabs, intro and cards stay in graphite and soft graphite for every reader.",
         "section": "colors"
       },
       {
-        "name": "The Paired Ink Rule",
-        "body": "An accent fill always takes the on-colour paired with it, never a fixed white. Light accents (marigold, jade) carry graphite ink.",
+        "name": "The One Warm Thing Rule",
+        "body": "Burnt amber marks the single action a visitor might take from anywhere on the first screen (\"get cv\"). Nothing decorative is amber.",
         "section": "colors"
       },
       {
-        "name": "The Ink-Only Board Rule",
-        "body": "The audience reaches the board through its characters alone. Tiles and split line stay in the page's neutral tone for every audience; the accent fill never paints a tile.",
-        "section": "colors"
-      },
-      {
-        "name": "The Archivo Fence Rule",
-        "body": "Archivo appears only on the homepage name, the board's glyphs and the homepage \"picked for\" heading. Any other text, including the intro, the switch, the picks cue and the cards, is Inter.",
+        "name": "The Mono Aside Rule",
+        "body": "JetBrains Mono is reserved for code-like terms inside running intro text. It never sets a heading, a control or a whole sentence.",
         "section": "typography"
       },
       {
-        "name": "The Split Sentence Rule",
-        "body": "The board shows only the lead of the audience's sentence and the intro continues it; the lead also stays in the intro as plain text, visually hidden while the board runs, so the sentence is whole for screen readers and without WebGL.",
+        "name": "The Steady Width Rule",
+        "body": "A tab that turns bold must not push its neighbours: each tab reserves its bold width in advance, and the intro reserves the height of its longest text, so switching audiences never shifts the page.",
         "section": "typography"
       },
       {
@@ -983,33 +526,25 @@
         "section": "elevation"
       },
       {
-        "name": "The Night Flip Rule",
-        "body": "In dark theme each accent lightens and the text on it flips to near-black; the board follows the page into night, its tiles darkening and its characters lightening.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Unstaged Board Rule",
-        "body": "The board sits straight on, in the page's own tone, with nothing built around or behind it; its only depth comes from flaps turning as they fall. If it reads weakly, fix the tile or the ink, never add staging.",
+        "name": "The Atmosphere Rule",
+        "body": "The particles stay behind the text, small, grey or chrome, and masked at their edges. They never take an accent colour, never sit in front of a control, and the page reads fully without them.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do take every colour from the tokens, with a dark value for each page surface and accent colour.",
-      "Do route every audience-coloured element through the one accent variable and its paired on-colour so the whole axis changes together.",
-      "Do keep the homepage hero to one screen on one centred axis, with the picks as the only content below the fold.",
-      "Do keep the board's text in the page as plain text, so nothing it shows exists only in WebGL.",
-      "Do animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 460ms; keep an opacity crossfade under reduced motion.",
-      "Do stop the board's render loop when it settles, off screen and in hidden tabs; change characters at once under reduced motion.",
-      "Do keep touch targets at 44px minimum and a 2px graphite ink focus ring on every control.",
-      "Do keep Archivo inside the Archivo fence (homepage name, board glyphs, \"picked for\" heading)."
+      "Do take every colour from the tokens, with a dark value for each page surface.",
+      "Do keep the homepage first screen to the greeting, the tabs, the intro and \"more about me\", with the \"currently in\" line and \"get cv\" pinned to its bottom corners.",
+      "Do let the audience choice change words and picks, and keep the page's colours the same for every reader.",
+      "Do reserve space for the longest intro and the bold tab width so switching audiences never shifts the layout.",
+      "Do keep the particle field behind the text, masked at its edges, paused off screen and in hidden tabs, and static under reduced motion.",
+      "Do animate only transform, opacity and filter with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 300ms; keep an opacity-only fallback under reduced motion.",
+      "Do keep a 2px graphite ink focus ring on every control and full keyboard operation of the tabs."
     ],
     "donts": [
       "Don't use box-shadows, glass, glow halos or decorative gradients to suggest depth.",
-      "Don't hard-code an audience colour or white text on an accent; read the accent and on-accent variables.",
-      "Don't colour the board's tiles by audience; only the characters change colour.",
-      "Don't frame, angle or stage the board; depth comes only from its moving flaps.",
-      "Don't add a second rendered 3D object or let the stage grow past 980px wide or 380px tall.",
-      "Don't use signal green for anything but the status dot."
+      "Don't colour the particles or add a second rendered 3D effect.",
+      "Don't use burnt amber for decoration or signal green for anything but status.",
+      "Don't set headings, tabs or whole sentences in JetBrains Mono."
     ]
   }
 }
