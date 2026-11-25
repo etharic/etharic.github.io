@@ -8,7 +8,10 @@ import { RoomEnvironment } from './RoomEnvironment.js';
 const DEPTH_NEAR = 160, DEPTH_FAR = -320;     // px in front of / behind the text plane
 const rand = (a, b) => a + Math.random() * (b - a);
 
-export function mount(canvas, { dot = '#9d9d9b', dark = false, reduced = false } = {}) {
+export function mount(canvas, { dot = '#9d9d9b', dark = false, reduced = false, avoid = null } = {}) {
+  // a box (canvas px) where the field thins out so the intro text stays clean
+  let keepOut = null;
+  const readAvoid = () => { keepOut = avoid ? avoid() : null; };
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -63,6 +66,7 @@ export function mount(canvas, { dot = '#9d9d9b', dark = false, reduced = false }
     camera.near = 1; camera.far = dist + 1200;
     camera.updateProjectionMatrix();
     if (rebuild) build();
+    readAvoid();
     draw(0);
   }
 
@@ -89,8 +93,18 @@ export function mount(canvas, { dot = '#9d9d9b', dark = false, reduced = false }
         if (p.z < DEPTH_FAR) p.vz = Math.abs(p.vz); else if (p.z > DEPTH_NEAR) p.vz = -Math.abs(p.vz);
       }
       const depth = 1 + p.z / 400;                 // near particles follow the cursor more
-      tmp.position.set(p.x + ox * depth, p.y - oy * depth, p.z);
-      tmp.scale.setScalar(p.r);
+      const px = p.x + ox * depth, py = p.y - oy * depth;
+      let fade = 1;
+      if (keepOut) {
+        // where the particle lands on screen, and how far that is from the text box
+        const k2 = camera.position.z / (camera.position.z - p.z);
+        const sx = px * k2 + W / 2, sy = -py * k2 + H / 2;
+        const dx = Math.max(keepOut.x0 - sx, 0, sx - keepOut.x1), dy = Math.max(keepOut.y0 - sy, 0, sy - keepOut.y1);
+        const d = Math.max(dx, dy), t = Math.min(d / (p.chrome ? 44 : 28), 1), s = t * t * (3 - 2 * t);
+        fade = p.chrome ? s : .3 + .7 * s;        // beads leave the text entirely; dots only thin out
+      }
+      tmp.position.set(px, py, p.z);
+      tmp.scale.setScalar(p.r * Math.max(fade, .0001));
       tmp.updateMatrix();
       if (p.chrome) beads.setMatrixAt(bi++, tmp.matrix); else dots.setMatrixAt(di++, tmp.matrix);
     }

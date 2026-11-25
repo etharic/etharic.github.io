@@ -72,17 +72,18 @@ h1{font-size:2.2rem;line-height:1.2;margin:40px 0 12px;font-weight:700;letter-sp
 p{margin:0 0 14px;color:var(--soft)}
 main p a,.link{color:var(--ink)}
 .label{font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);font-weight:400;margin:64px 0 16px}
-.hero{isolation:isolate;display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 60px);margin-top:0;padding-top:60px}
+.hero{isolation:isolate;display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 60px);min-height:calc(100svh - 60px);margin-top:0;padding-top:60px}
 .hero h1{margin:8px 0 24px;font-size:3rem}
 .spores{position:absolute;z-index:0;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 58% 34% at center,#000 42%,rgba(0,0,0,.82) 58%,rgba(0,0,0,.30) 74%,transparent 100%);mask-image:radial-gradient(ellipse 58% 34% at center,#000 42%,rgba(0,0,0,.82) 58%,rgba(0,0,0,.30) 74%,transparent 100%)}
 .hero>h1,.hero>.for-bar,.hero>.for-intro,.hero>.more-about{position:relative;z-index:1}
 .intro{line-height:1.8}
 .for-bar{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px}
-.for-bar button{font:inherit;font-size:.85rem;color:var(--soft);background:none;border:0;padding:4px 0;margin:-4px 0;cursor:pointer;transition:color .18s}
+.for-bar button{font:inherit;font-size:.85rem;color:var(--soft);background:none;border:0;padding:13px 0;margin:-13px 0;cursor:pointer;transition:color .18s}
 .for-bar button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:3px}
 .for-intro a.intro-em{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--soft)}
 @media (hover:hover){.for-intro a.intro-em:hover{text-decoration-color:var(--ink)}}
-.for-bar button.active{color:var(--ink);font-weight:600}
+.for-bar button.active{color:var(--ink)}
+.for-bar button[aria-selected="true"]{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
 .for-bar button{display:inline-grid}
 .for-bar button::after{content:attr(data-label);font-weight:600;height:0;visibility:hidden;overflow:hidden;user-select:none;pointer-events:none}
 .for-intro{font-size:1.6rem;line-height:1.5;font-weight:400;min-height:3.2em;color:var(--ink)}
@@ -107,7 +108,8 @@ a.card{transition:border-color .18s,background .18s}
 .grid .t{font-size:.85rem;margin-top:10px;font-weight:500}
 .sub{color:var(--soft);font-size:.75rem}
 .sub strong{color:var(--ink);font-weight:600}
-h1 .fade{color:var(--soft);opacity:.5}
+h1 .fade{color:#84878f}
+:root[data-theme="dark"] h1 .fade{color:#6f6f6d}
 .post{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
 .post a{color:var(--ink);text-decoration:none;font-size:.95rem}
 .post a:hover{text-decoration:underline}
@@ -311,12 +313,35 @@ body.about-route main{padding-bottom:8px}
  .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .clearline-feature-copy{grid-column:1;grid-row:auto}
  .work-article.clearline-article .clearline-feature-copy{text-align:left}
 }
+/* ---------- homepage: bottom row, cue, closing row ---------- */
+.hero-foot{position:absolute;left:24px;right:24px;top:calc(100vh - 24px);top:calc(100svh - 24px);transform:translateY(-100%);display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:50}
+.hero-foot .hero-where,.hero-foot .hero-actions{position:static;transform:none;left:auto;right:auto;top:auto}
+.hero-cue{font:inherit;font-size:.9rem;color:var(--soft);background:none;border:0;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 6px;cursor:pointer;transition:color .18s}
+.hero-cue b{font-weight:500;color:var(--ink)}
+@media (hover:hover){.hero-cue:hover{color:var(--ink)}}
+.hero-cue:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.for-intro em.intro-em{color:var(--soft)}
+.hx-picked{scroll-margin-top:88px;padding-top:64px}
+.hx-end{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:30px 0 0;color:var(--soft);font-size:.95rem}
+.hx-end a{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+@media (hover:hover){.hx-end a:hover{text-decoration-thickness:2px}}
+@media (max-width:680px){
+  .hero{min-height:calc(100svh - 61px);padding-top:28px;padding-bottom:96px;position:relative}
+  .hero-foot{left:0;right:0;top:auto;bottom:16px;transform:none;flex-wrap:wrap;justify-content:space-between}
+  .hero-foot .hero-where{margin:0}.hero-foot .hero-actions{margin:0;flex-direction:row}
+  .hero-cue{order:-1;flex-basis:100%;justify-content:center}
+}
+@media (max-width:400px){
+  .for-bar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:18px;margin-left:-20px;margin-right:-20px;padding:13px 20px;margin-top:-13px}
+  .for-bar::-webkit-scrollbar{display:none}
+  .for-bar button{margin:-13px 0;white-space:nowrap}
+}
 /* ---------- homepage: particles and picks ---------- */
 .spores{opacity:0;transition:opacity .8s ease}
 .spores.on{opacity:1}
 .for-intro .intro-em{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-style:normal;font-weight:400;font-size:.84em;letter-spacing:-.02em;transform:none;display:inline}
 .for-intro a.intro-em{text-underline-offset:5px}
-.hx-picked{padding:72px 0 40px}
+.hx-picked{padding-bottom:40px}
 .hx-picked h2{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.01em;margin:0 0 20px}
 .hx-picked h2 b{font-weight:700}
 .hx-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
@@ -492,7 +517,7 @@ let forLocked = 0;
 const AUDIENCES = [
   { label: "anyone",     picks: () => ["clearline-why-i-built-it", newestIn("macro-market")[0], "why-i-started-a-personal-website"] },
   { label: "recruiters", picks: () => ["clearline-why-i-built-it", "ea-55bn-take-private", newestIn("macro-market")[0]] },
-  { label: "finance",    picks: () => newestIn("macro-market").slice(0, 3) },
+  { label: "finance professionals", picks: () => newestIn("macro-market").slice(0, 3) },
   { label: "engineers",  picks: () => ["clearline-why-i-built-it", "habitkit-small-habits-big-changes", "why-i-started-a-personal-website"] }
 ];
 const newestIn = key => (WORK_POSTS_SORTED[key] || []).map(p => p.id);
@@ -514,6 +539,8 @@ function initSpores() {
   if (sporeStop) { sporeStop(); sporeStop = null; }
   const hero = document.querySelector(".hero");
   if (!hero) return;
+  const cue = hero.querySelector(".hero-cue");
+  if (cue) cue.onclick = () => document.querySelector(".hx-picked").scrollIntoView({ behavior: REDUCED_MOTION.matches ? "auto" : "smooth", block: "start" });
   let gl = false;
   try { gl = !!(document.createElement("canvas").getContext("webgl2") || document.createElement("canvas").getContext("webgl")); } catch (e) {}
   if (!gl) return;
@@ -527,7 +554,9 @@ function initSpores() {
     const vw = document.documentElement.clientWidth;
     const x0 = Math.max(0, Math.min(...parts.map(r => r.left)) - PAD), x1 = Math.min(vw, Math.max(...parts.map(r => r.right)) + PAD);
     const y0 = Math.min(...parts.map(r => r.top)) - PAD, y1 = Math.max(...parts.map(r => r.bottom)) + PAD;
-    Object.assign(cv.style, { left: x0 + scrollX + "px", top: y0 + scrollY + "px", width: x1 - x0 + "px", height: y1 - y0 + "px" });
+    // place relative to whatever box the canvas is positioned in (the page, or the hero on phones)
+    const op = cv.offsetParent, o = op && op !== document.body && op !== document.documentElement ? op.getBoundingClientRect() : { left: -scrollX, top: -scrollY };
+    Object.assign(cv.style, { left: x0 - o.left + "px", top: y0 - o.top + "px", width: x1 - x0 + "px", height: y1 - y0 + "px" });
   };
   place();
   const ro = new ResizeObserver(place); ro.observe(hero);
@@ -537,8 +566,11 @@ function initSpores() {
   let field = null, alive = true;
   const onTheme = () => { if (field) field.setTheme(isDark(), soft()); };
   document.addEventListener("themechange", onTheme);
-  import("./vendor/particles3d.js?v=e6c16c8a")
-    .then(m => { if (!alive) return; field = m.mount(cv, { dot: soft(), dark: isDark(), reduced: REDUCED_MOTION.matches }); cv.classList.add("on"); })
+  import("./vendor/particles3d.js?v=431b3a6c")
+    .then(m => { if (!alive) return; field = m.mount(cv, { dot: soft(), dark: isDark(), reduced: REDUCED_MOTION.matches, avoid: () => {
+        const c = cv.getBoundingClientRect(), r = hero.querySelector(".for-intro").getBoundingClientRect();
+        return { x0: r.left - c.left, y0: r.top - c.top, x1: r.right - c.left, y1: r.bottom - c.top };
+      } }); cv.classList.add("on"); })
     .catch(() => cv.remove());
   sporeStop = () => {
     alive = false; ro.disconnect(); window.removeEventListener("resize", place);
@@ -646,8 +678,8 @@ function formatForIntro(text) {
 
 function home() {
   const forTabs = FOR_CATEGORIES.map((c, i) => `<button type="button" role="tab" id="for-tab-${i}" data-for="${i}" class="${i === forLocked ? "active" : ""}" aria-selected="${i === forLocked}" aria-controls="for-intro" tabindex="${i === forLocked ? 0 : -1}" data-label="${esc(c.label)}">${esc(c.label)}</button>`).join("");
-  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar" role="tablist" aria-label="who is reading">${forTabs}</div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span><i class="arr" aria-hidden="true">&rarr;</i></a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
-  h += `<section class="hx-picked" aria-labelledby="hx-picked-h"><h2 id="hx-picked-h">picked for <b data-aud-name>${esc(AUDIENCES[forLocked].label)}</b></h2><div class="hx-cards">${audCards(forLocked)}</div></section>`;
+  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar" role="tablist" aria-label="who is reading">${forTabs}</div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span><i class="arr" aria-hidden="true">&rarr;</i></a><div class="hero-foot">${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : "<span></span>"}<button type="button" class="hero-cue">picked for <b data-aud-name>${esc(AUDIENCES[forLocked].label)}</b><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div></div>`;
+  h += `<section class="hx-picked" aria-labelledby="hx-picked-h"><h2 id="hx-picked-h">picked for <b data-aud-name>${esc(AUDIENCES[forLocked].label)}</b></h2><div class="hx-cards">${audCards(forLocked)}</div><p class="hx-end"><a href="#work">all essays&nbsp;<span aria-hidden="true">&rarr;</span></a><span aria-hidden="true">·</span><a href="cv.pdf" target="_blank" rel="noopener">get cv</a><span aria-hidden="true">·</span><a href="#contact">say hi</a></p></section>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
   return h;
