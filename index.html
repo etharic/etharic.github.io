@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap&text=abcdefghijklmnopqrstuvwxyz." rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap&text=abcdefghijklmnopqrstuvwxyzNPV0123456789%21%2C%27%C2%B7%20.%3E%3D%2F()%E2%80%99%3A-%7B%7D_%E2%86%92" rel="stylesheet">
 <style>
 :root{--bg:#f0f1f3;--card:#f8f9fa;--ink:#1d1e22;--soft:#646873;--line:#dcdee3;--on:#34c759;--hover:rgba(29,30,34,.05);--accent:#8f5d00;--track:#3a3a40;--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1)}
@@ -312,66 +313,21 @@ body.about-route main{padding-bottom:8px}
  .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .clearline-feature-copy{grid-column:1;grid-row:auto}
  .work-article.clearline-article .clearline-feature-copy{text-align:left}
 }
-/* ---------- homepage: the split-flap board ---------- */
-:root{--acc-0:#1d1e22;--on-0:#fff;--acc-1:#2f6fe0;--on-1:#fff;--acc-2:#e6a817;--on-2:#1d1e22;--acc-3:#2fb57a;--on-3:#1d1e22}
-:root[data-theme="dark"]{--acc-0:#f2f2f1;--on-0:#111;--acc-1:#7aa7ff;--on-1:#111;--acc-2:#f2b93b;--on-2:#111;--acc-3:#4fd08f;--on-3:#111}
-#app{--acc:var(--acc-0);--on-acc:var(--on-0)}
-#app[data-aud="1"]{--acc:var(--acc-1);--on-acc:var(--on-1)}#app[data-aud="2"]{--acc:var(--acc-2);--on-acc:var(--on-2)}#app[data-aud="3"]{--acc:var(--acc-3);--on-acc:var(--on-3)}
-.switch[aria-checked="true"]{background:#4a4b52}
-body.home .wrap{max-width:1120px}
-.hx{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;box-sizing:border-box;height:100vh;height:100svh;min-height:600px;padding:clamp(92px,11vh,108px) 0 clamp(10px,2vh,22px)}
-.hx-name{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:700;font-size:clamp(2.1rem,min(4.6vw,7.2vh),4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
-.hx-q{font-size:.95rem;color:var(--soft);margin:clamp(12px,2.6vh,26px) 0 10px}
-.hx-seg{position:relative;display:inline-flex;padding:4px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
-.hx-seg button{position:relative;z-index:1;font:inherit;font-size:.92rem;font-weight:500;color:var(--soft);background:none;border:0;padding:0 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:color .3s ease}
-@media (hover:hover){.hx-seg button:hover{color:var(--ink)}}
-.hx-seg button[aria-selected="true"]{color:var(--on-acc)}
-.hx-seg button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.hx-ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--acc);transition:transform .42s var(--ease-out),width .42s var(--ease-out),background-color .42s ease}
-.hx-seg.still .hx-ind{transition:none}
-.hx-stage{position:relative;width:min(100%,980px);flex:1 1 0;min-height:110px;max-height:min(380px,calc((min(100vw,1120px) - 48px) / 3.4));margin:clamp(6px,1.4vh,14px) 0 0}
-.hx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s ease}
-.hx.hx-3d .hx-canvas{opacity:1}
-.hx.hx-no3d .hx-stage{flex:0 0 12px;min-height:0}
-.hx-panel{margin-top:4px;max-width:40rem;display:flex;flex-direction:column;align-items:center}
-.hx.hx-3d .hx-lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.hx .hx-intro{font-size:clamp(1rem,min(1.4vw,2.2vh),1.22rem);line-height:1.6;color:var(--ink);margin:0;min-height:0}
-.hx .hx-intro .intro-em{font-family:inherit;font-style:italic;font-weight:400;transform:none;display:inline}
-.hx .hx-intro a.intro-em{color:inherit;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:4px}
-.hx-ctas{display:flex;gap:10px 24px;align-items:center;justify-content:center;margin-top:clamp(12px,2.2vh,22px);flex-wrap:wrap}
-.hx-cta{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:var(--on-acc);text-decoration:none;font-weight:600;font-size:.95rem;padding:0 22px;min-height:48px;border-radius:999px;transition:transform .16s var(--ease-out),background-color .42s ease,color .42s ease}
-.hx-cta svg{transition:transform .2s var(--ease-out)}
-.hx-cta:active{transform:scale(.97)}
-@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.hx-cta:hover svg{transform:translateX(3px)}}
-.hx .more-about{align-self:center;margin:0}
-.hx-more{margin-top:clamp(8px,2vh,20px);font:inherit;font-size:.85rem;color:var(--soft);background:none;border:0;display:inline-flex;align-items:center;gap:6px;min-height:40px;cursor:pointer;transition:color .18s}
-@media (hover:hover){.hx-more:hover{color:var(--ink)}}
-.hx-picked{padding:48px 0 8px}
-.hx-picked{text-align:center}
-.hx-picked .hx-cards{text-align:left}
-.hx-picked h2{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.01em;margin:0 0 20px}
-.hx-picked h2 b{font-weight:700;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:3px;text-underline-offset:6px}
+/* ---------- homepage: particles and picks ---------- */
+.spores{opacity:0;transition:opacity .8s ease}
+.spores.on{opacity:1}
+.for-intro .intro-em{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-style:normal;font-weight:400;font-size:.84em;letter-spacing:-.02em;transform:none;display:inline}
+.for-intro a.intro-em{text-underline-offset:5px}
+.hx-picked{padding:72px 0 40px}
+.hx-picked h2{font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.01em;margin:0 0 20px}
+.hx-picked h2 b{font-weight:700}
 .hx-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .hx-card{display:block;text-decoration:none;color:var(--ink)}
 .hx-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--card);display:block;transition:transform .3s var(--ease-out)}
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.hx-card:hover img{transform:translateY(-3px)}}
 .hx-card .meta{font-size:.8rem;color:var(--soft);margin:12px 0 4px}
 .hx-card .ttl{font-weight:600;font-size:1.02rem;line-height:1.35}
-.hx-close{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 0 32px;border-top:1px solid var(--line);margin-top:64px;color:var(--soft);font-size:.92rem}
-.hx-where{display:flex;align-items:center;gap:8px}
-.hx-cv{color:var(--ink);display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:44px;font-weight:500}
-@media (hover:hover){.hx-cv:hover{text-decoration:underline;text-underline-offset:3px}}
-@media (max-height:560px){.hx{height:auto;min-height:0}.hx-stage{flex:0 0 160px}}
-@media (max-width:680px){
-  body.home .wrap{padding:0 20px}
-  .hx{height:calc(100svh - 61px);min-height:560px;padding:20px 0 8px}
-  .hx-name .nm{display:block}
-  .hx-seg button{padding:0 11px;font-size:.85rem}
-  .hx-stage{width:calc(100% + 40px);margin:10px -20px 0;min-height:150px;max-height:calc(100vw / 1.85)}
-  .hx-ctas{margin-top:12px}
-  .hx-cards{grid-template-columns:1fr;gap:28px}
-  .hx-picked{padding-top:36px}
-}
+@media (max-width:680px){.hx-cards{grid-template-columns:1fr;gap:28px}.hx-picked{padding-top:48px}}
 </style>
 </head>
 <body>
@@ -534,24 +490,13 @@ function initTile() {
 }
 let forLocked = 0;
 
-// ---------- homepage: the split-flap board, one line per audience ----------
-const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+// ---------- homepage: picks per audience (below the fold) ----------
 const AUDIENCES = [
-  { label: "anyone",     tag: "for anyone",                lead: "i’m a lifehacker",
-    cta: () => ({ text: "start with this essay",  href: "#work-post-why-i-started-a-personal-website" }),
-    picks: () => ["clearline-why-i-built-it", newestIn("macro-market")[0], "why-i-started-a-personal-website"] },
-  { label: "recruiters", tag: "for recruiters",            lead: "i’m a finance student",
-    cta: () => ({ text: "download my cv", href: "cv.pdf", file: true }),
-    picks: () => ["clearline-why-i-built-it", "ea-55bn-take-private", newestIn("macro-market")[0]] },
-  { label: "finance",    tag: "for finance professionals", lead: "i’m→ NPV > 0, {aspiring_analyst}",
-    cta: () => ({ text: "read my latest analysis", href: "#work-post-" + newestIn("macro-market")[0] }),
-    picks: () => newestIn("macro-market").slice(0, 3) },
-  { label: "engineers",  tag: "for engineers",             lead: "i’m {highly_technical}",
-    cta: () => ({ text: "see what i built", href: "#work-post-clearline-why-i-built-it" }),
-    picks: () => ["clearline-why-i-built-it", "habitkit-small-habits-big-changes", "why-i-started-a-personal-website"] }
+  { label: "anyone",     picks: () => ["clearline-why-i-built-it", newestIn("macro-market")[0], "why-i-started-a-personal-website"] },
+  { label: "recruiters", picks: () => ["clearline-why-i-built-it", "ea-55bn-take-private", newestIn("macro-market")[0]] },
+  { label: "finance",    picks: () => newestIn("macro-market").slice(0, 3) },
+  { label: "engineers",  picks: () => ["clearline-why-i-built-it", "habitkit-small-habits-big-changes", "why-i-started-a-personal-website"] }
 ];
-// letter colour on the split-flap board per audience, [light, dark]; tiles follow the page tone
-const BOARD_INKS = [["#1d1e22", "#f2f2f1"], ["#2a5fc4", "#8fb4ff"], ["#8a5a00", "#f2b93b"], ["#1a7a4f", "#5fd39a"]];
 const newestIn = key => (WORK_POSTS_SORTED[key] || []).map(p => p.id);
 function workCard(id) {
   for (const key of Object.keys(WORK_POSTS)) {
@@ -564,52 +509,86 @@ function workCard(id) {
   return "";
 }
 const audCards = i => AUDIENCES[i].picks().filter(Boolean).map(workCard).join("");
-function audPanel(i) {
-  const c = AUDIENCES[i].cta();
-  const full = FOR_CATEGORIES[i].text, lead = AUDIENCES[i].lead;
-  const rest = full.startsWith(lead) ? full.slice(lead.length).replace(/^\s+/, "") : full;
-  const leadHtml = full.startsWith(lead) ? `<span class="hx-lead">${esc(lead)} </span>` : "";
-  return `<p class="for-intro hx-intro">${leadHtml}${formatForIntro(rest)}</p>` +
-    `<div class="hx-ctas"><a class="hx-cta" href="${esc(c.href)}"${c.file ? ' target="_blank" rel="noopener"' : ""}>${esc(c.text)}${ARROW}</a>` +
-    `<a class="more-about" href="#about"><span>more about me</span>${ARROW}</a></div>`;
+
+// ---------- homepage: drifting particles behind the greeting, in 3D (some of them chrome) ----------
+let sporeStop = null;
+function initSpores() {
+  if (sporeStop) { sporeStop(); sporeStop = null; }
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+  let gl = false;
+  try { gl = !!(document.createElement("canvas").getContext("webgl2") || document.createElement("canvas").getContext("webgl")); } catch (e) {}
+  if (!gl) return;
+  const cv = document.createElement("canvas");
+  cv.className = "spores"; cv.setAttribute("aria-hidden", "true");
+  hero.prepend(cv);
+  const PAD = 120;
+  // the field sits around the greeting, intro and link, like the original
+  const place = () => {
+    const parts = [".hero h1", ".for-bar", ".for-intro", ".more-about"].map(q => hero.querySelector(q)).filter(Boolean).map(e => e.getBoundingClientRect());
+    const vw = document.documentElement.clientWidth;
+    const x0 = Math.max(0, Math.min(...parts.map(r => r.left)) - PAD), x1 = Math.min(vw, Math.max(...parts.map(r => r.right)) + PAD);
+    const y0 = Math.min(...parts.map(r => r.top)) - PAD, y1 = Math.max(...parts.map(r => r.bottom)) + PAD;
+    Object.assign(cv.style, { left: x0 + scrollX + "px", top: y0 + scrollY + "px", width: x1 - x0 + "px", height: y1 - y0 + "px" });
+  };
+  place();
+  const ro = new ResizeObserver(place); ro.observe(hero);
+  window.addEventListener("resize", place);
+  const soft = () => getComputedStyle(document.documentElement).getPropertyValue("--soft").trim() || "#9d9d9b";
+  const isDark = () => document.documentElement.dataset.theme === "dark";
+  let field = null, alive = true;
+  const onTheme = () => { if (field) field.setTheme(isDark(), soft()); };
+  document.addEventListener("themechange", onTheme);
+  import("./vendor/particles3d.js?v=e6c16c8a")
+    .then(m => { if (!alive) return; field = m.mount(cv, { dot: soft(), dark: isDark(), reduced: REDUCED_MOTION.matches }); cv.classList.add("on"); })
+    .catch(() => cv.remove());
+  sporeStop = () => {
+    alive = false; ro.disconnect(); window.removeEventListener("resize", place);
+    document.removeEventListener("themechange", onTheme);
+    if (field) field.destroy();
+    cv.remove();
+  };
 }
-let heroCleanup = null, hero3d = null;
-function initAudience() {
-  if (heroCleanup) { heroCleanup(); heroCleanup = null; }
-  const root = document.querySelector(".hx");
-  if (!root) return;
-  const seg = root.querySelector(".hx-seg"), tabs = [...seg.querySelectorAll("[role=tab]")], ind = seg.querySelector(".hx-ind");
-  const panel = root.querySelector(".hx-panel"), cards = document.querySelector(".hx-cards"), canvas = root.querySelector(".hx-canvas");
-  const names = [...document.querySelectorAll("[data-aud-name]")];
-  const reduced = REDUCED_MOTION.matches;
-  let alive = true;
-  APP.dataset.aud = forLocked;
-  const moveInd = () => { const t = tabs[forLocked]; ind.style.width = t.offsetWidth + "px"; ind.style.transform = `translateX(${t.offsetLeft - 4}px)`; };
-  // hold the panel at its tallest text so switching never shifts the page
-  const fitPanel = () => {
-    if (matchMedia("(max-width:680px)").matches) { panel.style.minHeight = ""; return; }   // phones: let the text set the height
-    const cur = panel.innerHTML; panel.style.minHeight = "0px"; let h = 0;
-    AUDIENCES.forEach((a, i) => { panel.innerHTML = audPanel(i); h = Math.max(h, panel.offsetHeight); });
-    panel.innerHTML = cur; panel.style.minHeight = h + "px";
+let forBarCleanup = null;
+function initForBar() {
+  if (forBarCleanup) { forBarCleanup(); forBarCleanup = null; }
+  const bar = document.querySelector(".for-bar");
+  if (!bar) return;
+  const intro = document.querySelector(".for-intro");
+  const tabs = [...bar.querySelectorAll("button[data-for]")];
+  // Reserve the longest intro height so switching audiences never shifts the page.
+  const fit = () => {
+    const curHTML = intro.innerHTML;
+    intro.style.minHeight = "0px";
+    let h = 0;
+    FOR_CATEGORIES.forEach(c => {
+      intro.textContent = c.text;
+      h = Math.max(h, intro.offsetHeight);
+    });
+    intro.innerHTML = curHTML;
+    intro.style.minHeight = h + "px";
   };
-  const swap = (el, html) => {
-    el.innerHTML = html;
-    el.animate(reduced ? [{ opacity: 0 }, { opacity: 1 }]
-      : [{ opacity: 0, transform: "translateY(10px)", filter: "blur(4px)" }, { opacity: 1, transform: "none", filter: "blur(0)" }],
-      { duration: reduced ? 160 : 460, easing: "cubic-bezier(.23,1,.32,1)" });
+  let shown = forLocked;
+  const activate = i => {
+    if (i !== shown) {
+      intro.innerHTML = formatForIntro(FOR_CATEGORIES[i].text);
+      intro.animate(REDUCED_MOTION.matches
+        ? [{ opacity: .5 }, { opacity: 1 }]
+        : [{ opacity: .35, filter: "blur(3px)" }, { opacity: 1, filter: "blur(0)" }],
+        { duration: 200, easing: "cubic-bezier(.23,1,.32,1)" });
+      shown = i;
+    }
+    tabs.forEach((tab,k) => tab.classList.toggle("active", k === i));
   };
-  const select = (i, from3d) => {
-    if (i === forLocked) return;
-    forLocked = i; APP.dataset.aud = i;
-    tabs.forEach((t, k) => { t.setAttribute("aria-selected", k === i); t.tabIndex = k === i ? 0 : -1; });
-    panel.setAttribute("aria-labelledby", tabs[i].id);
-    moveInd();
-    swap(panel, audPanel(i));
-    if (cards) swap(cards, audCards(i));
-    names.forEach(n => { n.textContent = AUDIENCES[i].label; });
-    if (hero3d && !from3d) hero3d.setAudience(i);
+  const select = i => {
+    forLocked = i; activate(i);
+    tabs.forEach((tab,k) => { tab.tabIndex = k === i ? 0 : -1; tab.setAttribute("aria-selected", k === i); });
+    intro.setAttribute("aria-labelledby", tabs[i].id);
+    // the picks below the fold follow the chosen audience
+    const cards = document.querySelector(".hx-cards");
+    if (cards) cards.innerHTML = audCards(i);
+    document.querySelectorAll("[data-aud-name]").forEach(n => { n.textContent = AUDIENCES[i].label; });
   };
-  tabs.forEach((t, i) => t.addEventListener("click", () => select(i)));
   const onKey = e => {
     const n = tabs.length, keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
     let i = forLocked;
@@ -617,32 +596,27 @@ function initAudience() {
     else if (e.key === "Home") i = 0; else if (e.key === "End") i = n - 1; else return;
     e.preventDefault(); select(i); tabs[i].focus();
   };
-  seg.addEventListener("keydown", onKey);
-  root.querySelector(".hx-more").addEventListener("click", () => document.querySelector(".hx-picked").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }));
-  seg.classList.add("still"); moveInd(); fitPanel();
-  requestAnimationFrame(() => seg.classList.remove("still"));
-  const relayout = () => { if (!alive) return; seg.classList.add("still"); moveInd(); fitPanel(); requestAnimationFrame(() => seg.classList.remove("still")); };
-  const ro = new ResizeObserver(relayout);
-  ro.observe(root);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
-  // the 3D board loads after the page is usable; without WebGL the hero shows the full intro instead
-  let gl = false;
-  try { gl = !!(document.createElement("canvas").getContext("webgl2") || document.createElement("canvas").getContext("webgl")); } catch (e) {}
-  const onTheme = () => { if (hero3d) hero3d.setTheme(document.documentElement.dataset.theme === "dark"); };
-  document.addEventListener("themechange", onTheme);
-  if (gl) {
-    import("./vendor/hero3d.js?v=4ed007f9")
-      .then(m => m.mount(canvas, {
-        leads: AUDIENCES.map(a => a.lead), inks: BOARD_INKS, start: forLocked, reduced,
-        dark: document.documentElement.dataset.theme === "dark"
-      }))
-      .then(h => { if (!alive) { h.destroy(); return; } hero3d = h; h.setAudience(forLocked); root.classList.add("hx-3d"); })
-      .catch(() => root.classList.add("hx-no3d"));
-  } else root.classList.add("hx-no3d");
-  heroCleanup = () => {
-    alive = false; ro.disconnect();
-    document.removeEventListener("themechange", onTheme);
-    if (hero3d) { hero3d.destroy(); hero3d = null; }
+  bar.addEventListener("keydown", onKey);
+  const handlers = tabs.map(tab => {
+    const enter = () => activate(+tab.dataset.for);
+    const leave = () => activate(forLocked);
+    const click = () => select(+tab.dataset.for);
+    tab.addEventListener("mouseenter", enter);
+    tab.addEventListener("mouseleave", leave);
+    tab.addEventListener("click", click);
+    return [tab, enter, leave, click];
+  });
+  const ro = new ResizeObserver(fit);
+  ro.observe(bar);
+  fit();
+  forBarCleanup = () => {
+    ro.disconnect();
+    bar.removeEventListener("keydown", onKey);
+    handlers.forEach(([tab,enter,leave,click]) => {
+      tab.removeEventListener("mouseenter", enter);
+      tab.removeEventListener("mouseleave", leave);
+      tab.removeEventListener("click", click);
+    });
   };
 }
 const postRow = p => `<div class="post"><a href="#${esc(p.id)}">${esc(p.title)}</a><span class="sub">${esc(p.date)}</span></div>`;
@@ -673,21 +647,11 @@ function formatForIntro(text) {
 }
 
 function home() {
-  const a = AUDIENCES[forLocked];
-  const seg = AUDIENCES.map((x, i) => `<button type="button" role="tab" id="aud-${i}" aria-selected="${i === forLocked}" aria-controls="aud-panel" tabindex="${i === forLocked ? 0 : -1}">${esc(x.label)}</button>`).join("");
-  const cvIcon = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>';
-  let h = `<section class="hx">` +
-    `<h1 class="hx-name">hey, i'm <span class="nm">${nameHtml()}<span class="fade">!</span></span></h1>` +
-    `<p class="hx-q" id="aud-q">who's reading?</p>` +
-    `<div class="hx-seg" role="tablist" aria-labelledby="aud-q"><span class="hx-ind" aria-hidden="true"></span>${seg}</div>` +
-    `<div class="hx-stage"><canvas class="hx-canvas" aria-hidden="true"></canvas></div>` +
-    `<div class="hx-panel" id="aud-panel" role="tabpanel" aria-labelledby="aud-${forLocked}">${audPanel(forLocked)}</div>` +
-    `<button type="button" class="hx-more">essays picked for you<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>` +
-    `</section>` +
-    `<section class="hx-picked" aria-labelledby="hx-picked-h"><h2 id="hx-picked-h">picked for <b data-aud-name>${esc(a.label)}</b></h2><div class="hx-cards">${audCards(forLocked)}</div></section>`;
+  const forTabs = FOR_CATEGORIES.map((c, i) => `<button type="button" role="tab" id="for-tab-${i}" data-for="${i}" class="${i === forLocked ? "active" : ""}" aria-selected="${i === forLocked}" aria-controls="for-intro" tabindex="${i === forLocked ? 0 : -1}" data-label="${esc(c.label)}">${esc(c.label)}</button>`).join("");
+  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar" role="tablist" aria-label="who is reading">${forTabs}</div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span><i class="arr" aria-hidden="true">&rarr;</i></a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
+  h += `<section class="hx-picked" aria-labelledby="hx-picked-h"><h2 id="hx-picked-h">picked for <b data-aud-name>${esc(AUDIENCES[forLocked].label)}</b></h2><div class="hx-cards">${audCards(forLocked)}</div></section>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
-  h += `<div class="hx-close">${CITY ? `<div class="hx-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : "<span></span>"}<a class="hx-cv" href="cv.pdf" target="_blank" rel="noopener">${cvIcon}get cv</a></div>`;
   return h;
 }
 function year() {
@@ -855,7 +819,7 @@ function renderWorkSection(key){
 }
 
 function route(forced) {
-  if (heroCleanup) { heroCleanup(); heroCleanup = null; }
+  if (sporeStop) { sporeStop(); sporeStop = null; }
   if (chapterRailCleanup) { chapterRailCleanup(); chapterRailCleanup = null; }
   let id = typeof forced === "string" ? forced : location.hash.slice(1);
   if (id.startsWith("notebook-")) {
@@ -884,7 +848,8 @@ function route(forced) {
   document.body.classList.toggle("about-route", !p && id === "about");
   if (isHome) {
     initTile();
-    initAudience();
+    initForBar();
+    initSpores();
   }
   if (typeof tick === "function") tick();
   if (id === "blog") {
