@@ -20,7 +20,7 @@ One person standing between finance and engineering, writing well-researched ess
 
 ## Operating Context
 
-Static single-page site on GitHub Pages (custom domain etharic.com), hash routing, one `index.html` with inline CSS/JS, no build step. Visitors on desktop and iPhone; light and dark themes with a toggle.
+Static single-page site on GitHub Pages (custom domain etharic.com), hash routing, one `index.html` with inline CSS/JS. Articles are Markdown files in `_articles/` with front matter (title, date, section, image, draft), edited by the owner in Pages CMS (`.pages.yml`); GitHub Pages' Jekyll build publishes each as `/a/<id>.html` and lists them in `/articles/index.json`, with sections in `_data/sections.yml`. Visitors on desktop and iPhone; light and dark themes with a toggle.
 
 ## Capabilities and Constraints
 
