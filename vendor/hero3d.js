@@ -68,15 +68,6 @@ function layout(text) {
   return lines.map(r => { r = r.slice(0, COLS); const l = Math.floor((COLS - r.length) / 2); return (' '.repeat(l) + r).padEnd(COLS, ' '); });
 }
 
-function wallShadow() {
-  const c = document.createElement('canvas'); c.width = 512; c.height = 200;
-  const g = c.getContext('2d');
-  g.filter = 'blur(16px)';
-  g.fillStyle = 'rgba(0,0,0,.65)';
-  g.fillRect(44, 40, 424, 120);
-  return new THREE.CanvasTexture(c);
-}
-
 export async function mount(canvas, { leads, tints, start = 0, reduced = false, dark = false }) {
   tints = tints.slice();
   const narrow = canvas.clientWidth < 560;
@@ -86,13 +77,20 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.VSMShadowMap;
 
   const scene = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), .04).texture;
   pmrem.dispose();
   const camera = new THREE.PerspectiveCamera(20, 3, .1, 100);
-  const key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(-5, 6, 7); scene.add(key);
+  const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(-4, 5, 6); scene.add(key);
+  key.castShadow = true;
+  key.shadow.mapSize.set(512, 512);
+  Object.assign(key.shadow.camera, { left: -5, right: 5, top: 3, bottom: -3, near: 1, far: 20 });
+  key.shadow.radius = 6; key.shadow.blurSamples = 10; key.shadow.bias = -.0006;
+  const rim = new THREE.DirectionalLight(0xffffff, .7); rim.position.set(2, 5, -5); scene.add(rim);   // edge light, keeps the casing readable on dark
   const fill = new THREE.DirectionalLight(0xffffff, .35); fill.position.set(5, -1, 4); scene.add(fill);
 
   const mats = tints.map(ink => {
@@ -105,12 +103,18 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   const board = new THREE.Group(); scene.add(board);
   // casing
   const caseMat = new THREE.MeshPhysicalMaterial({ color: 0x141416, roughness: .42, metalness: .2, clearcoat: .35 });
-  const casing = new THREE.Mesh(new RoundedBoxGeometry(BW + PAD * 2, BH + PAD * 2, .22, 4, .045), caseMat);
-  casing.position.z = -.11; board.add(casing);
+  const casing = new THREE.Mesh(new RoundedBoxGeometry(BW + PAD * 2, BH + PAD * 2, .36, 4, .05), caseMat);
+  casing.position.z = -.18; casing.castShadow = true; casing.receiveShadow = true; board.add(casing);
+  const LIP = .045, LD = .05;
+  const lip = (w, h, x, y) => { const m = new THREE.Mesh(new RoundedBoxGeometry(w, h, LD, 2, .012), caseMat); m.position.set(x, y, LD / 2); m.castShadow = m.receiveShadow = true; board.add(m); };
+  lip(BW + LIP * 2 + .04, LIP, 0, BH / 2 + LIP / 2 + .02);
+  lip(BW + LIP * 2 + .04, LIP, 0, -BH / 2 - LIP / 2 - .02);
+  lip(LIP, BH + .04, -BW / 2 - LIP / 2 - .02, 0);
+  lip(LIP, BH + .04, BW / 2 + LIP / 2 + .02, 0);
   // shadow on the wall behind, cast from the upper-left key light
-  const shadowMat = new THREE.MeshBasicMaterial({ map: wallShadow(), transparent: true, depthWrite: false, opacity: dark ? .75 : .32 });
-  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(BW + PAD * 2 + .6, BH + PAD * 2 + .5), shadowMat);
-  shadow.position.set(.12, -.14, -.3); board.add(shadow);
+  const shadowMat = new THREE.ShadowMaterial({ opacity: dark ? .5 : .26 });
+  const wall = new THREE.Mesh(new THREE.PlaneGeometry(20, 10), shadowMat);
+  wall.position.z = -.4; wall.receiveShadow = true; scene.add(wall);
 
   // tiles: a fixed top half, a fixed bottom half, and a hinged flap between them
   const cells = [];
@@ -118,11 +122,12 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
     const g = new THREE.Group();
     g.position.set(-BW / 2 + CW / 2 + c * (CW + GX), BH / 2 - CH / 2 - r * (CH + GY), .01);
-    const top = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); top.position.y = half / 2;
-    const bot = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); bot.position.y = -half / 2;
+    const top = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); top.position.y = half / 2; top.receiveShadow = true;
+    const bot = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); bot.position.y = -half / 2; bot.receiveShadow = true;
     const flap = new THREE.Group(); flap.position.z = .004;
     const front = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); front.position.y = half / 2;
     const back = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]);
+    front.castShadow = back.castShadow = true;
     flap.add(front, back); flap.visible = false;
     g.add(top, bot, flap); board.add(g);
     cells.push({ top, bot, flap, front, back, ch: ' ', next: ' ', m: start, queue: [], t0: 0, flipping: false });
@@ -166,7 +171,7 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   }
 
   // motion
-  const TILT = .1, YAW = narrow ? -.08 : -.15;
+  const TILT = .16, YAW = narrow ? -.18 : -.3;
   let tiltX = TILT, tiltTo = TILT, yaw = YAW, yawTo = YAW, raf = 0, visible = true, last = performance.now();
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
@@ -174,9 +179,9 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     const vf = THREE.MathUtils.degToRad(camera.fov / 2), hf = Math.atan(Math.tan(vf) * camera.aspect);
-    const dist = Math.max((BW + PAD * 2 + (narrow ? .55 : 1.3)) / 2 / Math.tan(hf), (BH + PAD * 2 + (narrow ? .6 : .9)) / 2 / Math.tan(vf));
-    camera.position.set(0, dist * .12, dist);
-    camera.lookAt(0, -.02, 0);
+    const dist = Math.max((BW + PAD * 2 + (narrow ? .9 : 1.5)) / 2 / Math.tan(hf), (BH + PAD * 2 + (narrow ? 1.1 : 1.35)) / 2 / Math.tan(vf));
+    camera.position.set(0, dist * .16, dist);
+    camera.lookAt(.08, -.1, 0);
     camera.updateProjectionMatrix();
     kick();
   };
@@ -231,7 +236,7 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   const applyTheme = isDark => {
     renderer.toneMappingExposure = isDark ? .95 : 1.05;
     scene.environmentIntensity = isDark ? .6 : .9;
-    shadowMat.opacity = isDark ? .75 : .32;
+    shadowMat.opacity = isDark ? .5 : .26;
     caseMat.color.set(isDark ? 0x232327 : 0x141416);
     kick();
   };
