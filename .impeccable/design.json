@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T07:02:47.869Z",
+  "generatedAt": "2026-11-25T07:34:36.475Z",
   "title": "Design System: Etharic",
   "extensions": {
     "colorMeta": {
@@ -197,7 +197,7 @@
         ]
       },
       "burnt-amber": {
-        "role": "primary",
+        "role": "tertiary",
         "displayName": "Burnt Amber",
         "canonical": "#8f5d00",
         "oklch": "oklch(52.0% 0.111 72.9)",
@@ -213,7 +213,7 @@
         ]
       },
       "burnt-amber-dark": {
-        "role": "primary",
+        "role": "tertiary",
         "displayName": "Lamplit Amber",
         "canonical": "#cf8c06",
         "oklch": "oklch(69.0% 0.145 74.8)",
@@ -260,187 +260,379 @@
           "oklch(95.0% 0.002 285.9)"
         ]
       },
-      "basswood": {
+      "switch-on": {
+        "role": "neutral",
+        "displayName": "Switch On",
+        "canonical": "#4a4b52",
+        "oklch": "oklch(41.4% 0.012 279.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 279.4)",
+          "oklch(25.0% 0.007 279.4)",
+          "oklch(35.0% 0.009 279.4)",
+          "oklch(48.0% 0.011 279.4)",
+          "oklch(60.0% 0.012 279.4)",
+          "oklch(72.0% 0.010 279.4)",
+          "oklch(84.0% 0.007 279.4)",
+          "oklch(95.0% 0.002 279.4)"
+        ]
+      },
+      "acc-anyone": {
+        "role": "primary",
+        "displayName": "Graphite Accent",
+        "canonical": "#1d1e22",
+        "oklch": "oklch(23.6% 0.008 274.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
+        ]
+      },
+      "acc-anyone-dark": {
+        "role": "primary",
+        "displayName": "Chalk Accent",
+        "canonical": "#f2f2f1",
+        "oklch": "oklch(96.1% 0.001 106.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.4)",
+          "oklch(25.0% 0.001 106.4)",
+          "oklch(35.0% 0.001 106.4)",
+          "oklch(48.0% 0.001 106.4)",
+          "oklch(60.0% 0.001 106.4)",
+          "oklch(72.0% 0.001 106.4)",
+          "oklch(84.0% 0.001 106.4)",
+          "oklch(95.0% 0.000 106.4)"
+        ]
+      },
+      "acc-recruiters": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "#2f6fe0",
+        "oklch": "oklch(56.4% 0.185 260.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.039 260.8)",
+          "oklch(25.0% 0.103 260.8)",
+          "oklch(35.0% 0.148 260.8)",
+          "oklch(48.0% 0.181 260.8)",
+          "oklch(60.0% 0.185 260.8)",
+          "oklch(72.0% 0.161 260.8)",
+          "oklch(84.0% 0.109 260.8)",
+          "oklch(95.0% 0.039 260.8)"
+        ]
+      },
+      "acc-recruiters-dark": {
+        "role": "primary",
+        "displayName": "Night Signal Blue",
+        "canonical": "#7aa7ff",
+        "oklch": "oklch(73.3% 0.137 262.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.029 262.9)",
+          "oklch(25.0% 0.077 262.9)",
+          "oklch(35.0% 0.110 262.9)",
+          "oklch(48.0% 0.135 262.9)",
+          "oklch(60.0% 0.137 262.9)",
+          "oklch(72.0% 0.120 262.9)",
+          "oklch(84.0% 0.081 262.9)",
+          "oklch(95.0% 0.029 262.9)"
+        ]
+      },
+      "acc-finance": {
+        "role": "primary",
+        "displayName": "Marigold",
+        "canonical": "#e6a817",
+        "oklch": "oklch(77.0% 0.155 81.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.033 81.1)",
+          "oklch(25.0% 0.087 81.1)",
+          "oklch(35.0% 0.124 81.1)",
+          "oklch(48.0% 0.152 81.1)",
+          "oklch(60.0% 0.155 81.1)",
+          "oklch(72.0% 0.135 81.1)",
+          "oklch(84.0% 0.091 81.1)",
+          "oklch(95.0% 0.033 81.1)"
+        ]
+      },
+      "acc-finance-dark": {
+        "role": "primary",
+        "displayName": "Night Marigold",
+        "canonical": "#f2b93b",
+        "oklch": "oklch(81.7% 0.150 82.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.031 82.9)",
+          "oklch(25.0% 0.084 82.9)",
+          "oklch(35.0% 0.120 82.9)",
+          "oklch(48.0% 0.147 82.9)",
+          "oklch(60.0% 0.150 82.9)",
+          "oklch(72.0% 0.130 82.9)",
+          "oklch(84.0% 0.088 82.9)",
+          "oklch(95.0% 0.031 82.9)"
+        ]
+      },
+      "acc-engineers": {
+        "role": "primary",
+        "displayName": "Jade",
+        "canonical": "#2fb57a",
+        "oklch": "oklch(68.8% 0.143 159.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.030 159.2)",
+          "oklch(25.0% 0.080 159.2)",
+          "oklch(35.0% 0.115 159.2)",
+          "oklch(48.0% 0.140 159.2)",
+          "oklch(60.0% 0.143 159.2)",
+          "oklch(72.0% 0.125 159.2)",
+          "oklch(84.0% 0.084 159.2)",
+          "oklch(95.0% 0.030 159.2)"
+        ]
+      },
+      "acc-engineers-dark": {
+        "role": "primary",
+        "displayName": "Night Jade",
+        "canonical": "#4fd08f",
+        "oklch": "oklch(77.0% 0.148 157.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.031 157.9)",
+          "oklch(25.0% 0.083 157.9)",
+          "oklch(35.0% 0.118 157.9)",
+          "oklch(48.0% 0.145 157.9)",
+          "oklch(60.0% 0.148 157.9)",
+          "oklch(72.0% 0.129 157.9)",
+          "oklch(84.0% 0.087 157.9)",
+          "oklch(95.0% 0.031 157.9)"
+        ]
+      },
+      "on-anyone": {
+        "role": "neutral",
+        "displayName": "On Graphite",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(25.0% 0.000 89.9)",
+          "oklch(35.0% 0.000 89.9)",
+          "oklch(48.0% 0.000 89.9)",
+          "oklch(60.0% 0.000 89.9)",
+          "oklch(72.0% 0.000 89.9)",
+          "oklch(84.0% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "on-recruiters": {
+        "role": "neutral",
+        "displayName": "On Signal Blue",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(25.0% 0.000 89.9)",
+          "oklch(35.0% 0.000 89.9)",
+          "oklch(48.0% 0.000 89.9)",
+          "oklch(60.0% 0.000 89.9)",
+          "oklch(72.0% 0.000 89.9)",
+          "oklch(84.0% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "on-finance": {
+        "role": "neutral",
+        "displayName": "On Marigold",
+        "canonical": "#1d1e22",
+        "oklch": "oklch(23.6% 0.008 274.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
+        ]
+      },
+      "on-engineers": {
+        "role": "neutral",
+        "displayName": "On Jade",
+        "canonical": "#1d1e22",
+        "oklch": "oklch(23.6% 0.008 274.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
+        ]
+      },
+      "on-acc-dark": {
+        "role": "neutral",
+        "displayName": "Night On-Accent",
+        "canonical": "#111111",
+        "oklch": "oklch(17.8% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(25.0% 0.000 89.9)",
+          "oklch(35.0% 0.000 89.9)",
+          "oklch(48.0% 0.000 89.9)",
+          "oklch(60.0% 0.000 89.9)",
+          "oklch(72.0% 0.000 89.9)",
+          "oklch(84.0% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "face-anyone": {
         "role": "secondary",
-        "displayName": "Basswood",
-        "canonical": "#cdb48a",
-        "oklch": "oklch(78.1% 0.063 80.5)",
+        "displayName": "Warm White Placard",
+        "canonical": "#f7f5f0",
+        "oklch": "oklch(97.0% 0.007 88.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.013 80.5)",
-          "oklch(25.0% 0.035 80.5)",
-          "oklch(35.0% 0.051 80.5)",
-          "oklch(48.0% 0.062 80.5)",
-          "oklch(60.0% 0.062 80.5)",
-          "oklch(72.0% 0.054 80.5)",
-          "oklch(84.0% 0.037 80.5)",
-          "oklch(95.0% 0.013 80.5)"
+          "oklch(15.0% 0.001 88.6)",
+          "oklch(25.0% 0.004 88.6)",
+          "oklch(35.0% 0.006 88.6)",
+          "oklch(48.0% 0.007 88.6)",
+          "oklch(60.0% 0.007 88.6)",
+          "oklch(72.0% 0.006 88.6)",
+          "oklch(84.0% 0.004 88.6)",
+          "oklch(95.0% 0.001 88.6)"
         ]
       },
-      "basswood-dark": {
+      "face-anyone-dark": {
         "role": "secondary",
-        "displayName": "Night Basswood",
-        "canonical": "#3a3127",
-        "oklch": "oklch(32.0% 0.021 69.9)",
+        "displayName": "Night Graphite Placard",
+        "canonical": "#26272a",
+        "oklch": "oklch(27.3% 0.006 271.2)",
         "tonalRamp": [
-          "oklch(15.0% 0.004 69.9)",
-          "oklch(25.0% 0.012 69.9)",
-          "oklch(35.0% 0.017 69.9)",
-          "oklch(48.0% 0.021 69.9)",
-          "oklch(60.0% 0.021 69.9)",
-          "oklch(72.0% 0.018 69.9)",
-          "oklch(84.0% 0.013 69.9)",
-          "oklch(95.0% 0.004 69.9)"
+          "oklch(15.0% 0.001 271.2)",
+          "oklch(25.0% 0.003 271.2)",
+          "oklch(35.0% 0.005 271.2)",
+          "oklch(48.0% 0.006 271.2)",
+          "oklch(60.0% 0.006 271.2)",
+          "oklch(72.0% 0.005 271.2)",
+          "oklch(84.0% 0.003 271.2)",
+          "oklch(95.0% 0.001 271.2)"
         ]
       },
-      "basswood-edge": {
+      "face-recruiters": {
         "role": "secondary",
-        "displayName": "Basswood Cut Edge",
-        "canonical": "#ad9468",
-        "oklch": "oklch(67.8% 0.067 81.3)",
+        "displayName": "Ice Blue Placard",
+        "canonical": "#e6edfb",
+        "oklch": "oklch(94.5% 0.020 264.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.014 81.3)",
-          "oklch(25.0% 0.037 81.3)",
-          "oklch(35.0% 0.054 81.3)",
-          "oklch(48.0% 0.065 81.3)",
-          "oklch(60.0% 0.066 81.3)",
-          "oklch(72.0% 0.057 81.3)",
-          "oklch(84.0% 0.039 81.3)",
-          "oklch(95.0% 0.014 81.3)"
+          "oklch(15.0% 0.004 264.5)",
+          "oklch(25.0% 0.011 264.5)",
+          "oklch(35.0% 0.016 264.5)",
+          "oklch(48.0% 0.020 264.5)",
+          "oklch(60.0% 0.020 264.5)",
+          "oklch(72.0% 0.018 264.5)",
+          "oklch(84.0% 0.012 264.5)",
+          "oklch(95.0% 0.004 264.5)"
         ]
       },
-      "basswood-edge-dark": {
+      "face-recruiters-dark": {
         "role": "secondary",
-        "displayName": "Night Basswood Edge",
-        "canonical": "#2a231b",
-        "oklch": "oklch(26.1% 0.018 70.7)",
+        "displayName": "Night Blue Placard",
+        "canonical": "#1b2438",
+        "oklch": "oklch(26.2% 0.040 265.2)",
         "tonalRamp": [
-          "oklch(15.0% 0.004 70.7)",
-          "oklch(25.0% 0.010 70.7)",
-          "oklch(35.0% 0.014 70.7)",
-          "oklch(48.0% 0.017 70.7)",
-          "oklch(60.0% 0.018 70.7)",
-          "oklch(72.0% 0.015 70.7)",
-          "oklch(84.0% 0.010 70.7)",
-          "oklch(95.0% 0.004 70.7)"
+          "oklch(15.0% 0.008 265.2)",
+          "oklch(25.0% 0.022 265.2)",
+          "oklch(35.0% 0.032 265.2)",
+          "oklch(48.0% 0.039 265.2)",
+          "oklch(60.0% 0.040 265.2)",
+          "oklch(72.0% 0.035 265.2)",
+          "oklch(84.0% 0.024 265.2)",
+          "oklch(95.0% 0.008 265.2)"
         ]
       },
-      "mount-board-lit": {
-        "role": "neutral",
-        "displayName": "Mount Board, Lit Face",
-        "canonical": "#f6f5f1",
-        "oklch": "oklch(97.0% 0.005 95.1)",
+      "face-finance": {
+        "role": "secondary",
+        "displayName": "Cream Placard",
+        "canonical": "#faefcf",
+        "oklch": "oklch(95.3% 0.043 91.3)",
         "tonalRamp": [
-          "oklch(15.0% 0.001 95.1)",
-          "oklch(25.0% 0.003 95.1)",
-          "oklch(35.0% 0.004 95.1)",
-          "oklch(48.0% 0.005 95.1)",
-          "oklch(60.0% 0.005 95.1)",
-          "oklch(72.0% 0.005 95.1)",
-          "oklch(84.0% 0.003 95.1)",
-          "oklch(95.0% 0.001 95.1)"
+          "oklch(15.0% 0.009 91.3)",
+          "oklch(25.0% 0.024 91.3)",
+          "oklch(35.0% 0.035 91.3)",
+          "oklch(48.0% 0.043 91.3)",
+          "oklch(60.0% 0.043 91.3)",
+          "oklch(72.0% 0.038 91.3)",
+          "oklch(84.0% 0.026 91.3)",
+          "oklch(95.0% 0.009 91.3)"
         ]
       },
-      "mount-board-lit-dark": {
-        "role": "neutral",
-        "displayName": "Night Board, Lit Face",
-        "canonical": "#55585f",
-        "oklch": "oklch(46.0% 0.012 267.3)",
+      "face-finance-dark": {
+        "role": "secondary",
+        "displayName": "Night Ochre Placard",
+        "canonical": "#33290f",
+        "oklch": "oklch(28.6% 0.043 88.4)",
         "tonalRamp": [
-          "oklch(15.0% 0.003 267.3)",
-          "oklch(25.0% 0.007 267.3)",
-          "oklch(35.0% 0.010 267.3)",
-          "oklch(48.0% 0.012 267.3)",
-          "oklch(60.0% 0.012 267.3)",
-          "oklch(72.0% 0.010 267.3)",
-          "oklch(84.0% 0.007 267.3)",
-          "oklch(95.0% 0.003 267.3)"
+          "oklch(15.0% 0.009 88.4)",
+          "oklch(25.0% 0.024 88.4)",
+          "oklch(35.0% 0.034 88.4)",
+          "oklch(48.0% 0.042 88.4)",
+          "oklch(60.0% 0.043 88.4)",
+          "oklch(72.0% 0.037 88.4)",
+          "oklch(84.0% 0.025 88.4)",
+          "oklch(95.0% 0.009 88.4)"
         ]
       },
-      "mount-board-side": {
-        "role": "neutral",
-        "displayName": "Mount Board, Side Face",
-        "canonical": "#e4e2db",
-        "oklch": "oklch(91.2% 0.010 93.6)",
+      "face-engineers": {
+        "role": "secondary",
+        "displayName": "Mint Placard",
+        "canonical": "#def2e6",
+        "oklch": "oklch(94.3% 0.026 159.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.002 93.6)",
-          "oklch(25.0% 0.005 93.6)",
-          "oklch(35.0% 0.008 93.6)",
-          "oklch(48.0% 0.009 93.6)",
-          "oklch(60.0% 0.010 93.6)",
-          "oklch(72.0% 0.008 93.6)",
-          "oklch(84.0% 0.006 93.6)",
-          "oklch(95.0% 0.002 93.6)"
+          "oklch(15.0% 0.006 159.6)",
+          "oklch(25.0% 0.015 159.6)",
+          "oklch(35.0% 0.021 159.6)",
+          "oklch(48.0% 0.026 159.6)",
+          "oklch(60.0% 0.026 159.6)",
+          "oklch(72.0% 0.023 159.6)",
+          "oklch(84.0% 0.016 159.6)",
+          "oklch(95.0% 0.006 159.6)"
         ]
       },
-      "mount-board-side-dark": {
-        "role": "neutral",
-        "displayName": "Night Board, Side Face",
-        "canonical": "#383a40",
-        "oklch": "oklch(34.9% 0.011 271.1)",
+      "face-engineers-dark": {
+        "role": "secondary",
+        "displayName": "Night Green Placard",
+        "canonical": "#142d21",
+        "oklch": "oklch(27.3% 0.039 161.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.002 271.1)",
-          "oklch(25.0% 0.006 271.1)",
-          "oklch(35.0% 0.009 271.1)",
-          "oklch(48.0% 0.010 271.1)",
-          "oklch(60.0% 0.011 271.1)",
-          "oklch(72.0% 0.009 271.1)",
-          "oklch(84.0% 0.006 271.1)",
-          "oklch(95.0% 0.002 271.1)"
+          "oklch(15.0% 0.008 161.5)",
+          "oklch(25.0% 0.022 161.5)",
+          "oklch(35.0% 0.031 161.5)",
+          "oklch(48.0% 0.038 161.5)",
+          "oklch(60.0% 0.039 161.5)",
+          "oklch(72.0% 0.034 161.5)",
+          "oklch(84.0% 0.023 161.5)",
+          "oklch(95.0% 0.008 161.5)"
         ]
       },
-      "mount-board-shade": {
-        "role": "neutral",
-        "displayName": "Mount Board, Shade Face",
-        "canonical": "#cbc8bf",
-        "oklch": "oklch(83.3% 0.013 91.5)",
+      "seam": {
+        "role": "secondary",
+        "displayName": "Seam Shadow",
+        "canonical": "#a9a69f",
+        "oklch": "oklch(72.6% 0.011 87.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.003 91.5)",
-          "oklch(25.0% 0.007 91.5)",
-          "oklch(35.0% 0.010 91.5)",
-          "oklch(48.0% 0.012 91.5)",
-          "oklch(60.0% 0.013 91.5)",
-          "oklch(72.0% 0.011 91.5)",
-          "oklch(84.0% 0.007 91.5)",
-          "oklch(95.0% 0.003 91.5)"
+          "oklch(15.0% 0.002 87.5)",
+          "oklch(25.0% 0.006 87.5)",
+          "oklch(35.0% 0.008 87.5)",
+          "oklch(48.0% 0.010 87.5)",
+          "oklch(60.0% 0.011 87.5)",
+          "oklch(72.0% 0.009 87.5)",
+          "oklch(84.0% 0.006 87.5)",
+          "oklch(95.0% 0.002 87.5)"
         ]
       },
-      "mount-board-shade-dark": {
-        "role": "neutral",
-        "displayName": "Night Board, Shade Face",
-        "canonical": "#222428",
-        "oklch": "oklch(26.0% 0.008 264.4)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 264.4)",
-          "oklch(25.0% 0.004 264.4)",
-          "oklch(35.0% 0.006 264.4)",
-          "oklch(48.0% 0.008 264.4)",
-          "oklch(60.0% 0.008 264.4)",
-          "oklch(72.0% 0.007 264.4)",
-          "oklch(84.0% 0.005 264.4)",
-          "oklch(95.0% 0.002 264.4)"
-        ]
-      },
-      "plaque": {
-        "role": "neutral",
-        "displayName": "Plaque Card",
-        "canonical": "#f6f5f1",
-        "oklch": "oklch(97.0% 0.005 95.1)",
-        "tonalRamp": [
-          "oklch(15.0% 0.001 95.1)",
-          "oklch(25.0% 0.003 95.1)",
-          "oklch(35.0% 0.004 95.1)",
-          "oklch(48.0% 0.005 95.1)",
-          "oklch(60.0% 0.005 95.1)",
-          "oklch(72.0% 0.005 95.1)",
-          "oklch(84.0% 0.003 95.1)",
-          "oklch(95.0% 0.001 95.1)"
-        ]
-      },
-      "plaque-dark": {
-        "role": "neutral",
-        "displayName": "Night Plaque",
-        "canonical": "#1c1c1d",
-        "oklch": "oklch(22.7% 0.002 286.2)",
+      "seam-dark": {
+        "role": "secondary",
+        "displayName": "Night Seam",
+        "canonical": "#101011",
+        "oklch": "oklch(17.3% 0.002 286.2)",
         "tonalRamp": [
           "oklch(15.0% 0.000 286.2)",
           "oklch(25.0% 0.001 286.2)",
@@ -451,72 +643,36 @@
           "oklch(84.0% 0.001 286.2)",
           "oklch(95.0% 0.000 286.2)"
         ]
-      },
-      "window-amber": {
-        "role": "secondary",
-        "displayName": "Window Amber",
-        "canonical": "#e9a93a",
-        "oklch": "oklch(77.7% 0.143 77.0)",
-        "tonalRamp": [
-          "oklch(15.0% 0.030 77.0)",
-          "oklch(25.0% 0.079 77.0)",
-          "oklch(35.0% 0.114 77.0)",
-          "oklch(48.0% 0.139 77.0)",
-          "oklch(60.0% 0.141 77.0)",
-          "oklch(72.0% 0.122 77.0)",
-          "oklch(84.0% 0.083 77.0)",
-          "oklch(95.0% 0.030 77.0)"
-        ]
-      },
-      "cast": {
-        "role": "neutral",
-        "displayName": "Cast Shadow",
-        "canonical": "rgba(74,58,34,.2)",
-        "oklch": "oklch(36.0% 0.044 76.8)",
-        "tonalRamp": [
-          "oklch(15.0% 0.009 76.8)",
-          "oklch(25.0% 0.024 76.8)",
-          "oklch(35.0% 0.035 76.8)",
-          "oklch(48.0% 0.043 76.8)",
-          "oklch(60.0% 0.043 76.8)",
-          "oklch(72.0% 0.037 76.8)",
-          "oklch(84.0% 0.025 76.8)",
-          "oklch(95.0% 0.009 76.8)"
-        ]
-      },
-      "cast-dark": {
-        "role": "neutral",
-        "displayName": "Night Cast",
-        "canonical": "rgba(0,0,0,.4)",
-        "oklch": "oklch(0.0% 0.000 0.0)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 0.0)",
-          "oklch(25.0% 0.000 0.0)",
-          "oklch(35.0% 0.000 0.0)",
-          "oklch(48.0% 0.000 0.0)",
-          "oklch(60.0% 0.000 0.0)",
-          "oklch(72.0% 0.000 0.0)",
-          "oklch(84.0% 0.000 0.0)",
-          "oklch(95.0% 0.000 0.0)"
-        ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Homepage name only (Archivo, width 118)."
+        "purpose": "Homepage name only (Archivo, width 112)."
+      },
+      "sign-line": {
+        "displayName": "Sign Line",
+        "purpose": "The audience line on each sign face (Archivo 700 expanded), fitted as large as two lines allow; drawn to a 2048px canvas, up to 330px there."
       },
       "headline": {
         "displayName": "Headline",
         "purpose": "Page titles on reading routes."
       },
+      "section-head": {
+        "displayName": "Section Head",
+        "purpose": "Homepage 'picked for' heading (Archivo, width 112); audience name with a 3px accent underline."
+      },
       "intro": {
         "displayName": "Intro",
-        "purpose": "Homepage audience tabpanel."
+        "purpose": "Homepage audience panel, max 40rem."
+      },
+      "intro-term": {
+        "displayName": "Intro Term",
+        "purpose": "Inter italic code-like terms inside homepage intros; linked ones carry a 2px accent underline."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Prose and chapter h2."
+        "purpose": "Prose and chapter h2; homepage card titles."
       },
       "body": {
         "displayName": "Body",
@@ -526,17 +682,9 @@
         "displayName": "Reading",
         "purpose": "About page and long-form prose, 660px measure."
       },
-      "plaque": {
-        "displayName": "Plaque",
-        "purpose": "Audience plaques (Archivo, width 112)."
-      },
       "label": {
         "displayName": "Label",
         "purpose": "Uppercase section labels on reading routes."
-      },
-      "intro-term": {
-        "displayName": "Intro Term",
-        "purpose": "Skewed serif italic code-like terms inside homepage intros."
       }
     },
     "shadows": [
@@ -546,21 +694,16 @@
         "purpose": "Theme switch knob only."
       },
       {
-        "name": "course-cut",
-        "value": "inset 0 -1px 0 rgba(0,0,0,.08)",
-        "purpose": "Cut line at the foot of each model course side face."
-      },
-      {
-        "name": "plate-cast",
-        "value": "background: var(--cast); filter: blur(1.5px); transform: skewX(var(--lx))",
-        "purpose": "Cast decal on the basswood plate; skews 16/22/28/34deg with the light per audience."
+        "name": "sign-contact",
+        "value": "WebGL radial contact shadow under the sign; opacity .6 light, .95 dark",
+        "purpose": "Grounds the homepage sign. Not a CSS shadow."
       }
     ],
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(.23,1,.32,1)",
-        "purpose": "Default for every transform: presses, lifts, plate turn, course rise, crossfades."
+        "purpose": "Default for every transform: presses, lifts, indicator slide, panel swap."
       },
       {
         "name": "ease-in-out",
@@ -570,7 +713,7 @@
       {
         "name": "press",
         "value": "160ms ease-out, scale(.97)",
-        "purpose": "Button and plaque press."
+        "purpose": "Button and primary action press."
       },
       {
         "name": "hover-color",
@@ -578,24 +721,39 @@
         "purpose": "Color, border and background hovers."
       },
       {
-        "name": "select",
-        "value": "420ms ease-out",
-        "purpose": "Tower rise, plate turn and light swing on audience selection."
+        "name": "audience-select",
+        "value": "420ms ease-out (indicator transform/width; accent background-color)",
+        "purpose": "Switch indicator slide and accent recolour."
       },
       {
-        "name": "entrance",
-        "value": "420ms per course; 50ms per tower + 40ms per course stagger; once per session",
-        "purpose": "Courses rise out of the plate on the first homepage view."
+        "name": "panel-swap",
+        "value": "460ms ease-out from translateY(10px) + blur(4px) + opacity 0; 160ms opacity only under reduced motion",
+        "purpose": "Intro panel and picked cards on audience change."
       },
       {
-        "name": "crossfade",
-        "value": "200ms; opacity .35 + blur(3px) to sharp (opacity only under reduced motion)",
-        "purpose": "Intro text change."
+        "name": "sign-wave",
+        "value": "640ms easeOutBack (overshoot 1.15) per slat, 38ms stagger left to right",
+        "purpose": "Sign turns to the selected audience face; reduced motion: no stagger, no overshoot, instant."
       },
       {
-        "name": "tilt",
-        "value": "spring k .08, damping .78, max 3deg, mouse only",
-        "purpose": "Model follows the pointer; idles when settled."
+        "name": "sign-drag",
+        "value": "0.012 rad per px; release snaps to nearest face in 360ms; a move over 4px selects that audience",
+        "purpose": "Drag to turn the sign."
+      },
+      {
+        "name": "sign-idle",
+        "value": "sway sin(.5t) x .035 rad, bob sin(t) x .025; 15s after load or interaction, then stops",
+        "purpose": "Brief life after arrival; none under reduced motion."
+      },
+      {
+        "name": "sign-parallax",
+        "value": "mouse: yaw +-.06 rad, tilt .045 +-.05 rad, eased at rate 6/s",
+        "purpose": "Slight lean toward the pointer; none under reduced motion."
+      },
+      {
+        "name": "sign-fade-in",
+        "value": "700ms ease opacity",
+        "purpose": "Canvas appears once the scene is ready."
       },
       {
         "name": "card-in",
@@ -621,14 +779,79 @@
         "value": "max-width: 1100px"
       }
     ],
-    "geometry": {
-      "perspective": "1400px, origin 50% 25%",
-      "plate": "480 x 300px, 14px cut edge, rotateX(60deg) rotateZ(-30/-24/-18/-12deg per audience)",
-      "course": "28px",
-      "towers": "anyone: stepped 96x80 to 48x32, 4 courses; recruiters: slab 84x40, 6 courses; finance: 60x60, 8 courses + crown 40x40x20 + spire 8x8x36; engineers: twins 40x40, 5 courses each + bridge 36x22x14",
-      "selectedRaise": "+1 course",
-      "fit": "scale 0.4 to 1.2 to stage",
-      "faceBudget": "under 140"
+    "scene": {
+      "renderer": "three.js r170, WebGL, low-power, pixel ratio max 2, ACES filmic tone mapping, sRGB output; lazy-loaded, optional",
+      "sign": "trivision: 12 slats, BoxGeometry square section (4.2/12 minus .014 gap) x 1.5 tall; panel 4.2 x 1.5 world units; slat side groups +z, -x, -z, +x carry faces 0-3",
+      "rails": "top and bottom RoundedBoxGeometry bars 4.36 x .045 x (slat depth + .05); #26272b light / #45464c dark, roughness .38, metalness .25, clearcoat .4",
+      "faceMaterial": "MeshPhysicalMaterial roughness .62, clearcoat .12, clearcoatRoughness .5; map = slice k/12 of a 2048 x 731 canvas per audience",
+      "slatEnds": "#d9d6cf light / #3a3b40 dark, roughness .5, clearcoat .2",
+      "faceLayout": "tag Inter 600 62px at (120, 170); line Archivo 700 expanded, 330px down to 90px in 8px steps until it fits two lines within width - 240, set at x 114 centred in the band from y 230 to h - 90",
+      "faces": {
+        "anyone": {
+          "light": {
+            "bg": "#f7f5f0",
+            "ink": "#1d1e22",
+            "tag": "#6a6c74",
+            "rule": "#dedad1"
+          },
+          "dark": {
+            "bg": "#26272a",
+            "ink": "#f2f2f1",
+            "tag": "#a3a3a6",
+            "rule": "#3a3b3f"
+          }
+        },
+        "recruiters": {
+          "light": {
+            "bg": "#e6edfb",
+            "ink": "#14213d",
+            "tag": "#4a5a7c",
+            "rule": "#cbd7f0"
+          },
+          "dark": {
+            "bg": "#1b2438",
+            "ink": "#e3ebff",
+            "tag": "#93a6cf",
+            "rule": "#2c3956"
+          }
+        },
+        "finance": {
+          "light": {
+            "bg": "#faefcf",
+            "ink": "#2b2108",
+            "tag": "#7a6326",
+            "rule": "#ecdcab"
+          },
+          "dark": {
+            "bg": "#33290f",
+            "ink": "#fbe6b0",
+            "tag": "#c9ad6a",
+            "rule": "#4a3c1a"
+          }
+        },
+        "engineers": {
+          "light": {
+            "bg": "#def2e6",
+            "ink": "#0f2a1c",
+            "tag": "#476b57",
+            "rule": "#c3e3cf"
+          },
+          "dark": {
+            "bg": "#142d21",
+            "ink": "#d3f4e1",
+            "tag": "#83b89a",
+            "rule": "#22432f"
+          }
+        }
+      },
+      "facesNote": "the rule colour is defined per face but not drawn by the current face painter",
+      "seam": "off-axis faces tinted #a9a69f light / #101011 dark while at rest (not turning, not dragging)",
+      "lighting": "RoomEnvironment (pmrem .04); key 1.1 from (-4, 5, 6); rim .7 from (5, 2, -4)",
+      "view": "PerspectiveCamera fov 13; distance fits (4.55 x 2.25) to the stage; camera y = distance x .06, looking at (0, -.08, 0); pivot tilt .045 rad",
+      "shadow": "radial contact shadow plane 5.25 x 1.1 under the sign; opacity .6 light / .95 dark",
+      "theme": "exposure 1.05 light / .95 dark; environment intensity 1 / .7; faces repainted from the dark set",
+      "stage": "min(100%, 880px) at 2.75:1; phones full-bleed at 2.2:1; 8px tall without WebGL",
+      "pauses": "render loop stops when settled and idle has passed, off screen (IntersectionObserver), in hidden tabs"
     }
   },
   "components": [
@@ -641,28 +864,44 @@
       "css": ".ds-btn{display:inline-block;border:1px solid var(--line,#dcdee3);color:var(--ink,#1d1e22);background:var(--card,#f8f9fa);padding:8px 16px;border-radius:8px;text-decoration:none;font:400 .85rem/1.6 Inter,system-ui,sans-serif;transition:background .18s,border-color .18s,color .18s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-btn:hover{background:var(--ink,#1d1e22);border-color:var(--ink,#1d1e22);color:var(--bg,#f0f1f3);transform:translateY(-1px)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "cta-primary",
+      "description": "One audience-specific action per audience; accent pill with its paired on-colour.",
+      "html": "<a class=\"ds-cta\" href=\"#\">start with this essay<svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-cta{display:inline-flex;align-items:center;gap:8px;background:var(--acc,#2f6fe0);color:var(--on-acc,#fff);text-decoration:none;font:600 .95rem Inter,system-ui,sans-serif;padding:0 22px;min-height:48px;border-radius:999px;transition:transform .16s cubic-bezier(.23,1,.32,1),background-color .42s ease,color .42s ease}.ds-cta svg{transition:transform .2s cubic-bezier(.23,1,.32,1)}.ds-cta:hover svg{transform:translateX(3px)}.ds-cta:active{transform:scale(.97)}.ds-cta:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Audience Switch",
+      "kind": "chip",
+      "refersTo": "audience-switch-on",
+      "description": "Homepage tablist under \"who's reading?\"; accent pill indicator slides to the selected audience.",
+      "html": "<div class=\"ds-aud\" role=\"tablist\"><span class=\"ds-ind\"></span><button role=\"tab\" aria-selected=\"false\">anyone</button><button role=\"tab\" aria-selected=\"true\">recruiters</button><button role=\"tab\" aria-selected=\"false\">finance</button><button role=\"tab\" aria-selected=\"false\">engineers</button></div>",
+      "css": ".ds-aud{--acc:#2f6fe0;--on-acc:#fff;position:relative;display:inline-flex;padding:4px;border-radius:999px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3)}.ds-aud button{position:relative;z-index:1;font:500 .92rem Inter,system-ui,sans-serif;color:var(--soft,#646873);background:none;border:0;padding:0 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:color .3s ease}.ds-aud button:hover{color:var(--ink,#1d1e22)}.ds-aud button[aria-selected=\"true\"]{color:var(--on-acc,#fff)}.ds-aud button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}.ds-ind{position:absolute;top:4px;bottom:4px;left:79px;width:104px;border-radius:999px;background:var(--acc);transition:transform .42s cubic-bezier(.23,1,.32,1),width .42s cubic-bezier(.23,1,.32,1),background-color .42s ease}"
+    },
+    {
+      "name": "Picked Card",
+      "kind": "card",
+      "refersTo": "pick-card",
+      "description": "Homepage hand-picked writing: 4:3 image, meta with reading time, title.",
+      "html": "<a class=\"ds-pick\" href=\"#\"><div class=\"ds-pick-img\"></div><div class=\"ds-pick-meta\">technology · 6 min read</div><div class=\"ds-pick-t\">clearline: why i built it</div></a>",
+      "css": ".ds-pick{display:inline-grid;width:240px;text-decoration:none;color:var(--ink,#1d1e22);font-family:Inter,system-ui,sans-serif}.ds-pick-img{aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line,#dcdee3);background:var(--card,#f8f9fa);transition:transform .3s cubic-bezier(.23,1,.32,1)}.ds-pick:hover .ds-pick-img{transform:translateY(-3px)}.ds-pick:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}.ds-pick-meta{font-size:.8rem;color:var(--soft,#646873);margin:12px 0 4px}.ds-pick-t{font-weight:600;font-size:1.02rem;line-height:1.35}"
+    },
+    {
+      "name": "Intro Link",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Linked code-like term inside a homepage intro: Inter italic, 2px accent underline.",
+      "html": "<p class=\"ds-intro\">read <a class=\"ds-em\" href=\"#\">this.essay</a> or browse <a class=\"ds-em\" href=\"#\">my.projects</a></p>",
+      "css": ".ds-intro{--acc:#2f6fe0;font:400 1.15rem/1.6 Inter,system-ui,sans-serif;color:var(--ink,#1d1e22);margin:0}.ds-em{color:inherit;font-style:italic;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:4px}.ds-em:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
       "name": "Segmented Control",
       "kind": "chip",
       "refersTo": "segmented-on",
       "description": "Small multi-way switch on reading routes.",
       "html": "<div class=\"ds-seg\"><button class=\"ds-on\">all</button><button>essays</button><button>tools</button></div>",
       "css": ".ds-seg{display:inline-flex;gap:2px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:8px;padding:3px}.ds-seg button{font:400 .82rem Inter,system-ui,sans-serif;background:none;border:0;border-radius:6px;padding:6px 16px;color:var(--soft,#646873);cursor:pointer;transition:background .15s,color .15s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-seg button.ds-on{background:var(--ink,#1d1e22);color:var(--bg,#f0f1f3)}.ds-seg button:not(.ds-on):hover{color:var(--ink,#1d1e22)}.ds-seg button:active{transform:scale(.96)}.ds-seg button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
-    },
-    {
-      "name": "Audience Plaque",
-      "kind": "custom",
-      "refersTo": "plaque",
-      "description": "Homepage audience tabs standing along the model's front edge.",
-      "html": "<div class=\"ds-plaques\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">for anyone</button><button role=\"tab\" aria-selected=\"false\">recruiters</button><button role=\"tab\" aria-selected=\"false\">engineers</button></div>",
-      "css": ".ds-plaques{display:flex;gap:10px}.ds-plaques button{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:600;font-size:.8rem;letter-spacing:.01em;color:var(--ink,#1d1e22);background:var(--plaque,#f6f5f1);border:1px solid var(--line,#dcdee3);border-radius:3px;padding:0 14px;min-height:44px;cursor:pointer;white-space:nowrap;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-plaques button:hover{border-color:var(--ink,#1d1e22)}.ds-plaques button[aria-selected=\"true\"]{background:var(--ink,#1d1e22);color:var(--bg,#f0f1f3);border-color:var(--ink,#1d1e22)}.ds-plaques button:active{transform:scale(.97)}.ds-plaques button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
-    },
-    {
-      "name": "Card Course",
-      "kind": "custom",
-      "refersTo": "",
-      "description": "One 28px course of mount board in the three face shades, on basswood (flat elevation view).",
-      "html": "<div class=\"ds-course\"><i class=\"ds-side\"></i><i class=\"ds-top\"></i><i class=\"ds-shade\"></i></div>",
-      "css": ".ds-course{display:grid;grid-template-columns:28px 84px;grid-template-rows:40px 28px;width:max-content;background:var(--plate,#cdb48a);padding:12px}.ds-course i{display:block}.ds-side{background:var(--face-2,#e4e2db)}.ds-top{background:var(--face-1,#f6f5f1)}.ds-shade{grid-column:2;background:var(--face-3,#cbc8bf);box-shadow:inset 0 -1px 0 rgba(0,0,0,.08)}"
     },
     {
       "name": "Card",
@@ -689,12 +928,12 @@
       "css": ".ds-nav{display:flex;justify-content:space-between;align-items:center;padding:30px 24px;background:var(--bg,#f0f1f3);font-family:Inter,system-ui,sans-serif}.ds-nav a{text-decoration:none;font-size:.95rem}.ds-logo{color:var(--ink,#1d1e22);font-weight:600;font-size:1.1rem;letter-spacing:-.01em}.ds-right{display:flex;gap:24px}.ds-right a{color:var(--soft,#646873);transition:color .18s}.ds-right a.ds-on,.ds-right a:hover{color:var(--ink,#1d1e22)}.ds-nav a:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
-      "name": "Accent Link",
+      "name": "CV Link",
       "kind": "button",
-      "refersTo": "",
-      "description": "The burnt-amber action (get cv).",
-      "html": "<a class=\"ds-accent\" href=\"#\">get cv</a>",
-      "css": ".ds-accent{color:var(--accent,#8f5d00);text-decoration:none;font:400 .95rem Inter,system-ui,sans-serif;display:inline-flex;align-items:center;min-height:30px;transition:color .18s}.ds-accent:hover{color:var(--ink,#1d1e22)}.ds-accent:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+      "refersTo": "cv-link",
+      "description": "'get cv' on the homepage closing row: graphite ink, underline on hover.",
+      "html": "<a class=\"ds-cv\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/></svg>get cv</a>",
+      "css": ".ds-cv{color:var(--ink,#1d1e22);display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:44px;font:500 .92rem Inter,system-ui,sans-serif}.ds-cv:hover{text-decoration:underline;text-underline-offset:3px}.ds-cv:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
       "name": "Theme Switch",
@@ -702,60 +941,71 @@
       "refersTo": "theme-switch",
       "description": "Light/dark toggle, fixed top right.",
       "html": "<button class=\"ds-switch\" role=\"switch\" aria-checked=\"false\" aria-label=\"dark theme\"></button>",
-      "css": ".ds-switch{position:relative;width:48px;height:27px;border-radius:999px;border:0;background:var(--track,#3a3a40);cursor:pointer;padding:0;transition:background .26s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-switch::after{content:\"\";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .26s cubic-bezier(.23,1,.32,1)}.ds-switch[aria-checked=\"true\"]{background:var(--on,#34c759)}.ds-switch[aria-checked=\"true\"]::after{transform:translateX(21px)}.ds-switch:active{transform:scale(.94)}.ds-switch:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+      "css": ".ds-switch{position:relative;width:48px;height:27px;border-radius:999px;border:0;background:var(--track,#3a3a40);cursor:pointer;padding:0;transition:background .26s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-switch::after{content:\"\";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .26s cubic-bezier(.23,1,.32,1)}.ds-switch[aria-checked=\"true\"]{background:#4a4b52}.ds-switch[aria-checked=\"true\"]::after{transform:translateX(21px)}.ds-switch:active{transform:scale(.94)}.ds-switch:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     }
   ],
   "narrative": {
-    "northStar": "The Study Model on a Quiet Desk",
-    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, one burnt-amber accent kept for the few actions that matter. The homepage sets a hand-built study model on that desk: four towers of cut white mount board on a basswood plate, lit by one raking light, one tower per audience. Both registers share the same ink, soft graphite, amber accent, hairlines and easing, so the model reads as an object placed on the site, not a second site.\n\nThe model is literal material, not illustration. Depth comes from three face fills of the same board (lit top, side, shade), from the plate's cut edge, and from a soft cast decal on the plate that skews with the light. At night (dark theme) the same model sits in a dim studio: board faces drop to graphite, basswood darkens, and only the selected tower's windows glow amber. Choosing an audience raises that tower one course, lights it, swings the light and turns the plate.\n\nThe voice is personal and playful (lowercase copy, a pixel dog, a live clock) but the surfaces are restrained. Rejected: corporate polish, glossy 3D blobs, glass, decorative gradients and glow halos.",
+    "northStar": "One Object on a Quiet Desk",
+    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a slatted trivision sign, twelve square-section slats between two dark rails, with four faces, one per audience. Each face is a printed placard: a small tag (\"for recruiters\") over one large Archivo line (\"seen the numbers from both sides.\"). Choosing an audience turns the slats in a wave until the new face reads.\n\nThe homepage is one centred vertical axis: name, \"who's reading?\" and the audience switch, the sign, the intro, one audience-specific action plus \"more about me\", then a \"picked for\" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the \"picked for\" underline together, and turns the sign, so the whole axis shifts at once.\n\nThe voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The sign is the one rendered object, matte and soft-lit; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
     "keyCharacteristics": [
-      "Flat tonal surfaces with 1px hairlines; no elevation shadows on reading routes.",
-      "One accent (burnt amber) for the primary action of a view; one decorative amber (window glow) inside the model only.",
-      "Inter for everything readable; Archivo expanded only for the homepage name and the plaques.",
-      "The homepage model is built from real geometry: 28px courses, three face shades, a perspective plate.",
-      "Motion is short, ease-out and transform/opacity only; reduced motion keeps crossfades and drops movement."
+      "Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D sign.",
+      "One audience accent live at a time on the homepage, carried by a single variable with its own on-colour.",
+      "Inter for everything readable; Archivo expanded only for the homepage name, the sign lines and the \"picked for\" heading.",
+      "The homepage is a single centred column; the sign is decorative and every action it offers is also a plain control.",
+      "Motion is short and ease-out; the sign turns in a staggered wave, sways briefly, then stops, and loses the wave and overshoot under reduced motion."
     ],
     "rules": [
       {
-        "name": "The One Amber Rule",
-        "body": "Burnt amber marks at most one or two actions per view. If a second thing wants amber, it gets graphite ink instead.",
+        "name": "The One Voice Rule",
+        "body": "One audience accent is live at a time, and every accent-bearing element reads it through the shared variable, never a fixed audience colour. If an element should not change with the audience, it is not accent-coloured.",
         "section": "colors"
       },
       {
-        "name": "The Raking Light Rule",
-        "body": "Model faces use exactly the three mount-board shades, lit top, side, shade, in that order. Depth in the model never comes from box-shadow or gradients.",
+        "name": "The Paired Ink Rule",
+        "body": "An accent fill always takes the on-colour paired with it, never a fixed white. Light accents (marigold, jade) carry graphite ink.",
         "section": "colors"
       },
       {
-        "name": "The Night Studio Rule",
-        "body": "Dark theme does not invert the model; it dims it. Faces go to graphite, basswood darkens, windows keep the same amber.",
+        "name": "The Placard Rule",
+        "body": "A sign face is a tint of its audience hue with ink of the same hue; the accent fill itself never paints the sign.",
         "section": "colors"
       },
       {
         "name": "The Archivo Fence Rule",
-        "body": "Archivo appears only on the homepage name and the plaques. Any other text, including the homepage intro, is Inter.",
+        "body": "Archivo appears only on the homepage name, the sign lines and the homepage \"picked for\" heading. Any other text, including the sign's tag, the intro, the switch and the cards, is Inter.",
         "section": "typography"
       },
       {
         "name": "The Material Depth Rule",
-        "body": "If something looks raised, it is because it is built in 3D or has a lighter tone, not because it casts a box-shadow.",
+        "body": "If something looks raised, it is because it is rendered in 3D or has a lighter tone, not because it casts a box-shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Seam Rule",
+        "body": "At rest only the chosen face shows; every other face takes the seam colour, so the slat gaps read as shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Night Flip Rule",
+        "body": "In dark theme each accent lightens and the text on it flips to near-black; the sign repaints to its dark faces, it is never inverted.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do take every color from the tokens, with a dark value for each surface color.",
-      "Do keep burnt amber to one or two actions per view (get cv; the picked intro link).",
-      "Do build model depth from the three mount-board shades, the basswood edge and the cast decal.",
-      "Do animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 420ms; keep a 200ms crossfade under reduced motion.",
+      "Do take every colour from the tokens, with a dark value for each surface and accent colour.",
+      "Do route every audience-coloured element through the one accent variable and its paired on-colour so the whole axis changes together.",
+      "Do keep the homepage on one centred axis, and keep every action the sign offers available as a plain control.",
+      "Do animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 460ms; keep an opacity crossfade under reduced motion.",
+      "Do stop the sign's render loop when it settles, after the 15s idle, off screen and in hidden tabs; drop the wave and overshoot under reduced motion.",
       "Do keep touch targets at 44px minimum and a 2px graphite ink focus ring on every control.",
-      "Do keep Archivo inside the Archivo fence (homepage name, plaques)."
+      "Do keep Archivo inside the Archivo fence (homepage name, sign lines, \"picked for\" heading)."
     ],
     "donts": [
       "Don't use box-shadows, glass, glow halos or decorative gradients to suggest depth.",
-      "Don't let the model take more than half the viewport width on desktop, or run an animation loop while idle, on touch, or in a hidden tab.",
-      "Don't light more than one tower; the other three stay plain card.",
-      "Don't model a real Frankfurt building; the towers stay abstract.",
-      "Don't use signal green for anything but the theme switch and the status dot."
+      "Don't hard-code an audience colour or white text on an accent; read the accent and on-accent variables.",
+      "Don't paint a sign face with the accent fill; faces stay tints of their hue.",
+      "Don't add a second rendered 3D object or let the stage grow past 880px wide.",
+      "Don't use signal green for anything but the status dot."
     ]
   }
 }

@@ -1,6 +1,6 @@
 ---
 name: Etharic
-description: The personal site of ryan (suryanarayan); a quiet paper reading system, with a hand-built card model of Frankfurt on the homepage.
+description: The personal site of ryan (suryanarayan); a quiet paper reading system, with one slatted 3D sign on the homepage that turns in a wave to face each audience.
 colors:
   paper: "#f0f1f3"
   paper-dark: "#151515"
@@ -18,40 +18,63 @@ colors:
   burnt-amber-dark: "#cf8c06"
   signal-green: "#34c759"
   switch-track: "#3a3a40"
-  basswood: "#cdb48a"
-  basswood-dark: "#3a3127"
-  basswood-edge: "#ad9468"
-  basswood-edge-dark: "#2a231b"
-  mount-board-lit: "#f6f5f1"
-  mount-board-lit-dark: "#55585f"
-  mount-board-side: "#e4e2db"
-  mount-board-side-dark: "#383a40"
-  mount-board-shade: "#cbc8bf"
-  mount-board-shade-dark: "#222428"
-  plaque: "#f6f5f1"
-  plaque-dark: "#1c1c1d"
-  window-amber: "#e9a93a"
-  cast: "rgba(74,58,34,.2)"
-  cast-dark: "rgba(0,0,0,.4)"
+  switch-on: "#4a4b52"
+  acc-anyone: "#1d1e22"
+  acc-anyone-dark: "#f2f2f1"
+  acc-recruiters: "#2f6fe0"
+  acc-recruiters-dark: "#7aa7ff"
+  acc-finance: "#e6a817"
+  acc-finance-dark: "#f2b93b"
+  acc-engineers: "#2fb57a"
+  acc-engineers-dark: "#4fd08f"
+  on-anyone: "#ffffff"
+  on-recruiters: "#ffffff"
+  on-finance: "#1d1e22"
+  on-engineers: "#1d1e22"
+  on-acc-dark: "#111111"
+  face-anyone: "#f7f5f0"
+  face-anyone-dark: "#26272a"
+  face-recruiters: "#e6edfb"
+  face-recruiters-dark: "#1b2438"
+  face-finance: "#faefcf"
+  face-finance-dark: "#33290f"
+  face-engineers: "#def2e6"
+  face-engineers-dark: "#142d21"
+  seam: "#a9a69f"
+  seam-dark: "#101011"
 typography:
   display:
     fontFamily: "Archivo, Inter, system-ui, sans-serif"
-    fontSize: "clamp(2.6rem, 5.4vw, 5.5rem)"
+    fontSize: "clamp(2.3rem, 4.6vw, 4.2rem)"
     fontWeight: 700
-    lineHeight: 0.98
+    lineHeight: 1.02
     letterSpacing: "-0.02em"
-    fontVariation: "'wdth' 118"
+    fontVariation: "'wdth' 112"
+  sign-line:
+    fontFamily: "Archivo, Inter, system-ui, sans-serif"
+    fontWeight: 700
+    lineHeight: 1
+    fontVariation: "'wdth' 112"
   headline:
     fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "2.2rem"
     fontWeight: 700
     lineHeight: 1.2
     letterSpacing: "-0.02em"
+  section-head:
+    fontFamily: "Archivo, Inter, system-ui, sans-serif"
+    fontSize: "clamp(1.4rem, 2.2vw, 1.8rem)"
+    fontWeight: 700
+    letterSpacing: "-0.01em"
+    fontVariation: "'wdth' 112"
   intro:
     fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "clamp(1.15rem, 1.65vw, 1.5rem)"
+    fontSize: "clamp(1.05rem, 1.4vw, 1.22rem)"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1.6
+  intro-term:
+    fontFamily: "Inter, system-ui, sans-serif"
+    fontWeight: 400
   title:
     fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "1.05rem"
@@ -67,24 +90,13 @@ typography:
     fontSize: "1.125rem"
     fontWeight: 400
     lineHeight: 1.65
-  plaque:
-    fontFamily: "Archivo, Inter, system-ui, sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: "0.01em"
-    fontVariation: "'wdth' 112"
   label:
     fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "0.09em"
-  intro-term:
-    fontFamily: "Times New Roman, Times, serif"
-    fontWeight: 300
 rounded:
-  plaque: "3px"
   thumb: "6px"
   control: "8px"
   card: "10px"
@@ -97,7 +109,6 @@ spacing:
   lg: "24px"
   xl: "30px"
   section: "64px"
-  course: "28px"
 components:
   button:
     backgroundColor: "{colors.card}"
@@ -112,17 +123,32 @@ components:
     textColor: "{colors.paper}"
     rounded: "6px"
     padding: "6px 16px"
-  plaque:
-    backgroundColor: "{colors.plaque}"
-    textColor: "{colors.graphite-ink}"
-    typography: "{typography.plaque}"
-    rounded: "{rounded.plaque}"
-    padding: "0 14px"
+  audience-switch:
+    backgroundColor: "{colors.card}"
+    textColor: "{colors.soft-graphite}"
+    rounded: "{rounded.pill}"
+    padding: "4px"
+  audience-switch-on:
+    backgroundColor: "{colors.acc-recruiters}"
+    textColor: "{colors.on-recruiters}"
+    rounded: "{rounded.pill}"
+    padding: "0 18px"
     height: "44px"
-  plaque-selected:
-    backgroundColor: "{colors.graphite-ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.plaque}"
+  cta-primary:
+    backgroundColor: "{colors.acc-recruiters}"
+    textColor: "{colors.on-recruiters}"
+    rounded: "{rounded.pill}"
+    padding: "0 22px"
+    height: "48px"
+  cta-primary-finance:
+    backgroundColor: "{colors.acc-finance}"
+    textColor: "{colors.on-finance}"
+  cv-link:
+    textColor: "{colors.graphite-ink}"
+    height: "44px"
+  pick-card:
+    textColor: "{colors.graphite-ink}"
+    rounded: "{rounded.card}"
   card:
     backgroundColor: "{colors.card}"
     textColor: "{colors.graphite-ink}"
@@ -139,105 +165,108 @@ components:
     width: "48px"
     height: "27px"
   theme-switch-on:
-    backgroundColor: "{colors.signal-green}"
+    backgroundColor: "{colors.switch-on}"
 ---
 
 # Design System: Etharic
 
 ## Overview
 
-**Creative North Star: "The Study Model on a Quiet Desk"**
+**Creative North Star: "One Object on a Quiet Desk"**
 
-Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, one burnt-amber accent kept for the few actions that matter. The homepage sets a hand-built study model on that desk: four towers of cut white mount board on a basswood plate, lit by one raking light, one tower per audience. Both registers share the same ink, soft graphite, amber accent, hairlines and easing, so the model reads as an object placed on the site, not a second site.
+Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a slatted trivision sign, twelve square-section slats between two light rails, with four faces, one per audience. Each face is a printed placard carrying the opening of that audience's own sentence in one Archivo line ("i'm a finance student"); the intro directly under the sign finishes the sentence. Choosing an audience turns the slats in a wave until the new face reads.
 
-The model is literal material, not illustration. Depth comes from three face fills of the same board (lit top, side, shade), from the plate's cut edge, and from a soft cast decal on the plate that skews with the light. At night (dark theme) the same model sits in a dim studio: board faces drop to graphite, basswood darkens, and only the selected tower's windows glow amber. Choosing an audience raises that tower one course, lights it, swings the light and turns the plate.
+The homepage is one centred vertical axis: name, "who's reading?" and the audience switch, the sign, the intro, one audience-specific action plus "more about me", then a "picked for" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the "picked for" underline together, and turns the sign, so the whole axis shifts at once.
 
-The voice is personal and playful (lowercase copy, a pixel dog, a live clock) but the surfaces are restrained. Rejected: corporate polish, glossy 3D blobs, glass, decorative gradients and glow halos.
+The voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The sign is the one rendered object, matte and soft-lit; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.
 
 **Key Characteristics:**
-- Flat tonal surfaces with 1px hairlines; no elevation shadows on reading routes.
-- One accent (burnt amber) for the primary action of a view; one decorative amber (window glow) inside the model only.
-- Inter for everything readable; Archivo expanded only for the homepage name and the plaques.
-- The homepage model is built from real geometry: 28px courses, three face shades, a perspective plate.
-- Motion is short, ease-out and transform/opacity only; reduced motion keeps crossfades and drops movement.
+- Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D sign.
+- One audience accent live at a time on the homepage, carried by a single variable with its own on-colour.
+- Inter for everything readable; Archivo expanded only for the homepage name, the sign lines and the "picked for" heading.
+- The homepage is a single centred column; the sign is decorative and every action it offers is also a plain control.
+- Motion is short and ease-out; the sign turns in a staggered wave, sways briefly, then stops, and loses the wave and overshoot under reduced motion.
 
 ## Colors
 
-Cool, nearly neutral paper and graphite, warmed only by burnt amber and, on the homepage, by basswood and window light. Every surface color has a light and a dark value; the dark keys (`*-dark`) apply under `:root[data-theme="dark"]`.
+Cool, nearly neutral paper and graphite; on the homepage, one audience accent at a time and four pale placard faces. Every surface and accent colour has a light and a dark value; the dark keys (`*-dark`) apply under `:root[data-theme="dark"]`.
 
 ### Primary
-- **Burnt Amber** (`burnt-amber` / `burnt-amber-dark`): the one interactive accent. It colors "get cv", and on the homepage the first intro link once the visitor has picked an audience. Never a fill, never a large area.
+- **Audience Accent** (`acc-anyone`, `acc-recruiters`, `acc-finance`, `acc-engineers`): Graphite, Signal Blue, Marigold and Jade. Exactly one is live at a time, set on the app root by `data-aud` and read everywhere as one variable. It fills the switch indicator and the primary action, and draws the 2px underline under intro links and the 3px underline under the audience name in "picked for".
+- **On-Accent** (`on-anyone`, `on-recruiters`, `on-finance`, `on-engineers`): text on an accent fill, paired per audience. White on graphite and blue; graphite ink on marigold and jade, because those two are too light for white. In dark theme every on-colour is near-black (`on-acc-dark`).
 
 ### Secondary
-- **Basswood** (`basswood`, edge `basswood-edge`): the model's plate and its cut edge. Homepage only.
-- **Window Amber** (`window-amber`): lit windows on the selected tower. Decorative, carries no text, homepage only; the same in both themes.
+- **Placard Faces** (`face-anyone`, `face-recruiters`, `face-finance`, `face-engineers`): the printed background of each sign face. In light theme a pale tint of the audience hue (warm white, ice blue, cream, mint); in dark theme a deep tint of the same hue. Each face carries its own ink and a softer tag colour from the same hue (see sidecar `scene.faces`). Used only inside the WebGL scene.
+- **Seam** (`seam`): at rest, slat faces not turned to the viewer take this colour so the gaps between slats read as shadow, not as stray letters.
 
 ### Neutral
 - **Paper** (`paper`): page background on every route, including the fixed nav.
-- **Card** (`card`): raised-by-tone surfaces: cards, buttons, inputs, segmented controls, list tiles.
-- **Graphite Ink** (`graphite-ink`): headings, body text in prose, selected states, focus rings, selected plaque fill.
-- **Soft Graphite** (`soft-graphite`): secondary text, nav links at rest, captions, leader lines at rest.
+- **Card** (`card`): raised-by-tone surfaces: cards, buttons, inputs, segmented controls and the audience switch track.
+- **Graphite Ink** (`graphite-ink`): headings, body text in prose and intros, selected states, focus rings, and "get cv" on the homepage closing row.
+- **Soft Graphite** (`soft-graphite`): secondary text, nav links at rest, captions, card meta, the "who's reading?" question, the closing row.
 - **Hairline** (`hairline`): every 1px border and divider; also image placeholders and empty bars.
 - **Hover Wash** (`hover-wash`): the background tint for hovered rows and cards.
-- **Mount Board, three shades** (`mount-board-lit`, `mount-board-side`, `mount-board-shade`): the top, west and south faces of each course. The ordering lit > side > shade is fixed; it is the raking light.
-- **Plaque** (`plaque`): audience plaques at rest; same as the lit board face in light theme.
-- **Cast** (`cast`): the translucent cast shadow on the plate.
-- **Signal Green** (`signal-green`): the theme switch "on" track and the "currently in" status dot. Nothing else.
+- **Switch Track / Switch On** (`switch-track`, `switch-on`): the theme switch, off and on. Both neutral greys; the switch does not use colour.
+- **Signal Green** (`signal-green`): the "currently in" status dot. Nothing else.
+- **Burnt Amber** (`burnt-amber`): the site's reserved action colour, defined on `:root` for both themes. No rendered element carries it at present.
 
 ### Named Rules
-**The One Amber Rule.** Burnt amber marks at most one or two actions per view. If a second thing wants amber, it gets graphite ink instead.
+**The One Voice Rule.** One audience accent is live at a time, and every accent-bearing element reads it through the shared variable, never a fixed audience colour. If an element should not change with the audience, it is not accent-coloured.
 
-**The Raking Light Rule.** Model faces use exactly the three mount-board shades, lit top, side, shade, in that order. Depth in the model never comes from box-shadow or gradients.
+**The Paired Ink Rule.** An accent fill always takes the on-colour paired with it, never a fixed white. Light accents (marigold, jade) carry graphite ink.
 
-**The Night Studio Rule.** Dark theme does not invert the model; it dims it. Faces go to graphite, basswood darkens, windows keep the same amber.
+**The Placard Rule.** A sign face is a tint of its audience hue with ink of the same hue; the accent fill itself never paints the sign.
 
 ## Typography
 
-**Display Font:** Archivo, width axis (with Inter, system-ui fallback), loaded only for the characters the homepage uses
-**Body Font:** Inter 300 to 700 (with system-ui, sans-serif)
-**Accent Face:** Times New Roman italic, synthesized lean (`skewX(-9deg) scaleX(.94)`), for the code-like terms inside homepage intros
+**Display Font:** Archivo, width axis at 112 (with Inter, system-ui fallback), subset to the characters the homepage and the sign use
+**Body Font:** Inter 300 to 700, with italic 400 (with system-ui, sans-serif)
 
-**Character:** Inter carries everything a visitor reads. Archivo expanded gives the homepage name and the model's labels a drafted, architectural mass, as if lettered on a presentation board. The skewed serif terms ("this.essay") are the playful voice inside otherwise plain sentences.
+**Character:** Inter carries everything a visitor reads. Archivo expanded gives the homepage name, the sign lines and the "picked for" heading a broad, drafted mass; the sign line is the loudest type on the site. Code-like terms in the intros ("this.essay") are simply Inter italic.
 
 ### Hierarchy
-- **Display** (Archivo 700, width 118, `clamp(2.6rem, 5.4vw, 5.5rem)`, line-height 0.98): homepage name only. The faded part of "suryanarayan" sits in soft graphite at 50% opacity. On phones the width drops to 100 and size to `clamp(2.2rem, 10.4vw, 2.8rem)`.
+- **Display** (Archivo 700, width 112, `clamp(2.3rem, 4.6vw, 4.2rem)`, line-height 1.02): homepage name only, balanced, centred. The faded part of "suryanarayan" sits in soft graphite at 50% opacity; on phones the name drops to its own line.
+- **Sign Line** (Archivo 700, expanded, line-height 1): the audience line on each sign face, set as large as fits in at most two lines, left-aligned on the placard.
 - **Headline** (Inter 700, 2.2rem, 1.2, -0.02em): page titles on reading routes; 2rem on about and on phones.
-- **Intro** (Inter 400, `clamp(1.15rem, 1.65vw, 1.5rem)`, 1.5): the homepage tabpanel, capped at `min(36rem, 40vw)`.
-- **Title** (Inter 600, 1.05rem, 1.4): prose and chapter h2.
+- **Section Head** (Archivo 700, width 112, `clamp(1.4rem, 2.2vw, 1.8rem)`, -0.01em): the homepage "picked for" heading; the audience name inside it carries a 3px accent underline, 6px offset.
+- **Intro** (Inter 400, `clamp(1.05rem, 1.4vw, 1.22rem)`, 1.6): the homepage audience panel, max 40rem, graphite ink.
+- **Intro Term** (Inter italic 400): code-like terms inside intros; linked terms add a 2px accent underline, 4px offset.
+- **Title** (Inter 600, 1.05rem, 1.4): prose and chapter h2; homepage card titles use 1.02rem, 1.35.
 - **Body** (Inter 400, 1rem, 1.6): default text; secondary text in soft graphite.
 - **Reading** (Inter 400, 1.125rem, 1.65): about page and long-form prose, max 660px measure.
-- **Plaque** (Archivo 600, width 112, 0.8rem): audience plaques; 0.74rem from 1050px down.
 - **Label** (Inter 400, 0.75rem, 0.09em, uppercase): section labels on reading routes and the chapter rail head. Tile categories use 0.7rem, 0.08em.
 
 ### Named Rules
-**The Archivo Fence Rule.** Archivo appears only on the homepage name and the plaques. Any other text, including the homepage intro, is Inter.
+**The Archivo Fence Rule.** Archivo appears only on the homepage name, the sign lines and the homepage "picked for" heading. Any other text, including the intro, the switch and the cards, is Inter.
 
 ## Layout
 
 Reading routes use a single centered column (`max-width: 800px`, 20px side padding) under a fixed nav (30px vertical padding, 24px left, room on the right for the fixed theme switch). Prose caps at 660px; the about page at 760px with a 196px photo column. Work grids run 3 columns (gap 30px x 18px), 2 columns from 681 to 900px, 1 column at 680px and below.
 
-The homepage removes the column cap (`max-width: none`, 24px gutter). Text holds the left side: name, intro, "more about me". The model stands absolutely on the right, `min(50vw, 800px)` wide and 70vh tall, never more than half the viewport. The plaques sit along the model's bottom edge, centered, 10px apart, with leader lines drawn from each plaque to the foot of its tower. Footer details ("currently in", clock, dog; "get cv") pin to the bottom corners of the first viewport.
+The homepage widens the column to 1120px and stacks everything on one centred axis, text centred, starting 100px from the top. Order: name; "who's reading?" (26px above, 10px below) and the audience switch; the sign stage, `min(100%, 880px)` wide at a 2.75:1 aspect, 14px below the switch; the panel (intro, max 40rem, then the primary action and "more about me" in a row 22px below, 24px gap); the "picked for" section (44px top, heading 20px above the cards) with three cards in a 3-column grid (22px gap); then the closing row 64px below, a hairline on top, city, clock, dot and dog on the left and "get cv" on the right. Without WebGL the stage collapses to 8px and the page reads as type alone. On wider screens the panel is held at the height of its tallest audience text so switching never shifts the page.
 
-At 680px and below the homepage stacks: name, then a model band `max(240px, 34vh)` tall bleeding to the screen edges, plaques in a 2x2 grid (8px gap), intro, footer details inline. Leader lines are hidden.
+At 680px and below the axis starts 28px from the top, the stage bleeds to the screen edges at a 2.2:1 aspect, switch segments tighten to 11px side padding at 0.85rem, the panel takes its own height, and the cards go to one column with 28px gaps (36px above the section).
 
-The model scales to fit its stage (0.4 to 1.2 times its 480 x 300px plate), so geometry is authored at fixed pixels and never reflowed.
-
-Spacing rhythm is small and practical: 8 / 12 / 16 / 20 / 24 / 30px, with 64px before section labels.
+Spacing rhythm is small and practical: 8 / 12 / 16 / 20 / 24 / 30px, with 64px before section labels and the closing row.
 
 ## Elevation & Depth
 
-Reading routes are flat. Surfaces separate by tone (paper vs card) and 1px hairlines; hover adds the hover wash or a 1 to 2px lift, never a shadow. The only shadow outside the model is the theme switch knob (`0 1px 4px rgba(0,0,0,.35)`), a physical toggle detail.
+Every surface is flat. Surfaces separate by tone (paper vs card) and 1px hairlines; hover adds the hover wash or a 1 to 3px lift, never a shadow. The only CSS shadow is the theme switch knob (`0 1px 4px rgba(0,0,0,.35)`), a physical toggle detail.
 
-The homepage model is real 3D (`perspective: 1400px`, origin 50% 25%; plate `rotateX(60deg) rotateZ(-30deg)` for "for anyone", turning to -24, -18 and -12deg for the other audiences). Depth is conveyed by face fills, the plate's 14px cut edge, and a cast decal on the plate (cast color, 1.5px blur, skewed 16 to 34deg with the light). Course side faces carry a 1px inset line at their foot (`inset 0 -1px 0 rgba(0,0,0,.08)`) to read the cut between courses.
+The homepage sign is the one real 3D object, rendered with WebGL (three.js r170): a 4.2 x 1.5 unit panel of twelve square-section slats, each a four-sided prism that shows a vertical slice of one audience placard per side, held between a light top and bottom rail (#cfcac0, dark theme #55565c). Faces are fully matte printed stock (roughness .9, no clearcoat) so every slat takes the same tone; slat ends are a light stone grey. It is lit by a soft room environment, a raking key light from the left and a rim from behind right, seen through a 17° lens from about 10° above and turned 15° (yaw -0.26), so the slat prisms and rails read as depth at rest. The sign line is set a clear step below the name (at most 200px on a 2048px face, centred). Depth under it is a soft radial contact shadow on the floor, never a CSS shadow. Dark theme repaints the faces from the dark set, lowers exposure and environment light, and lightens the slat ends and rails.
 
 ### Named Rules
-**The Material Depth Rule.** If something looks raised, it is because it is built in 3D or has a lighter tone, not because it casts a box-shadow.
+**The Material Depth Rule.** If something looks raised, it is because it is rendered in 3D or has a lighter tone, not because it casts a box-shadow.
+
+**The Seam Rule.** At rest only the chosen face shows; every other face takes the seam colour, so the slat gaps read as shadow.
+
+**The Night Flip Rule.** In dark theme each accent lightens and the text on it flips to near-black; the sign repaints to its dark faces, it is never inverted.
 
 ## Shapes
 
-Gently rounded on reading routes: 10px on cards, photos and video frames; 8px on buttons, inputs, segmented controls and post thumbnails; 6px on thumbnails inside cards. Pills (999px) only for the theme switch and dots.
+Gently rounded on reading routes: 10px on cards, photos, video frames and homepage card images; 8px on buttons, inputs, segmented controls and post thumbnails; 6px on thumbnails inside cards. The homepage's interactive pieces are full pills (999px): the audience switch, its sliding indicator and the primary action. Pills otherwise only for the theme switch and dots.
 
-The homepage model is square-cut: towers are stacked rectangular courses (28px tall, footprints from 96 x 80px down to 40 x 40px), the plate has square corners, and the plaques are near-square (3px). Tower forms are abstract: anyone is a stepped ziggurat, recruiters a clean slab, finance the tallest square tower with a two-step crown and spire, engineers twin towers joined by a bridge. No tower copies a real building.
+The sign is the one hard-edged solid on the site: square slats with a hairline gap between them, a wide flat rectangle overall, closed top and bottom by softly rounded rails.
 
 ## Components
 
@@ -246,18 +275,41 @@ Restrained, tonal, a little tactile.
 - **Shape:** gently rounded (8px).
 - **Default:** card fill, hairline border, graphite ink text, 8px x 16px, 0.85rem.
 - **Hover (fine pointers):** inverts to graphite ink fill with paper text and lifts 1px. Press scales to 0.97.
-- **Segmented control:** card track with hairline border and 3px padding; the selected segment fills graphite ink with paper text (6px radius).
+- **Segmented control (reading routes):** card track with hairline border and 3px padding; the selected segment fills graphite ink with paper text (6px radius).
 
-### Audience Plaques (signature)
-Flat card labels standing along the model's front edge; they are the audience tablist.
-- **Shape:** near-square (3px), minimum 44px tall, 0 14px padding, Archivo plaque type.
-- **Rest:** plaque fill, hairline border, graphite ink text.
-- **Hover/preview:** border turns graphite ink; the intro and tower lighting preview that audience; leaving restores the selection.
-- **Selected:** graphite ink fill, paper text. Selection lights the tower's windows, raises it one course, swings the light and turns the plate (420ms ease-out).
-- **Focus:** 2px graphite ink outline, 3px offset. Arrow keys, Home and End select.
+### Primary Action (homepage)
+One per audience: "start with this essay", "download my cv", "read my latest analysis", "see what i built".
+- **Shape:** pill, 48px tall, 0 22px, Inter 600 0.95rem, trailing arrow.
+- **Color:** accent fill with its paired on-colour; fill and text ease to the new audience over 420ms.
+- **Hover (fine pointers, motion allowed):** the arrow nudges 3px right. Press scales to 0.97.
+- Paired with "more about me", a soft graphite underlined link whose arrow nudges the same way.
 
-### The Maquette (signature)
-Decorative and `aria-hidden`; every action lives on the plaques. Under 140 faces. Each course is three faces (top only where visible); windows are a pattern on the side faces of the lit tower. First homepage view per session: courses rise out of the plate, 420ms each, 50ms per tower and 40ms per course stagger. Mouse-only tilt within ±3deg on a spring, idle when settled, off on touch, reduced motion and hidden tabs.
+### Audience Switch (signature)
+The homepage tablist under the question "who's reading?".
+- **Shape:** pill track (card fill, hairline border, 4px padding); four segments, 44px tall, 0 18px, Inter 500 0.92rem.
+- **Indicator:** one accent pill that slides and resizes under the selected segment (420ms ease-out) and changes colour with it; it holds still during layout.
+- **States:** rest soft graphite, hover graphite ink, selected on-accent text over the indicator.
+- **Keyboard:** arrow keys, Home and End select and move focus; 2px graphite ink focus ring, 3px offset.
+- **Change:** the panel and cards swap with a 460ms rise from 10px and 4px blur to sharp; 160ms opacity only under reduced motion.
+
+### The Sign (signature)
+Decorative (`aria-hidden`) and optional: it loads after the page is usable, fades in over 700ms, and the page works without it.
+- **Faces:** one per audience: "for anyone / minimal systems that last.", "for recruiters / seen the numbers from both sides.", "for finance professionals / NPV > 0.", "for engineers / i know my way /around.".
+- **Turn:** selecting an audience turns every slat a quarter-turn multiple to that face in a wave from left to right, each slat starting 38ms after the last and taking 640ms with a slight overshoot that settles.
+- **Drag:** dragging sideways turns all slats together; on release they snap to the nearest face and that face selects its audience in the switch.
+- **Idle:** for 15 seconds after load or interaction it sways and bobs very slightly, then stops rendering. A mouse tilts it a little toward the pointer.
+- **Reduced motion:** no wave, no overshoot, no idle sway and no pointer tilt; the slats change face at once.
+- It pauses off screen and in hidden tabs.
+
+### Picked Cards
+Three hand-picked pieces per audience under "picked for <audience>".
+- **Image:** 4:3, 10px radius, hairline border, card fill behind; lifts 3px on hover (fine pointers, motion allowed).
+- **Meta:** section name and reading time ("6 min read"), 0.8rem soft graphite.
+- **Title:** Inter 600 1.02rem, graphite ink.
+- No card chrome around the text; the image is the card.
+
+### Closing Row (homepage)
+Hairline on top, 28px above and 32px below, 0.92rem soft graphite: "currently in" city, live clock, green status dot and pixel dog on the left; "get cv" on the right in graphite ink (500, with a file icon, 44px target), underlined on hover.
 
 ### Cards / Containers
 - **Corner Style:** 10px.
@@ -270,24 +322,25 @@ Decorative and `aria-hidden`; every action lives on the plaques. Under 140 faces
 
 ### Navigation
 - **Style:** fixed top bar on paper; "Etharic" wordmark 600 1.1rem in graphite ink; route links 0.95rem in soft graphite with 16px line icons, the current route in graphite ink. Icons drop at 680px and below, and the nav becomes static with a hairline under it.
-- **Theme switch:** 48 x 27px pill, track switch-track (off) or signal green (on), white 21px knob; the theme changes under a circular view-transition reveal.
+- **Theme switch:** 48 x 27px pill, track switch-track (off) or switch-on (on), white 21px knob; the theme changes under a circular view-transition reveal.
 
 ### Inline Links
-Underlined at 1px with 2 to 4px offset. In prose and intros the underline sits in soft graphite and darkens to graphite ink on hover; "more about me" nudges its arrow 3px right.
+Underlined at 1px with 2 to 4px offset. In prose the underline sits in soft graphite and darkens to graphite ink on hover. In homepage intros the linked terms stay graphite ink in Inter italic with a 2px accent underline.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** take every color from the tokens, with a dark value for each surface color.
-- **Do** keep burnt amber to one or two actions per view (get cv; the picked intro link).
-- **Do** build model depth from the three mount-board shades, the basswood edge and the cast decal.
-- **Do** animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 420ms; keep a 200ms crossfade under reduced motion.
+- **Do** take every colour from the tokens, with a dark value for each surface and accent colour.
+- **Do** route every audience-coloured element through the one accent variable and its paired on-colour so the whole axis changes together.
+- **Do** keep the homepage on one centred axis, and keep every action the sign offers available as a plain control.
+- **Do** animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 460ms; keep an opacity crossfade under reduced motion.
+- **Do** stop the sign's render loop when it settles, after the 15s idle, off screen and in hidden tabs; drop the wave and overshoot under reduced motion.
 - **Do** keep touch targets at 44px minimum and a 2px graphite ink focus ring on every control.
-- **Do** keep Archivo inside the Archivo fence (homepage name, plaques).
+- **Do** keep Archivo inside the Archivo fence (homepage name, sign lines, "picked for" heading).
 
 ### Don't:
 - **Don't** use box-shadows, glass, glow halos or decorative gradients to suggest depth.
-- **Don't** let the model take more than half the viewport width on desktop, or run an animation loop while idle, on touch, or in a hidden tab.
-- **Don't** light more than one tower; the other three stay plain card.
-- **Don't** model a real Frankfurt building; the towers stay abstract.
-- **Don't** use signal green for anything but the theme switch and the status dot.
+- **Don't** hard-code an audience colour or white text on an accent; read the accent and on-accent variables.
+- **Don't** paint a sign face with the accent fill; faces stay tints of their hue.
+- **Don't** add a second rendered 3D object or let the stage grow past 880px wide.
+- **Don't** use signal green for anything but the status dot.

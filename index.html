@@ -20,8 +20,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap&text=abcdefghijklmnopqrstuvwxyz0123456789%21%2C%27%C2%B7%20" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap&text=abcdefghijklmnopqrstuvwxyzNPV0123456789%21%2C%27%C2%B7%20.%3E%3D%2F()%E2%80%99%3A-%7B%7D_%E2%86%92" rel="stylesheet">
 <style>
 :root{--bg:#f0f1f3;--card:#f8f9fa;--ink:#1d1e22;--soft:#646873;--line:#dcdee3;--on:#34c759;--hover:rgba(29,30,34,.05);--accent:#8f5d00;--track:#3a3a40;--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1)}
 ::selection{background:var(--ink);color:var(--bg)}
@@ -312,62 +312,62 @@ body.about-route main{padding-bottom:8px}
  .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .clearline-feature-copy{grid-column:1;grid-row:auto}
  .work-article.clearline-article .clearline-feature-copy{text-align:left}
 }
-/* ---------- homepage: the maquette ---------- */
-:root{--plaque:#f6f5f1;--plate:#cdb48a;--plate-edge:#ad9468;--face-1:#f6f5f1;--face-2:#e4e2db;--face-3:#cbc8bf;--window:#e9a93a;--cast:rgba(74,58,34,.2)}
-:root[data-theme="dark"]{--plate:#3a3127;--plate-edge:#2a231b;--face-1:#55585f;--face-2:#383a40;--face-3:#222428;--plaque:#1c1c1d;--cast:rgba(0,0,0,.4)}
-body.home .wrap{max-width:none;padding:0 24px}
-body.home .hero{min-height:100vh;padding:112px 0 104px;justify-content:center}
-body.home .hero h1.hero-name{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:118%;font-weight:700;font-size:clamp(2.6rem,5.4vw,5.5rem);line-height:.98;letter-spacing:-.02em;margin:0 0 30px;max-width:min(46rem,47vw);text-wrap:balance}
-.hero-name .nm{display:block}
-body.home .hero .for-intro{font-size:clamp(1.15rem,1.65vw,1.5rem);line-height:1.5;max-width:min(36rem,40vw);margin:0}
-body.home .hero .more-about{align-self:flex-start;margin-top:22px}
-.for-intro.picked a.intro-em:first-of-type{color:var(--accent);text-decoration-color:currentColor}
-.maq{position:absolute;right:clamp(8px,3vw,56px);top:max(96px,14vh);width:min(50vw,800px);height:70vh;z-index:0}
-.maq-stage{position:absolute;left:0;right:0;top:0;bottom:64px;perspective:1400px;perspective-origin:50% 25%;display:grid;place-items:center}
-.maq-scale{transform-style:preserve-3d}
-.maq-plate{position:relative;width:480px;height:300px;background:var(--plate);transform-style:preserve-3d;transform:rotateX(60deg) rotateZ(-30deg);transition:transform .42s var(--ease-out),background-color .3s ease}
-.maq-plate .pe{position:absolute;background:var(--plate-edge)}
-.maq-plate .pe-s{left:0;top:300px;width:480px;height:14px;transform-origin:50% 0;transform:rotateX(-90deg)}
-.maq-plate .pe-e{left:480px;top:0;width:14px;height:300px;transform-origin:0 50%;transform:rotateY(90deg)}
-.maq-plate .pe-w{left:-14px;top:0;width:14px;height:300px;transform-origin:100% 50%;transform:rotateY(-90deg)}
-.tw{position:absolute;transform-style:preserve-3d;cursor:pointer}
-.cu{position:absolute;transform-style:preserve-3d;transform:translateZ(var(--z));transition:transform .42s var(--ease-out),opacity .3s ease}
-.cu i{position:absolute;display:block}
-.cu .fs{left:0;transform-origin:50% 100%;transform:rotateX(-90deg);background:var(--face-3);--fc:var(--face-3)}
-.cu .fw{top:0;transform-origin:100% 50%;transform:rotateY(90deg);background:var(--face-2);--fc:var(--face-2)}
-.cu .ft{left:0;top:0;background:var(--face-1)}
-.cu .fs,.cu .fw{box-shadow:inset 0 -1px 0 rgba(0,0,0,.08)}
-.cu.c .fs::after,.cu.c .fw::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s ease;background-color:var(--window);background-image:linear-gradient(90deg,var(--fc) 0 5px,transparent 5px),linear-gradient(var(--fc) 0 8px,transparent 8px 20px,var(--fc) 20px);background-size:12px 100%,100% 28px}
-.tw.lit .cu.c .fs::after,.tw.lit .cu.c .fw::after{opacity:1}
-.cu.x{transform:translateZ(var(--z0));opacity:0}
-.tw.sel .cu.x{transform:translateZ(var(--z));opacity:1}
-.tw.sel .cu.hd{transform:translateZ(calc(var(--z) + 28px))}
-.casts{position:absolute;inset:0;overflow:hidden;transform:translateZ(.3px);pointer-events:none}
-.cast{position:absolute;background:var(--cast);transform-origin:0 0;transform:skewX(var(--lx,16deg));transition:transform .42s var(--ease-out);filter:blur(1.5px);pointer-events:none}
-.maq-lead{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
-.maq-lead path{fill:none;stroke:var(--soft);stroke-width:1;opacity:.55;transition:opacity .2s ease,stroke .2s ease}
-.maq-lead circle{fill:var(--soft);opacity:.7}
-.maq-lead path.on{stroke:var(--ink);opacity:1}
-.maq-lead circle.on{fill:var(--ink);opacity:1}
-.plaques{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:10px;margin:0;flex-wrap:nowrap}
-.plaques button{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:600;font-size:.8rem;letter-spacing:.01em;color:var(--ink);background:var(--plaque);border:1px solid var(--line);border-radius:3px;padding:0 14px;margin:0;min-height:44px;display:inline-grid;align-content:center;white-space:nowrap;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .16s var(--ease-out)}
-.plaques button.active{color:var(--ink);font-weight:600;border-color:var(--ink)}
-.plaques button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.plaques button:active{transform:scale(.97)}
-.plaques button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:3px}
-@media (prefers-reduced-motion:reduce){.maq-plate,.cu,.cast{transition:none}.plaques button:active{transform:none}}
-@supports not (transform-style:preserve-3d){.maq-plate{transform:none}}
-@media (max-width:1050px){.plaques button{padding:0 10px;font-size:.74rem}}
+/* ---------- homepage: the sign ---------- */
+:root{--acc-0:#1d1e22;--on-0:#fff;--acc-1:#2f6fe0;--on-1:#fff;--acc-2:#e6a817;--on-2:#1d1e22;--acc-3:#2fb57a;--on-3:#1d1e22}
+:root[data-theme="dark"]{--acc-0:#f2f2f1;--on-0:#111;--acc-1:#7aa7ff;--on-1:#111;--acc-2:#f2b93b;--on-2:#111;--acc-3:#4fd08f;--on-3:#111}
+#app{--acc:var(--acc-0);--on-acc:var(--on-0)}
+#app[data-aud="1"]{--acc:var(--acc-1);--on-acc:var(--on-1)}#app[data-aud="2"]{--acc:var(--acc-2);--on-acc:var(--on-2)}#app[data-aud="3"]{--acc:var(--acc-3);--on-acc:var(--on-3)}
+.switch[aria-checked="true"]{background:#4a4b52}
+body.home .wrap{max-width:1120px}
+.hx{display:flex;flex-direction:column;align-items:center;text-align:center;padding:100px 0 0}
+.hx-name{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:700;font-size:clamp(2.3rem,4.6vw,4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.hx-q{font-size:.95rem;color:var(--soft);margin:26px 0 10px}
+.hx-seg{position:relative;display:inline-flex;padding:4px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+.hx-seg button{position:relative;z-index:1;font:inherit;font-size:.92rem;font-weight:500;color:var(--soft);background:none;border:0;padding:0 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:color .3s ease}
+@media (hover:hover){.hx-seg button:hover{color:var(--ink)}}
+.hx-seg button[aria-selected="true"]{color:var(--on-acc)}
+.hx-seg button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.hx-ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--acc);transition:transform .42s var(--ease-out),width .42s var(--ease-out),background-color .42s ease}
+.hx-seg.still .hx-ind{transition:none}
+.hx-stage{position:relative;width:min(100%,880px);aspect-ratio:2.75/1;margin:14px 0 0}
+.hx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s ease;cursor:grab;touch-action:pan-y}
+.hx.hx-3d .hx-canvas{opacity:1}
+.hx-canvas.grabbing{cursor:grabbing}
+.hx.hx-no3d .hx-stage{aspect-ratio:auto;height:8px}
+.hx-panel{margin-top:4px;max-width:40rem;display:flex;flex-direction:column;align-items:center}
+.hx.hx-3d .hx-lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hx .hx-intro{font-size:clamp(1.05rem,1.4vw,1.22rem);line-height:1.6;color:var(--ink);margin:0;min-height:0}
+.hx .hx-intro .intro-em{font-family:inherit;font-style:italic;font-weight:400;transform:none;display:inline}
+.hx .hx-intro a.intro-em{color:inherit;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:4px}
+.hx-ctas{display:flex;gap:24px;align-items:center;justify-content:center;margin-top:22px;flex-wrap:wrap}
+.hx-cta{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:var(--on-acc);text-decoration:none;font-weight:600;font-size:.95rem;padding:0 22px;min-height:48px;border-radius:999px;transition:transform .16s var(--ease-out),background-color .42s ease,color .42s ease}
+.hx-cta svg{transition:transform .2s var(--ease-out)}
+.hx-cta:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.hx-cta:hover svg{transform:translateX(3px)}}
+.hx .more-about{align-self:center;margin:0}
+.hx-picked{padding:44px 0 8px}
+.hx-picked{text-align:center}
+.hx-picked .hx-cards{text-align:left}
+.hx-picked h2{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.01em;margin:0 0 20px}
+.hx-picked h2 b{font-weight:700;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:3px;text-underline-offset:6px}
+.hx-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.hx-card{display:block;text-decoration:none;color:var(--ink)}
+.hx-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--card);display:block;transition:transform .3s var(--ease-out)}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.hx-card:hover img{transform:translateY(-3px)}}
+.hx-card .meta{font-size:.8rem;color:var(--soft);margin:12px 0 4px}
+.hx-card .ttl{font-weight:600;font-size:1.02rem;line-height:1.35}
+.hx-close{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 0 32px;border-top:1px solid var(--line);margin-top:64px;color:var(--soft);font-size:.92rem}
+.hx-where{display:flex;align-items:center;gap:8px}
+.hx-cv{color:var(--ink);display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:44px;font-weight:500}
+@media (hover:hover){.hx-cv:hover{text-decoration:underline;text-underline-offset:3px}}
 @media (max-width:680px){
   body.home .wrap{padding:0 20px}
-  body.home .hero{min-height:0;padding:28px 0 40px;justify-content:flex-start}
-  body.home .hero h1.hero-name{font-stretch:100%;font-size:clamp(2.2rem,10.4vw,2.8rem);max-width:none;margin:0 0 4px}
-  .maq{position:relative;right:auto;top:auto;width:auto;height:auto;margin:0 -20px 22px}
-  .maq-stage{position:relative;left:auto;right:auto;top:auto;bottom:auto;height:max(240px,34vh);overflow:clip}
-  .plaques{position:static;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 20px}
-  .plaques button{justify-content:center;font-size:.8rem}
-  .maq-lead{display:none}
-  body.home .hero .for-intro{max-width:none;font-size:1.15rem}
+  .hx{padding-top:28px}
+  .hx-name .nm{display:block}
+  .hx-seg button{padding:0 11px;font-size:.85rem}
+  .hx-stage{width:calc(100% + 40px);margin:12px -20px 0;aspect-ratio:2.2/1}
+  .hx-cards{grid-template-columns:1fr;gap:28px}
+  .hx-picked{padding-top:36px}
 }
 </style>
 </head>
@@ -531,201 +531,87 @@ function initTile() {
 }
 let forLocked = 0;
 
-// ---------- the maquette: a card study model, one tower per audience ----------
-const MQ_H = 28;                                   // one course of card
-const MQ_TURN = [-30, -24, -18, -12];              // plate turn per audience (deg)
-const MQ_LIGHT = [16, 22, 28, 34];                 // light angle per audience: cast-shadow skew (deg)
-// x, y: footprint position on the 480x300 plate. stacks: courses as [w, d]; extra: the course a selection adds.
-const MQ_TOWERS = [
-  { x: 36,  y: 168, stacks: [{ ox: 48, oy: 40, courses: [[96, 80], [80, 64], [64, 48], [48, 32]], extra: [32, 20], stepped: true }] },   // for anyone: a low stepped tower
-  { x: 168, y: 150, stacks: [{ ox: 42, oy: 20, courses: Array(6).fill([84, 40]), extra: [84, 40] }] },                                    // recruiters: a clean slab
-  { x: 280, y: 104, stacks: [{ ox: 30, oy: 30, courses: Array(8).fill([60, 60]), extra: [60, 60], crown: true }] },                       // finance: the tallest, crowned
-  { x: 356, y: 70,  stacks: [{ ox: 20, oy: 20, courses: Array(5).fill([40, 40]), extra: [40, 40] },
-                             { ox: 96, oy: 20, courses: Array(5).fill([40, 40]), extra: [40, 40], anchor: true }], bridge: true }                     // engineers: twins joined by a bridge
+// ---------- homepage: the sign, four faces, one per audience ----------
+const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const AUDIENCES = [
+  { label: "anyone",     tag: "for anyone",                lead: "i’m a lifehacker",
+    cta: () => ({ text: "start with this essay",  href: "#work-post-why-i-started-a-personal-website" }),
+    picks: () => ["clearline-why-i-built-it", newestIn("macro-market")[0], "why-i-started-a-personal-website"] },
+  { label: "recruiters", tag: "for recruiters",            lead: "i’m a finance student",
+    cta: () => ({ text: "download my cv", href: "cv.pdf", file: true }),
+    picks: () => ["clearline-why-i-built-it", "ea-55bn-take-private", newestIn("macro-market")[0]] },
+  { label: "finance",    tag: "for finance professionals", lead: "i’m→ NPV > 0, {aspiring_analyst}",
+    cta: () => ({ text: "read my latest analysis", href: "#work-post-" + newestIn("macro-market")[0] }),
+    picks: () => newestIn("macro-market").slice(0, 3) },
+  { label: "engineers",  tag: "for engineers",             lead: "i’m {highly_technical}",
+    cta: () => ({ text: "see what i built", href: "#work-post-clearline-why-i-built-it" }),
+    picks: () => ["clearline-why-i-built-it", "habitkit-small-habits-big-changes", "why-i-started-a-personal-website"] }
 ];
-function mqBox(w, d, h, cx, cy, z, cls, top, z0) {
-  const zs = z0 === undefined ? `--z:${z}px` : `--z:${z}px;--z0:${z0}px`;
-  return `<div class="cu ${cls}" style="left:${cx - w / 2}px;top:${cy - d / 2}px;width:${w}px;height:${d}px;${zs}" data-z="${z}">` +
-    `<i class="fs" style="top:${d - h}px;width:${w}px;height:${h}px"></i>` +
-    `<i class="fw" style="left:${-h}px;width:${h}px;height:${d}px"></i>` +
-    (top ? `<i class="ft" style="width:${w}px;height:${d}px;transform:translateZ(${h}px)"></i>` : "") + `</div>`;
+// sign faces per audience: [light, dark]
+const SIGN_THEMES = [
+  [{ bg: "#f7f5f0", ink: "#1d1e22", tag: "#6a6c74", rule: "#dedad1" }, { bg: "#26272a", ink: "#f2f2f1", tag: "#a3a3a6", rule: "#3a3b3f" }],
+  [{ bg: "#e6edfb", ink: "#14213d", tag: "#4a5a7c", rule: "#cbd7f0" }, { bg: "#1b2438", ink: "#e3ebff", tag: "#93a6cf", rule: "#2c3956" }],
+  [{ bg: "#f4d77e", ink: "#2b2108", tag: "#5c4710", rule: "#e3c264" }, { bg: "#4a3810", ink: "#fbe3a2", tag: "#d9bd74", rule: "#5c4614" }],
+  [{ bg: "#def2e6", ink: "#0f2a1c", tag: "#476b57", rule: "#c3e3cf" }, { bg: "#142d21", ink: "#d3f4e1", tag: "#83b89a", rule: "#22432f" }]
+];
+const newestIn = key => (WORK_POSTS_SORTED[key] || []).map(p => p.id);
+function workCard(id) {
+  for (const key of Object.keys(WORK_POSTS)) {
+    const p = WORK_POSTS[key].find(x => x.id === id);
+    if (!p) continue;
+    const a = WORK_ARTICLES[id], mins = a ? Math.max(1, Math.round(a.totalWords / 220)) : 0;
+    const section = WORK_SECTION_BY_KEY[key];
+    return `<a class="hx-card" href="#work-post-${esc(id)}"><img src="${esc(p.image)}" alt="" loading="lazy" decoding="async"><div class="meta">${esc(section ? section.label : key)}${mins ? ` · ${mins} min read` : ""}</div><div class="ttl">${esc(p.title)}</div></a>`;
+  }
+  return "";
 }
-function maquetteHtml() {
-  let casts = "";
-  const towers = MQ_TOWERS.map((t, ti) => {
-    let inner = "";
-    t.stacks.forEach(st => {
-      const n = st.courses.length, [bw, bd] = st.courses[0];
-      casts += `<div class="cast" style="left:${t.x + st.ox - bw / 2}px;top:${t.y + st.oy - bd / 2}px;width:${bw}px;height:${bd + n * MQ_H * .4}px"></div>`;
-      st.courses.forEach(([w, d], k) => {
-        const next = st.courses[k + 1];
-        const top = st.stepped ? true : false;
-        inner += mqBox(w, d, MQ_H, st.ox, st.oy, k * MQ_H, k === 0 && (st.anchor || t.stacks.length === 1) ? "c an" : "c", top && (!next || next[0] < w));
-      });
-      const [ew, ed] = st.extra;
-      inner += mqBox(ew, ed, MQ_H, st.ox, st.oy, n * MQ_H, "c x", st.stepped, (n - 1) * MQ_H);
-      if (!st.stepped) {
-        const [tw, td] = st.courses[n - 1];
-        inner += `<div class="cu hd" style="left:${st.ox - tw / 2}px;top:${st.oy - td / 2}px;width:${tw}px;height:${td}px;--z:${n * MQ_H}px" data-z="${n * MQ_H}"><i class="ft" style="width:${tw}px;height:${td}px"></i></div>`;
-      }
-      if (st.crown) {
-        inner += mqBox(40, 40, 20, st.ox, st.oy, n * MQ_H, "hd", true);
-        inner += mqBox(8, 8, 36, st.ox, st.oy, n * MQ_H + 20, "hd", true);
-      }
-    });
-    if (t.bridge) inner += mqBox(36, 22, 14, 58, 20, 2 * MQ_H, "br", true);
-    return `<div class="tw" data-i="${ti}" style="left:${t.x}px;top:${t.y}px">${inner}</div>`;
-  }).join("");
-  return `<div class="maq-stage" aria-hidden="true"><div class="maq-scale"><div class="maq-plate"><i class="pe pe-s"></i><i class="pe pe-w"></i><i class="pe pe-e"></i><div class="casts">${casts}</div>${towers}</div></div></div>`;
+const audCards = i => AUDIENCES[i].picks().filter(Boolean).map(workCard).join("");
+function audPanel(i) {
+  const c = AUDIENCES[i].cta();
+  const full = FOR_CATEGORIES[i].text, lead = AUDIENCES[i].lead;
+  const rest = full.startsWith(lead) ? full.slice(lead.length).replace(/^\s+/, "") : full;
+  const leadHtml = full.startsWith(lead) ? `<span class="hx-lead">${esc(lead)} </span>` : "";
+  return `<p class="for-intro hx-intro">${leadHtml}${formatForIntro(rest)}</p>` +
+    `<div class="hx-ctas"><a class="hx-cta" href="${esc(c.href)}"${c.file ? ' target="_blank" rel="noopener"' : ""}>${esc(c.text)}${ARROW}</a>` +
+    `<a class="more-about" href="#about"><span>more about me</span>${ARROW}</a></div>`;
 }
-let maqCleanup = null;
-function initMaquette() {
-  if (maqCleanup) { maqCleanup(); maqCleanup = null; }
-  const root = document.querySelector(".maq");
+let heroCleanup = null, hero3d = null;
+function initAudience() {
+  if (heroCleanup) { heroCleanup(); heroCleanup = null; }
+  const root = document.querySelector(".hx");
   if (!root) return;
-  const stage = root.querySelector(".maq-stage"), scaleEl = root.querySelector(".maq-scale"), plate = root.querySelector(".maq-plate");
-  const bar = root.querySelector(".plaques"), tabs = [...bar.querySelectorAll("[role=tab]")];
-  const towers = [...root.querySelectorAll(".tw")], lead = root.querySelector(".maq-lead");
-  const still = REDUCED_MOTION.matches;
-  const fine = matchMedia("(hover:hover) and (pointer:fine)").matches && !still;
-  let s = 1, tx = 0, ty = 0, vx = 0, vy = 0, gx = 0, gy = 0, raf = 0, visible = true, sel = forLocked;
-  const applyScale = () => { scaleEl.style.transform = `scale(${s}) rotateX(${tx}deg) rotateY(${ty}deg)`; };
-  const fit = () => {
-    const r = stage.getBoundingClientRect();
-    s = Math.max(.4, Math.min(1.2, r.width / (r.width < 560 ? 780 : 700), r.height / 520));
-    applyScale(); drawLeads();
+  const seg = root.querySelector(".hx-seg"), tabs = [...seg.querySelectorAll("[role=tab]")], ind = seg.querySelector(".hx-ind");
+  const panel = root.querySelector(".hx-panel"), cards = document.querySelector(".hx-cards"), canvas = root.querySelector(".hx-canvas");
+  const names = [...document.querySelectorAll("[data-aud-name]")];
+  const reduced = REDUCED_MOTION.matches;
+  let alive = true;
+  APP.dataset.aud = forLocked;
+  const moveInd = () => { const t = tabs[forLocked]; ind.style.width = t.offsetWidth + "px"; ind.style.transform = `translateX(${t.offsetLeft - 4}px)`; };
+  // hold the panel at its tallest text so switching never shifts the page
+  const fitPanel = () => {
+    if (matchMedia("(max-width:680px)").matches) { panel.style.minHeight = ""; return; }   // phones: let the text set the height
+    const cur = panel.innerHTML; panel.style.minHeight = "0px"; let h = 0;
+    AUDIENCES.forEach((a, i) => { panel.innerHTML = audPanel(i); h = Math.max(h, panel.offsetHeight); });
+    panel.innerHTML = cur; panel.style.minHeight = h + "px";
   };
-  const show = i => {
-    towers.forEach((t, k) => t.classList.toggle("lit", k === i));
-    root.style.setProperty("--lx", MQ_LIGHT[i] + "deg");
-    drawLeads(i);
+  const swap = (el, html) => {
+    el.innerHTML = html;
+    el.animate(reduced ? [{ opacity: 0 }, { opacity: 1 }]
+      : [{ opacity: 0, transform: "translateY(10px)", filter: "blur(4px)" }, { opacity: 1, transform: "none", filter: "blur(0)" }],
+      { duration: reduced ? 160 : 460, easing: "cubic-bezier(.23,1,.32,1)" });
   };
-  const select = i => {
-    sel = i;
-    towers.forEach((t, k) => t.classList.toggle("sel", k === i));
-    plate.style.transform = `rotateX(60deg) rotateZ(${MQ_TURN[i]}deg)`;
-    show(i);
-    settleLeads();
+  const select = (i, from3d) => {
+    if (i === forLocked) return;
+    forLocked = i; APP.dataset.aud = i;
+    tabs.forEach((t, k) => { t.setAttribute("aria-selected", k === i); t.tabIndex = k === i ? 0 : -1; });
+    panel.setAttribute("aria-labelledby", tabs[i].id);
+    moveInd();
+    swap(panel, audPanel(i));
+    if (cards) swap(cards, audCards(i));
+    names.forEach(n => { n.textContent = AUDIENCES[i].label; });
+    if (hero3d && !from3d) hero3d.setAudience(i);
   };
-  // leader lines from each plaque up to the foot of its tower (desktop only)
-  function drawLeads(on = sel) {
-    if (!lead || getComputedStyle(lead).display === "none") return;
-    const base = root.getBoundingClientRect();
-    let out = "";
-    towers.forEach((t, i) => {
-      const foot = t.querySelector(".cu.an .fs").getBoundingClientRect(), tab = tabs[i].getBoundingClientRect();
-      const x1 = tab.left + tab.width / 2 - base.left, y1 = tab.top - base.top;
-      const x2 = foot.left + foot.width / 2 - base.left, y2 = foot.bottom - base.top;
-      const c = i === on ? ' class="on"' : "";
-      out += `<path${c} d="M${x1.toFixed(1)} ${y1.toFixed(1)} V${((y1 + y2) / 2).toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)}"/><circle${c} cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" r="2.5"/>`;
-    });
-    lead.innerHTML = out;
-  }
-  let leadTimer = 0;
-  function settleLeads() {               // redraw while the plate turns, then stop
-    const end = performance.now() + 480;
-    cancelAnimationFrame(leadTimer);
-    const step = () => { drawLeads(); if (performance.now() < end) leadTimer = requestAnimationFrame(step); };
-    leadTimer = requestAnimationFrame(step);
-  }
-  // pointer tilt: mouse only, within ±3°, on a spring; idles when settled
-  const frame = () => {
-    vx = (vx + (gx - tx) * .08) * .78; vy = (vy + (gy - ty) * .08) * .78;
-    tx += vx; ty += vy;
-    const settled = Math.abs(gx - tx) < .01 && Math.abs(gy - ty) < .01 && Math.abs(vx) < .01 && Math.abs(vy) < .01;
-    if (settled) { tx = gx; ty = gy; }
-    applyScale(); drawLeads();
-    raf = (!settled && visible && !document.hidden) ? requestAnimationFrame(frame) : 0;
-  };
-  const kick = () => { if (!raf && visible && !document.hidden) raf = requestAnimationFrame(frame); };
-  const onMove = e => {
-    gy = Math.max(-3, Math.min(3, (e.clientX / innerWidth - .5) * 6));
-    gx = Math.max(-3, Math.min(3, -(e.clientY / innerHeight - .5) * 6));
-    kick();
-  };
-  const onLeave = () => { gx = gy = 0; kick(); };
-  // the towers preview and select like their plaques
-  let hoverTower = null;
-  const towerOf = e => e.target.closest && e.target.closest(".tw");
-  const onOver = e => { const t = towerOf(e); if (t === hoverTower) return; if (hoverTower) tabs[+hoverTower.dataset.i].dispatchEvent(new Event("mouseleave")); hoverTower = t; if (t) tabs[+t.dataset.i].dispatchEvent(new Event("mouseenter")); };
-  const onOut = e => { if (!stage.contains(e.relatedTarget) && hoverTower) { tabs[+hoverTower.dataset.i].dispatchEvent(new Event("mouseleave")); hoverTower = null; } };
-  const onClick = e => { const t = towerOf(e); if (t) tabs[+t.dataset.i].click(); };
-  const onShow = e => show(e.detail), onSelect = e => select(e.detail);
-  bar.addEventListener("audience:show", onShow);
-  bar.addEventListener("audience:select", onSelect);
-  stage.addEventListener("pointerover", onOver);
-  stage.addEventListener("pointerout", onOut);
-  stage.addEventListener("click", onClick);
-  if (fine) { window.addEventListener("pointermove", onMove, { passive: true }); document.addEventListener("pointerleave", onLeave); }
-  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) kick(); });
-  io.observe(root);
-  const ro = new ResizeObserver(fit);
-  ro.observe(stage);
-  document.addEventListener("visibilitychange", kick);
-  // first state, then the entrance: once per browser session, courses rise out of the plate
-  select(sel);
-  fit();
-  let risen = true;
-  try { risen = sessionStorage.getItem("maq-risen") === "1"; sessionStorage.setItem("maq-risen", "1"); } catch (e) {}
-  if (!risen && !still) {
-    towers.forEach((t, ti) => {
-      [...t.querySelectorAll(".cu:not(.x)")].forEach(cu => {
-        const z = +cu.dataset.z;
-        if (!z) return;
-        const zEnd = getComputedStyle(cu).transform;
-        cu.animate([{ transform: "translateZ(0px)" }, { transform: zEnd }],
-          { duration: 420, delay: ti * 50 + (z / MQ_H) * 40, easing: "cubic-bezier(.23,1,.32,1)", fill: "backwards" });
-      });
-    });
-    setTimeout(drawLeads, 1000);
-  }
-  maqCleanup = () => {
-    cancelAnimationFrame(raf); cancelAnimationFrame(leadTimer);
-    io.disconnect(); ro.disconnect();
-    document.removeEventListener("visibilitychange", kick);
-    window.removeEventListener("pointermove", onMove);
-    document.removeEventListener("pointerleave", onLeave);
-  };
-}
-let forBarCleanup = null;
-function initForBar() {
-  if (forBarCleanup) { forBarCleanup(); forBarCleanup = null; }
-  const bar = document.querySelector(".for-bar");
-  if (!bar) return;
-  const intro = document.querySelector(".for-intro");
-  const tabs = [...bar.querySelectorAll("button[data-for]")];
-  // Reserve the longest intro height so switching audiences never shifts the page.
-  const fit = () => {
-    const curHTML = intro.innerHTML;
-    intro.style.minHeight = "0px";
-    let h = 0;
-    FOR_CATEGORIES.forEach(c => {
-      intro.textContent = c.text;
-      h = Math.max(h, intro.offsetHeight);
-    });
-    intro.innerHTML = curHTML;
-    intro.style.minHeight = h + "px";
-  };
-  let shown = forLocked;
-  const activate = i => {
-    bar.dispatchEvent(new CustomEvent("audience:show", { detail: i }));
-    if (i !== shown) {
-      intro.innerHTML = formatForIntro(FOR_CATEGORIES[i].text);
-      intro.animate(REDUCED_MOTION.matches
-        ? [{ opacity: .5 }, { opacity: 1 }]
-        : [{ opacity: .35, filter: "blur(3px)" }, { opacity: 1, filter: "blur(0)" }],
-        { duration: 200, easing: "cubic-bezier(.23,1,.32,1)" });
-      shown = i;
-    }
-    tabs.forEach((tab,k) => tab.classList.toggle("active", k === i));
-  };
-  const select = i => {
-    forLocked = i; activate(i);
-    intro.classList.add("picked");
-    bar.dispatchEvent(new CustomEvent("audience:select", { detail: i }));
-    tabs.forEach((tab,k) => { tab.tabIndex = k === i ? 0 : -1; tab.setAttribute("aria-selected", k === i); });
-    intro.setAttribute("aria-labelledby", tabs[i].id);
-  };
+  tabs.forEach((t, i) => t.addEventListener("click", () => select(i)));
   const onKey = e => {
     const n = tabs.length, keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
     let i = forLocked;
@@ -733,27 +619,32 @@ function initForBar() {
     else if (e.key === "Home") i = 0; else if (e.key === "End") i = n - 1; else return;
     e.preventDefault(); select(i); tabs[i].focus();
   };
-  bar.addEventListener("keydown", onKey);
-  const handlers = tabs.map(tab => {
-    const enter = () => activate(+tab.dataset.for);
-    const leave = () => activate(forLocked);
-    const click = () => select(+tab.dataset.for);
-    tab.addEventListener("mouseenter", enter);
-    tab.addEventListener("mouseleave", leave);
-    tab.addEventListener("click", click);
-    return [tab, enter, leave, click];
-  });
-  const ro = new ResizeObserver(fit);
-  ro.observe(bar);
-  fit();
-  forBarCleanup = () => {
-    ro.disconnect();
-    bar.removeEventListener("keydown", onKey);
-    handlers.forEach(([tab,enter,leave,click]) => {
-      tab.removeEventListener("mouseenter", enter);
-      tab.removeEventListener("mouseleave", leave);
-      tab.removeEventListener("click", click);
-    });
+  seg.addEventListener("keydown", onKey);
+  seg.classList.add("still"); moveInd(); fitPanel();
+  requestAnimationFrame(() => seg.classList.remove("still"));
+  const relayout = () => { if (!alive) return; seg.classList.add("still"); moveInd(); fitPanel(); requestAnimationFrame(() => seg.classList.remove("still")); };
+  const ro = new ResizeObserver(relayout);
+  ro.observe(root);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+  // the 3D sign loads after the page is usable; without WebGL the hero shows the full intro instead
+  let gl = false;
+  try { gl = !!(document.createElement("canvas").getContext("webgl2") || document.createElement("canvas").getContext("webgl")); } catch (e) {}
+  const onTheme = () => { if (hero3d) hero3d.setTheme(document.documentElement.dataset.theme === "dark"); };
+  document.addEventListener("themechange", onTheme);
+  if (gl) {
+    import("./vendor/hero3d.js")
+      .then(m => m.mount(canvas, {
+        faces: AUDIENCES.map(a => ({ line: a.lead })), themes: SIGN_THEMES, start: forLocked, reduced,
+        dark: document.documentElement.dataset.theme === "dark",
+        onSnap: i => { select(i, true); }
+      }))
+      .then(h => { if (!alive) { h.destroy(); return; } hero3d = h; h.setAudience(forLocked); root.classList.add("hx-3d"); })
+      .catch(() => root.classList.add("hx-no3d"));
+  } else root.classList.add("hx-no3d");
+  heroCleanup = () => {
+    alive = false; ro.disconnect();
+    document.removeEventListener("themechange", onTheme);
+    if (hero3d) { hero3d.destroy(); hero3d = null; }
   };
 }
 const postRow = p => `<div class="post"><a href="#${esc(p.id)}">${esc(p.title)}</a><span class="sub">${esc(p.date)}</span></div>`;
@@ -784,10 +675,20 @@ function formatForIntro(text) {
 }
 
 function home() {
-  const forTabs = FOR_CATEGORIES.map((c, i) => `<button type="button" role="tab" id="for-tab-${i}" data-for="${i}" class="${i === forLocked ? "active" : ""}" aria-selected="${i === forLocked}" aria-controls="for-intro" tabindex="${i === forLocked ? 0 : -1}" data-label="${esc(c.label)}">${esc(c.label)}</button>`).join("");
-  let h = `<div class="hero"><h1 class="hero-name">hey, i'm <span class="nm">${nameHtml()}<span class="fade">!</span></span></h1><div class="maq">${maquetteHtml()}<svg class="maq-lead" aria-hidden="true"></svg><div class="for-bar plaques" role="tablist" aria-label="who is reading">${forTabs}</div></div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span><svg class="arr" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
+  const a = AUDIENCES[forLocked];
+  const seg = AUDIENCES.map((x, i) => `<button type="button" role="tab" id="aud-${i}" aria-selected="${i === forLocked}" aria-controls="aud-panel" tabindex="${i === forLocked ? 0 : -1}">${esc(x.label)}</button>`).join("");
+  const cvIcon = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>';
+  let h = `<section class="hx">` +
+    `<h1 class="hx-name">hey, i'm <span class="nm">${nameHtml()}<span class="fade">!</span></span></h1>` +
+    `<p class="hx-q" id="aud-q">who's reading?</p>` +
+    `<div class="hx-seg" role="tablist" aria-labelledby="aud-q"><span class="hx-ind" aria-hidden="true"></span>${seg}</div>` +
+    `<div class="hx-stage"><canvas class="hx-canvas" aria-hidden="true"></canvas></div>` +
+    `<div class="hx-panel" id="aud-panel" role="tabpanel" aria-labelledby="aud-${forLocked}">${audPanel(forLocked)}</div>` +
+    `</section>` +
+    `<section class="hx-picked" aria-labelledby="hx-picked-h"><h2 id="hx-picked-h">picked for <b data-aud-name>${esc(a.label)}</b></h2><div class="hx-cards">${audCards(forLocked)}</div></section>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
+  h += `<div class="hx-close">${CITY ? `<div class="hx-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : "<span></span>"}<a class="hx-cv" href="cv.pdf" target="_blank" rel="noopener">${cvIcon}get cv</a></div>`;
   return h;
 }
 function year() {
@@ -955,7 +856,7 @@ function renderWorkSection(key){
 }
 
 function route(forced) {
-  if (maqCleanup) { maqCleanup(); maqCleanup = null; }
+  if (heroCleanup) { heroCleanup(); heroCleanup = null; }
   if (chapterRailCleanup) { chapterRailCleanup(); chapterRailCleanup = null; }
   let id = typeof forced === "string" ? forced : location.hash.slice(1);
   if (id.startsWith("notebook-")) {
@@ -984,8 +885,7 @@ function route(forced) {
   document.body.classList.toggle("about-route", !p && id === "about");
   if (isHome) {
     initTile();
-    initForBar();
-    initMaquette();
+    initAudience();
   }
   if (typeof tick === "function") tick();
   if (id === "blog") {
@@ -1004,7 +904,7 @@ const REDUCED_MOTION = matchMedia("(prefers-reduced-motion:reduce)");
 const DARK_SCHEME = matchMedia("(prefers-color-scheme:dark)");
 function setTheme(t, save, e) {
   const sw = document.getElementById("theme");
-  const apply = () => { document.documentElement.dataset.theme = t; sw.setAttribute("aria-checked", t === "dark"); };
+  const apply = () => { document.documentElement.dataset.theme = t; sw.setAttribute("aria-checked", t === "dark"); document.dispatchEvent(new Event("themechange")); };
   if (save) { try { localStorage.setItem("theme", t); } catch(ex){} }
   const reduce = REDUCED_MOTION.matches;
   if (!save || !e || !document.startViewTransition || reduce) { apply(); return; }
