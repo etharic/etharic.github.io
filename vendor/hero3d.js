@@ -1,56 +1,87 @@
-// Homepage hero: a rotating slat sign (a trivision). Four faces, one per audience;
-// choosing an audience turns the slats in a wave to that audience's line.
+// Homepage hero: a split-flap board. Each tile is a real hinged flap; choosing an
+// audience makes every character flip through the drum to its new letter.
 // Loaded lazily by index.html; the page works without it.
 import * as THREE from './three.module.min.js';
 import { RoundedBoxGeometry } from './RoundedBoxGeometry.js';
 import { RoomEnvironment } from './RoomEnvironment.js';
 
-const QUARTER = Math.PI / 2;
-const N = 12;                 // slats
-const W = 4.2, H = 1.5;       // panel size (world units)
-const SW = W / N;             // slat width = depth (square section)
-const GAP = .004;
-// side face that looks at the camera when a slat's rotation.y = i * 90deg: +z, -x, -z, +x
-// BoxGeometry material groups: 0 +x, 1 -x, 2 +y, 3 -y, 4 +z, 5 -z
-const FACE_GROUP = [4, 1, 5, 0];
+const CW = .26, CH = .38, GX = .028, GY = .05;            // tile size and gaps (world units)
+let ROWS = 2, COLS = 18, BW = 0, BH = 0;                   // set per screen in mount()
+function setGrid(r, c) { ROWS = r; COLS = c; BW = COLS * CW + (COLS - 1) * GX; BH = ROWS * CH + (ROWS - 1) * GY; }
+const PAD = .16;                                            // casing margin
+// the drum: the order a flap passes through
+const DRUM = " abcdefghijklmnopqrstuvwxyz0123456789.,’'!?→>={}_()&-NPV";
+const ATLAS_COLS = 8, ATLAS_ROWS = Math.ceil(DRUM.length / ATLAS_COLS);
+const GW = 128, GH = Math.round(128 * CH / CW);            // glyph cell in the atlas (px)
 
-function easeOutBack(p) { const c1 = 1.15, c3 = c1 + 1; return 1 + c3 * Math.pow(p - 1, 3) + c1 * Math.pow(p - 1, 2); }
-
-function drawFace(canvas, face, theme) {
-  const g = canvas.getContext('2d'), w = canvas.width, h = canvas.height;
-  g.fillStyle = theme.bg; g.fillRect(0, 0, w, h);
-  // hairline frame inset, like a printed placard
-    g.textBaseline = 'alphabetic';
-  g.textAlign = 'center';
-  // the line: as large as fits, at most two lines
-  g.fillStyle = theme.ink;
-  try { g.fontStretch = 'expanded'; } catch (e) {}
-  let size = 200, lines;
-  const wrap = s => {
-    g.font = `700 ${s}px Archivo, Inter, system-ui, sans-serif`;
-    const words = face.line.split(' '), out = []; let cur = '';
-    for (const wd of words) { const t = cur ? cur + ' ' + wd : wd; if (g.measureText(t).width > w - 240 && cur) { out.push(cur); cur = wd; } else cur = t; }
-    if (cur) out.push(cur); return out;
-  };
-  const boxTop = 110, boxBottom = h - 110;
-  while (size > 90) { lines = wrap(size); if (lines.length <= 2 && lines.every(l => g.measureText(l).width <= w - 240) && lines.length * size * 1.0 <= boxBottom - boxTop) break; size -= 8; }
-  const lh = size * 1.0, mid = (boxTop + boxBottom) / 2, first = mid - (lines.length - 1) * lh / 2;
-  lines.forEach((l, i) => g.fillText(l, w / 2, first + i * lh + size * .34));
+function buildAtlas(ink) {
+  const c = document.createElement('canvas');
+  c.width = ATLAS_COLS * GW; c.height = ATLAS_ROWS * GH;
+  const g = c.getContext('2d');
+  try { g.fontStretch = 'semi-expanded'; } catch (e) {}
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  [...DRUM].forEach((ch, i) => {
+    const x = (i % ATLAS_COLS) * GW, y = Math.floor(i / ATLAS_COLS) * GH;
+    g.fillStyle = '#1c1c1e'; g.fillRect(x, y, GW, GH);
+    g.fillStyle = ink;
+    g.font = `700 ${Math.round(GH * .62)}px Archivo, Inter, system-ui, sans-serif`;
+    if (ch !== ' ') g.fillText(ch, x + GW / 2, y + GH * .53);
+    g.fillStyle = '#0b0b0c'; g.fillRect(x, y + GH / 2 - 2, GW, 4);    // the split
+  });
+  return c;
 }
 
-function shadowTexture() {
-  const c = document.createElement('canvas'); c.width = 512; c.height = 128;
+// UVs for the top or bottom half of a glyph; PlaneGeometry vertex order: TL, TR, BL, BR
+function setHalf(geo, ch, half) {
+  let i = DRUM.indexOf(ch); if (i < 0) i = 0;
+  const gx = i % ATLAS_COLS, gy = Math.floor(i / ATLAS_COLS);
+  const u0 = gx / ATLAS_COLS, u1 = (gx + 1) / ATLAS_COLS;
+  const vt = 1 - gy / ATLAS_ROWS, vb = 1 - (gy + 1) / ATLAS_ROWS, vm = (vt + vb) / 2;
+  const [a, b] = half === 'top' ? [vt, vm] : [vm, vb];
+  const uv = geo.attributes.uv;
+  uv.setXY(0, u0, a); uv.setXY(1, u1, a); uv.setXY(2, u0, b); uv.setXY(3, u1, b);
+  uv.needsUpdate = true;
+}
+
+function layout(text) {
+  // words longer than a row break after an underscore, or hard at the row width
+  const words = [];
+  for (const w of text.split(' ')) {
+    let rest = w;
+    while (rest.length > COLS) { const u = rest.lastIndexOf('_', COLS - 1); const cut = u > 2 ? u + 1 : COLS; words.push(rest.slice(0, cut)); rest = rest.slice(cut); }
+    words.push(rest);
+  }
+  const rows = [];
+  let cur = '';
+  for (const w of words) { const t = cur ? cur + ' ' + w : w; if (t.length > COLS && cur) { rows.push(cur); cur = w; } else cur = t; }
+  if (cur) rows.push(cur);
+  if (rows.length === 1 && rows[0].length > 10 && rows[0].includes(' ')) {     // split near the middle
+    const t = rows[0], mid = t.length / 2;
+    let best = -1;
+    for (let j = 0; j < t.length; j++) if (t[j] === ' ' && (best < 0 || Math.abs(j - mid) < Math.abs(best - mid))) best = j;
+    rows.splice(0, 1, t.slice(0, best), t.slice(best + 1));
+  }
+  const lines = rows.slice(0, ROWS);
+  const padTop = Math.floor((ROWS - lines.length) / 2);   // centre short phrases vertically
+  for (let j = 0; j < padTop; j++) lines.unshift('');
+  while (lines.length < ROWS) lines.push('');
+  return lines.map(r => { r = r.slice(0, COLS); const l = Math.floor((COLS - r.length) / 2); return (' '.repeat(l) + r).padEnd(COLS, ' '); });
+}
+
+function wallShadow() {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 200;
   const g = c.getContext('2d');
-  const r = g.createRadialGradient(256, 64, 0, 256, 64, 256);
-  r.addColorStop(0, 'rgba(0,0,0,.5)'); r.addColorStop(.5, 'rgba(0,0,0,.18)'); r.addColorStop(1, 'rgba(0,0,0,0)');
-  g.setTransform(1, 0, 0, .25, 0, 48); g.fillStyle = r; g.fillRect(0, 0, 512, 512);
+  g.filter = 'blur(16px)';
+  g.fillStyle = 'rgba(0,0,0,.65)';
+  g.fillRect(44, 40, 424, 120);
   return new THREE.CanvasTexture(c);
 }
 
-export async function mount(canvas, { faces, themes, start = 0, reduced = false, dark = false, onSnap = () => {} }) {
-  if (document.fonts && document.fonts.load) {
-    try { await Promise.all([document.fonts.load('700 100px Archivo'), document.fonts.load('600 40px Inter')]); } catch (e) {}
-  }
+export async function mount(canvas, { leads, tints, start = 0, reduced = false, dark = false }) {
+  tints = tints.slice();
+  const narrow = canvas.clientWidth < 560;
+  narrow ? setGrid(4, 12) : setGrid(2, 18);
+  if (document.fonts && document.fonts.load) { try { await document.fonts.load('700 80px Archivo'); } catch (e) {} }
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -60,166 +91,165 @@ export async function mount(canvas, { faces, themes, start = 0, reduced = false,
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), .04).texture;
   pmrem.dispose();
+  const camera = new THREE.PerspectiveCamera(20, 3, .1, 100);
+  const key = new THREE.DirectionalLight(0xffffff, 1.3); key.position.set(-5, 6, 7); scene.add(key);
+  const fill = new THREE.DirectionalLight(0xffffff, .35); fill.position.set(5, -1, 4); scene.add(fill);
 
-  const camera = new THREE.PerspectiveCamera(17, 2, .1, 120);
-  const key = new THREE.DirectionalLight(0xffffff, 1.25); key.position.set(-7, 4, 3.5); scene.add(key);   // raking, so slat edges catch light
-  const rim = new THREE.DirectionalLight(0xffffff, .7); rim.position.set(5, 2, -4); scene.add(rim);
+  const mats = tints.map(ink => {
+    const t = new THREE.CanvasTexture(buildAtlas(ink));
+    t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    return new THREE.MeshStandardMaterial({ map: t, roughness: .55, metalness: 0 });
+  });
+  let aud = start;     // colour of characters being written now
 
-  // one canvas per audience face; slats show vertical slices of it
-  const canvases = faces.map(() => { const c = document.createElement('canvas'); c.width = 2048; c.height = Math.round(2048 * H / W); return c; });
-  const maps = canvases.map(c => { const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = renderer.capabilities.getMaxAnisotropy(); return t; });
-  const paint = isDark => { canvases.forEach((c, i) => { drawFace(c, faces[i], themes[i][isDark ? 1 : 0]); maps[i].needsUpdate = true; }); };
-  paint(dark);
+  const board = new THREE.Group(); scene.add(board);
+  // casing
+  const caseMat = new THREE.MeshPhysicalMaterial({ color: 0x141416, roughness: .42, metalness: .2, clearcoat: .35 });
+  const casing = new THREE.Mesh(new RoundedBoxGeometry(BW + PAD * 2, BH + PAD * 2, .22, 4, .045), caseMat);
+  casing.position.z = -.11; board.add(casing);
+  // shadow on the wall behind, cast from the upper-left key light
+  const shadowMat = new THREE.MeshBasicMaterial({ map: wallShadow(), transparent: true, depthWrite: false, opacity: dark ? .75 : .32 });
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(BW + PAD * 2 + .6, BH + PAD * 2 + .5), shadowMat);
+  shadow.position.set(.12, -.14, -.3); board.add(shadow);
 
-  const edgeMat = new THREE.MeshPhysicalMaterial({ color: dark ? 0x3a3b40 : 0xd9d6cf, roughness: .5, clearcoat: .2 });
-  const pivot = new THREE.Group(); scene.add(pivot);
-  const slats = [];
-  const faceMats = faces.map(() => []);   // per audience, across all slats
-  // at rest, faces that are not facing the viewer go dark so the gaps read as shadow, not as stray letters
-  let resting = null, seam = dark ? 0x101011 : 0xa9a69f;
-  const rest = (i, on) => { const key = on ? i : -1; if (resting === key) return; resting = key; faceMats.forEach((ms, a) => ms.forEach(m => m.color.set(on && a !== i ? seam : 0xffffff))); };
-  const geo = new THREE.BoxGeometry(SW - GAP, H, SW - GAP);
-  for (let k = 0; k < N; k++) {
-    const mats = [edgeMat, edgeMat, edgeMat, edgeMat, edgeMat, edgeMat];
-    FACE_GROUP.forEach((grp, a) => {
-      const t = maps[a].clone(); t.repeat.set(1 / N, 1); t.offset.set(k / N, 0); t.needsUpdate = true;
-      mats[grp] = new THREE.MeshStandardMaterial({ map: t, roughness: .9, metalness: 0, envMapIntensity: .55 });
-      faceMats[a].push(mats[grp]);
-    });
-    const m = new THREE.Mesh(geo, mats);
-    m.position.x = -W / 2 + SW / 2 + k * SW;
-    pivot.add(m);
-    slats.push({ mesh: m, rot: start * QUARTER, from: start * QUARTER, to: start * QUARTER, t0: 0, dur: 1 });
+  // tiles: a fixed top half, a fixed bottom half, and a hinged flap between them
+  const cells = [];
+  const half = CH / 2;
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const g = new THREE.Group();
+    g.position.set(-BW / 2 + CW / 2 + c * (CW + GX), BH / 2 - CH / 2 - r * (CH + GY), .01);
+    const top = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); top.position.y = half / 2;
+    const bot = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); bot.position.y = -half / 2;
+    const flap = new THREE.Group(); flap.position.z = .004;
+    const front = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); front.position.y = half / 2;
+    const back = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]);
+    flap.add(front, back); flap.visible = false;
+    g.add(top, bot, flap); board.add(g);
+    cells.push({ top, bot, flap, front, back, ch: ' ', next: ' ', m: start, queue: [], t0: 0, flipping: false });
   }
-  // housing: a dark frame around the slats
-  const frameMat = new THREE.MeshPhysicalMaterial({ color: dark ? 0x55565c : 0xcfcac0, roughness: .35, metalness: .3, clearcoat: .5 });
-  const bar = (w, h, d, x, y) => { const b = new THREE.Mesh(new RoundedBoxGeometry(w, h, d, 3, Math.min(w, h, d) * .3), frameMat); b.position.set(x, y, 0); pivot.add(b); };
-  const FT = .045, FD = SW + .05;
-  bar(W + .16, FT, FD, 0, H / 2 + FT / 2 + .006);
-  bar(W + .16, FT, FD, 0, -H / 2 - FT / 2 - .006);
-  
-  const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTexture(), transparent: true, depthWrite: false });
-  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(W * 1.25, 1.1), shadowMat);
-  shadow.rotation.x = -QUARTER; shadow.position.set(0, -H / 2 - .3, .2);
-  scene.add(shadow);
-
-  const applyTheme = isDark => {
-    renderer.toneMappingExposure = isDark ? .95 : 1.05;
-    scene.environmentIntensity = isDark ? .7 : 1;
-    shadowMat.opacity = isDark ? .95 : .6;
-    edgeMat.color.set(isDark ? 0x3a3b40 : 0xd9d6cf);
-    frameMat.color.set(isDark ? 0x55565c : 0xcfcac0);
-    paint(isDark);
-    seam = isDark ? 0x101011 : 0xa9a69f; resting = null;
+  const show = (cell, ch) => {
+    cell.ch = cell.next = ch; cell.queue = []; cell.flipping = false; cell.m = aud;
+    cell.top.material = cell.bot.material = mats[aud];
+    setHalf(cell.top.geometry, ch, 'top'); setHalf(cell.bot.geometry, ch, 'bot');
+    cell.flap.visible = false; cell.flap.rotation.x = 0;
   };
-  applyTheme(dark);
+  // back of the flap: geometry pre-rotated so it reads upright once the flap has fallen
+  const setBack = (cell, ch) => {
+    const geo = new THREE.PlaneGeometry(CW, half);
+    setHalf(geo, ch, 'bot'); geo.rotateX(Math.PI); geo.translate(0, half / 2, 0);
+    cell.back.geometry.dispose(); cell.back.geometry = geo;
+  };
+
+  const target = i => layout(leads[i]).join('');
+  const FLIP = 85;      // ms per flap fall
+  function setText(i) {
+    const want = target(i);
+    const now = performance.now();
+    cells.forEach((cell, k) => {
+      const to = want[k];
+      if (reduced) { show(cell, to); return; }
+      const from = cell.flipping ? cell.next : cell.ch;
+      if (from === to && !cell.flipping) { cell.queue = []; return; }
+      // pass through the drum toward the target, at most 6 flaps
+      const a = Math.max(DRUM.indexOf(from), 0), b = Math.max(DRUM.indexOf(to), 0);
+      const dist = (b - a + DRUM.length) % DRUM.length;
+      const steps = Math.min(dist || DRUM.length, 6);
+      const q = [];
+      for (let s = 1; s <= steps; s++) q.push(DRUM[(a + Math.round(dist * s / steps)) % DRUM.length]);
+      q[q.length - 1] = to;
+      if (cell.flipping) q.unshift(cell.next);           // finish the flap already falling
+      cell.queue = q;
+      if (!cell.flipping) cell.t0 = now + (k % COLS) * 28 + Math.floor(k / COLS) * 90;
+    });
+    aud = i;
+    kick();
+  }
 
   // motion
-  const TILT = .03, YAW = -.26;
-  let tiltX = TILT, tiltTo = TILT, yaw = YAW, yawTo = YAW, idleUntil = performance.now() + 15000;
-  let dragging = false, dragX = 0, dragBase = 0, raf = 0, visible = true, t0 = performance.now(), last = t0, current = start;
-
+  const TILT = .1, YAW = narrow ? -.08 : -.15;
+  let tiltX = TILT, tiltTo = TILT, yaw = YAW, yawTo = YAW, raf = 0, visible = true, last = performance.now();
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
-    const hf = 2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect);
-    const fitW = (W + .5) / 2 / Math.tan(hf / 2), fitH = (H + .95) / 2 / Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    const dist = Math.max(fitW, fitH);
-    camera.position.set(0, dist * .17, dist);
-    camera.lookAt(0, -.05, 0);
+    const vf = THREE.MathUtils.degToRad(camera.fov / 2), hf = Math.atan(Math.tan(vf) * camera.aspect);
+    const dist = Math.max((BW + PAD * 2 + (narrow ? .55 : 1.3)) / 2 / Math.tan(hf), (BH + PAD * 2 + (narrow ? .6 : .9)) / 2 / Math.tan(vf));
+    camera.position.set(0, dist * .12, dist);
+    camera.lookAt(0, -.02, 0);
     camera.updateProjectionMatrix();
     kick();
   };
-
   function frame(now) {
     const dt = Math.min((now - last) / 1000, .05); last = now;
     const k = 1 - Math.exp(-dt * 6);
     tiltX += (tiltTo - tiltX) * k; yaw += (yawTo - yaw) * k;
-    let moving = false;
-    slats.forEach(s => {
-      if (dragging) return;
-      const p = Math.min(Math.max((now - s.t0) / s.dur, 0), 1);
-      s.rot = s.from + (s.to - s.from) * (reduced ? p : easeOutBack(p));
-      if (p < 1) moving = true;
-    });
-    const idle = !reduced && now < idleUntil;
-    const t = (now - t0) / 1000;
-    pivot.rotation.set(tiltX, yaw + (idle ? Math.sin(t * .5) * .035 : 0), 0, 'YXZ');
-    pivot.position.y = idle ? Math.sin(t * 1.0) * .025 : 0;
-    slats.forEach(s => { s.mesh.rotation.y = s.rot; });
-    rest(current, !moving && !dragging);
+    board.rotation.set(tiltX, yaw, 0, 'YXZ');
+    let busy = false;
+    for (const cell of cells) {
+      if (!cell.queue.length && !cell.flipping) continue;
+      busy = true;
+      if (now < cell.t0) continue;
+      if (!cell.flipping) {            // start a flap: the top shows next, the flap carries current top and next bottom
+        cell.next = cell.queue.shift();
+        cell.top.material = cell.back.material = mats[aud];
+        cell.front.material = mats[cell.m];
+        setHalf(cell.top.geometry, cell.next, 'top');
+        setHalf(cell.front.geometry, cell.ch, 'top');
+        setBack(cell, cell.next);
+        cell.flap.visible = true; cell.flap.rotation.x = 0;
+        cell.flipping = true; cell.t0 = now;
+      }
+      const p = Math.min((now - cell.t0) / FLIP, 1);
+      cell.flap.rotation.x = Math.PI * p * p;        // falls under gravity
+      if (p >= 1) {
+        cell.ch = cell.next; cell.m = aud;
+        cell.bot.material = mats[aud];
+        setHalf(cell.bot.geometry, cell.ch, 'bot');
+        cell.flap.visible = false; cell.flap.rotation.x = 0;
+        cell.flipping = false; cell.t0 = now + 12;
+      }
+    }
     renderer.render(scene, camera);
-    const busy = dragging || moving || idle || Math.abs(tiltTo - tiltX) > .0005 || Math.abs(yawTo - yaw) > .0005;
-    raf = busy && visible && !document.hidden ? requestAnimationFrame(frame) : 0;
+    const settling = Math.abs(tiltTo - tiltX) > .0005 || Math.abs(yawTo - yaw) > .0005;
+    raf = (busy || settling) && visible && !document.hidden ? requestAnimationFrame(frame) : 0;
   }
   function kick() { if (!raf && visible && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(frame); } }
-  const wake = () => { idleUntil = performance.now() + 15000; kick(); };
 
-  function turnTo(i, wave = true) {
-    current = i;
-    const now = performance.now();
-    slats.forEach((s, k) => {
-      const want = i * QUARTER;
-      s.from = s.rot;
-      s.to = want + Math.round((s.rot - want) / (2 * Math.PI)) * 2 * Math.PI;
-      s.t0 = now + (wave && !reduced ? k * 38 : 0);
-      s.dur = reduced ? 1 : 640;
-    });
-    wake();
-  }
-
-  // drag sideways to turn the whole sign; release snaps to the nearest face and selects it
-  const down = e => {
-    if (e.button !== undefined && e.button !== 0) return;
-    dragging = true; dragX = e.clientX; dragBase = slats[0].rot;
-    canvas.setPointerCapture(e.pointerId); canvas.classList.add('grabbing'); wake();
-  };
   const move = e => {
-    if (dragging) {
-      const r = dragBase + (e.clientX - dragX) * .012;
-      slats.forEach(s => { s.rot = r; s.mesh.rotation.y = r; });
-      kick();
-    } else if (!reduced && e.pointerType === 'mouse') {
-      const r = canvas.getBoundingClientRect();
-      yawTo = YAW + ((e.clientX - r.left) / r.width - .5) * .12;
-      tiltTo = TILT + ((e.clientY - r.top) / r.height - .5) * .1;
-      wake();
-    }
-  };
-  const up = e => {
-    if (!dragging) return;
-    dragging = false; canvas.classList.remove('grabbing');
-    try { canvas.releasePointerCapture(e.pointerId); } catch (err) {}
-    const n = Math.round(slats[0].rot / QUARTER), i = ((n % 4) + 4) % 4;
-    slats.forEach(s => { s.from = s.rot; s.to = n * QUARTER; s.t0 = performance.now(); s.dur = 360; });
-    if (Math.abs(e.clientX - dragX) > 4 && i !== current) { current = i; onSnap(i); }
+    if (reduced || e.pointerType !== 'mouse') return;
+    const r = canvas.getBoundingClientRect();
+    yawTo = YAW + ((e.clientX - r.left) / r.width - .5) * .16;
+    tiltTo = TILT + ((e.clientY - r.top) / r.height - .5) * .1;
     kick();
   };
   const leave = () => { yawTo = YAW; tiltTo = TILT; kick(); };
-  canvas.addEventListener('pointerdown', down);
   canvas.addEventListener('pointermove', move);
-  canvas.addEventListener('pointerup', up);
-  canvas.addEventListener('pointercancel', up);
   canvas.addEventListener('pointerleave', leave);
+
+  const applyTheme = isDark => {
+    renderer.toneMappingExposure = isDark ? .95 : 1.05;
+    scene.environmentIntensity = isDark ? .6 : .9;
+    shadowMat.opacity = isDark ? .75 : .32;
+    caseMat.color.set(isDark ? 0x232327 : 0x141416);
+    kick();
+  };
+  applyTheme(dark);
 
   const ro = new ResizeObserver(resize); ro.observe(canvas);
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; kick(); }); io.observe(canvas);
   document.addEventListener('visibilitychange', kick);
-  resize();
+
+  // first view per session: the board flips in from blank; afterwards it simply shows the line
   let shown = true;
-  try { shown = sessionStorage.getItem('sign-shown') === '1'; sessionStorage.setItem('sign-shown', '1'); } catch (e) {}
-  if (!shown && !reduced) {
-    const from = (start + 3) % 4;
-    slats.forEach(s => { s.rot = s.from = s.to = from * QUARTER; s.mesh.rotation.y = s.rot; });
-    current = from;
-    setTimeout(() => turnTo(start), 700);
-  }
+  try { shown = sessionStorage.getItem('board-shown') === '1'; sessionStorage.setItem('board-shown', '1'); } catch (e) {}
+  let current = start;
+  if (!shown && !reduced) { cells.forEach(c => show(c, ' ')); resize(); setTimeout(() => setText(start), 450); }
+  else { const t = target(start); cells.forEach((c, k) => show(c, t[k])); resize(); }
 
   return {
-    setAudience(i) { if (i !== current) turnTo(i); },
-    setTheme(isDark) { applyTheme(isDark); kick(); },
+    setAudience(i) { if (i !== current) { current = i; setText(i); } },
+    setTheme(isDark) { applyTheme(isDark); },
     destroy() {
       cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
       document.removeEventListener('visibilitychange', kick);

@@ -319,9 +319,9 @@ body.about-route main{padding-bottom:8px}
 #app[data-aud="1"]{--acc:var(--acc-1);--on-acc:var(--on-1)}#app[data-aud="2"]{--acc:var(--acc-2);--on-acc:var(--on-2)}#app[data-aud="3"]{--acc:var(--acc-3);--on-acc:var(--on-3)}
 .switch[aria-checked="true"]{background:#4a4b52}
 body.home .wrap{max-width:1120px}
-.hx{display:flex;flex-direction:column;align-items:center;text-align:center;padding:100px 0 0}
-.hx-name{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:700;font-size:clamp(2.3rem,4.6vw,4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
-.hx-q{font-size:.95rem;color:var(--soft);margin:26px 0 10px}
+.hx{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;box-sizing:border-box;height:100vh;height:100svh;min-height:600px;padding:clamp(92px,11vh,108px) 0 clamp(10px,2vh,22px)}
+.hx-name{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:700;font-size:clamp(2.1rem,min(4.6vw,7.2vh),4.2rem);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.hx-q{font-size:.95rem;color:var(--soft);margin:clamp(12px,2.6vh,26px) 0 10px}
 .hx-seg{position:relative;display:inline-flex;padding:4px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
 .hx-seg button{position:relative;z-index:1;font:inherit;font-size:.92rem;font-weight:500;color:var(--soft);background:none;border:0;padding:0 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:color .3s ease}
 @media (hover:hover){.hx-seg button:hover{color:var(--ink)}}
@@ -329,23 +329,25 @@ body.home .wrap{max-width:1120px}
 .hx-seg button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .hx-ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--acc);transition:transform .42s var(--ease-out),width .42s var(--ease-out),background-color .42s ease}
 .hx-seg.still .hx-ind{transition:none}
-.hx-stage{position:relative;width:min(100%,880px);aspect-ratio:2.75/1;margin:14px 0 0}
+.hx-stage{position:relative;width:min(100%,980px);flex:1 1 0;min-height:110px;max-height:min(380px,calc((min(100vw,1120px) - 48px) / 3.4));margin:clamp(6px,1.4vh,14px) 0 0}
 .hx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s ease;cursor:grab;touch-action:pan-y}
 .hx.hx-3d .hx-canvas{opacity:1}
 .hx-canvas.grabbing{cursor:grabbing}
-.hx.hx-no3d .hx-stage{aspect-ratio:auto;height:8px}
+.hx.hx-no3d .hx-stage{flex:0 0 12px;min-height:0}
 .hx-panel{margin-top:4px;max-width:40rem;display:flex;flex-direction:column;align-items:center}
 .hx.hx-3d .hx-lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.hx .hx-intro{font-size:clamp(1.05rem,1.4vw,1.22rem);line-height:1.6;color:var(--ink);margin:0;min-height:0}
+.hx .hx-intro{font-size:clamp(1rem,min(1.4vw,2.2vh),1.22rem);line-height:1.6;color:var(--ink);margin:0;min-height:0}
 .hx .hx-intro .intro-em{font-family:inherit;font-style:italic;font-weight:400;transform:none;display:inline}
 .hx .hx-intro a.intro-em{color:inherit;text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:4px}
-.hx-ctas{display:flex;gap:24px;align-items:center;justify-content:center;margin-top:22px;flex-wrap:wrap}
+.hx-ctas{display:flex;gap:10px 24px;align-items:center;justify-content:center;margin-top:clamp(12px,2.2vh,22px);flex-wrap:wrap}
 .hx-cta{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:var(--on-acc);text-decoration:none;font-weight:600;font-size:.95rem;padding:0 22px;min-height:48px;border-radius:999px;transition:transform .16s var(--ease-out),background-color .42s ease,color .42s ease}
 .hx-cta svg{transition:transform .2s var(--ease-out)}
 .hx-cta:active{transform:scale(.97)}
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.hx-cta:hover svg{transform:translateX(3px)}}
 .hx .more-about{align-self:center;margin:0}
-.hx-picked{padding:44px 0 8px}
+.hx-more{margin-top:clamp(8px,2vh,20px);font:inherit;font-size:.85rem;color:var(--soft);background:none;border:0;display:inline-flex;align-items:center;gap:6px;min-height:40px;cursor:pointer;transition:color .18s}
+@media (hover:hover){.hx-more:hover{color:var(--ink)}}
+.hx-picked{padding:48px 0 8px}
 .hx-picked{text-align:center}
 .hx-picked .hx-cards{text-align:left}
 .hx-picked h2{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-size:clamp(1.4rem,2.2vw,1.8rem);font-weight:700;letter-spacing:-.01em;margin:0 0 20px}
@@ -360,12 +362,14 @@ body.home .wrap{max-width:1120px}
 .hx-where{display:flex;align-items:center;gap:8px}
 .hx-cv{color:var(--ink);display:inline-flex;align-items:center;gap:6px;text-decoration:none;min-height:44px;font-weight:500}
 @media (hover:hover){.hx-cv:hover{text-decoration:underline;text-underline-offset:3px}}
+@media (max-height:560px){.hx{height:auto;min-height:0}.hx-stage{flex:0 0 160px}}
 @media (max-width:680px){
   body.home .wrap{padding:0 20px}
-  .hx{padding-top:28px}
+  .hx{height:calc(100svh - 61px);min-height:560px;padding:20px 0 8px}
   .hx-name .nm{display:block}
   .hx-seg button{padding:0 11px;font-size:.85rem}
-  .hx-stage{width:calc(100% + 40px);margin:12px -20px 0;aspect-ratio:2.2/1}
+  .hx-stage{width:calc(100% + 40px);margin:10px -20px 0;min-height:150px;max-height:calc(100vw / 1.85)}
+  .hx-ctas{margin-top:12px}
   .hx-cards{grid-template-columns:1fr;gap:28px}
   .hx-picked{padding-top:36px}
 }
@@ -531,7 +535,7 @@ function initTile() {
 }
 let forLocked = 0;
 
-// ---------- homepage: the sign, four faces, one per audience ----------
+// ---------- homepage: the split-flap board, one line per audience ----------
 const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const AUDIENCES = [
   { label: "anyone",     tag: "for anyone",                lead: "i’m a lifehacker",
@@ -547,13 +551,8 @@ const AUDIENCES = [
     cta: () => ({ text: "see what i built", href: "#work-post-clearline-why-i-built-it" }),
     picks: () => ["clearline-why-i-built-it", "habitkit-small-habits-big-changes", "why-i-started-a-personal-website"] }
 ];
-// sign faces per audience: [light, dark]
-const SIGN_THEMES = [
-  [{ bg: "#f7f5f0", ink: "#1d1e22", tag: "#6a6c74", rule: "#dedad1" }, { bg: "#26272a", ink: "#f2f2f1", tag: "#a3a3a6", rule: "#3a3b3f" }],
-  [{ bg: "#e6edfb", ink: "#14213d", tag: "#4a5a7c", rule: "#cbd7f0" }, { bg: "#1b2438", ink: "#e3ebff", tag: "#93a6cf", rule: "#2c3956" }],
-  [{ bg: "#f4d77e", ink: "#2b2108", tag: "#5c4710", rule: "#e3c264" }, { bg: "#4a3810", ink: "#fbe3a2", tag: "#d9bd74", rule: "#5c4614" }],
-  [{ bg: "#def2e6", ink: "#0f2a1c", tag: "#476b57", rule: "#c3e3cf" }, { bg: "#142d21", ink: "#d3f4e1", tag: "#83b89a", rule: "#22432f" }]
-];
+// character colour on the split-flap board, per audience (the board itself stays dark in both themes)
+const BOARD_TINTS = ["#f2efe6", "#9cc0ff", "#f5c451", "#6fe0a6"];
 const newestIn = key => (WORK_POSTS_SORTED[key] || []).map(p => p.id);
 function workCard(id) {
   for (const key of Object.keys(WORK_POSTS)) {
@@ -620,13 +619,14 @@ function initAudience() {
     e.preventDefault(); select(i); tabs[i].focus();
   };
   seg.addEventListener("keydown", onKey);
+  root.querySelector(".hx-more").addEventListener("click", () => document.querySelector(".hx-picked").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }));
   seg.classList.add("still"); moveInd(); fitPanel();
   requestAnimationFrame(() => seg.classList.remove("still"));
   const relayout = () => { if (!alive) return; seg.classList.add("still"); moveInd(); fitPanel(); requestAnimationFrame(() => seg.classList.remove("still")); };
   const ro = new ResizeObserver(relayout);
   ro.observe(root);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
-  // the 3D sign loads after the page is usable; without WebGL the hero shows the full intro instead
+  // the 3D board loads after the page is usable; without WebGL the hero shows the full intro instead
   let gl = false;
   try { gl = !!(document.createElement("canvas").getContext("webgl2") || document.createElement("canvas").getContext("webgl")); } catch (e) {}
   const onTheme = () => { if (hero3d) hero3d.setTheme(document.documentElement.dataset.theme === "dark"); };
@@ -634,7 +634,7 @@ function initAudience() {
   if (gl) {
     import("./vendor/hero3d.js")
       .then(m => m.mount(canvas, {
-        faces: AUDIENCES.map(a => ({ line: a.lead })), themes: SIGN_THEMES, start: forLocked, reduced,
+        leads: AUDIENCES.map(a => a.lead), tints: BOARD_TINTS, start: forLocked, reduced,
         dark: document.documentElement.dataset.theme === "dark",
         onSnap: i => { select(i, true); }
       }))
@@ -684,6 +684,7 @@ function home() {
     `<div class="hx-seg" role="tablist" aria-labelledby="aud-q"><span class="hx-ind" aria-hidden="true"></span>${seg}</div>` +
     `<div class="hx-stage"><canvas class="hx-canvas" aria-hidden="true"></canvas></div>` +
     `<div class="hx-panel" id="aud-panel" role="tabpanel" aria-labelledby="aud-${forLocked}">${audPanel(forLocked)}</div>` +
+    `<button type="button" class="hx-more">essays picked for you<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>` +
     `</section>` +
     `<section class="hx-picked" aria-labelledby="hx-picked-h"><h2 id="hx-picked-h">picked for <b data-aud-name>${esc(a.label)}</b></h2><div class="hx-cards">${audCards(forLocked)}</div></section>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
