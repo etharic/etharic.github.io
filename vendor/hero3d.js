@@ -1,34 +1,38 @@
-// Homepage hero: a split-flap board. Each tile is a real hinged flap; choosing an
-// audience makes every character flip through the drum to its new letter.
+// Homepage hero: a split-flap board, kept quiet. Matte tiles in the page's own
+// tone, seen straight on; the only depth is the flaps themselves falling.
+// Choosing an audience makes every character flip through the drum to its new letter.
 // Loaded lazily by index.html; the page works without it.
 import * as THREE from './three.module.min.js';
-import { RoundedBoxGeometry } from './RoundedBoxGeometry.js';
 import { RoomEnvironment } from './RoomEnvironment.js';
 
-const CW = .26, CH = .38, GX = .028, GY = .05;            // tile size and gaps (world units)
+const CW = .26, CH = .38, GX = .03, GY = .05;              // tile size and gaps (world units)
 let ROWS = 2, COLS = 18, BW = 0, BH = 0;                   // set per screen in mount()
 function setGrid(r, c) { ROWS = r; COLS = c; BW = COLS * CW + (COLS - 1) * GX; BH = ROWS * CH + (ROWS - 1) * GY; }
-const PAD = .16;                                            // casing margin
 // the drum: the order a flap passes through
 const DRUM = " abcdefghijklmnopqrstuvwxyz0123456789.,’'!?→>={}_()&-NPV";
 const ATLAS_COLS = 8, ATLAS_ROWS = Math.ceil(DRUM.length / ATLAS_COLS);
 const GW = 128, GH = Math.round(128 * CH / CW);            // glyph cell in the atlas (px)
 
-function buildAtlas(ink) {
-  const c = document.createElement('canvas');
-  c.width = ATLAS_COLS * GW; c.height = ATLAS_ROWS * GH;
+// page-matched tiles: [light, dark]
+const TILE = [{ face: '#fbfbfa', split: 'rgba(29,30,34,.10)' }, { face: '#232325', split: 'rgba(0,0,0,.55)' }];
+
+function roundRect(g, x, y, w, h, r) {
+  g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+}
+function paintAtlas(c, ink, tile) {
   const g = c.getContext('2d');
+  g.clearRect(0, 0, c.width, c.height);
   try { g.fontStretch = 'semi-expanded'; } catch (e) {}
   g.textAlign = 'center'; g.textBaseline = 'middle';
   [...DRUM].forEach((ch, i) => {
     const x = (i % ATLAS_COLS) * GW, y = Math.floor(i / ATLAS_COLS) * GH;
-    g.fillStyle = '#1c1c1e'; g.fillRect(x, y, GW, GH);
+    g.fillStyle = tile.face; roundRect(g, x + 1, y + 1, GW - 2, GH - 2, 10); g.fill();
     g.fillStyle = ink;
-    g.font = `700 ${Math.round(GH * .62)}px Archivo, Inter, system-ui, sans-serif`;
+    g.font = `600 ${Math.round(GH * .58)}px Archivo, Inter, system-ui, sans-serif`;
     if (ch !== ' ') g.fillText(ch, x + GW / 2, y + GH * .53);
-    g.fillStyle = '#0b0b0c'; g.fillRect(x, y + GH / 2 - 2, GW, 4);    // the split
+    g.fillStyle = tile.split; g.fillRect(x + 1, y + GH / 2 - 1, GW - 2, 2);    // the split
   });
-  return c;
 }
 
 // UVs for the top or bottom half of a glyph; PlaneGeometry vertex order: TL, TR, BL, BR
@@ -68,66 +72,52 @@ function layout(text) {
   return lines.map(r => { r = r.slice(0, COLS); const l = Math.floor((COLS - r.length) / 2); return (' '.repeat(l) + r).padEnd(COLS, ' '); });
 }
 
-export async function mount(canvas, { leads, tints, start = 0, reduced = false, dark = false }) {
-  tints = tints.slice();
+export async function mount(canvas, { leads, inks, start = 0, reduced = false, dark = false }) {
+  if (document.fonts && document.fonts.load) { try { await document.fonts.load('600 80px Archivo'); } catch (e) {} }
   const narrow = canvas.clientWidth < 560;
   narrow ? setGrid(4, 12) : setGrid(2, 18);
-  if (document.fonts && document.fonts.load) { try { await document.fonts.load('700 80px Archivo'); } catch (e) {} }
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'low-power' });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.VSMShadowMap;
+  renderer.toneMapping = THREE.NoToneMapping;
 
   const scene = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), .04).texture;
   pmrem.dispose();
-  const camera = new THREE.PerspectiveCamera(20, 3, .1, 100);
-  const key = new THREE.DirectionalLight(0xffffff, 1.5); key.position.set(-4, 5, 6); scene.add(key);
-  key.castShadow = true;
-  key.shadow.mapSize.set(512, 512);
-  Object.assign(key.shadow.camera, { left: -5, right: 5, top: 3, bottom: -3, near: 1, far: 20 });
-  key.shadow.radius = 6; key.shadow.blurSamples = 10; key.shadow.bias = -.0006;
-  const rim = new THREE.DirectionalLight(0xffffff, .7); rim.position.set(2, 5, -5); scene.add(rim);   // edge light, keeps the casing readable on dark
-  const fill = new THREE.DirectionalLight(0xffffff, .35); fill.position.set(5, -1, 4); scene.add(fill);
+  const camera = new THREE.PerspectiveCamera(22, 3, .1, 100);
+  // soft overhead light: a falling flap turns away from it and darkens, which is all the depth the board needs
+  const key = new THREE.DirectionalLight(0xffffff, .55); key.position.set(0, 6, 4); scene.add(key);
 
-  const mats = tints.map(ink => {
-    const t = new THREE.CanvasTexture(buildAtlas(ink));
+  // one glyph sheet per audience, repainted for the theme
+  let isDark = dark;
+  const sheets = inks.map(() => { const c = document.createElement('canvas'); c.width = ATLAS_COLS * GW; c.height = ATLAS_ROWS * GH; return c; });
+  const mats = sheets.map(c => {
+    const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = renderer.capabilities.getMaxAnisotropy();
-    return new THREE.MeshStandardMaterial({ map: t, roughness: .55, metalness: 0 });
+    return new THREE.MeshStandardMaterial({ map: t, emissiveMap: t, emissive: 0xffffff, roughness: .85, metalness: 0, alphaTest: .5 });
   });
+  const paint = () => {
+    // faces carry their own colour (emissive); light only adds the shading that shows a flap turning
+    sheets.forEach((c, i) => { paintAtlas(c, inks[i][isDark ? 1 : 0], TILE[isDark ? 1 : 0]); mats[i].map.needsUpdate = true; mats[i].emissiveIntensity = isDark ? .72 : .45; });
+    key.intensity = isDark ? .35 : .6;
+    scene.environmentIntensity = isDark ? .25 : .5;
+  };
+  paint();
   let aud = start;     // colour of characters being written now
 
   const board = new THREE.Group(); scene.add(board);
-  // casing
-  const caseMat = new THREE.MeshPhysicalMaterial({ color: 0x141416, roughness: .42, metalness: .2, clearcoat: .35 });
-  const casing = new THREE.Mesh(new RoundedBoxGeometry(BW + PAD * 2, BH + PAD * 2, .36, 4, .05), caseMat);
-  casing.position.z = -.18; casing.castShadow = true; casing.receiveShadow = true; board.add(casing);
-  const LIP = .045, LD = .05;
-  const lip = (w, h, x, y) => { const m = new THREE.Mesh(new RoundedBoxGeometry(w, h, LD, 2, .012), caseMat); m.position.set(x, y, LD / 2); m.castShadow = m.receiveShadow = true; board.add(m); };
-  lip(BW + LIP * 2 + .04, LIP, 0, BH / 2 + LIP / 2 + .02);
-  lip(BW + LIP * 2 + .04, LIP, 0, -BH / 2 - LIP / 2 - .02);
-  lip(LIP, BH + .04, -BW / 2 - LIP / 2 - .02, 0);
-  lip(LIP, BH + .04, BW / 2 + LIP / 2 + .02, 0);
-  // shadow on the wall behind, cast from the upper-left key light
-  const shadowMat = new THREE.ShadowMaterial({ opacity: dark ? .5 : .26 });
-  const wall = new THREE.Mesh(new THREE.PlaneGeometry(20, 10), shadowMat);
-  wall.position.z = -.4; wall.receiveShadow = true; scene.add(wall);
-
   // tiles: a fixed top half, a fixed bottom half, and a hinged flap between them
   const cells = [];
   const half = CH / 2;
   for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
     const g = new THREE.Group();
-    g.position.set(-BW / 2 + CW / 2 + c * (CW + GX), BH / 2 - CH / 2 - r * (CH + GY), .01);
-    const top = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); top.position.y = half / 2; top.receiveShadow = true;
-    const bot = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); bot.position.y = -half / 2; bot.receiveShadow = true;
-    const flap = new THREE.Group(); flap.position.z = .004;
+    g.position.set(-BW / 2 + CW / 2 + c * (CW + GX), BH / 2 - CH / 2 - r * (CH + GY), 0);
+    const top = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); top.position.y = half / 2;
+    const bot = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); bot.position.y = -half / 2;
+    const flap = new THREE.Group(); flap.position.z = .003;
     const front = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]); front.position.y = half / 2;
     const back = new THREE.Mesh(new THREE.PlaneGeometry(CW, half), mats[start]);
-    front.castShadow = back.castShadow = true;
     flap.add(front, back); flap.visible = false;
     g.add(top, bot, flap); board.add(g);
     cells.push({ top, bot, flap, front, back, ch: ' ', next: ' ', m: start, queue: [], t0: 0, flipping: false });
@@ -150,12 +140,18 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   function setText(i) {
     const want = target(i);
     const now = performance.now();
+    aud = i;
     cells.forEach((cell, k) => {
       const to = want[k];
       if (reduced) { show(cell, to); return; }
       const from = cell.flipping ? cell.next : cell.ch;
-      if (from === to && !cell.flipping) { cell.queue = []; return; }
-      // pass through the drum toward the target, at most 6 flaps
+      if (from === to && !cell.flipping) {
+        // same letter, new colour: one flap repaints it; blanks stay put
+        if (to !== ' ' && cell.m !== aud) { cell.queue = [to]; cell.t0 = now + (k % COLS) * 34 + Math.floor(k / COLS) * 110; }
+        else cell.queue = [];
+        return;
+      }
+      // pass through the drum toward the target, at most 8 flaps
       const a = Math.max(DRUM.indexOf(from), 0), b = Math.max(DRUM.indexOf(to), 0);
       const dist = (b - a + DRUM.length) % DRUM.length;
       const steps = Math.min(dist || DRUM.length, 8);
@@ -166,22 +162,20 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
       cell.queue = q;
       if (!cell.flipping) cell.t0 = now + (k % COLS) * 34 + Math.floor(k / COLS) * 110;
     });
-    aud = i;
     kick();
   }
 
-  // motion
-  const TILT = .16, YAW = narrow ? -.18 : -.3;
-  let tiltX = TILT, tiltTo = TILT, yaw = YAW, yawTo = YAW, raf = 0, visible = true, last = performance.now();
+  // motion: a barely-there parallax with the mouse; the board otherwise sits flat on the page
+  let tiltX = 0, tiltTo = 0, yaw = 0, yawTo = 0, raf = 0, visible = true, last = performance.now();
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     const vf = THREE.MathUtils.degToRad(camera.fov / 2), hf = Math.atan(Math.tan(vf) * camera.aspect);
-    const dist = Math.max((BW + PAD * 2 + (narrow ? .9 : 1.5)) / 2 / Math.tan(hf), (BH + PAD * 2 + (narrow ? 1.1 : 1.35)) / 2 / Math.tan(vf));
-    camera.position.set(0, dist * .16, dist);
-    camera.lookAt(.08, -.1, 0);
+    const dist = Math.max((BW + .3) / 2 / Math.tan(hf), (BH + .3) / 2 / Math.tan(vf));
+    camera.position.set(0, 0, dist);
+    camera.lookAt(0, 0, 0);
     camera.updateProjectionMatrix();
     kick();
   };
@@ -209,15 +203,15 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
       cell.flap.rotation.x = Math.PI * p * p;        // falls under gravity
       if (p >= 1) {
         cell.ch = cell.next; cell.m = aud;
-        canvas.dataset.flips = (+canvas.dataset.flips || 0) + 1;   // lets tests see the board moving
         cell.bot.material = mats[aud];
         setHalf(cell.bot.geometry, cell.ch, 'bot');
+        canvas.dataset.flips = (+canvas.dataset.flips || 0) + 1;   // lets tests see the board moving
         cell.flap.visible = false; cell.flap.rotation.x = 0;
         cell.flipping = false; cell.t0 = now + 12;
       }
     }
     renderer.render(scene, camera);
-    const settling = Math.abs(tiltTo - tiltX) > .0005 || Math.abs(yawTo - yaw) > .0005;
+    const settling = Math.abs(tiltTo - tiltX) > .0003 || Math.abs(yawTo - yaw) > .0003;
     raf = (busy || settling) && visible && !document.hidden ? requestAnimationFrame(frame) : 0;
   }
   function kick() { if (!raf && visible && !document.hidden) { last = performance.now(); raf = requestAnimationFrame(frame); } }
@@ -225,22 +219,13 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   const move = e => {
     if (reduced || e.pointerType !== 'mouse') return;
     const r = canvas.getBoundingClientRect();
-    yawTo = YAW + ((e.clientX - r.left) / r.width - .5) * .16;
-    tiltTo = TILT + ((e.clientY - r.top) / r.height - .5) * .1;
+    yawTo = ((e.clientX - r.left) / r.width - .5) * .05;
+    tiltTo = ((e.clientY - r.top) / r.height - .5) * .04;
     kick();
   };
-  const leave = () => { yawTo = YAW; tiltTo = TILT; kick(); };
+  const leave = () => { yawTo = 0; tiltTo = 0; kick(); };
   canvas.addEventListener('pointermove', move);
   canvas.addEventListener('pointerleave', leave);
-
-  const applyTheme = isDark => {
-    renderer.toneMappingExposure = isDark ? .95 : 1.05;
-    scene.environmentIntensity = isDark ? .6 : .9;
-    shadowMat.opacity = isDark ? .5 : .26;
-    caseMat.color.set(isDark ? 0x232327 : 0x141416);
-    kick();
-  };
-  applyTheme(dark);
 
   const ro = new ResizeObserver(resize); ro.observe(canvas);
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; kick(); }); io.observe(canvas);
@@ -255,7 +240,7 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
 
   return {
     setAudience(i) { if (i !== current) { current = i; setText(i); } },
-    setTheme(isDark) { applyTheme(isDark); },
+    setTheme(d) { isDark = d; paint(); kick(); },
     destroy() {
       cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
       document.removeEventListener('visibilitychange', kick);

@@ -550,8 +550,8 @@ const AUDIENCES = [
     cta: () => ({ text: "see what i built", href: "#work-post-clearline-why-i-built-it" }),
     picks: () => ["clearline-why-i-built-it", "habitkit-small-habits-big-changes", "why-i-started-a-personal-website"] }
 ];
-// character colour on the split-flap board, per audience (the board itself stays dark in both themes)
-const BOARD_TINTS = ["#f2efe6", "#9cc0ff", "#f5c451", "#6fe0a6"];
+// letter colour on the split-flap board per audience, [light, dark]; tiles follow the page tone
+const BOARD_INKS = [["#1d1e22", "#f2f2f1"], ["#2a5fc4", "#8fb4ff"], ["#8a5a00", "#f2b93b"], ["#1a7a4f", "#5fd39a"]];
 const newestIn = key => (WORK_POSTS_SORTED[key] || []).map(p => p.id);
 function workCard(id) {
   for (const key of Object.keys(WORK_POSTS)) {
@@ -631,9 +631,9 @@ function initAudience() {
   const onTheme = () => { if (hero3d) hero3d.setTheme(document.documentElement.dataset.theme === "dark"); };
   document.addEventListener("themechange", onTheme);
   if (gl) {
-    import("./vendor/hero3d.js?v=3b0c80ea")
+    import("./vendor/hero3d.js?v=4ed007f9")
       .then(m => m.mount(canvas, {
-        leads: AUDIENCES.map(a => a.lead), tints: BOARD_TINTS, start: forLocked, reduced,
+        leads: AUDIENCES.map(a => a.lead), inks: BOARD_INKS, start: forLocked, reduced,
         dark: document.documentElement.dataset.theme === "dark"
       }))
       .then(h => { if (!alive) { h.destroy(); return; } hero3d = h; h.setAudience(forLocked); root.classList.add("hx-3d"); })
