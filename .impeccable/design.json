@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T08:55:29.999Z",
+  "generatedAt": "2026-11-25T12:05:38.060Z",
   "title": "Design System: Etharic",
   "extensions": {
     "colorMeta": {
@@ -486,73 +486,153 @@
       },
       "board-anyone": {
         "role": "secondary",
-        "displayName": "Bone",
-        "canonical": "#f2efe6",
-        "oklch": "oklch(95.2% 0.012 91.5)",
+        "displayName": "Graphite Ink",
+        "canonical": "#1d1e22",
+        "oklch": "oklch(23.6% 0.008 274.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.003 91.5)",
-          "oklch(25.0% 0.007 91.5)",
-          "oklch(35.0% 0.010 91.5)",
-          "oklch(48.0% 0.012 91.5)",
-          "oklch(60.0% 0.012 91.5)",
-          "oklch(72.0% 0.011 91.5)",
-          "oklch(84.0% 0.007 91.5)",
-          "oklch(95.0% 0.003 91.5)"
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
+        ]
+      },
+      "board-anyone-dark": {
+        "role": "secondary",
+        "displayName": "Night Ink",
+        "canonical": "#f2f2f1",
+        "oklch": "oklch(96.1% 0.001 106.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.4)",
+          "oklch(25.0% 0.001 106.4)",
+          "oklch(35.0% 0.001 106.4)",
+          "oklch(48.0% 0.001 106.4)",
+          "oklch(60.0% 0.001 106.4)",
+          "oklch(72.0% 0.001 106.4)",
+          "oklch(84.0% 0.001 106.4)",
+          "oklch(95.0% 0.000 106.4)"
         ]
       },
       "board-recruiters": {
         "role": "secondary",
-        "displayName": "Sky",
-        "canonical": "#9cc0ff",
-        "oklch": "oklch(80.5% 0.098 261.4)",
+        "displayName": "Deep Blue",
+        "canonical": "#2a5fc4",
+        "oklch": "oklch(50.9% 0.168 261.7)",
         "tonalRamp": [
-          "oklch(15.0% 0.021 261.4)",
-          "oklch(25.0% 0.055 261.4)",
-          "oklch(35.0% 0.078 261.4)",
-          "oklch(48.0% 0.096 261.4)",
-          "oklch(60.0% 0.098 261.4)",
-          "oklch(72.0% 0.085 261.4)",
-          "oklch(84.0% 0.058 261.4)",
-          "oklch(95.0% 0.021 261.4)"
+          "oklch(15.0% 0.036 261.7)",
+          "oklch(25.0% 0.094 261.7)",
+          "oklch(35.0% 0.134 261.7)",
+          "oklch(48.0% 0.165 261.7)",
+          "oklch(60.0% 0.168 261.7)",
+          "oklch(72.0% 0.146 261.7)",
+          "oklch(84.0% 0.099 261.7)",
+          "oklch(95.0% 0.036 261.7)"
+        ]
+      },
+      "board-recruiters-dark": {
+        "role": "secondary",
+        "displayName": "Sky",
+        "canonical": "#8fb4ff",
+        "oklch": "oklch(77.2% 0.115 263.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.025 263.8)",
+          "oklch(25.0% 0.065 263.8)",
+          "oklch(35.0% 0.092 263.8)",
+          "oklch(48.0% 0.113 263.8)",
+          "oklch(60.0% 0.115 263.8)",
+          "oklch(72.0% 0.100 263.8)",
+          "oklch(84.0% 0.068 263.8)",
+          "oklch(95.0% 0.025 263.8)"
         ]
       },
       "board-finance": {
         "role": "secondary",
-        "displayName": "Lamp Yellow",
-        "canonical": "#f5c451",
-        "oklch": "oklch(84.3% 0.141 85.5)",
+        "displayName": "Umber",
+        "canonical": "#8a5a00",
+        "oklch": "oklch(50.8% 0.108 73.3)",
         "tonalRamp": [
-          "oklch(15.0% 0.030 85.5)",
-          "oklch(25.0% 0.079 85.5)",
-          "oklch(35.0% 0.113 85.5)",
-          "oklch(48.0% 0.138 85.5)",
-          "oklch(60.0% 0.141 85.5)",
-          "oklch(72.0% 0.123 85.5)",
-          "oklch(84.0% 0.083 85.5)",
-          "oklch(95.0% 0.030 85.5)"
+          "oklch(15.0% 0.023 73.3)",
+          "oklch(25.0% 0.061 73.3)",
+          "oklch(35.0% 0.086 73.3)",
+          "oklch(48.0% 0.106 73.3)",
+          "oklch(60.0% 0.108 73.3)",
+          "oklch(72.0% 0.094 73.3)",
+          "oklch(84.0% 0.064 73.3)",
+          "oklch(95.0% 0.023 73.3)"
+        ]
+      },
+      "board-finance-dark": {
+        "role": "secondary",
+        "displayName": "Marigold",
+        "canonical": "#f2b93b",
+        "oklch": "oklch(81.7% 0.150 82.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.032 82.9)",
+          "oklch(25.0% 0.084 82.9)",
+          "oklch(35.0% 0.119 82.9)",
+          "oklch(48.0% 0.147 82.9)",
+          "oklch(60.0% 0.150 82.9)",
+          "oklch(72.0% 0.130 82.9)",
+          "oklch(84.0% 0.088 82.9)",
+          "oklch(95.0% 0.032 82.9)"
         ]
       },
       "board-engineers": {
         "role": "secondary",
-        "displayName": "Mint",
-        "canonical": "#6fe0a6",
-        "oklch": "oklch(82.5% 0.134 159.1)",
+        "displayName": "Forest",
+        "canonical": "#1a7a4f",
+        "oklch": "oklch(51.5% 0.110 158.4)",
         "tonalRamp": [
-          "oklch(15.0% 0.028 159.1)",
-          "oklch(25.0% 0.075 159.1)",
-          "oklch(35.0% 0.107 159.1)",
-          "oklch(48.0% 0.131 159.1)",
-          "oklch(60.0% 0.134 159.1)",
-          "oklch(72.0% 0.116 159.1)",
-          "oklch(84.0% 0.079 159.1)",
-          "oklch(95.0% 0.028 159.1)"
+          "oklch(15.0% 0.024 158.4)",
+          "oklch(25.0% 0.062 158.4)",
+          "oklch(35.0% 0.088 158.4)",
+          "oklch(48.0% 0.108 158.4)",
+          "oklch(60.0% 0.110 158.4)",
+          "oklch(72.0% 0.096 158.4)",
+          "oklch(84.0% 0.065 158.4)",
+          "oklch(95.0% 0.024 158.4)"
+        ]
+      },
+      "board-engineers-dark": {
+        "role": "secondary",
+        "displayName": "Mint",
+        "canonical": "#5fd39a",
+        "oklch": "oklch(78.5% 0.135 159.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.029 159.5)",
+          "oklch(25.0% 0.076 159.5)",
+          "oklch(35.0% 0.107 159.5)",
+          "oklch(48.0% 0.132 159.5)",
+          "oklch(60.0% 0.135 159.5)",
+          "oklch(72.0% 0.117 159.5)",
+          "oklch(84.0% 0.079 159.5)",
+          "oklch(95.0% 0.029 159.5)"
         ]
       },
       "board-tile": {
         "role": "secondary",
-        "displayName": "Board Black",
-        "canonical": "#1c1c1e",
-        "oklch": "oklch(22.7% 0.004 286.1)",
+        "displayName": "Paper Tile",
+        "canonical": "#fbfbfa",
+        "oklch": "oklch(98.8% 0.001 106.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.4)",
+          "oklch(25.0% 0.001 106.4)",
+          "oklch(35.0% 0.001 106.4)",
+          "oklch(48.0% 0.001 106.4)",
+          "oklch(60.0% 0.001 106.4)",
+          "oklch(72.0% 0.001 106.4)",
+          "oklch(84.0% 0.001 106.4)",
+          "oklch(95.0% 0.000 106.4)"
+        ]
+      },
+      "board-tile-dark": {
+        "role": "secondary",
+        "displayName": "Night Tile",
+        "canonical": "#232325",
+        "oklch": "oklch(25.7% 0.004 286.1)",
         "tonalRamp": [
           "oklch(15.0% 0.001 286.1)",
           "oklch(25.0% 0.002 286.1)",
@@ -567,49 +647,33 @@
       "board-split": {
         "role": "secondary",
         "displayName": "Split Line",
-        "canonical": "#0b0b0c",
-        "oklch": "oklch(15.0% 0.002 286.1)",
+        "canonical": "rgba(29,30,34,.10)",
+        "oklch": "oklch(23.6% 0.008 274.6)",
         "tonalRamp": [
-          "oklch(15.0% 0.000 286.1)",
-          "oklch(25.0% 0.001 286.1)",
-          "oklch(35.0% 0.002 286.1)",
-          "oklch(48.0% 0.002 286.1)",
-          "oklch(60.0% 0.002 286.1)",
-          "oklch(72.0% 0.002 286.1)",
-          "oklch(84.0% 0.001 286.1)",
-          "oklch(95.0% 0.000 286.1)"
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
         ]
       },
-      "board-casing": {
+      "board-split-dark": {
         "role": "secondary",
-        "displayName": "Casing",
-        "canonical": "#141416",
-        "oklch": "oklch(19.2% 0.004 286.0)",
+        "displayName": "Night Split",
+        "canonical": "rgba(0,0,0,.55)",
+        "oklch": "oklch(0.0% 0.000 0.0)",
         "tonalRamp": [
-          "oklch(15.0% 0.001 286.0)",
-          "oklch(25.0% 0.002 286.0)",
-          "oklch(35.0% 0.003 286.0)",
-          "oklch(48.0% 0.004 286.0)",
-          "oklch(60.0% 0.004 286.0)",
-          "oklch(72.0% 0.003 286.0)",
-          "oklch(84.0% 0.002 286.0)",
-          "oklch(95.0% 0.001 286.0)"
-        ]
-      },
-      "board-casing-dark": {
-        "role": "secondary",
-        "displayName": "Night Casing",
-        "canonical": "#232327",
-        "oklch": "oklch(25.8% 0.007 285.9)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 285.9)",
-          "oklch(25.0% 0.004 285.9)",
-          "oklch(35.0% 0.006 285.9)",
-          "oklch(48.0% 0.007 285.9)",
-          "oklch(60.0% 0.007 285.9)",
-          "oklch(72.0% 0.006 285.9)",
-          "oklch(84.0% 0.004 285.9)",
-          "oklch(95.0% 0.002 285.9)"
+          "oklch(15.0% 0.000 0.0)",
+          "oklch(25.0% 0.000 0.0)",
+          "oklch(35.0% 0.000 0.0)",
+          "oklch(48.0% 0.000 0.0)",
+          "oklch(60.0% 0.000 0.0)",
+          "oklch(72.0% 0.000 0.0)",
+          "oklch(84.0% 0.000 0.0)",
+          "oklch(95.0% 0.000 0.0)"
         ]
       }
     },
@@ -620,7 +684,7 @@
       },
       "board-glyph": {
         "displayName": "Board Glyph",
-        "purpose": "One character per board tile (Archivo 700 semi-expanded), 62% of the tile height, centred; drawn into a 128 x 187px atlas cell, one atlas per audience colour."
+        "purpose": "One character per board tile (Archivo 600 semi-expanded), 58% of the tile height, centred; drawn into a 128 x 187px atlas cell, one atlas per audience colour, repainted per theme."
       },
       "headline": {
         "displayName": "Headline",
@@ -660,11 +724,6 @@
         "name": "switch-knob",
         "value": "0 1px 4px rgba(0,0,0,.35)",
         "purpose": "Theme switch knob only."
-      },
-      {
-        "name": "board-wall",
-        "value": "WebGL plane behind the board, 16px-blurred rectangle, offset (.12, -.14, -.3) down-right from the upper-left key light; opacity .32 light, .75 dark",
-        "purpose": "Grounds the homepage board against the page. Not a CSS shadow."
       }
     ],
     "motion": [
@@ -700,23 +759,23 @@
       },
       {
         "name": "board-flap",
-        "value": "85ms per flap, rotation 0 -> PI with progress squared (gravity); 12ms between flaps; at most 6 flaps through the drum",
+        "value": "120ms per flap, rotation 0 -> PI with progress squared (gravity); 12ms between flaps; at most 8 flaps through the drum; a same letter in a new colour gets one repaint flap",
         "purpose": "One tile flipping to its next character."
       },
       {
         "name": "board-stagger",
-        "value": "28ms per column, 90ms per row",
+        "value": "34ms per column, 110ms per row",
         "purpose": "The flip sweeps across and down the board on audience change."
       },
       {
         "name": "board-arrival",
-        "value": "once per browser session: blank tiles, flip-in after 450ms",
-        "purpose": "First view only; later views show the line directly; none under reduced motion."
+        "value": "every page load: blank tiles, flip-in after 450ms; returning home inside the site shows the line directly",
+        "purpose": "Fresh loads only; none under reduced motion."
       },
       {
-        "name": "board-tilt",
-        "value": "mouse only: yaw +-.08 rad, tilt +-.05 rad around a .1 rad base pitch, eased at rate 6/s",
-        "purpose": "Slight lean toward the pointer; none under reduced motion."
+        "name": "board-parallax",
+        "value": "mouse only: yaw +-.025 rad, pitch +-.02 rad (about +-1.5 deg) from a straight-on view, eased at rate 6/s",
+        "purpose": "Barely-there parallax toward the pointer; none under reduced motion."
       },
       {
         "name": "board-fade-in",
@@ -761,23 +820,33 @@
       }
     ],
     "scene": {
-      "renderer": "three.js r170, WebGL, low-power, pixel ratio max 2, ACES filmic tone mapping, sRGB output; lazy-loaded, optional",
-      "board": "split-flap grid, 2 rows x 18 cols (desktop) or 4 x 12 (canvas < 560px); tile .26 x .38 world units, gaps .028 x .05",
-      "casing": "RoundedBoxGeometry, board + .16 margin each side, depth .22, radius .045; MeshPhysicalMaterial #141416 light / #232327 dark, roughness .42, metalness .2, clearcoat .35",
-      "tile": "fixed top half + fixed bottom half + hinged flap (front = current top, back = next bottom, pre-rotated); MeshStandardMaterial roughness .55",
-      "glyphs": "one canvas atlas per audience colour, 8 columns, 128 x 187px cells; cell #1c1c1e, glyph Archivo 700 semi-expanded at 62% of cell height, split line #0b0b0c 4px at mid-height",
+      "renderer": "three.js r170, WebGL, transparent canvas, low-power, pixel ratio max 2, no tone mapping, sRGB output; lazy-loaded, optional",
+      "board": "split-flap grid, 2 rows x 18 cols (desktop) or 4 x 12 (canvas < 560px); tile .26 x .38 world units, gaps .03 x .05; nothing built around or behind the tiles",
+      "tile": "fixed top half + fixed bottom half + hinged flap (front = current top, back = next bottom, pre-rotated); MeshStandardMaterial roughness .85, metalness 0, atlas as both map and emissive map (emissive intensity .45 light / .72 dark), alphaTest .5 for the rounded corners",
+      "glyphs": "one canvas atlas per audience colour, 8 columns, 128 x 187px cells; cell = rounded tile (10px radius) #fbfbfa light / #232325 dark, glyph Archivo 600 semi-expanded at 58% of cell height, split line 2px at mid-height rgba(29,30,34,.10) light / rgba(0,0,0,.55) dark",
       "drum": " abcdefghijklmnopqrstuvwxyz0123456789.,’'!?→>={}_()&-NPV",
-      "tints": {
-        "anyone": "#f2efe6",
-        "recruiters": "#9cc0ff",
-        "finance": "#f5c451",
-        "engineers": "#6fe0a6"
+      "inks": {
+        "anyone": {
+          "light": "#1d1e22",
+          "dark": "#f2f2f1"
+        },
+        "recruiters": {
+          "light": "#2a5fc4",
+          "dark": "#8fb4ff"
+        },
+        "finance": {
+          "light": "#8a5a00",
+          "dark": "#f2b93b"
+        },
+        "engineers": {
+          "light": "#1a7a4f",
+          "dark": "#5fd39a"
+        }
       },
       "text": "each audience's lead (opening of its intro sentence); long words break after '_' or hard at the row width; a single row over 10 chars splits at the space nearest the middle; rows centred, block centred vertically",
-      "lighting": "RoomEnvironment (pmrem .04); key 1.3 from (-5, 6, 7); fill .35 from (5, -1, 4)",
-      "view": "PerspectiveCamera fov 20; distance fits board + casing + margin to the stage; camera y = distance x .12, looking at (0, -.02, 0); board pitch .1 rad, yaw -.15 (-.08 narrow)",
-      "shadow": "blurred wall plane behind the board, offset (.12, -.14, -.3); opacity .32 light / .75 dark",
-      "theme": "exposure 1.05 light / .95 dark; environment intensity .9 / .6; casing lightens and wall shadow deepens in dark; tiles and characters unchanged",
+      "lighting": "faces self-lit (emissive); soft overhead key light from (0, 6, 4), .6 light / .35 dark; RoomEnvironment (pmrem .04), intensity .5 light / .25 dark; light only shades flaps as they fall",
+      "view": "PerspectiveCamera fov 22, straight on at (0, 0, d) looking at the origin; d fits board + .3 margin to the stage",
+      "theme": "atlas repainted with the theme's tile, split and inks; emissive, key and environment intensities step down in dark",
       "stage": "min(100%, 980px) wide, flex height: min 110px, max min(380px, (min(100vw,1120px) - 48px) / 3.4); phones full-bleed, min 150px, max 100vw / 1.85; 12px tall without WebGL",
       "pauses": "render loop stops when settled, off screen (IntersectionObserver), in hidden tabs"
     }
@@ -874,9 +943,9 @@
   ],
   "narrative": {
     "northStar": "One Object on a Quiet Desk",
-    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a split-flap board, a dark cased grid of hinged tiles like a station departures board. It shows the opening of the chosen audience's own sentence (\"i'm a finance student\") in Archivo glyphs; the intro directly under the board finishes the sentence. Choosing an audience makes every tile flip through its drum to the new character, and the characters take that audience's colour as they land.\n\nThe homepage hero is exactly one screen, one centred vertical axis: name, \"who's reading?\" and the audience switch, the board, the intro, one audience-specific action plus \"more about me\", and a small \"essays picked for you\" cue. Below the fold sit only the \"picked for\" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the \"picked for\" underline together, and flips the board, so the whole axis shifts at once.\n\nThe voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The board is the one rendered object, a satin dark casing with matte tiles; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
+    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a split-flap board, a grid of matte hinged tiles in the page's own tone, seen straight on like a departures board set into the desk. It shows the opening of the chosen audience's own sentence (\"i'm a finance student\") in Archivo glyphs; the intro directly under the board finishes the sentence. Choosing an audience makes every tile flip through its drum to the new character, and the characters take that audience's colour as they land.\n\nThe homepage hero is exactly one screen, one centred vertical axis: name, \"who's reading?\" and the audience switch, the board, the intro, one audience-specific action plus \"more about me\", and a small \"essays picked for you\" cue. Below the fold sit only the \"picked for\" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the \"picked for\" underline together, and flips the board, so the whole axis shifts at once.\n\nThe voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The board is the one rendered object and it is kept quiet: matte tiles in the page's tone with nothing built around them; everything else is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
     "keyCharacteristics": [
-      "Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D board.",
+      "Flat tonal surfaces with 1px hairlines; no elevation shadows anywhere, the board included.",
       "One audience accent live at a time on the homepage, carried by a single variable with its own on-colour.",
       "Inter for everything readable; Archivo expanded only for the homepage name, the board's glyphs and the \"picked for\" heading.",
       "The hero is one screen on a single centred column; the board is decorative and its text is also in the page as plain text.",
@@ -895,7 +964,7 @@
       },
       {
         "name": "The Ink-Only Board Rule",
-        "body": "The audience reaches the board through its characters alone. Tiles, split line and casing stay neutral black for every audience; the accent fill never paints a tile.",
+        "body": "The audience reaches the board through its characters alone. Tiles and split line stay in the page's neutral tone for every audience; the accent fill never paints a tile.",
         "section": "colors"
       },
       {
@@ -915,7 +984,12 @@
       },
       {
         "name": "The Night Flip Rule",
-        "body": "In dark theme each accent lightens and the text on it flips to near-black; the board stays a black board, it is never inverted.",
+        "body": "In dark theme each accent lightens and the text on it flips to near-black; the board follows the page into night, its tiles darkening and its characters lightening.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Unstaged Board Rule",
+        "body": "The board sits straight on, in the page's own tone, with nothing built around or behind it; its only depth comes from flaps turning as they fall. If it reads weakly, fix the tile or the ink, never add staging.",
         "section": "elevation"
       }
     ],
@@ -932,7 +1006,8 @@
     "donts": [
       "Don't use box-shadows, glass, glow halos or decorative gradients to suggest depth.",
       "Don't hard-code an audience colour or white text on an accent; read the accent and on-accent variables.",
-      "Don't colour the board's tiles or casing by audience; only the characters change colour.",
+      "Don't colour the board's tiles by audience; only the characters change colour.",
+      "Don't frame, angle or stage the board; depth comes only from its moving flaps.",
       "Don't add a second rendered 3D object or let the stage grow past 980px wide or 380px tall.",
       "Don't use signal green for anything but the status dot."
     ]
