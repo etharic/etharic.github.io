@@ -312,7 +312,7 @@ body.about-route main{padding-bottom:8px}
  .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .clearline-feature-copy{grid-column:1;grid-row:auto}
  .work-article.clearline-article .clearline-feature-copy{text-align:left}
 }
-/* ---------- homepage: the sign ---------- */
+/* ---------- homepage: the split-flap board ---------- */
 :root{--acc-0:#1d1e22;--on-0:#fff;--acc-1:#2f6fe0;--on-1:#fff;--acc-2:#e6a817;--on-2:#1d1e22;--acc-3:#2fb57a;--on-3:#1d1e22}
 :root[data-theme="dark"]{--acc-0:#f2f2f1;--on-0:#111;--acc-1:#7aa7ff;--on-1:#111;--acc-2:#f2b93b;--on-2:#111;--acc-3:#4fd08f;--on-3:#111}
 #app{--acc:var(--acc-0);--on-acc:var(--on-0)}
@@ -330,9 +330,8 @@ body.home .wrap{max-width:1120px}
 .hx-ind{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:999px;background:var(--acc);transition:transform .42s var(--ease-out),width .42s var(--ease-out),background-color .42s ease}
 .hx-seg.still .hx-ind{transition:none}
 .hx-stage{position:relative;width:min(100%,980px);flex:1 1 0;min-height:110px;max-height:min(380px,calc((min(100vw,1120px) - 48px) / 3.4));margin:clamp(6px,1.4vh,14px) 0 0}
-.hx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s ease;cursor:grab;touch-action:pan-y}
+.hx-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .7s ease}
 .hx.hx-3d .hx-canvas{opacity:1}
-.hx-canvas.grabbing{cursor:grabbing}
 .hx.hx-no3d .hx-stage{flex:0 0 12px;min-height:0}
 .hx-panel{margin-top:4px;max-width:40rem;display:flex;flex-direction:column;align-items:center}
 .hx.hx-3d .hx-lead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -635,8 +634,7 @@ function initAudience() {
     import("./vendor/hero3d.js")
       .then(m => m.mount(canvas, {
         leads: AUDIENCES.map(a => a.lead), tints: BOARD_TINTS, start: forLocked, reduced,
-        dark: document.documentElement.dataset.theme === "dark",
-        onSnap: i => { select(i, true); }
+        dark: document.documentElement.dataset.theme === "dark"
       }))
       .then(h => { if (!alive) { h.destroy(); return; } hero3d = h; h.setAudience(forLocked); root.classList.add("hx-3d"); })
       .catch(() => root.classList.add("hx-no3d"));

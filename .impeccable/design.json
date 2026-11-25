@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T07:34:36.475Z",
+  "generatedAt": "2026-11-25T08:55:29.999Z",
   "title": "Design System: Etharic",
   "extensions": {
     "colorMeta": {
@@ -484,175 +484,143 @@
           "oklch(95.0% 0.000 89.9)"
         ]
       },
-      "face-anyone": {
+      "board-anyone": {
         "role": "secondary",
-        "displayName": "Warm White Placard",
-        "canonical": "#f7f5f0",
-        "oklch": "oklch(97.0% 0.007 88.6)",
+        "displayName": "Bone",
+        "canonical": "#f2efe6",
+        "oklch": "oklch(95.2% 0.012 91.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.001 88.6)",
-          "oklch(25.0% 0.004 88.6)",
-          "oklch(35.0% 0.006 88.6)",
-          "oklch(48.0% 0.007 88.6)",
-          "oklch(60.0% 0.007 88.6)",
-          "oklch(72.0% 0.006 88.6)",
-          "oklch(84.0% 0.004 88.6)",
-          "oklch(95.0% 0.001 88.6)"
+          "oklch(15.0% 0.003 91.5)",
+          "oklch(25.0% 0.007 91.5)",
+          "oklch(35.0% 0.010 91.5)",
+          "oklch(48.0% 0.012 91.5)",
+          "oklch(60.0% 0.012 91.5)",
+          "oklch(72.0% 0.011 91.5)",
+          "oklch(84.0% 0.007 91.5)",
+          "oklch(95.0% 0.003 91.5)"
         ]
       },
-      "face-anyone-dark": {
+      "board-recruiters": {
         "role": "secondary",
-        "displayName": "Night Graphite Placard",
-        "canonical": "#26272a",
-        "oklch": "oklch(27.3% 0.006 271.2)",
+        "displayName": "Sky",
+        "canonical": "#9cc0ff",
+        "oklch": "oklch(80.5% 0.098 261.4)",
         "tonalRamp": [
-          "oklch(15.0% 0.001 271.2)",
-          "oklch(25.0% 0.003 271.2)",
-          "oklch(35.0% 0.005 271.2)",
-          "oklch(48.0% 0.006 271.2)",
-          "oklch(60.0% 0.006 271.2)",
-          "oklch(72.0% 0.005 271.2)",
-          "oklch(84.0% 0.003 271.2)",
-          "oklch(95.0% 0.001 271.2)"
+          "oklch(15.0% 0.021 261.4)",
+          "oklch(25.0% 0.055 261.4)",
+          "oklch(35.0% 0.078 261.4)",
+          "oklch(48.0% 0.096 261.4)",
+          "oklch(60.0% 0.098 261.4)",
+          "oklch(72.0% 0.085 261.4)",
+          "oklch(84.0% 0.058 261.4)",
+          "oklch(95.0% 0.021 261.4)"
         ]
       },
-      "face-recruiters": {
+      "board-finance": {
         "role": "secondary",
-        "displayName": "Ice Blue Placard",
-        "canonical": "#e6edfb",
-        "oklch": "oklch(94.5% 0.020 264.5)",
+        "displayName": "Lamp Yellow",
+        "canonical": "#f5c451",
+        "oklch": "oklch(84.3% 0.141 85.5)",
         "tonalRamp": [
-          "oklch(15.0% 0.004 264.5)",
-          "oklch(25.0% 0.011 264.5)",
-          "oklch(35.0% 0.016 264.5)",
-          "oklch(48.0% 0.020 264.5)",
-          "oklch(60.0% 0.020 264.5)",
-          "oklch(72.0% 0.018 264.5)",
-          "oklch(84.0% 0.012 264.5)",
-          "oklch(95.0% 0.004 264.5)"
+          "oklch(15.0% 0.030 85.5)",
+          "oklch(25.0% 0.079 85.5)",
+          "oklch(35.0% 0.113 85.5)",
+          "oklch(48.0% 0.138 85.5)",
+          "oklch(60.0% 0.141 85.5)",
+          "oklch(72.0% 0.123 85.5)",
+          "oklch(84.0% 0.083 85.5)",
+          "oklch(95.0% 0.030 85.5)"
         ]
       },
-      "face-recruiters-dark": {
+      "board-engineers": {
         "role": "secondary",
-        "displayName": "Night Blue Placard",
-        "canonical": "#1b2438",
-        "oklch": "oklch(26.2% 0.040 265.2)",
+        "displayName": "Mint",
+        "canonical": "#6fe0a6",
+        "oklch": "oklch(82.5% 0.134 159.1)",
         "tonalRamp": [
-          "oklch(15.0% 0.008 265.2)",
-          "oklch(25.0% 0.022 265.2)",
-          "oklch(35.0% 0.032 265.2)",
-          "oklch(48.0% 0.039 265.2)",
-          "oklch(60.0% 0.040 265.2)",
-          "oklch(72.0% 0.035 265.2)",
-          "oklch(84.0% 0.024 265.2)",
-          "oklch(95.0% 0.008 265.2)"
+          "oklch(15.0% 0.028 159.1)",
+          "oklch(25.0% 0.075 159.1)",
+          "oklch(35.0% 0.107 159.1)",
+          "oklch(48.0% 0.131 159.1)",
+          "oklch(60.0% 0.134 159.1)",
+          "oklch(72.0% 0.116 159.1)",
+          "oklch(84.0% 0.079 159.1)",
+          "oklch(95.0% 0.028 159.1)"
         ]
       },
-      "face-finance": {
+      "board-tile": {
         "role": "secondary",
-        "displayName": "Cream Placard",
-        "canonical": "#faefcf",
-        "oklch": "oklch(95.3% 0.043 91.3)",
+        "displayName": "Board Black",
+        "canonical": "#1c1c1e",
+        "oklch": "oklch(22.7% 0.004 286.1)",
         "tonalRamp": [
-          "oklch(15.0% 0.009 91.3)",
-          "oklch(25.0% 0.024 91.3)",
-          "oklch(35.0% 0.035 91.3)",
-          "oklch(48.0% 0.043 91.3)",
-          "oklch(60.0% 0.043 91.3)",
-          "oklch(72.0% 0.038 91.3)",
-          "oklch(84.0% 0.026 91.3)",
-          "oklch(95.0% 0.009 91.3)"
+          "oklch(15.0% 0.001 286.1)",
+          "oklch(25.0% 0.002 286.1)",
+          "oklch(35.0% 0.003 286.1)",
+          "oklch(48.0% 0.004 286.1)",
+          "oklch(60.0% 0.004 286.1)",
+          "oklch(72.0% 0.003 286.1)",
+          "oklch(84.0% 0.002 286.1)",
+          "oklch(95.0% 0.001 286.1)"
         ]
       },
-      "face-finance-dark": {
+      "board-split": {
         "role": "secondary",
-        "displayName": "Night Ochre Placard",
-        "canonical": "#33290f",
-        "oklch": "oklch(28.6% 0.043 88.4)",
+        "displayName": "Split Line",
+        "canonical": "#0b0b0c",
+        "oklch": "oklch(15.0% 0.002 286.1)",
         "tonalRamp": [
-          "oklch(15.0% 0.009 88.4)",
-          "oklch(25.0% 0.024 88.4)",
-          "oklch(35.0% 0.034 88.4)",
-          "oklch(48.0% 0.042 88.4)",
-          "oklch(60.0% 0.043 88.4)",
-          "oklch(72.0% 0.037 88.4)",
-          "oklch(84.0% 0.025 88.4)",
-          "oklch(95.0% 0.009 88.4)"
+          "oklch(15.0% 0.000 286.1)",
+          "oklch(25.0% 0.001 286.1)",
+          "oklch(35.0% 0.002 286.1)",
+          "oklch(48.0% 0.002 286.1)",
+          "oklch(60.0% 0.002 286.1)",
+          "oklch(72.0% 0.002 286.1)",
+          "oklch(84.0% 0.001 286.1)",
+          "oklch(95.0% 0.000 286.1)"
         ]
       },
-      "face-engineers": {
+      "board-casing": {
         "role": "secondary",
-        "displayName": "Mint Placard",
-        "canonical": "#def2e6",
-        "oklch": "oklch(94.3% 0.026 159.6)",
+        "displayName": "Casing",
+        "canonical": "#141416",
+        "oklch": "oklch(19.2% 0.004 286.0)",
         "tonalRamp": [
-          "oklch(15.0% 0.006 159.6)",
-          "oklch(25.0% 0.015 159.6)",
-          "oklch(35.0% 0.021 159.6)",
-          "oklch(48.0% 0.026 159.6)",
-          "oklch(60.0% 0.026 159.6)",
-          "oklch(72.0% 0.023 159.6)",
-          "oklch(84.0% 0.016 159.6)",
-          "oklch(95.0% 0.006 159.6)"
+          "oklch(15.0% 0.001 286.0)",
+          "oklch(25.0% 0.002 286.0)",
+          "oklch(35.0% 0.003 286.0)",
+          "oklch(48.0% 0.004 286.0)",
+          "oklch(60.0% 0.004 286.0)",
+          "oklch(72.0% 0.003 286.0)",
+          "oklch(84.0% 0.002 286.0)",
+          "oklch(95.0% 0.001 286.0)"
         ]
       },
-      "face-engineers-dark": {
+      "board-casing-dark": {
         "role": "secondary",
-        "displayName": "Night Green Placard",
-        "canonical": "#142d21",
-        "oklch": "oklch(27.3% 0.039 161.5)",
+        "displayName": "Night Casing",
+        "canonical": "#232327",
+        "oklch": "oklch(25.8% 0.007 285.9)",
         "tonalRamp": [
-          "oklch(15.0% 0.008 161.5)",
-          "oklch(25.0% 0.022 161.5)",
-          "oklch(35.0% 0.031 161.5)",
-          "oklch(48.0% 0.038 161.5)",
-          "oklch(60.0% 0.039 161.5)",
-          "oklch(72.0% 0.034 161.5)",
-          "oklch(84.0% 0.023 161.5)",
-          "oklch(95.0% 0.008 161.5)"
-        ]
-      },
-      "seam": {
-        "role": "secondary",
-        "displayName": "Seam Shadow",
-        "canonical": "#a9a69f",
-        "oklch": "oklch(72.6% 0.011 87.5)",
-        "tonalRamp": [
-          "oklch(15.0% 0.002 87.5)",
-          "oklch(25.0% 0.006 87.5)",
-          "oklch(35.0% 0.008 87.5)",
-          "oklch(48.0% 0.010 87.5)",
-          "oklch(60.0% 0.011 87.5)",
-          "oklch(72.0% 0.009 87.5)",
-          "oklch(84.0% 0.006 87.5)",
-          "oklch(95.0% 0.002 87.5)"
-        ]
-      },
-      "seam-dark": {
-        "role": "secondary",
-        "displayName": "Night Seam",
-        "canonical": "#101011",
-        "oklch": "oklch(17.3% 0.002 286.2)",
-        "tonalRamp": [
-          "oklch(15.0% 0.000 286.2)",
-          "oklch(25.0% 0.001 286.2)",
-          "oklch(35.0% 0.002 286.2)",
-          "oklch(48.0% 0.002 286.2)",
-          "oklch(60.0% 0.002 286.2)",
-          "oklch(72.0% 0.002 286.2)",
-          "oklch(84.0% 0.001 286.2)",
-          "oklch(95.0% 0.000 286.2)"
+          "oklch(15.0% 0.002 285.9)",
+          "oklch(25.0% 0.004 285.9)",
+          "oklch(35.0% 0.006 285.9)",
+          "oklch(48.0% 0.007 285.9)",
+          "oklch(60.0% 0.007 285.9)",
+          "oklch(72.0% 0.006 285.9)",
+          "oklch(84.0% 0.004 285.9)",
+          "oklch(95.0% 0.002 285.9)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Homepage name only (Archivo, width 112)."
+        "purpose": "Homepage name only (Archivo, width 112); also scales with viewport height so the hero fits one screen."
       },
-      "sign-line": {
-        "displayName": "Sign Line",
-        "purpose": "The audience line on each sign face (Archivo 700 expanded), fitted as large as two lines allow; drawn to a 2048px canvas, up to 330px there."
+      "board-glyph": {
+        "displayName": "Board Glyph",
+        "purpose": "One character per board tile (Archivo 700 semi-expanded), 62% of the tile height, centred; drawn into a 128 x 187px atlas cell, one atlas per audience colour."
       },
       "headline": {
         "displayName": "Headline",
@@ -694,9 +662,9 @@
         "purpose": "Theme switch knob only."
       },
       {
-        "name": "sign-contact",
-        "value": "WebGL radial contact shadow under the sign; opacity .6 light, .95 dark",
-        "purpose": "Grounds the homepage sign. Not a CSS shadow."
+        "name": "board-wall",
+        "value": "WebGL plane behind the board, 16px-blurred rectangle, offset (.12, -.14, -.3) down-right from the upper-left key light; opacity .32 light, .75 dark",
+        "purpose": "Grounds the homepage board against the page. Not a CSS shadow."
       }
     ],
     "motion": [
@@ -731,29 +699,34 @@
         "purpose": "Intro panel and picked cards on audience change."
       },
       {
-        "name": "sign-wave",
-        "value": "640ms easeOutBack (overshoot 1.15) per slat, 38ms stagger left to right",
-        "purpose": "Sign turns to the selected audience face; reduced motion: no stagger, no overshoot, instant."
+        "name": "board-flap",
+        "value": "85ms per flap, rotation 0 -> PI with progress squared (gravity); 12ms between flaps; at most 6 flaps through the drum",
+        "purpose": "One tile flipping to its next character."
       },
       {
-        "name": "sign-drag",
-        "value": "0.012 rad per px; release snaps to nearest face in 360ms; a move over 4px selects that audience",
-        "purpose": "Drag to turn the sign."
+        "name": "board-stagger",
+        "value": "28ms per column, 90ms per row",
+        "purpose": "The flip sweeps across and down the board on audience change."
       },
       {
-        "name": "sign-idle",
-        "value": "sway sin(.5t) x .035 rad, bob sin(t) x .025; 15s after load or interaction, then stops",
-        "purpose": "Brief life after arrival; none under reduced motion."
+        "name": "board-arrival",
+        "value": "once per browser session: blank tiles, flip-in after 450ms",
+        "purpose": "First view only; later views show the line directly; none under reduced motion."
       },
       {
-        "name": "sign-parallax",
-        "value": "mouse: yaw +-.06 rad, tilt .045 +-.05 rad, eased at rate 6/s",
+        "name": "board-tilt",
+        "value": "mouse only: yaw +-.08 rad, tilt +-.05 rad around a .1 rad base pitch, eased at rate 6/s",
         "purpose": "Slight lean toward the pointer; none under reduced motion."
       },
       {
-        "name": "sign-fade-in",
+        "name": "board-fade-in",
         "value": "700ms ease opacity",
         "purpose": "Canvas appears once the scene is ready."
+      },
+      {
+        "name": "picks-cue",
+        "value": "scrollIntoView smooth (auto under reduced motion)",
+        "purpose": "The hero cue scrolls to the picks."
       },
       {
         "name": "card-in",
@@ -777,81 +750,36 @@
       {
         "name": "rail",
         "value": "max-width: 1100px"
+      },
+      {
+        "name": "board-narrow",
+        "value": "canvas width < 560px: 4 x 12 grid"
+      },
+      {
+        "name": "short",
+        "value": "max-height: 560px: hero height auto, stage 160px"
       }
     ],
     "scene": {
       "renderer": "three.js r170, WebGL, low-power, pixel ratio max 2, ACES filmic tone mapping, sRGB output; lazy-loaded, optional",
-      "sign": "trivision: 12 slats, BoxGeometry square section (4.2/12 minus .014 gap) x 1.5 tall; panel 4.2 x 1.5 world units; slat side groups +z, -x, -z, +x carry faces 0-3",
-      "rails": "top and bottom RoundedBoxGeometry bars 4.36 x .045 x (slat depth + .05); #26272b light / #45464c dark, roughness .38, metalness .25, clearcoat .4",
-      "faceMaterial": "MeshPhysicalMaterial roughness .62, clearcoat .12, clearcoatRoughness .5; map = slice k/12 of a 2048 x 731 canvas per audience",
-      "slatEnds": "#d9d6cf light / #3a3b40 dark, roughness .5, clearcoat .2",
-      "faceLayout": "tag Inter 600 62px at (120, 170); line Archivo 700 expanded, 330px down to 90px in 8px steps until it fits two lines within width - 240, set at x 114 centred in the band from y 230 to h - 90",
-      "faces": {
-        "anyone": {
-          "light": {
-            "bg": "#f7f5f0",
-            "ink": "#1d1e22",
-            "tag": "#6a6c74",
-            "rule": "#dedad1"
-          },
-          "dark": {
-            "bg": "#26272a",
-            "ink": "#f2f2f1",
-            "tag": "#a3a3a6",
-            "rule": "#3a3b3f"
-          }
-        },
-        "recruiters": {
-          "light": {
-            "bg": "#e6edfb",
-            "ink": "#14213d",
-            "tag": "#4a5a7c",
-            "rule": "#cbd7f0"
-          },
-          "dark": {
-            "bg": "#1b2438",
-            "ink": "#e3ebff",
-            "tag": "#93a6cf",
-            "rule": "#2c3956"
-          }
-        },
-        "finance": {
-          "light": {
-            "bg": "#faefcf",
-            "ink": "#2b2108",
-            "tag": "#7a6326",
-            "rule": "#ecdcab"
-          },
-          "dark": {
-            "bg": "#33290f",
-            "ink": "#fbe6b0",
-            "tag": "#c9ad6a",
-            "rule": "#4a3c1a"
-          }
-        },
-        "engineers": {
-          "light": {
-            "bg": "#def2e6",
-            "ink": "#0f2a1c",
-            "tag": "#476b57",
-            "rule": "#c3e3cf"
-          },
-          "dark": {
-            "bg": "#142d21",
-            "ink": "#d3f4e1",
-            "tag": "#83b89a",
-            "rule": "#22432f"
-          }
-        }
+      "board": "split-flap grid, 2 rows x 18 cols (desktop) or 4 x 12 (canvas < 560px); tile .26 x .38 world units, gaps .028 x .05",
+      "casing": "RoundedBoxGeometry, board + .16 margin each side, depth .22, radius .045; MeshPhysicalMaterial #141416 light / #232327 dark, roughness .42, metalness .2, clearcoat .35",
+      "tile": "fixed top half + fixed bottom half + hinged flap (front = current top, back = next bottom, pre-rotated); MeshStandardMaterial roughness .55",
+      "glyphs": "one canvas atlas per audience colour, 8 columns, 128 x 187px cells; cell #1c1c1e, glyph Archivo 700 semi-expanded at 62% of cell height, split line #0b0b0c 4px at mid-height",
+      "drum": " abcdefghijklmnopqrstuvwxyz0123456789.,’'!?→>={}_()&-NPV",
+      "tints": {
+        "anyone": "#f2efe6",
+        "recruiters": "#9cc0ff",
+        "finance": "#f5c451",
+        "engineers": "#6fe0a6"
       },
-      "facesNote": "the rule colour is defined per face but not drawn by the current face painter",
-      "seam": "off-axis faces tinted #a9a69f light / #101011 dark while at rest (not turning, not dragging)",
-      "lighting": "RoomEnvironment (pmrem .04); key 1.1 from (-4, 5, 6); rim .7 from (5, 2, -4)",
-      "view": "PerspectiveCamera fov 13; distance fits (4.55 x 2.25) to the stage; camera y = distance x .06, looking at (0, -.08, 0); pivot tilt .045 rad",
-      "shadow": "radial contact shadow plane 5.25 x 1.1 under the sign; opacity .6 light / .95 dark",
-      "theme": "exposure 1.05 light / .95 dark; environment intensity 1 / .7; faces repainted from the dark set",
-      "stage": "min(100%, 880px) at 2.75:1; phones full-bleed at 2.2:1; 8px tall without WebGL",
-      "pauses": "render loop stops when settled and idle has passed, off screen (IntersectionObserver), in hidden tabs"
+      "text": "each audience's lead (opening of its intro sentence); long words break after '_' or hard at the row width; a single row over 10 chars splits at the space nearest the middle; rows centred, block centred vertically",
+      "lighting": "RoomEnvironment (pmrem .04); key 1.3 from (-5, 6, 7); fill .35 from (5, -1, 4)",
+      "view": "PerspectiveCamera fov 20; distance fits board + casing + margin to the stage; camera y = distance x .12, looking at (0, -.02, 0); board pitch .1 rad, yaw -.15 (-.08 narrow)",
+      "shadow": "blurred wall plane behind the board, offset (.12, -.14, -.3); opacity .32 light / .75 dark",
+      "theme": "exposure 1.05 light / .95 dark; environment intensity .9 / .6; casing lightens and wall shadow deepens in dark; tiles and characters unchanged",
+      "stage": "min(100%, 980px) wide, flex height: min 110px, max min(380px, (min(100vw,1120px) - 48px) / 3.4); phones full-bleed, min 150px, max 100vw / 1.85; 12px tall without WebGL",
+      "pauses": "render loop stops when settled, off screen (IntersectionObserver), in hidden tabs"
     }
   },
   "components": [
@@ -946,13 +874,13 @@
   ],
   "narrative": {
     "northStar": "One Object on a Quiet Desk",
-    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a slatted trivision sign, twelve square-section slats between two dark rails, with four faces, one per audience. Each face is a printed placard: a small tag (\"for recruiters\") over one large Archivo line (\"seen the numbers from both sides.\"). Choosing an audience turns the slats in a wave until the new face reads.\n\nThe homepage is one centred vertical axis: name, \"who's reading?\" and the audience switch, the sign, the intro, one audience-specific action plus \"more about me\", then a \"picked for\" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the \"picked for\" underline together, and turns the sign, so the whole axis shifts at once.\n\nThe voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The sign is the one rendered object, matte and soft-lit; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
+    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a split-flap board, a dark cased grid of hinged tiles like a station departures board. It shows the opening of the chosen audience's own sentence (\"i'm a finance student\") in Archivo glyphs; the intro directly under the board finishes the sentence. Choosing an audience makes every tile flip through its drum to the new character, and the characters take that audience's colour as they land.\n\nThe homepage hero is exactly one screen, one centred vertical axis: name, \"who's reading?\" and the audience switch, the board, the intro, one audience-specific action plus \"more about me\", and a small \"essays picked for you\" cue. Below the fold sit only the \"picked for\" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the \"picked for\" underline together, and flips the board, so the whole axis shifts at once.\n\nThe voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The board is the one rendered object, a satin dark casing with matte tiles; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
     "keyCharacteristics": [
-      "Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D sign.",
+      "Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D board.",
       "One audience accent live at a time on the homepage, carried by a single variable with its own on-colour.",
-      "Inter for everything readable; Archivo expanded only for the homepage name, the sign lines and the \"picked for\" heading.",
-      "The homepage is a single centred column; the sign is decorative and every action it offers is also a plain control.",
-      "Motion is short and ease-out; the sign turns in a staggered wave, sways briefly, then stops, and loses the wave and overshoot under reduced motion."
+      "Inter for everything readable; Archivo expanded only for the homepage name, the board's glyphs and the \"picked for\" heading.",
+      "The hero is one screen on a single centred column; the board is decorative and its text is also in the page as plain text.",
+      "Motion is short and ease-out; the board flips fast with a gravity fall, staggered across the grid, then stops rendering; reduced motion changes the characters at once."
     ],
     "rules": [
       {
@@ -966,13 +894,18 @@
         "section": "colors"
       },
       {
-        "name": "The Placard Rule",
-        "body": "A sign face is a tint of its audience hue with ink of the same hue; the accent fill itself never paints the sign.",
+        "name": "The Ink-Only Board Rule",
+        "body": "The audience reaches the board through its characters alone. Tiles, split line and casing stay neutral black for every audience; the accent fill never paints a tile.",
         "section": "colors"
       },
       {
         "name": "The Archivo Fence Rule",
-        "body": "Archivo appears only on the homepage name, the sign lines and the homepage \"picked for\" heading. Any other text, including the sign's tag, the intro, the switch and the cards, is Inter.",
+        "body": "Archivo appears only on the homepage name, the board's glyphs and the homepage \"picked for\" heading. Any other text, including the intro, the switch, the picks cue and the cards, is Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Split Sentence Rule",
+        "body": "The board shows only the lead of the audience's sentence and the intro continues it; the lead also stays in the intro as plain text, visually hidden while the board runs, so the sentence is whole for screen readers and without WebGL.",
         "section": "typography"
       },
       {
@@ -981,30 +914,26 @@
         "section": "elevation"
       },
       {
-        "name": "The Seam Rule",
-        "body": "At rest only the chosen face shows; every other face takes the seam colour, so the slat gaps read as shadow.",
-        "section": "elevation"
-      },
-      {
         "name": "The Night Flip Rule",
-        "body": "In dark theme each accent lightens and the text on it flips to near-black; the sign repaints to its dark faces, it is never inverted.",
+        "body": "In dark theme each accent lightens and the text on it flips to near-black; the board stays a black board, it is never inverted.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do take every colour from the tokens, with a dark value for each surface and accent colour.",
+      "Do take every colour from the tokens, with a dark value for each page surface and accent colour.",
       "Do route every audience-coloured element through the one accent variable and its paired on-colour so the whole axis changes together.",
-      "Do keep the homepage on one centred axis, and keep every action the sign offers available as a plain control.",
+      "Do keep the homepage hero to one screen on one centred axis, with the picks as the only content below the fold.",
+      "Do keep the board's text in the page as plain text, so nothing it shows exists only in WebGL.",
       "Do animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 460ms; keep an opacity crossfade under reduced motion.",
-      "Do stop the sign's render loop when it settles, after the 15s idle, off screen and in hidden tabs; drop the wave and overshoot under reduced motion.",
+      "Do stop the board's render loop when it settles, off screen and in hidden tabs; change characters at once under reduced motion.",
       "Do keep touch targets at 44px minimum and a 2px graphite ink focus ring on every control.",
-      "Do keep Archivo inside the Archivo fence (homepage name, sign lines, \"picked for\" heading)."
+      "Do keep Archivo inside the Archivo fence (homepage name, board glyphs, \"picked for\" heading)."
     ],
     "donts": [
       "Don't use box-shadows, glass, glow halos or decorative gradients to suggest depth.",
       "Don't hard-code an audience colour or white text on an accent; read the accent and on-accent variables.",
-      "Don't paint a sign face with the accent fill; faces stay tints of their hue.",
-      "Don't add a second rendered 3D object or let the stage grow past 880px wide.",
+      "Don't colour the board's tiles or casing by audience; only the characters change colour.",
+      "Don't add a second rendered 3D object or let the stage grow past 980px wide or 380px tall.",
       "Don't use signal green for anything but the status dot."
     ]
   }

@@ -1,6 +1,6 @@
 ---
 name: Etharic
-description: The personal site of ryan (suryanarayan); a quiet paper reading system, with one slatted 3D sign on the homepage that turns in a wave to face each audience.
+description: The personal site of ryan (suryanarayan); a quiet paper reading system, with one split-flap board on the homepage that flips each audience's opening line into place.
 colors:
   paper: "#f0f1f3"
   paper-dark: "#151515"
@@ -32,29 +32,27 @@ colors:
   on-finance: "#1d1e22"
   on-engineers: "#1d1e22"
   on-acc-dark: "#111111"
-  face-anyone: "#f7f5f0"
-  face-anyone-dark: "#26272a"
-  face-recruiters: "#e6edfb"
-  face-recruiters-dark: "#1b2438"
-  face-finance: "#faefcf"
-  face-finance-dark: "#33290f"
-  face-engineers: "#def2e6"
-  face-engineers-dark: "#142d21"
-  seam: "#a9a69f"
-  seam-dark: "#101011"
+  board-anyone: "#f2efe6"
+  board-recruiters: "#9cc0ff"
+  board-finance: "#f5c451"
+  board-engineers: "#6fe0a6"
+  board-tile: "#1c1c1e"
+  board-split: "#0b0b0c"
+  board-casing: "#141416"
+  board-casing-dark: "#232327"
 typography:
   display:
     fontFamily: "Archivo, Inter, system-ui, sans-serif"
-    fontSize: "clamp(2.3rem, 4.6vw, 4.2rem)"
+    fontSize: "clamp(2.1rem, min(4.6vw, 7.2vh), 4.2rem)"
     fontWeight: 700
     lineHeight: 1.02
     letterSpacing: "-0.02em"
     fontVariation: "'wdth' 112"
-  sign-line:
+  board-glyph:
     fontFamily: "Archivo, Inter, system-ui, sans-serif"
     fontWeight: 700
     lineHeight: 1
-    fontVariation: "'wdth' 112"
+    fontVariation: "'wdth' 112.5"
   headline:
     fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "2.2rem"
@@ -69,7 +67,7 @@ typography:
     fontVariation: "'wdth' 112"
   intro:
     fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "clamp(1.05rem, 1.4vw, 1.22rem)"
+    fontSize: "clamp(1rem, min(1.4vw, 2.2vh), 1.22rem)"
     fontWeight: 400
     lineHeight: 1.6
   intro-term:
@@ -143,6 +141,12 @@ components:
   cta-primary-finance:
     backgroundColor: "{colors.acc-finance}"
     textColor: "{colors.on-finance}"
+  picks-cue:
+    textColor: "{colors.soft-graphite}"
+    height: "40px"
+  board-tile:
+    backgroundColor: "{colors.board-tile}"
+    textColor: "{colors.board-recruiters}"
   cv-link:
     textColor: "{colors.graphite-ink}"
     height: "44px"
@@ -174,36 +178,37 @@ components:
 
 **Creative North Star: "One Object on a Quiet Desk"**
 
-Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a slatted trivision sign, twelve square-section slats between two light rails, with four faces, one per audience. Each face is a printed placard carrying the opening of that audience's own sentence in one Archivo line ("i'm a finance student"); the intro directly under the sign finishes the sentence. Choosing an audience turns the slats in a wave until the new face reads.
+Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, flat surfaces. The homepage sets a single object on that desk: a split-flap board, a dark cased grid of hinged tiles like a station departures board. It shows the opening of the chosen audience's own sentence ("i'm a finance student") in Archivo glyphs; the intro directly under the board finishes the sentence. Choosing an audience makes every tile flip through its drum to the new character, and the characters take that audience's colour as they land.
 
-The homepage is one centred vertical axis: name, "who's reading?" and the audience switch, the sign, the intro, one audience-specific action plus "more about me", then a "picked for" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the "picked for" underline together, and turns the sign, so the whole axis shifts at once.
+The homepage hero is exactly one screen, one centred vertical axis: name, "who's reading?" and the audience switch, the board, the intro, one audience-specific action plus "more about me", and a small "essays picked for you" cue. Below the fold sit only the "picked for" heading, three hand-picked pieces of writing and a closing row. The audience is the only variable. Selecting one recolours the switch indicator, the primary action, the intro underlines and the "picked for" underline together, and flips the board, so the whole axis shifts at once.
 
-The voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The sign is the one rendered object, matte and soft-lit; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.
+The voice is personal and playful (lowercase copy, code-like intro lines, a pixel dog, a live clock) but the surfaces are restrained. The board is the one rendered object, a satin dark casing with matte tiles; everything around it is flat. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.
 
 **Key Characteristics:**
-- Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D sign.
+- Flat tonal surfaces with 1px hairlines; no elevation shadows outside the 3D board.
 - One audience accent live at a time on the homepage, carried by a single variable with its own on-colour.
-- Inter for everything readable; Archivo expanded only for the homepage name, the sign lines and the "picked for" heading.
-- The homepage is a single centred column; the sign is decorative and every action it offers is also a plain control.
-- Motion is short and ease-out; the sign turns in a staggered wave, sways briefly, then stops, and loses the wave and overshoot under reduced motion.
+- Inter for everything readable; Archivo expanded only for the homepage name, the board's glyphs and the "picked for" heading.
+- The hero is one screen on a single centred column; the board is decorative and its text is also in the page as plain text.
+- Motion is short and ease-out; the board flips fast with a gravity fall, staggered across the grid, then stops rendering; reduced motion changes the characters at once.
 
 ## Colors
 
-Cool, nearly neutral paper and graphite; on the homepage, one audience accent at a time and four pale placard faces. Every surface and accent colour has a light and a dark value; the dark keys (`*-dark`) apply under `:root[data-theme="dark"]`.
+Cool, nearly neutral paper and graphite; on the homepage, one audience accent at a time and one dark board whose characters wear a light tint of that audience. Every page surface and accent colour has a light and a dark value; the dark keys (`*-dark`) apply under `:root[data-theme="dark"]`.
 
 ### Primary
 - **Audience Accent** (`acc-anyone`, `acc-recruiters`, `acc-finance`, `acc-engineers`): Graphite, Signal Blue, Marigold and Jade. Exactly one is live at a time, set on the app root by `data-aud` and read everywhere as one variable. It fills the switch indicator and the primary action, and draws the 2px underline under intro links and the 3px underline under the audience name in "picked for".
 - **On-Accent** (`on-anyone`, `on-recruiters`, `on-finance`, `on-engineers`): text on an accent fill, paired per audience. White on graphite and blue; graphite ink on marigold and jade, because those two are too light for white. In dark theme every on-colour is near-black (`on-acc-dark`).
 
 ### Secondary
-- **Placard Faces** (`face-anyone`, `face-recruiters`, `face-finance`, `face-engineers`): the printed background of each sign face. In light theme a pale tint of the audience hue (warm white, ice blue, cream, mint); in dark theme a deep tint of the same hue. Each face carries its own ink and a softer tag colour from the same hue (see sidecar `scene.faces`). Used only inside the WebGL scene.
-- **Seam** (`seam`): at rest, slat faces not turned to the viewer take this colour so the gaps between slats read as shadow, not as stray letters.
+- **Board Characters** (`board-anyone`, `board-recruiters`, `board-finance`, `board-engineers`): Bone, Sky, Lamp Yellow and Mint. The glyph colour on the board per audience, one glyph atlas each; a light, bright member of the audience's hue so it reads on the black tiles. The same in both themes. Used only inside the WebGL scene.
+- **Board Tile / Split** (`board-tile`, `board-split`): every tile face is neutral near-black in both themes, crossed at its middle by a darker split line, the hinge between the two halves.
+- **Board Casing** (`board-casing`, `board-casing-dark`): the cased frame around the grid; it lifts a step in dark theme so the board still separates from night paper.
 
 ### Neutral
 - **Paper** (`paper`): page background on every route, including the fixed nav.
 - **Card** (`card`): raised-by-tone surfaces: cards, buttons, inputs, segmented controls and the audience switch track.
 - **Graphite Ink** (`graphite-ink`): headings, body text in prose and intros, selected states, focus rings, and "get cv" on the homepage closing row.
-- **Soft Graphite** (`soft-graphite`): secondary text, nav links at rest, captions, card meta, the "who's reading?" question, the closing row.
+- **Soft Graphite** (`soft-graphite`): secondary text, nav links at rest, captions, card meta, the "who's reading?" question, the picks cue, the closing row.
 - **Hairline** (`hairline`): every 1px border and divider; also image placeholders and empty bars.
 - **Hover Wash** (`hover-wash`): the background tint for hovered rows and cards.
 - **Switch Track / Switch On** (`switch-track`, `switch-on`): the theme switch, off and on. Both neutral greys; the switch does not use colour.
@@ -215,21 +220,21 @@ Cool, nearly neutral paper and graphite; on the homepage, one audience accent at
 
 **The Paired Ink Rule.** An accent fill always takes the on-colour paired with it, never a fixed white. Light accents (marigold, jade) carry graphite ink.
 
-**The Placard Rule.** A sign face is a tint of its audience hue with ink of the same hue; the accent fill itself never paints the sign.
+**The Ink-Only Board Rule.** The audience reaches the board through its characters alone. Tiles, split line and casing stay neutral black for every audience; the accent fill never paints a tile.
 
 ## Typography
 
-**Display Font:** Archivo, width axis at 112 (with Inter, system-ui fallback), subset to the characters the homepage and the sign use
+**Display Font:** Archivo, width axis at 112 (with Inter, system-ui fallback), subset to the characters the homepage name, the board and the "picked for" heading use
 **Body Font:** Inter 300 to 700, with italic 400 (with system-ui, sans-serif)
 
-**Character:** Inter carries everything a visitor reads. Archivo expanded gives the homepage name, the sign lines and the "picked for" heading a broad, drafted mass; the sign line is the loudest type on the site. Code-like terms in the intros ("this.essay") are simply Inter italic.
+**Character:** Inter carries everything a visitor reads. Archivo expanded gives the homepage name, the board's glyphs and the "picked for" heading a broad, drafted mass. Code-like terms in the intros ("this.essay") are simply Inter italic.
 
 ### Hierarchy
-- **Display** (Archivo 700, width 112, `clamp(2.3rem, 4.6vw, 4.2rem)`, line-height 1.02): homepage name only, balanced, centred. The faded part of "suryanarayan" sits in soft graphite at 50% opacity; on phones the name drops to its own line.
-- **Sign Line** (Archivo 700, expanded, line-height 1): the audience line on each sign face, set as large as fits in at most two lines, left-aligned on the placard.
+- **Display** (Archivo 700, width 112, `clamp(2.1rem, min(4.6vw, 7.2vh), 4.2rem)`, line-height 1.02): homepage name only, balanced, centred; it also shrinks with viewport height so the hero fits one screen. The faded part of "suryanarayan" sits in soft graphite at 50% opacity; on phones the name drops to its own line.
+- **Board Glyph** (Archivo 700, semi-expanded): one character per tile, centred, its size 62% of the tile height, drawn on the tile's black in the audience's board colour.
 - **Headline** (Inter 700, 2.2rem, 1.2, -0.02em): page titles on reading routes; 2rem on about and on phones.
 - **Section Head** (Archivo 700, width 112, `clamp(1.4rem, 2.2vw, 1.8rem)`, -0.01em): the homepage "picked for" heading; the audience name inside it carries a 3px accent underline, 6px offset.
-- **Intro** (Inter 400, `clamp(1.05rem, 1.4vw, 1.22rem)`, 1.6): the homepage audience panel, max 40rem, graphite ink.
+- **Intro** (Inter 400, `clamp(1rem, min(1.4vw, 2.2vh), 1.22rem)`, 1.6): the homepage audience panel, max 40rem, graphite ink.
 - **Intro Term** (Inter italic 400): code-like terms inside intros; linked terms add a 2px accent underline, 4px offset.
 - **Title** (Inter 600, 1.05rem, 1.4): prose and chapter h2; homepage card titles use 1.02rem, 1.35.
 - **Body** (Inter 400, 1rem, 1.6): default text; secondary text in soft graphite.
@@ -237,36 +242,36 @@ Cool, nearly neutral paper and graphite; on the homepage, one audience accent at
 - **Label** (Inter 400, 0.75rem, 0.09em, uppercase): section labels on reading routes and the chapter rail head. Tile categories use 0.7rem, 0.08em.
 
 ### Named Rules
-**The Archivo Fence Rule.** Archivo appears only on the homepage name, the sign lines and the homepage "picked for" heading. Any other text, including the intro, the switch and the cards, is Inter.
+**The Archivo Fence Rule.** Archivo appears only on the homepage name, the board's glyphs and the homepage "picked for" heading. Any other text, including the intro, the switch, the picks cue and the cards, is Inter.
+
+**The Split Sentence Rule.** The board shows only the lead of the audience's sentence and the intro continues it; the lead also stays in the intro as plain text, visually hidden while the board runs, so the sentence is whole for screen readers and without WebGL.
 
 ## Layout
 
 Reading routes use a single centered column (`max-width: 800px`, 20px side padding) under a fixed nav (30px vertical padding, 24px left, room on the right for the fixed theme switch). Prose caps at 660px; the about page at 760px with a 196px photo column. Work grids run 3 columns (gap 30px x 18px), 2 columns from 681 to 900px, 1 column at 680px and below.
 
-The homepage widens the column to 1120px and stacks everything on one centred axis, text centred, starting 100px from the top. Order: name; "who's reading?" (26px above, 10px below) and the audience switch; the sign stage, `min(100%, 880px)` wide at a 2.75:1 aspect, 14px below the switch; the panel (intro, max 40rem, then the primary action and "more about me" in a row 22px below, 24px gap); the "picked for" section (44px top, heading 20px above the cards) with three cards in a 3-column grid (22px gap); then the closing row 64px below, a hairline on top, city, clock, dot and dog on the left and "get cv" on the right. Without WebGL the stage collapses to 8px and the page reads as type alone. On wider screens the panel is held at the height of its tallest audience text so switching never shifts the page.
+The homepage widens the column to 1120px. The hero is exactly one screen (`100svh`, minimum 600px), its content centred vertically on one centred axis, text centred, with `clamp(92px, 11vh, 108px)` above for the nav. Order: name; "who's reading?" (`clamp(12px, 2.6vh, 26px)` above, 10px below) and the audience switch; the board stage, `min(100%, 980px)` wide, which flexes to take whatever height remains (minimum 110px, maximum `min(380px, (min(100vw, 1120px) - 48px) / 3.4)`); the panel (intro, max 40rem, then the primary action and "more about me" in a row, 10px x 24px gap); and the "essays picked for you" cue at the bottom. Vertical gaps inside the hero scale with viewport height so it always fits. The cue scrolls to the picks, the only content below the fold: the "picked for" section (48px top, heading 20px above the cards) with three cards in a 3-column grid (22px gap), then the closing row 64px below, a hairline on top, city, clock, dot and dog on the left and "get cv" on the right. Without WebGL the stage collapses to 12px and the page reads as type alone. On wider screens the panel is held at the height of its tallest audience text so switching never shifts the page. Below 560px of height the hero stops being a fixed screen and the stage takes 160px.
 
-At 680px and below the axis starts 28px from the top, the stage bleeds to the screen edges at a 2.2:1 aspect, switch segments tighten to 11px side padding at 0.85rem, the panel takes its own height, and the cards go to one column with 28px gaps (36px above the section).
+At 680px and below the hero is `calc(100svh - 61px)` (minimum 560px) under the static nav, the stage bleeds to the screen edges (minimum 150px, maximum `100vw / 1.85`), switch segments tighten to 11px side padding at 0.85rem, the panel takes its own height, and the cards go to one column with 28px gaps (36px above the section).
 
 Spacing rhythm is small and practical: 8 / 12 / 16 / 20 / 24 / 30px, with 64px before section labels and the closing row.
 
 ## Elevation & Depth
 
-Every surface is flat. Surfaces separate by tone (paper vs card) and 1px hairlines; hover adds the hover wash or a 1 to 3px lift, never a shadow. The only CSS shadow is the theme switch knob (`0 1px 4px rgba(0,0,0,.35)`), a physical toggle detail.
+Every page surface is flat. Surfaces separate by tone (paper vs card) and 1px hairlines; hover adds the hover wash or a 1 to 3px lift, never a shadow. The only CSS shadow is the theme switch knob (`0 1px 4px rgba(0,0,0,.35)`), a physical toggle detail.
 
-The homepage sign is the one real 3D object, rendered with WebGL (three.js r170): a 4.2 x 1.5 unit panel of twelve square-section slats, each a four-sided prism that shows a vertical slice of one audience placard per side, held between a light top and bottom rail (#cfcac0, dark theme #55565c). Faces are fully matte printed stock (roughness .9, no clearcoat) so every slat takes the same tone; slat ends are a light stone grey. It is lit by a soft room environment, a raking key light from the left and a rim from behind right, seen through a 17° lens from about 10° above and turned 15° (yaw -0.26), so the slat prisms and rails read as depth at rest. The sign line is set a clear step below the name (at most 200px on a 2048px face, centred). Depth under it is a soft radial contact shadow on the floor, never a CSS shadow. Dark theme repaints the faces from the dark set, lowers exposure and environment light, and lightens the slat ends and rails.
+The homepage board is the one real 3D object, rendered with WebGL (three.js r170). It is a grid of tiles, 2 rows x 18 columns on desktop and 4 x 12 on canvases narrower than 560px, each tile 0.26 x 0.38 world units with gaps of .028 across and .05 down, set in a rounded-box casing with a .16 margin (satin clearcoat). Every tile is three parts: a fixed top half, a fixed bottom half and a hinged flap between them whose front carries the current top half and whose back carries the next bottom half. Tiles are matte (roughness .55). It is lit by a soft room environment, a key light from the upper left and a weak fill from the lower right, seen through a 20° lens, pitched slightly down onto the board and turned a little (yaw -0.15, -0.08 on narrow canvases). Depth beyond the casing comes from a soft blurred plane on the wall behind the board, offset down and right as if cast by the upper-left key light (opacity .32 light, .75 dark), never from a CSS shadow. Dark theme deepens that wall shadow, lifts the casing a step, and lowers exposure and environment light; tiles and characters do not change.
 
 ### Named Rules
 **The Material Depth Rule.** If something looks raised, it is because it is rendered in 3D or has a lighter tone, not because it casts a box-shadow.
 
-**The Seam Rule.** At rest only the chosen face shows; every other face takes the seam colour, so the slat gaps read as shadow.
-
-**The Night Flip Rule.** In dark theme each accent lightens and the text on it flips to near-black; the sign repaints to its dark faces, it is never inverted.
+**The Night Flip Rule.** In dark theme each accent lightens and the text on it flips to near-black; the board stays a black board, it is never inverted.
 
 ## Shapes
 
 Gently rounded on reading routes: 10px on cards, photos, video frames and homepage card images; 8px on buttons, inputs, segmented controls and post thumbnails; 6px on thumbnails inside cards. The homepage's interactive pieces are full pills (999px): the audience switch, its sliding indicator and the primary action. Pills otherwise only for the theme switch and dots.
 
-The sign is the one hard-edged solid on the site: square slats with a hairline gap between them, a wide flat rectangle overall, closed top and bottom by softly rounded rails.
+The board is the one hard-edged grid on the site: a wide rectangle of small upright tiles, each split across the middle, in a casing with softly rounded edges.
 
 ## Components
 
@@ -292,14 +297,17 @@ The homepage tablist under the question "who's reading?".
 - **Keyboard:** arrow keys, Home and End select and move focus; 2px graphite ink focus ring, 3px offset.
 - **Change:** the panel and cards swap with a 460ms rise from 10px and 4px blur to sharp; 160ms opacity only under reduced motion.
 
-### The Sign (signature)
+### The Board (signature)
 Decorative (`aria-hidden`) and optional: it loads after the page is usable, fades in over 700ms, and the page works without it.
-- **Faces:** one per audience: "for anyone / minimal systems that last.", "for recruiters / seen the numbers from both sides.", "for finance professionals / NPV > 0.", "for engineers / i know my way /around.".
-- **Turn:** selecting an audience turns every slat a quarter-turn multiple to that face in a wave from left to right, each slat starting 38ms after the last and taking 640ms with a slight overshoot that settles.
-- **Drag:** dragging sideways turns all slats together; on release they snap to the nearest face and that face selects its audience in the switch.
-- **Idle:** for 15 seconds after load or interaction it sways and bobs very slightly, then stops rendering. A mouse tilts it a little toward the pointer.
-- **Reduced motion:** no wave, no overshoot, no idle sway and no pointer tilt; the slats change face at once.
-- It pauses off screen and in hidden tabs.
+- **Text:** each audience's lead, the opening of its own intro sentence: "i'm a lifehacker", "i'm a finance student", "i'm→ NPV > 0, {aspiring_analyst}", "i'm {highly_technical}". Long words break after "_"; short phrases are balanced over the rows, centred in each row and centred vertically on the board.
+- **Flip:** selecting an audience sends each tile through a fixed drum order toward its new character, at most 6 flaps. Each flap falls from 0 to 180° with a gravity ease (progress squared) over 85ms. Tiles start 28ms apart per column and 90ms apart per row, so the change sweeps across and down. Characters take the new audience's colour as each flap lands.
+- **Arrival:** once per browser session the board flips in from blank; after that it simply shows the line.
+- **Pointer:** a mouse tilts it slightly toward the pointer. Nothing else is interactive on it.
+- **Reduced motion:** the characters change at once, with no flaps and no tilt.
+- The render loop stops when everything has settled, and pauses off screen and in hidden tabs.
+
+### Picks Cue (homepage)
+"essays picked for you" with a down chevron, at the bottom of the hero: a plain button, Inter 0.85rem in soft graphite, 40px tall, darkening to graphite ink on hover. It scrolls to the picks (instantly under reduced motion).
 
 ### Picked Cards
 Three hand-picked pieces per audience under "picked for <audience>".
@@ -330,17 +338,18 @@ Underlined at 1px with 2 to 4px offset. In prose the underline sits in soft grap
 ## Do's and Don'ts
 
 ### Do:
-- **Do** take every colour from the tokens, with a dark value for each surface and accent colour.
+- **Do** take every colour from the tokens, with a dark value for each page surface and accent colour.
 - **Do** route every audience-coloured element through the one accent variable and its paired on-colour so the whole axis changes together.
-- **Do** keep the homepage on one centred axis, and keep every action the sign offers available as a plain control.
+- **Do** keep the homepage hero to one screen on one centred axis, with the picks as the only content below the fold.
+- **Do** keep the board's text in the page as plain text, so nothing it shows exists only in WebGL.
 - **Do** animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 460ms; keep an opacity crossfade under reduced motion.
-- **Do** stop the sign's render loop when it settles, after the 15s idle, off screen and in hidden tabs; drop the wave and overshoot under reduced motion.
+- **Do** stop the board's render loop when it settles, off screen and in hidden tabs; change characters at once under reduced motion.
 - **Do** keep touch targets at 44px minimum and a 2px graphite ink focus ring on every control.
-- **Do** keep Archivo inside the Archivo fence (homepage name, sign lines, "picked for" heading).
+- **Do** keep Archivo inside the Archivo fence (homepage name, board glyphs, "picked for" heading).
 
 ### Don't:
 - **Don't** use box-shadows, glass, glow halos or decorative gradients to suggest depth.
 - **Don't** hard-code an audience colour or white text on an accent; read the accent and on-accent variables.
-- **Don't** paint a sign face with the accent fill; faces stay tints of their hue.
-- **Don't** add a second rendered 3D object or let the stage grow past 880px wide.
+- **Don't** colour the board's tiles or casing by audience; only the characters change colour.
+- **Don't** add a second rendered 3D object or let the stage grow past 980px wide or 380px tall.
 - **Don't** use signal green for anything but the status dot.
