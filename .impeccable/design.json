@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T12:22:23.245Z",
+  "generatedAt": "2026-11-25T18:00:00.000Z",
   "title": "Design System: Etharic",
   "extensions": {
     "colorMeta": {
@@ -128,6 +128,38 @@
           "oklch(48.0% 0.003 106.5)",
           "oklch(60.0% 0.003 106.5)",
           "oklch(72.0% 0.002 106.5)",
+          "oklch(84.0% 0.002 106.5)",
+          "oklch(95.0% 0.001 106.5)"
+        ]
+      },
+      "name-fade": {
+        "role": "neutral",
+        "displayName": "Name Fade",
+        "canonical": "#84878f",
+        "oklch": "oklch(62.3% 0.012 269.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 269.5)",
+          "oklch(25.0% 0.007 269.5)",
+          "oklch(35.0% 0.010 269.5)",
+          "oklch(48.0% 0.012 269.5)",
+          "oklch(60.0% 0.012 269.5)",
+          "oklch(72.0% 0.010 269.5)",
+          "oklch(84.0% 0.007 269.5)",
+          "oklch(95.0% 0.003 269.5)"
+        ]
+      },
+      "name-fade-dark": {
+        "role": "neutral",
+        "displayName": "Night Name Fade",
+        "canonical": "#6f6f6d",
+        "oklch": "oklch(54.1% 0.003 106.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.001 106.5)",
+          "oklch(25.0% 0.002 106.5)",
+          "oklch(35.0% 0.003 106.5)",
+          "oklch(48.0% 0.003 106.5)",
+          "oklch(60.0% 0.003 106.5)",
+          "oklch(72.0% 0.003 106.5)",
           "oklch(84.0% 0.002 106.5)",
           "oklch(95.0% 0.001 106.5)"
         ]
@@ -280,7 +312,7 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Homepage greeting only; name parts around \"ryan\" faded to 50% soft graphite."
+        "purpose": "Homepage greeting only; name parts around \"ryan\" in fixed name-fade greys (>=3:1 for large text)."
       },
       "headline": {
         "displayName": "Headline",
@@ -288,7 +320,7 @@
       },
       "section-head": {
         "displayName": "Section Head",
-        "purpose": "Homepage \"picked for <audience>\" heading."
+        "purpose": "Homepage \"picked for <audience>\" heading, audience in the tab's exact label."
       },
       "intro": {
         "displayName": "Intro",
@@ -296,7 +328,7 @@
       },
       "intro-term": {
         "displayName": "Intro Term",
-        "purpose": "JetBrains Mono code-like terms inside homepage intros; linked ones underlined in soft graphite at 5px."
+        "purpose": "JetBrains Mono code-like terms inside homepage intros; linked ones ink with a soft graphite underline at 5px, unlinked em in soft graphite."
       },
       "title": {
         "displayName": "Title",
@@ -312,7 +344,7 @@
       },
       "tab": {
         "displayName": "Tab",
-        "purpose": "Homepage audience tabs; active is graphite ink at 600."
+        "purpose": "Homepage audience tabs; selected is graphite ink at 600 with a 2px underline at 7px."
       },
       "label": {
         "displayName": "Label",
@@ -376,6 +408,11 @@
         "name": "card-lift",
         "value": "300ms ease-out translateY(-3px)",
         "purpose": "Picked card image on hover."
+      },
+      {
+        "name": "cue-scroll",
+        "value": "scrollIntoView smooth, auto under reduced motion",
+        "purpose": "Bottom-row \"picked for\" cue scrolls to the picks."
       }
     ],
     "breakpoints": [
@@ -394,6 +431,10 @@
       {
         "name": "rail",
         "value": "max-width: 1100px"
+      },
+      {
+        "name": "narrow",
+        "value": "max-width: 400px (audience tabs scroll sideways)"
       }
     ],
     "scene": {
@@ -404,7 +445,8 @@
       "beads": "InstancedMesh spheres, radius 2.8-5.6px, MeshStandardMaterial metalness 1 roughness .08; white + envMapIntensity 1.25 in dark, gunmetal #5d6068 + envMapIntensity 1.6 on light paper",
       "lighting": "RoomEnvironment via PMREM (.03), environment intensity 1 light / .7 dark; one directional key light 1.2 from (-1, 1.4, 1.2)",
       "depth": "z from -320px (behind) to 160px (in front of) the text plane",
-      "pauses": "render loop stops off screen (IntersectionObserver) and in hidden tabs; reduced motion draws one static frame and redraws only on theme change"
+      "pauses": "render loop stops off screen (IntersectionObserver) and in hidden tabs; reduced motion draws one static frame and redraws only on theme change",
+      "thinning": "particles near the .for-intro box thin out (smoothstep on distance): dots to 30% within 28px, chrome beads to 0 within 44px"
     }
   },
   "components": [
@@ -412,17 +454,17 @@
       "name": "Audience Tabs",
       "kind": "nav",
       "refersTo": "audience-tab",
-      "description": "Homepage tablist under the greeting: plain text tabs, the active one bold ink; each reserves its bold width.",
+      "description": "Homepage tablist under the greeting: plain text tabs with 44px tap areas; selected is bold ink with a 2px underline; hover previews; each reserves its bold width; scrolls sideways under 400px.",
       "html": "<div class=\"ds-for\" role=\"tablist\" aria-label=\"who is reading\"><button role=\"tab\" aria-selected=\"true\" class=\"ds-active\" data-label=\"for anyone\">for anyone</button><button role=\"tab\" aria-selected=\"false\" data-label=\"recruiters\">recruiters</button><button role=\"tab\" aria-selected=\"false\" data-label=\"finance professionals\">finance professionals</button><button role=\"tab\" aria-selected=\"false\" data-label=\"engineers\">engineers</button></div>",
-      "css": ".ds-for{display:flex;gap:20px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif}.ds-for button{display:inline-grid;font:inherit;font-size:.85rem;color:var(--soft,#646873);background:none;border:0;padding:4px 0;cursor:pointer;transition:color .18s}.ds-for button::after{content:attr(data-label);font-weight:600;height:0;visibility:hidden;overflow:hidden}.ds-for button:hover{color:var(--ink,#1d1e22)}.ds-for button.ds-active{color:var(--ink,#1d1e22);font-weight:600}.ds-for button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px;border-radius:3px}"
+      "css": ".ds-for{display:flex;gap:20px;flex-wrap:wrap;font-family:Inter,system-ui,sans-serif}.ds-for button{display:inline-grid;font:inherit;font-size:.85rem;color:var(--soft,#646873);background:none;border:0;padding:13px 0;margin:-13px 0;cursor:pointer;transition:color .18s}.ds-for button::after{content:attr(data-label);font-weight:600;height:0;visibility:hidden;overflow:hidden}.ds-for button:hover{color:var(--ink,#1d1e22)}.ds-for button.ds-active{color:var(--ink,#1d1e22);font-weight:600;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}.ds-for button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px;border-radius:3px}@media (max-width:400px){.ds-for{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:18px}.ds-for button{white-space:nowrap}}"
     },
     {
       "name": "Homepage Intro",
       "kind": "custom",
       "refersTo": "",
-      "description": "Large intro paragraph; code-like terms in JetBrains Mono, linked ones underlined in soft graphite at 5px.",
+      "description": "Large intro paragraph; code-like terms in JetBrains Mono: linked ones ink with a soft graphite underline at 5px, unlinked em in soft graphite.",
       "html": "<p class=\"ds-intro\">read <a class=\"ds-em\" href=\"#\">this.essay</a> or browse <a class=\"ds-em\" href=\"#\">my.projects</a>, and i’ll bet you <em class=\"ds-em\">a.coffee</em> you’ll find something useful</p>",
-      "css": ".ds-intro{font:400 1.6rem/1.5 Inter,system-ui,sans-serif;color:var(--ink,#1d1e22);margin:0}.ds-em{font-family:\"JetBrains Mono\",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-style:normal;font-weight:400;font-size:.84em;letter-spacing:-.02em}a.ds-em{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--soft,#646873);transition:text-decoration-color .18s}a.ds-em:hover{text-decoration-color:var(--ink,#1d1e22)}a.ds-em:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+      "css": ".ds-intro{font:400 1.6rem/1.5 Inter,system-ui,sans-serif;color:var(--ink,#1d1e22);margin:0}.ds-em{font-family:\"JetBrains Mono\",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-style:normal;font-weight:400;font-size:.84em;letter-spacing:-.02em}em.ds-em{color:var(--soft,#646873)}a.ds-em{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--soft,#646873);transition:text-decoration-color .18s}a.ds-em:hover{text-decoration-color:var(--ink,#1d1e22)}a.ds-em:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
       "name": "Button",
@@ -447,6 +489,14 @@
       "description": "Homepage hand-picked writing: 4:3 image, meta with reading time, title.",
       "html": "<a class=\"ds-pick\" href=\"#\"><div class=\"ds-pick-img\"></div><div class=\"ds-pick-meta\">technology · 6 min read</div><div class=\"ds-pick-t\">clearline: why i built it</div></a>",
       "css": ".ds-pick{display:inline-grid;width:240px;text-decoration:none;color:var(--ink,#1d1e22);font-family:Inter,system-ui,sans-serif}.ds-pick-img{aspect-ratio:4/3;border-radius:10px;border:1px solid var(--line,#dcdee3);background:var(--card,#f8f9fa);transition:transform .3s cubic-bezier(.23,1,.32,1)}.ds-pick:hover .ds-pick-img{transform:translateY(-3px)}.ds-pick:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}.ds-pick-meta{font-size:.8rem;color:var(--soft,#646873);margin:12px 0 4px}.ds-pick-t{font-weight:600;font-size:1.02rem;line-height:1.35}"
+    },
+    {
+      "name": "Picks End Row",
+      "kind": "nav",
+      "refersTo": "end-link",
+      "description": "Closing row under the picked cards: all essays, get cv, say hi.",
+      "html": "<p class=\"ds-end\"><a href=\"#\">all essays&nbsp;<span aria-hidden=\"true\">&rarr;</span></a><span aria-hidden=\"true\">·</span><a href=\"#\">get cv</a><span aria-hidden=\"true\">·</span><a href=\"#\">say hi</a></p>",
+      "css": ".ds-end{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0;color:var(--soft,#646873);font:400 .95rem Inter,system-ui,sans-serif}.ds-end a{color:var(--ink,#1d1e22);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}.ds-end a:hover{text-decoration-thickness:2px}.ds-end a:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
     },
     {
       "name": "Card",
@@ -476,9 +526,17 @@
       "name": "Get CV",
       "kind": "button",
       "refersTo": "cv-link",
-      "description": "'get cv' pinned bottom-right of the homepage first screen: burnt amber, ink on hover.",
+      "description": "'get cv' at the right end of the homepage bottom row: burnt amber, ink on hover.",
       "html": "<a class=\"ds-cv\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><polyline points=\"14 2 14 8 20 8\"/><line x1=\"16\" y1=\"13\" x2=\"8\" y2=\"13\"/><line x1=\"16\" y1=\"17\" x2=\"8\" y2=\"17\"/></svg>get cv</a>",
       "css": ".ds-cv{color:var(--accent,#8f5d00);display:inline-flex;align-items:center;gap:6px;min-height:30px;text-decoration:none;font:400 .95rem Inter,system-ui,sans-serif;transition:color .18s}.ds-cv:hover{color:var(--ink,#1d1e22)}.ds-cv:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Picked-for Cue",
+      "kind": "button",
+      "refersTo": "hero-cue",
+      "description": "Centre of the homepage bottom row: names the selected audience and scrolls to the picks.",
+      "html": "<button type=\"button\" class=\"ds-cue\">picked for <b>finance professionals</b><svg viewBox=\"0 0 24 24\" width=\"15\" height=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 9l6 6 6-6\"/></svg></button>",
+      "css": ".ds-cue{font:400 .9rem Inter,system-ui,sans-serif;color:var(--soft,#646873);background:none;border:0;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 6px;cursor:pointer;transition:color .18s}.ds-cue b{font-weight:500;color:var(--ink,#1d1e22)}.ds-cue:hover{color:var(--ink,#1d1e22)}.ds-cue:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px;border-radius:4px}"
     },
     {
       "name": "Theme Switch",
@@ -491,7 +549,7 @@
   ],
   "narrative": {
     "northStar": "A Quiet Desk with Dust in the Light",
-    "overview": "Etharic is one calm reading system: cool paper, graphite ink, hairline borders, Inter at reading sizes and flat surfaces on every route. The homepage keeps that desk and lets a little air move over it. A left-aligned column says \"hey, i'm suryanarayan!\", lets the visitor pick who they are from a row of plain text tabs, and answers in a large intro paragraph written for that reader. Behind the greeting a sparse field of tiny particles drifts in real 3D, most of them matte grey dots in the page's own soft tone and a few small chrome beads that catch the light. It is atmosphere, not an object: no frame, no colour, fading out at its edges.\n\nThe first screen is the greeting alone. The \"currently in\" line with its clock, green dot and pixel dog sits pinned to the bottom-left corner of that screen, and \"get cv\" in burnt amber to the bottom-right. Below the fold, \"picked for <audience>\" lists three hand-picked pieces of writing that follow the selected tab.\n\nThe voice is personal and playful (lowercase copy, code-like terms such as `this.essay` set in a mono face, a pixel dog, a live clock) while the surfaces stay restrained. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
+    "overview": "Etharic is one calm reading system: cool paper, graphite ink, hairline borders, Inter at reading sizes and flat surfaces on every route. The homepage keeps that desk and lets a little air move over it. A left-aligned column says \"hey, i'm suryanarayan!\", lets the visitor pick who they are from a row of plain text tabs, and answers in a large intro paragraph written for that reader. Behind the greeting a sparse field of tiny particles drifts in real 3D, most of them matte grey dots in the page's own soft tone and a few small chrome beads that catch the light. It is atmosphere, not an object: no frame, no colour, fading out at its edges.\n\nThe first screen is the greeting alone, closed by one bottom row on the 24px gutter: the \"currently in\" line with its clock, green dot and pixel dog on the left, a soft \"picked for <audience> ↓\" cue in the centre that scrolls to the picks, and \"get cv\" in burnt amber on the right. Below the fold, \"picked for <audience>\" lists three hand-picked pieces of writing that follow the selected tab, then closes with \"all essays → · get cv · say hi\".\n\nThe voice is personal and playful (lowercase copy, code-like terms such as `this.essay` set in a mono face, a pixel dog, a live clock) while the surfaces stay restrained. Rejected: corporate polish, glossy neon 3D, glass, decorative gradients and glow halos.",
     "keyCharacteristics": [
       "Flat tonal surfaces with 1px hairlines; no elevation shadows.",
       "Graphite carries everything; burnt amber is the one action colour (\"get cv\"), signal green the one status colour.",
@@ -527,18 +585,18 @@
       },
       {
         "name": "The Atmosphere Rule",
-        "body": "The particles stay behind the text, small, grey or chrome, and masked at their edges. They never take an accent colour, never sit in front of a control, and the page reads fully without them.",
+        "body": "The particles stay behind the text, small, grey or chrome, thinned behind the intro and masked at their edges. They never take an accent colour, never sit in front of a control, and the page reads fully without them.",
         "section": "elevation"
       }
     ],
     "dos": [
       "Do take every colour from the tokens, with a dark value for each page surface.",
-      "Do keep the homepage first screen to the greeting, the tabs, the intro and \"more about me\", with the \"currently in\" line and \"get cv\" pinned to its bottom corners.",
+      "Do keep the homepage first screen to the greeting, the tabs, the intro and \"more about me\", closed by the one bottom row: \"currently in\" left, the picked-for cue centred, \"get cv\" right.",
       "Do let the audience choice change words and picks, and keep the page's colours the same for every reader.",
       "Do reserve space for the longest intro and the bold tab width so switching audiences never shifts the layout.",
       "Do keep the particle field behind the text, masked at its edges, paused off screen and in hidden tabs, and static under reduced motion.",
       "Do animate only transform, opacity and filter with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 300ms; keep an opacity-only fallback under reduced motion.",
-      "Do keep a 2px graphite ink focus ring on every control and full keyboard operation of the tabs."
+      "Do keep a 2px graphite ink focus ring on every control, a 44px tap area on every homepage tab and link, and full keyboard operation of the tabs."
     ],
     "donts": [
       "Don't use box-shadows, glass, glow halos or decorative gradients to suggest depth.",
