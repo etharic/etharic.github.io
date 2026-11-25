@@ -22,8 +22,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f0f1f3;--card:#f8f9fa;--ink:#1d1e22;--soft:#6b6f7a;--line:#dcdee3;--on:#34c759;--hover:rgba(29,30,34,.05)}
-:root[data-theme="dark"]{--bg:#151515;--card:#20201f;--ink:#f2f2f1;--soft:#9d9d9b;--line:#373736;--hover:rgba(242,242,241,.07)}
+:root{--bg:#f0f1f3;--card:#f8f9fa;--ink:#1d1e22;--soft:#646873;--line:#dcdee3;--on:#34c759;--hover:rgba(29,30,34,.05);--accent:#8f5d00;--track:#3a3a40}
+::selection{background:var(--ink);color:var(--bg)}
+:root[data-theme="dark"]{--bg:#151515;--card:#20201f;--ink:#f2f2f1;--soft:#9d9d9b;--line:#373736;--hover:rgba(242,242,241,.07);--accent:#cf8c06}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
@@ -51,7 +52,7 @@ nav .right a.on{color:var(--ink)}
 @media (hover:hover){.work-tabs a:hover{color:var(--ink)}}
 @media (hover:hover){nav .right a:hover{color:var(--ink)}}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.switch{width:48px;height:27px;border-radius:999px;border:0;background:#3a3a40;position:fixed;top:30px;right:30px;cursor:pointer;padding:0;transition:background .42s cubic-bezier(.4,0,.2,1);z-index:200;view-transition-name:theme-switch}
+.switch{width:48px;height:27px;border-radius:999px;border:0;background:var(--track);position:fixed;top:30px;right:30px;cursor:pointer;padding:0;transition:background .42s cubic-bezier(.4,0,.2,1);z-index:200;view-transition-name:theme-switch}
 .switch::after{content:"";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .42s cubic-bezier(.4,0,.2,1)}
 .switch[aria-checked="true"]{background:var(--on)}
 .switch[aria-checked="true"]::after{transform:translateX(21px)}
@@ -73,13 +74,16 @@ main p a,.link{color:var(--ink)}
 .hero>h1,.hero>.for-bar,.hero>.for-intro,.hero>.more-about{position:relative;z-index:1}
 .intro{line-height:1.8}
 .for-bar{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:24px}
-.for-bar span{color:var(--soft);cursor:pointer;font-size:.85rem;transition:color .18s}
-.for-bar span:hover,.for-bar span.active{color:var(--ink);font-weight:600}
+.for-bar button{font:inherit;font-size:.85rem;color:var(--soft);background:none;border:0;padding:4px 0;margin:-4px 0;cursor:pointer;transition:color .18s}
+.for-bar button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:3px}
+.for-intro a.intro-em{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:var(--soft)}
+@media (hover:hover){.for-intro a.intro-em:hover{text-decoration-color:var(--ink)}}
+.for-bar button.active{color:var(--ink);font-weight:600}
 .for-intro{font-size:1.6rem;line-height:1.5;font-weight:400;min-height:3.2em;color:var(--ink)}
 .for-intro .intro-em{font-family:"Times New Roman",Times,serif;font-style:italic;font-weight:300;font-synthesis:none;display:inline-block;transform:skewX(-9deg) scaleX(.94);transform-origin:center}
 .hero-where{position:absolute;left:24px;top:calc(100vh - 30px);transform:translateY(-100%);display:flex;align-items:center;gap:8px;min-height:30px;color:var(--soft);font-size:.95rem;z-index:50}
 .hero-actions{position:absolute;right:30px;top:calc(100vh - 30px);transform:translateY(-100%);display:flex;flex-direction:column;align-items:flex-end;gap:20px;z-index:50}
-.hero-actions a{color:#cf8c06;display:inline-flex;align-items:center;min-height:30px;gap:6px;text-decoration:none;font-size:.95rem;transition:color .18s}
+.hero-actions a{color:var(--accent);display:inline-flex;align-items:center;min-height:30px;gap:6px;text-decoration:none;font-size:.95rem;transition:color .18s}
 @media (hover:hover){.hero-actions a:hover{color:var(--ink)}}
 .btn{display:inline-block;border:1px solid var(--line);color:var(--ink);padding:8px 16px;border-radius:8px;text-decoration:none;font-size:.85rem;background:var(--card);transition:background .18s,border-color .18s,color .18s,transform .12s}
 @media (hover:hover){.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg);transform:translateY(-1px)}}
@@ -124,7 +128,7 @@ h1 .fade{color:var(--soft);opacity:.5}
 @media (prefers-reduced-motion:reduce){.seg button{transition:none}}
 .prose{max-width:660px;font-size:var(--reading-font-size);line-height:1.65}
 .prose p{color:var(--ink);line-height:1.65}
-.prose h3{font-size:1.05rem;font-weight:600;margin:32px 0 8px}
+.prose h2{font-size:1.05rem;font-weight:600;margin:32px 0 8px;line-height:1.4}
 .prose strong{font-weight:600}
 .lt{position:relative;--h:108px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .lt-scroll{height:var(--h);overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;-ms-overflow-style:none}
@@ -136,8 +140,8 @@ h1 .fade{color:var(--soft);opacity:.5}
 .lt-ph{display:flex;align-items:center;justify-content:center;color:var(--soft)}
 .lt-ph svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lt-title{font-size:.9rem;font-weight:500;line-height:1.35}
-.lt-dots{position:absolute;right:10px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:2px}
-.lt-dot{width:16px;height:16px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lt-dots{position:absolute;right:4px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:0}
+.lt-dot{width:24px;height:24px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lt-dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
 .lt-dot.on::after{background:var(--ink);transform:scale(1.25)}
 .lt-dot:focus-visible{outline:2px solid var(--ink);border-radius:50%}
@@ -154,9 +158,7 @@ footer{margin-top:auto;padding-top:26px;padding-bottom:44px;border-top:1px solid
 .subnote{flex-basis:100%;margin:0;font-size:.8rem}
 .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 24px}
 .where{display:flex;align-items:center;gap:8px}
-.dot{width:9px;height:9px;border-radius:50%;background:var(--on);animation:breathe 4.6s ease-in-out infinite}
-@keyframes breathe{0%,100%{transform:scale(.82);opacity:.7;box-shadow:0 0 0 0 rgba(52,199,89,0)}50%{transform:scale(1.1);opacity:1;box-shadow:0 0 0 7px rgba(52,199,89,.16)}}
-@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--on)}
 .dog g{display:none}
 .dog .base,.dog[data-f="0"] .down,.dog[data-f="1"] .up1,.dog[data-f="2"] .up2{display:inline}
 .dog{color:var(--ink);display:block;flex:none}
@@ -167,8 +169,7 @@ footer{margin-top:auto;padding-top:26px;padding-bottom:44px;border-top:1px solid
 
 /* Cursor halo: desktop/fine pointers only */
 @media (hover:hover) and (pointer:fine){
-  html,body,a,button,[role="button"],[role="switch"],.for-bar span,.lt-dot{cursor:none!important}
-  .cursor-halo{position:fixed;left:0;top:0;width:66px;height:66px;z-index:10000;pointer-events:none;opacity:0;transform:translate3d(-50%,-50%,0);transition:opacity .18s ease;will-change:left,top,transform;contain:layout paint style}
+  .cursor-halo{position:fixed;left:-33px;top:-33px;width:66px;height:66px;z-index:10000;pointer-events:none;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .18s ease;will-change:transform;contain:layout paint style}
   .cursor-halo.show{opacity:1}
   .cursor-halo svg{width:100%;height:100%;display:block;overflow:visible}
   .cursor-halo text{font-family:Inter,system-ui,sans-serif;font-size:9.5px;font-weight:500;letter-spacing:2.2px;text-transform:uppercase;fill:var(--soft);transition:fill .18s ease,filter .18s ease}
@@ -178,7 +179,7 @@ footer{margin-top:auto;padding-top:26px;padding-bottom:44px;border-top:1px solid
   .cursor-halo.click .cursor-halo-dot{fill:#111;filter:drop-shadow(0 0 2px rgba(0,0,0,.45))}
   :root[data-theme="dark"] .cursor-halo.click .cursor-halo-dot{fill:#fff;filter:drop-shadow(0 0 2px rgba(255,255,255,.75))}
 }
-@media (hover:none),(pointer:coarse){.cursor-halo{display:none!important}}
+@media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.cursor-halo{display:none!important}}
 
 
 /* Shared long-form reading typography: About and full blog posts */
@@ -233,7 +234,7 @@ body.about-route main{padding-bottom:8px}
 .work-article .prose h1{margin-bottom:8px}
 .work-article .article-date{color:var(--soft);font-size:.8rem;margin-bottom:28px}
 .work-article .chapter{scroll-margin-top:110px}
-.work-article .chapter h3{font-size:1.05rem;font-weight:600;margin:34px 0 10px}
+.work-article .chapter h2{font-size:1.05rem;font-weight:600;margin:34px 0 10px;line-height:1.4}
 .chapter-rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);width:220px;color:var(--soft);z-index:80}
 .chapter-rail-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase}
 .chapter-rail-head button,.chapter-link{font:inherit;border:0;background:none;padding:0;text-align:left;cursor:pointer}
@@ -396,7 +397,7 @@ let currentView = "recent";
 const app = document.getElementById("app");
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const inline = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
-const paras = t => t.split(/\n\s*\n/).map(x => x.startsWith("## ") ? `<h3>${inline(x.slice(3))}</h3>` : `<p>${inline(x)}</p>`).join("");
+const paras = t => t.split(/\n\s*\n/).map(x => x.startsWith("## ") ? `<h2>${inline(x.slice(3))}</h2>` : `<p>${inline(x)}</p>`).join("");
 const thumb = id => `https://img.youtube.com/vi/${esc(id)}/mqdefault.jpg`;
 const watch = id => `https://www.youtube.com/watch?v=${esc(id)}`;
 function nameHtml() {
@@ -467,7 +468,10 @@ function initSpores() {
   const still = matchMedia("(prefers-reduced-motion:reduce)").matches;
   const PAD = 90, CELL = 38;
   let W = 0, H = 0, L = 0, T = 0, dots = [], raf = 0;
-  let mx = 0, my = 0, inside = false, ox = 0, oy = 0;
+  let mx = 0, my = 0, inside = false, ox = 0, oy = 0, visible = true;
+  let dotColor = "#999";
+  const readColor = () => { dotColor = getComputedStyle(document.documentElement).getPropertyValue("--soft").trim() || "#999"; };
+  readColor();
   function layout() {
     const parts = [".hero h1", ".for-bar", ".for-intro", ".more-about"].map(q => hero.querySelector(q)).filter(Boolean).map(e => e.getBoundingClientRect());
     let x0 = Math.min(...parts.map(r => r.left)) - PAD; const y0 = Math.min(...parts.map(r => r.top)) - PAD;
@@ -490,7 +494,7 @@ function initSpores() {
     const tx = inside ? (mx - (L - scrollX) - W / 2) * .08 : 0, ty = inside ? (my - (T - scrollY) - H / 2) * .08 : 0;
     ox += (tx - ox) * .05; oy += (ty - oy) * .05;
     ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--soft").trim() || "#999";
+    ctx.fillStyle = dotColor;
     ctx.globalAlpha = .55;
     const m = 20;
     for (const d of dots) {
@@ -501,17 +505,21 @@ function initSpores() {
       }
       ctx.beginPath(); ctx.arc(d.x + ox, d.y + oy, d.r, 0, Math.PI * 2); ctx.fill();
     }
-    if (!still) raf = requestAnimationFrame(frame);
+    raf = (!still && visible && !document.hidden) ? requestAnimationFrame(frame) : 0;
   }
+  const resume = () => { if (!still && !raf && visible && !document.hidden) raf = requestAnimationFrame(frame); };
+  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; resume(); });
+  io.observe(hero);
+  document.addEventListener("visibilitychange", resume);
   const onMove = e => { mx = e.clientX; my = e.clientY; const r = cv.getBoundingClientRect(); inside = mx >= r.left && mx <= r.right && my >= r.top && my <= r.bottom; };
   const onLeave = () => { inside = false; };
   const ro = new ResizeObserver(() => { layout(); if (still) frame(); });
   ro.observe(hero); window.addEventListener("resize", layout);
   window.addEventListener("pointermove", onMove); document.addEventListener("pointerleave", onLeave);
   layout(); frame();
-  const themeObs = new MutationObserver(() => { if (still) frame(); });
+  const themeObs = new MutationObserver(() => { readColor(); if (still) frame(); });
   themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  sporeStop = () => { cancelAnimationFrame(raf); ro.disconnect(); themeObs.disconnect(); window.removeEventListener("resize", layout); window.removeEventListener("pointermove", onMove); document.removeEventListener("pointerleave", onLeave); cv.remove(); };
+  sporeStop = () => { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); document.removeEventListener("visibilitychange", resume); themeObs.disconnect(); window.removeEventListener("resize", layout); window.removeEventListener("pointermove", onMove); document.removeEventListener("pointerleave", onLeave); cv.remove(); };
 }
 let forBarCleanup = null;
 function initForBar() {
@@ -519,7 +527,7 @@ function initForBar() {
   const bar = document.querySelector(".for-bar");
   if (!bar) return;
   const intro = document.querySelector(".for-intro");
-  const tabs = [...bar.querySelectorAll("span[data-for]")];
+  const tabs = [...bar.querySelectorAll("button[data-for]")];
   // Reserve the longest intro height so switching audiences never shifts the page.
   const fit = () => {
     const curHTML = intro.innerHTML;
@@ -536,10 +544,23 @@ function initForBar() {
     intro.innerHTML = formatForIntro(FOR_CATEGORIES[i].text);
     tabs.forEach((tab,k) => tab.classList.toggle("active", k === i));
   };
+  const select = i => {
+    forLocked = i; activate(i);
+    tabs.forEach((tab,k) => { tab.tabIndex = k === i ? 0 : -1; tab.setAttribute("aria-selected", k === i); });
+    intro.setAttribute("aria-labelledby", tabs[i].id);
+  };
+  const onKey = e => {
+    const n = tabs.length, keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+    let i = forLocked;
+    if (e.key in keys) i = (forLocked + keys[e.key] + n) % n;
+    else if (e.key === "Home") i = 0; else if (e.key === "End") i = n - 1; else return;
+    e.preventDefault(); select(i); tabs[i].focus();
+  };
+  bar.addEventListener("keydown", onKey);
   const handlers = tabs.map(tab => {
     const enter = () => activate(+tab.dataset.for);
     const leave = () => activate(forLocked);
-    const click = () => { forLocked = +tab.dataset.for; activate(forLocked); };
+    const click = () => select(+tab.dataset.for);
     tab.addEventListener("mouseenter", enter);
     tab.addEventListener("mouseleave", leave);
     tab.addEventListener("click", click);
@@ -550,6 +571,7 @@ function initForBar() {
   fit();
   forBarCleanup = () => {
     ro.disconnect();
+    bar.removeEventListener("keydown", onKey);
     handlers.forEach(([tab,enter,leave,click]) => {
       tab.removeEventListener("mouseenter", enter);
       tab.removeEventListener("mouseleave", leave);
@@ -567,17 +589,26 @@ const FOR_CATEGORIES = [
 ];
 
 const FOR_ITALIC_TERMS = ["this.essay","my.projects","a.coffee","this.model","this.deck","this.pitch","this.site","this.project","this.too"];
+// Terms with a page to point at become links; the rest stay as plain italic.
+const FOR_TERM_LINKS = {
+  "this.essay": "#work-post-why-i-started-a-personal-website",
+  "my.projects": "#work-technology",
+  "this.site": "#work-post-why-i-started-a-personal-website",
+  "this.project": "#work-post-clearline-why-i-built-it",
+  "this.too": "#work-post-habitkit-small-habits-big-changes"
+};
 function formatForIntro(text) {
   let safe = esc(text);
   FOR_ITALIC_TERMS.forEach(term => {
-    safe = safe.split(term).join(`<em class="intro-em">${term}</em>`);
+    const href = FOR_TERM_LINKS[term];
+    safe = safe.split(term).join(href ? `<a class="intro-em" href="${href}">${term}</a>` : `<em class="intro-em">${term}</em>`);
   });
   return safe;
 }
 
 function home() {
-  const forTabs = FOR_CATEGORIES.map((c, i) => `<span data-for="${i}" class="${i === 0 ? 'active' : ''}">${esc(c.label)}</span>`).join("");
-  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar">${forTabs}</div><p class="for-intro">${formatForIntro(FOR_CATEGORIES[0].text)}</p><a class="more-about" href="#about"><span>more about me</span>&rarr;</a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
+  const forTabs = FOR_CATEGORIES.map((c, i) => `<button type="button" role="tab" id="for-tab-${i}" data-for="${i}" class="${i === forLocked ? "active" : ""}" aria-selected="${i === forLocked}" aria-controls="for-intro" tabindex="${i === forLocked ? 0 : -1}">${esc(c.label)}</button>`).join("");
+  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar" role="tablist" aria-label="who is reading">${forTabs}</div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span>&rarr;</a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
   return h;
@@ -648,12 +679,12 @@ const renderArticleElement=e=>{
  if(e.type==="image")return `<figure class="article-figure"><img src="${esc(e.src)}" alt="${esc(e.alt)}" loading="lazy" decoding="async"></figure>`;
  if(e.type==="list")return `<ul class="article-list">${e.items.map(x=>`<li>${x}</li>`).join("")}</ul>`;
  if(e.type==="table")return `<div class="article-table-wrap"><table class="article-table"><thead><tr>${e.headers.map(x=>`<th>${esc(x)}</th>`).join("")}</tr></thead><tbody>${e.rows.map(r=>`<tr>${r.map(x=>`<td>${esc(x)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
- if(e.type==="subhead")return `<h4 class="article-subhead">${e.html||""}</h4>`;
+ if(e.type==="subhead")return `<h3 class="article-subhead">${e.html||""}</h3>`;
  return `<p>${e.html||""}</p>`;
 };
 const renderWorkArticle=a=>{
  const rail=`<aside class="chapter-rail" aria-label="chapters"><div class="chapter-rail-head"><button type="button" data-top-link>chapters</button><span>${a.totalWords} words</span></div><div class="chapter-rail-list">`+a.chapters.map(c=>`<button type="button" class="chapter-link" data-chapter="${c.id}"><span class="chapter-dot"></span><span>${esc(c.title)} <span class="chapter-words">(${c.words} words)</span></span></button>`).join("")+`</div></aside>`;
- const body=a.chapters.map((c,i)=>`<section class="chapter" id="${c.id}">${i?`<h3>${esc(c.title)}</h3>`:""}${c.elements?c.elements.map(renderArticleElement).join(""):c.formattedParagraphs.map(x=>`<p>${x}</p>`).join("")}</section>`).join("");
+ const body=a.chapters.map((c,i)=>`<section class="chapter" id="${c.id}">${i?`<h2>${esc(c.title)}</h2>`:""}${c.elements?c.elements.map(renderArticleElement).join(""):c.formattedParagraphs.map(x=>`<p>${x}</p>`).join("")}</section>`).join("");
  return `<div class="work-article ${a.id==="clearline-why-i-built-it"?"clearline-article":""}">${rail}<article class="prose"><h1>${esc(a.title)}</h1><div class="article-date">${esc(a.date)} · ${a.totalWords} words</div>${body}</article></div>`;
 };
 
@@ -773,7 +804,10 @@ function route(forced) {
   if (id === "blog") {
     document.querySelectorAll(".seg button").forEach(b => { b.onclick = () => { currentView = b.dataset.v; route("blog"); }; });
   }
-  document.title = p ? p.title + " | " + BRAND : BRAND;
+  const routeName = { about: "about", contact: "contact", blog: "blog", projects: "projects", videos: "videos", [YEAR]: YEAR };
+  const section = id.startsWith("work-") ? WORK_SECTION_BY_KEY[id.slice(5)] : null;
+  const pageName = p ? p.title : section ? section.label : routeName[id];
+  document.title = pageName ? pageName + " — " + BRAND : BRAND;
   NAV_LINKS.forEach(a => a.classList.toggle("on", a.dataset.r === id || ((!!p || WORK_NAV_KEYS.includes(id)) && a.dataset.r === "bin") || (id.startsWith("work-") && a.dataset.r === "work")));
   window.scrollTo(0, 0);
 }
@@ -940,12 +974,14 @@ route();
 <script>
 (() => {
   const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)');
-  if (!finePointer.matches) return;
+  if (!finePointer.matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   const halo = document.getElementById('cursorHalo');
   const ring = document.getElementById('cursorHaloRing');
   const textPath = halo.querySelector('textPath');
-  const actionable = 'a,button,[role="button"],[role="switch"],input,select,textarea,.for-bar span,.lt-dot,[tabindex]:not([tabindex="-1"])';
-  let x = -100, y = -100, angle = 0, lastX = null, lastY = null, clicking = false, lastT = performance.now();
+  const actionable = 'a,button,[role="button"],[role="switch"],[role="tab"],input,select,textarea,.lt-dot,[tabindex]:not([tabindex="-1"])';
+  let x = -100, y = -100, angle = 0, lastX = null, lastY = null, clicking = false, lastT = performance.now(), raf = 0;
+  const draw = () => ring.setAttribute('transform', `rotate(${angle} 50 50)`);
+  const spin = () => { if (!raf) { lastT = performance.now(); raf = requestAnimationFrame(frame); } };
   const moveRate = 0.58;       // degrees per pixel of pointer travel
   const clickRate = 38;        // degrees per second
 
@@ -956,19 +992,20 @@ route();
       halo.classList.toggle('click', clicking);
       textPath.textContent = clicking ? 'CLICK · CLICK · CLICK · CLICK · ' : 'MOVE · MOVE · MOVE · MOVE · ';
       textPath.setAttribute('textLength', '213');
+      if (clicking) spin();
     }
   }
 
   document.addEventListener('pointermove', e => {
     x = e.clientX; y = e.clientY;
-    halo.style.left = x + 'px';
-    halo.style.top = y + 'px';
+    halo.style.transform = `translate3d(${x}px,${y}px,0)`;
     halo.classList.add('show');
     setMode(e.target);
     if (!clicking && lastX !== null){
       angle += Math.hypot(x - lastX, y - lastY) * moveRate;
     }
     lastX = x; lastY = y;
+    if (!clicking) draw();
   }, {passive:true});
 
   document.addEventListener('pointerover', e => setMode(e.target), {passive:true});
@@ -978,11 +1015,11 @@ route();
   function frame(now){
     const dt = Math.min((now - lastT) / 1000, .05);
     lastT = now;
-    if (clicking) angle += clickRate * dt;
-    ring.setAttribute('transform', `rotate(${angle} 50 50)`);
-    requestAnimationFrame(frame);
+    angle += clickRate * dt;
+    draw();
+    raf = (clicking && !document.hidden) ? requestAnimationFrame(frame) : 0;
   }
-  requestAnimationFrame(frame);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden && clicking) spin(); });
 })();
 </script>
 
