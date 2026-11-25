@@ -141,7 +141,7 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   };
 
   const target = i => layout(leads[i]).join('');
-  const FLIP = 85;      // ms per flap fall
+  const FLIP = 120;     // ms per flap fall
   function setText(i) {
     const want = target(i);
     const now = performance.now();
@@ -153,13 +153,13 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
       // pass through the drum toward the target, at most 6 flaps
       const a = Math.max(DRUM.indexOf(from), 0), b = Math.max(DRUM.indexOf(to), 0);
       const dist = (b - a + DRUM.length) % DRUM.length;
-      const steps = Math.min(dist || DRUM.length, 6);
+      const steps = Math.min(dist || DRUM.length, 8);
       const q = [];
       for (let s = 1; s <= steps; s++) q.push(DRUM[(a + Math.round(dist * s / steps)) % DRUM.length]);
       q[q.length - 1] = to;
       if (cell.flipping) q.unshift(cell.next);           // finish the flap already falling
       cell.queue = q;
-      if (!cell.flipping) cell.t0 = now + (k % COLS) * 28 + Math.floor(k / COLS) * 90;
+      if (!cell.flipping) cell.t0 = now + (k % COLS) * 34 + Math.floor(k / COLS) * 110;
     });
     aud = i;
     kick();
@@ -204,6 +204,7 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
       cell.flap.rotation.x = Math.PI * p * p;        // falls under gravity
       if (p >= 1) {
         cell.ch = cell.next; cell.m = aud;
+        canvas.dataset.flips = (+canvas.dataset.flips || 0) + 1;   // lets tests see the board moving
         cell.bot.material = mats[aud];
         setHalf(cell.bot.geometry, cell.ch, 'bot');
         cell.flap.visible = false; cell.flap.rotation.x = 0;
@@ -240,9 +241,9 @@ export async function mount(canvas, { leads, tints, start = 0, reduced = false, 
   const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; kick(); }); io.observe(canvas);
   document.addEventListener('visibilitychange', kick);
 
-  // first view per session: the board flips in from blank; afterwards it simply shows the line
-  let shown = true;
-  try { shown = sessionStorage.getItem('board-shown') === '1'; sessionStorage.setItem('board-shown', '1'); } catch (e) {}
+  // every page load: the board flips in from blank (returning to the homepage inside the site does not replay it)
+  const shown = window.__boardShown === true;
+  window.__boardShown = true;
   let current = start;
   if (!shown && !reduced) { cells.forEach(c => show(c, ' ')); resize(); setTimeout(() => setText(start), 450); }
   else { const t = target(start); cells.forEach((c, k) => show(c, t[k])); resize(); }

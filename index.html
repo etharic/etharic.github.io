@@ -631,7 +631,7 @@ function initAudience() {
   const onTheme = () => { if (hero3d) hero3d.setTheme(document.documentElement.dataset.theme === "dark"); };
   document.addEventListener("themechange", onTheme);
   if (gl) {
-    import("./vendor/hero3d.js")
+    import("./vendor/hero3d.js?v=a6309f73")
       .then(m => m.mount(canvas, {
         leads: AUDIENCES.map(a => a.lead), tints: BOARD_TINTS, start: forLocked, reduced,
         dark: document.documentElement.dataset.theme === "dark"
