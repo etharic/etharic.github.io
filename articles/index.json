@@ -1,0 +1,7 @@
+---
+layout: bare
+permalink: /articles/index.json
+---
+{% assign docs = site.articles | where_exp: "d", "d.draft != true" | sort: "date" | reverse %}[{% for d in docs %}
+{"id":{{ d.slug | jsonify }},"title":{{ d.title | jsonify }},"date":{{ d.date | date: "%Y-%m-%d" | jsonify }},"display":{{ d.date | date: "%-d %b %Y" | downcase | jsonify }},"section":{{ d.section | jsonify }},"image":{{ d.image | jsonify }},"words":{{ d.content | strip_html | number_of_words }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+]

@@ -1,0 +1,70 @@
+# Pages CMS (app.pagescms.org): the editor for etharic.com articles.
+media:
+  input: images
+  output: /images
+
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: _articles
+    filename: "{primary}.md"
+    format: yaml-frontmatter
+    view:
+      fields: [title, section, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: section
+        label: Section
+        type: select
+        required: true
+        options:
+          values: [fireplace, macro-market, technology, thrive, series, summaries]
+      - name: image
+        label: Card image
+        type: image
+      - name: draft
+        label: Draft (hidden from the site)
+        type: boolean
+        default: false
+      - name: body
+        label: Article
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: sections
+    label: Sections
+    type: file
+    path: _data/sections.yml
+    format: yaml
+    list: true
+    fields:
+      - name: key
+        label: Key (used in links, no spaces)
+        type: string
+        required: true
+      - name: label
+        label: Name shown on the site
+        type: string
+        required: true
+      - name: sticker
+        label: Sticker image
+        type: image
+      - name: description
+        label: Description
+        type: text

@@ -1,3 +1,25 @@
+# GitHub Pages (Jekyll) builds the article files; the site itself is the static index.html.
 exclude:
   - PRODUCT.md
   - DESIGN.md
+  - README.md
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: false
+
+# Articles live in _articles/*.md (edited in Pages CMS). Each one is published as a bare HTML
+# fragment at /a/<file-name>.html, and articles/index.json lists them for the site.
+collections:
+  articles:
+    output: true
+    permalink: /a/:name.html
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: bare

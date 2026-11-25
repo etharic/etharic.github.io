@@ -1,0 +1,24 @@
+- key: fireplace
+  label: "fireplace"
+  sticker: fireplace-sticker.webp
+  description: "a collection of bite-sized life lessons and learnings from everyday stories and moments."
+- key: macro-market
+  label: "macro&market"
+  sticker: macro-market-sticker.webp
+  description: "bulls, bears and ballots: my evolving take on a world that won’t sit still."
+- key: technology
+  label: "technology"
+  sticker: technology-sticker.webp
+  description: "tools and systems i’ve built or borrowed to automate the boring parts of life."
+- key: thrive
+  label: "thrive"
+  sticker: thrive-sticker.webp
+  description: "self improvement is an ongoing process. here, you’ll find articles that will help you down the path."
+- key: series
+  label: "series"
+  sticker: series-sticker.webp
+  description: "fancy a good series? find curated collections of articles, stories, and guides that share a theme or a goal."
+- key: summaries
+  label: "summaries"
+  sticker: summaries-sticker.webp
+  description: "you read a good book but didn't make notes? no worries. find a collection of my book notes and accompanying resources over here."
