@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-25T07:02:47.869Z",
+  "title": "Design System: Etharic",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f0f1f3",
+        "oklch": "oklch(95.8% 0.003 264.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.001 264.5)",
+          "oklch(25.0% 0.002 264.5)",
+          "oklch(35.0% 0.002 264.5)",
+          "oklch(48.0% 0.003 264.5)",
+          "oklch(60.0% 0.003 264.5)",
+          "oklch(72.0% 0.002 264.5)",
+          "oklch(84.0% 0.002 264.5)",
+          "oklch(95.0% 0.001 264.5)"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "#151515",
+        "oklch": "oklch(19.6% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(25.0% 0.000 89.9)",
+          "oklch(35.0% 0.000 89.9)",
+          "oklch(48.0% 0.000 89.9)",
+          "oklch(60.0% 0.000 89.9)",
+          "oklch(72.0% 0.000 89.9)",
+          "oklch(84.0% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card Stock",
+        "canonical": "#f8f9fa",
+        "oklch": "oklch(98.2% 0.002 247.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 247.8)",
+          "oklch(25.0% 0.001 247.8)",
+          "oklch(35.0% 0.001 247.8)",
+          "oklch(48.0% 0.002 247.8)",
+          "oklch(60.0% 0.002 247.8)",
+          "oklch(72.0% 0.001 247.8)",
+          "oklch(84.0% 0.001 247.8)",
+          "oklch(95.0% 0.000 247.8)"
+        ]
+      },
+      "card-dark": {
+        "role": "neutral",
+        "displayName": "Night Card",
+        "canonical": "#20201f",
+        "oklch": "oklch(24.3% 0.002 106.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.5)",
+          "oklch(25.0% 0.001 106.5)",
+          "oklch(35.0% 0.001 106.5)",
+          "oklch(48.0% 0.002 106.5)",
+          "oklch(60.0% 0.002 106.5)",
+          "oklch(72.0% 0.002 106.5)",
+          "oklch(84.0% 0.001 106.5)",
+          "oklch(95.0% 0.000 106.5)"
+        ]
+      },
+      "graphite-ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "#1d1e22",
+        "oklch": "oklch(23.6% 0.008 274.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
+        ]
+      },
+      "graphite-ink-dark": {
+        "role": "neutral",
+        "displayName": "Chalk Ink",
+        "canonical": "#f2f2f1",
+        "oklch": "oklch(96.1% 0.001 106.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.4)",
+          "oklch(25.0% 0.001 106.4)",
+          "oklch(35.0% 0.001 106.4)",
+          "oklch(48.0% 0.001 106.4)",
+          "oklch(60.0% 0.001 106.4)",
+          "oklch(72.0% 0.001 106.4)",
+          "oklch(84.0% 0.001 106.4)",
+          "oklch(95.0% 0.000 106.4)"
+        ]
+      },
+      "soft-graphite": {
+        "role": "neutral",
+        "displayName": "Soft Graphite",
+        "canonical": "#646873",
+        "oklch": "oklch(51.8% 0.018 269.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 269.8)",
+          "oklch(25.0% 0.010 269.8)",
+          "oklch(35.0% 0.014 269.8)",
+          "oklch(48.0% 0.018 269.8)",
+          "oklch(60.0% 0.018 269.8)",
+          "oklch(72.0% 0.015 269.8)",
+          "oklch(84.0% 0.011 269.8)",
+          "oklch(95.0% 0.004 269.8)"
+        ]
+      },
+      "soft-graphite-dark": {
+        "role": "neutral",
+        "displayName": "Soft Chalk",
+        "canonical": "#9d9d9b",
+        "oklch": "oklch(69.5% 0.003 106.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.001 106.5)",
+          "oklch(25.0% 0.002 106.5)",
+          "oklch(35.0% 0.002 106.5)",
+          "oklch(48.0% 0.003 106.5)",
+          "oklch(60.0% 0.003 106.5)",
+          "oklch(72.0% 0.002 106.5)",
+          "oklch(84.0% 0.002 106.5)",
+          "oklch(95.0% 0.001 106.5)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dcdee3",
+        "oklch": "oklch(90.1% 0.007 268.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.001 268.5)",
+          "oklch(25.0% 0.004 268.5)",
+          "oklch(35.0% 0.006 268.5)",
+          "oklch(48.0% 0.007 268.5)",
+          "oklch(60.0% 0.007 268.5)",
+          "oklch(72.0% 0.006 268.5)",
+          "oklch(84.0% 0.004 268.5)",
+          "oklch(95.0% 0.001 268.5)"
+        ]
+      },
+      "hairline-dark": {
+        "role": "neutral",
+        "displayName": "Night Hairline",
+        "canonical": "#373736",
+        "oklch": "oklch(33.6% 0.002 106.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.5)",
+          "oklch(25.0% 0.001 106.5)",
+          "oklch(35.0% 0.001 106.5)",
+          "oklch(48.0% 0.002 106.5)",
+          "oklch(60.0% 0.002 106.5)",
+          "oklch(72.0% 0.001 106.5)",
+          "oklch(84.0% 0.001 106.5)",
+          "oklch(95.0% 0.000 106.5)"
+        ]
+      },
+      "hover-wash": {
+        "role": "neutral",
+        "displayName": "Hover Wash",
+        "canonical": "rgba(29,30,34,.05)",
+        "oklch": "oklch(23.6% 0.008 274.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 274.6)",
+          "oklch(25.0% 0.004 274.6)",
+          "oklch(35.0% 0.006 274.6)",
+          "oklch(48.0% 0.008 274.6)",
+          "oklch(60.0% 0.008 274.6)",
+          "oklch(72.0% 0.007 274.6)",
+          "oklch(84.0% 0.005 274.6)",
+          "oklch(95.0% 0.002 274.6)"
+        ]
+      },
+      "hover-wash-dark": {
+        "role": "neutral",
+        "displayName": "Night Hover Wash",
+        "canonical": "rgba(242,242,241,.07)",
+        "oklch": "oklch(96.1% 0.001 106.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 106.4)",
+          "oklch(25.0% 0.001 106.4)",
+          "oklch(35.0% 0.001 106.4)",
+          "oklch(48.0% 0.001 106.4)",
+          "oklch(60.0% 0.001 106.4)",
+          "oklch(72.0% 0.001 106.4)",
+          "oklch(84.0% 0.001 106.4)",
+          "oklch(95.0% 0.000 106.4)"
+        ]
+      },
+      "burnt-amber": {
+        "role": "primary",
+        "displayName": "Burnt Amber",
+        "canonical": "#8f5d00",
+        "oklch": "oklch(52.0% 0.111 72.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.023 72.9)",
+          "oklch(25.0% 0.062 72.9)",
+          "oklch(35.0% 0.089 72.9)",
+          "oklch(48.0% 0.108 72.9)",
+          "oklch(60.0% 0.109 72.9)",
+          "oklch(72.0% 0.095 72.9)",
+          "oklch(84.0% 0.065 72.9)",
+          "oklch(95.0% 0.023 72.9)"
+        ]
+      },
+      "burnt-amber-dark": {
+        "role": "primary",
+        "displayName": "Lamplit Amber",
+        "canonical": "#cf8c06",
+        "oklch": "oklch(69.0% 0.145 74.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.030 74.8)",
+          "oklch(25.0% 0.080 74.8)",
+          "oklch(35.0% 0.116 74.8)",
+          "oklch(48.0% 0.141 74.8)",
+          "oklch(60.0% 0.143 74.8)",
+          "oklch(72.0% 0.124 74.8)",
+          "oklch(84.0% 0.085 74.8)",
+          "oklch(95.0% 0.030 74.8)"
+        ]
+      },
+      "signal-green": {
+        "role": "tertiary",
+        "displayName": "Signal Green",
+        "canonical": "#34c759",
+        "oklch": "oklch(73.0% 0.194 147.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.041 147.4)",
+          "oklch(25.0% 0.108 147.4)",
+          "oklch(35.0% 0.156 147.4)",
+          "oklch(48.0% 0.190 147.4)",
+          "oklch(60.0% 0.192 147.4)",
+          "oklch(72.0% 0.167 147.4)",
+          "oklch(84.0% 0.114 147.4)",
+          "oklch(95.0% 0.041 147.4)"
+        ]
+      },
+      "switch-track": {
+        "role": "neutral",
+        "displayName": "Switch Track",
+        "canonical": "#3a3a40",
+        "oklch": "oklch(35.1% 0.010 285.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 285.9)",
+          "oklch(25.0% 0.006 285.9)",
+          "oklch(35.0% 0.008 285.9)",
+          "oklch(48.0% 0.010 285.9)",
+          "oklch(60.0% 0.010 285.9)",
+          "oklch(72.0% 0.009 285.9)",
+          "oklch(84.0% 0.006 285.9)",
+          "oklch(95.0% 0.002 285.9)"
+        ]
+      },
+      "basswood": {
+        "role": "secondary",
+        "displayName": "Basswood",
+        "canonical": "#cdb48a",
+        "oklch": "oklch(78.1% 0.063 80.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.013 80.5)",
+          "oklch(25.0% 0.035 80.5)",
+          "oklch(35.0% 0.051 80.5)",
+          "oklch(48.0% 0.062 80.5)",
+          "oklch(60.0% 0.062 80.5)",
+          "oklch(72.0% 0.054 80.5)",
+          "oklch(84.0% 0.037 80.5)",
+          "oklch(95.0% 0.013 80.5)"
+        ]
+      },
+      "basswood-dark": {
+        "role": "secondary",
+        "displayName": "Night Basswood",
+        "canonical": "#3a3127",
+        "oklch": "oklch(32.0% 0.021 69.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 69.9)",
+          "oklch(25.0% 0.012 69.9)",
+          "oklch(35.0% 0.017 69.9)",
+          "oklch(48.0% 0.021 69.9)",
+          "oklch(60.0% 0.021 69.9)",
+          "oklch(72.0% 0.018 69.9)",
+          "oklch(84.0% 0.013 69.9)",
+          "oklch(95.0% 0.004 69.9)"
+        ]
+      },
+      "basswood-edge": {
+        "role": "secondary",
+        "displayName": "Basswood Cut Edge",
+        "canonical": "#ad9468",
+        "oklch": "oklch(67.8% 0.067 81.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 81.3)",
+          "oklch(25.0% 0.037 81.3)",
+          "oklch(35.0% 0.054 81.3)",
+          "oklch(48.0% 0.065 81.3)",
+          "oklch(60.0% 0.066 81.3)",
+          "oklch(72.0% 0.057 81.3)",
+          "oklch(84.0% 0.039 81.3)",
+          "oklch(95.0% 0.014 81.3)"
+        ]
+      },
+      "basswood-edge-dark": {
+        "role": "secondary",
+        "displayName": "Night Basswood Edge",
+        "canonical": "#2a231b",
+        "oklch": "oklch(26.1% 0.018 70.7)",
+        "tonalRamp": [
+          "oklch(15.0% 0.004 70.7)",
+          "oklch(25.0% 0.010 70.7)",
+          "oklch(35.0% 0.014 70.7)",
+          "oklch(48.0% 0.017 70.7)",
+          "oklch(60.0% 0.018 70.7)",
+          "oklch(72.0% 0.015 70.7)",
+          "oklch(84.0% 0.010 70.7)",
+          "oklch(95.0% 0.004 70.7)"
+        ]
+      },
+      "mount-board-lit": {
+        "role": "neutral",
+        "displayName": "Mount Board, Lit Face",
+        "canonical": "#f6f5f1",
+        "oklch": "oklch(97.0% 0.005 95.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.001 95.1)",
+          "oklch(25.0% 0.003 95.1)",
+          "oklch(35.0% 0.004 95.1)",
+          "oklch(48.0% 0.005 95.1)",
+          "oklch(60.0% 0.005 95.1)",
+          "oklch(72.0% 0.005 95.1)",
+          "oklch(84.0% 0.003 95.1)",
+          "oklch(95.0% 0.001 95.1)"
+        ]
+      },
+      "mount-board-lit-dark": {
+        "role": "neutral",
+        "displayName": "Night Board, Lit Face",
+        "canonical": "#55585f",
+        "oklch": "oklch(46.0% 0.012 267.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 267.3)",
+          "oklch(25.0% 0.007 267.3)",
+          "oklch(35.0% 0.010 267.3)",
+          "oklch(48.0% 0.012 267.3)",
+          "oklch(60.0% 0.012 267.3)",
+          "oklch(72.0% 0.010 267.3)",
+          "oklch(84.0% 0.007 267.3)",
+          "oklch(95.0% 0.003 267.3)"
+        ]
+      },
+      "mount-board-side": {
+        "role": "neutral",
+        "displayName": "Mount Board, Side Face",
+        "canonical": "#e4e2db",
+        "oklch": "oklch(91.2% 0.010 93.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 93.6)",
+          "oklch(25.0% 0.005 93.6)",
+          "oklch(35.0% 0.008 93.6)",
+          "oklch(48.0% 0.009 93.6)",
+          "oklch(60.0% 0.010 93.6)",
+          "oklch(72.0% 0.008 93.6)",
+          "oklch(84.0% 0.006 93.6)",
+          "oklch(95.0% 0.002 93.6)"
+        ]
+      },
+      "mount-board-side-dark": {
+        "role": "neutral",
+        "displayName": "Night Board, Side Face",
+        "canonical": "#383a40",
+        "oklch": "oklch(34.9% 0.011 271.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 271.1)",
+          "oklch(25.0% 0.006 271.1)",
+          "oklch(35.0% 0.009 271.1)",
+          "oklch(48.0% 0.010 271.1)",
+          "oklch(60.0% 0.011 271.1)",
+          "oklch(72.0% 0.009 271.1)",
+          "oklch(84.0% 0.006 271.1)",
+          "oklch(95.0% 0.002 271.1)"
+        ]
+      },
+      "mount-board-shade": {
+        "role": "neutral",
+        "displayName": "Mount Board, Shade Face",
+        "canonical": "#cbc8bf",
+        "oklch": "oklch(83.3% 0.013 91.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.003 91.5)",
+          "oklch(25.0% 0.007 91.5)",
+          "oklch(35.0% 0.010 91.5)",
+          "oklch(48.0% 0.012 91.5)",
+          "oklch(60.0% 0.013 91.5)",
+          "oklch(72.0% 0.011 91.5)",
+          "oklch(84.0% 0.007 91.5)",
+          "oklch(95.0% 0.003 91.5)"
+        ]
+      },
+      "mount-board-shade-dark": {
+        "role": "neutral",
+        "displayName": "Night Board, Shade Face",
+        "canonical": "#222428",
+        "oklch": "oklch(26.0% 0.008 264.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 264.4)",
+          "oklch(25.0% 0.004 264.4)",
+          "oklch(35.0% 0.006 264.4)",
+          "oklch(48.0% 0.008 264.4)",
+          "oklch(60.0% 0.008 264.4)",
+          "oklch(72.0% 0.007 264.4)",
+          "oklch(84.0% 0.005 264.4)",
+          "oklch(95.0% 0.002 264.4)"
+        ]
+      },
+      "plaque": {
+        "role": "neutral",
+        "displayName": "Plaque Card",
+        "canonical": "#f6f5f1",
+        "oklch": "oklch(97.0% 0.005 95.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.001 95.1)",
+          "oklch(25.0% 0.003 95.1)",
+          "oklch(35.0% 0.004 95.1)",
+          "oklch(48.0% 0.005 95.1)",
+          "oklch(60.0% 0.005 95.1)",
+          "oklch(72.0% 0.005 95.1)",
+          "oklch(84.0% 0.003 95.1)",
+          "oklch(95.0% 0.001 95.1)"
+        ]
+      },
+      "plaque-dark": {
+        "role": "neutral",
+        "displayName": "Night Plaque",
+        "canonical": "#1c1c1d",
+        "oklch": "oklch(22.7% 0.002 286.2)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 286.2)",
+          "oklch(25.0% 0.001 286.2)",
+          "oklch(35.0% 0.002 286.2)",
+          "oklch(48.0% 0.002 286.2)",
+          "oklch(60.0% 0.002 286.2)",
+          "oklch(72.0% 0.002 286.2)",
+          "oklch(84.0% 0.001 286.2)",
+          "oklch(95.0% 0.000 286.2)"
+        ]
+      },
+      "window-amber": {
+        "role": "secondary",
+        "displayName": "Window Amber",
+        "canonical": "#e9a93a",
+        "oklch": "oklch(77.7% 0.143 77.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.030 77.0)",
+          "oklch(25.0% 0.079 77.0)",
+          "oklch(35.0% 0.114 77.0)",
+          "oklch(48.0% 0.139 77.0)",
+          "oklch(60.0% 0.141 77.0)",
+          "oklch(72.0% 0.122 77.0)",
+          "oklch(84.0% 0.083 77.0)",
+          "oklch(95.0% 0.030 77.0)"
+        ]
+      },
+      "cast": {
+        "role": "neutral",
+        "displayName": "Cast Shadow",
+        "canonical": "rgba(74,58,34,.2)",
+        "oklch": "oklch(36.0% 0.044 76.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.009 76.8)",
+          "oklch(25.0% 0.024 76.8)",
+          "oklch(35.0% 0.035 76.8)",
+          "oklch(48.0% 0.043 76.8)",
+          "oklch(60.0% 0.043 76.8)",
+          "oklch(72.0% 0.037 76.8)",
+          "oklch(84.0% 0.025 76.8)",
+          "oklch(95.0% 0.009 76.8)"
+        ]
+      },
+      "cast-dark": {
+        "role": "neutral",
+        "displayName": "Night Cast",
+        "canonical": "rgba(0,0,0,.4)",
+        "oklch": "oklch(0.0% 0.000 0.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0.0)",
+          "oklch(25.0% 0.000 0.0)",
+          "oklch(35.0% 0.000 0.0)",
+          "oklch(48.0% 0.000 0.0)",
+          "oklch(60.0% 0.000 0.0)",
+          "oklch(72.0% 0.000 0.0)",
+          "oklch(84.0% 0.000 0.0)",
+          "oklch(95.0% 0.000 0.0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage name only (Archivo, width 118)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles on reading routes."
+      },
+      "intro": {
+        "displayName": "Intro",
+        "purpose": "Homepage audience tabpanel."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Prose and chapter h2."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "About page and long-form prose, 660px measure."
+      },
+      "plaque": {
+        "displayName": "Plaque",
+        "purpose": "Audience plaques (Archivo, width 112)."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase section labels on reading routes."
+      },
+      "intro-term": {
+        "displayName": "Intro Term",
+        "purpose": "Skewed serif italic code-like terms inside homepage intros."
+      }
+    },
+    "shadows": [
+      {
+        "name": "switch-knob",
+        "value": "0 1px 4px rgba(0,0,0,.35)",
+        "purpose": "Theme switch knob only."
+      },
+      {
+        "name": "course-cut",
+        "value": "inset 0 -1px 0 rgba(0,0,0,.08)",
+        "purpose": "Cut line at the foot of each model course side face."
+      },
+      {
+        "name": "plate-cast",
+        "value": "background: var(--cast); filter: blur(1.5px); transform: skewX(var(--lx))",
+        "purpose": "Cast decal on the basswood plate; skews 16/22/28/34deg with the light per audience."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "Default for every transform: presses, lifts, plate turn, course rise, crossfades."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(.77,0,.175,1)",
+        "purpose": "Defined token for on-screen movement between two positions."
+      },
+      {
+        "name": "press",
+        "value": "160ms ease-out, scale(.97)",
+        "purpose": "Button and plaque press."
+      },
+      {
+        "name": "hover-color",
+        "value": "180ms",
+        "purpose": "Color, border and background hovers."
+      },
+      {
+        "name": "select",
+        "value": "420ms ease-out",
+        "purpose": "Tower rise, plate turn and light swing on audience selection."
+      },
+      {
+        "name": "entrance",
+        "value": "420ms per course; 50ms per tower + 40ms per course stagger; once per session",
+        "purpose": "Courses rise out of the plate on the first homepage view."
+      },
+      {
+        "name": "crossfade",
+        "value": "200ms; opacity .35 + blur(3px) to sharp (opacity only under reduced motion)",
+        "purpose": "Intro text change."
+      },
+      {
+        "name": "tilt",
+        "value": "spring k .08, damping .78, max 3deg, mouse only",
+        "purpose": "Model follows the pointer; idles when settled."
+      },
+      {
+        "name": "card-in",
+        "value": "320ms ease-out from translateY(8px); 40-130ms stagger",
+        "purpose": "Work grid cards entering."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "max-width: 680px"
+      },
+      {
+        "name": "tablet",
+        "value": "681px to 900px"
+      },
+      {
+        "name": "compact",
+        "value": "max-width: 1050px"
+      },
+      {
+        "name": "rail",
+        "value": "max-width: 1100px"
+      }
+    ],
+    "geometry": {
+      "perspective": "1400px, origin 50% 25%",
+      "plate": "480 x 300px, 14px cut edge, rotateX(60deg) rotateZ(-30/-24/-18/-12deg per audience)",
+      "course": "28px",
+      "towers": "anyone: stepped 96x80 to 48x32, 4 courses; recruiters: slab 84x40, 6 courses; finance: 60x60, 8 courses + crown 40x40x20 + spire 8x8x36; engineers: twins 40x40, 5 courses each + bridge 36x22x14",
+      "selectedRaise": "+1 course",
+      "fit": "scale 0.4 to 1.2 to stage",
+      "faceBudget": "under 140"
+    }
+  },
+  "components": [
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Tonal default button; inverts to ink on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">read the essay</a>",
+      "css": ".ds-btn{display:inline-block;border:1px solid var(--line,#dcdee3);color:var(--ink,#1d1e22);background:var(--card,#f8f9fa);padding:8px 16px;border-radius:8px;text-decoration:none;font:400 .85rem/1.6 Inter,system-ui,sans-serif;transition:background .18s,border-color .18s,color .18s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-btn:hover{background:var(--ink,#1d1e22);border-color:var(--ink,#1d1e22);color:var(--bg,#f0f1f3);transform:translateY(-1px)}.ds-btn:active{transform:scale(.97)}.ds-btn:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "chip",
+      "refersTo": "segmented-on",
+      "description": "Small multi-way switch on reading routes.",
+      "html": "<div class=\"ds-seg\"><button class=\"ds-on\">all</button><button>essays</button><button>tools</button></div>",
+      "css": ".ds-seg{display:inline-flex;gap:2px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:8px;padding:3px}.ds-seg button{font:400 .82rem Inter,system-ui,sans-serif;background:none;border:0;border-radius:6px;padding:6px 16px;color:var(--soft,#646873);cursor:pointer;transition:background .15s,color .15s,transform .16s cubic-bezier(.23,1,.32,1)}.ds-seg button.ds-on{background:var(--ink,#1d1e22);color:var(--bg,#f0f1f3)}.ds-seg button:not(.ds-on):hover{color:var(--ink,#1d1e22)}.ds-seg button:active{transform:scale(.96)}.ds-seg button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Audience Plaque",
+      "kind": "custom",
+      "refersTo": "plaque",
+      "description": "Homepage audience tabs standing along the model's front edge.",
+      "html": "<div class=\"ds-plaques\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">for anyone</button><button role=\"tab\" aria-selected=\"false\">recruiters</button><button role=\"tab\" aria-selected=\"false\">engineers</button></div>",
+      "css": ".ds-plaques{display:flex;gap:10px}.ds-plaques button{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:600;font-size:.8rem;letter-spacing:.01em;color:var(--ink,#1d1e22);background:var(--plaque,#f6f5f1);border:1px solid var(--line,#dcdee3);border-radius:3px;padding:0 14px;min-height:44px;cursor:pointer;white-space:nowrap;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-plaques button:hover{border-color:var(--ink,#1d1e22)}.ds-plaques button[aria-selected=\"true\"]{background:var(--ink,#1d1e22);color:var(--bg,#f0f1f3);border-color:var(--ink,#1d1e22)}.ds-plaques button:active{transform:scale(.97)}.ds-plaques button:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Card Course",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "One 28px course of mount board in the three face shades, on basswood (flat elevation view).",
+      "html": "<div class=\"ds-course\"><i class=\"ds-side\"></i><i class=\"ds-top\"></i><i class=\"ds-shade\"></i></div>",
+      "css": ".ds-course{display:grid;grid-template-columns:28px 84px;grid-template-rows:40px 28px;width:max-content;background:var(--plate,#cdb48a);padding:12px}.ds-course i{display:block}.ds-side{background:var(--face-2,#e4e2db)}.ds-top{background:var(--face-1,#f6f5f1)}.ds-shade{grid-column:2;background:var(--face-3,#cbc8bf);box-shadow:inset 0 -1px 0 rgba(0,0,0,.08)}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Linked card with thumbnail on reading routes.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-img\"></div><div class=\"ds-card-t\">why i started a personal website</div></a>",
+      "css": ".ds-card{display:block;width:220px;background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:10px;padding:12px;color:var(--ink,#1d1e22);text-decoration:none;font-family:Inter,system-ui,sans-serif;transition:border-color .18s,background .18s}.ds-card:hover{border-color:var(--soft,#646873);background:var(--hover,rgba(29,30,34,.05))}.ds-card:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}.ds-card-img{aspect-ratio:16/9;border-radius:6px;background:var(--line,#dcdee3)}.ds-card-t{font-size:.85rem;font-weight:500;margin-top:10px}"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Subscribe field and its button.",
+      "html": "<div class=\"ds-subrow\"><input class=\"ds-input\" placeholder=\"your email\"><button class=\"ds-subbtn\">subscribe</button></div>",
+      "css": ".ds-subrow{display:flex;gap:10px}.ds-input{background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:8px;padding:8px 12px;color:var(--ink,#1d1e22);font:400 .85rem Inter,system-ui,sans-serif}.ds-input::placeholder{color:var(--soft,#646873)}.ds-input:focus-visible,.ds-subbtn:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:2px}.ds-subbtn{font:400 .85rem Inter,system-ui,sans-serif;color:var(--ink,#1d1e22);background:var(--card,#f8f9fa);border:1px solid var(--line,#dcdee3);border-radius:8px;padding:8px 14px;cursor:pointer;transition:background .18s,border-color .18s,color .18s}.ds-subbtn:hover{background:var(--ink,#1d1e22);border-color:var(--ink,#1d1e22);color:var(--bg,#f0f1f3)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Top bar: wordmark left, route links right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\">Etharic</a><span class=\"ds-right\"><a href=\"#\">2026</a><a class=\"ds-on\" href=\"#\">work</a><a href=\"#\">contact</a></span></nav>",
+      "css": ".ds-nav{display:flex;justify-content:space-between;align-items:center;padding:30px 24px;background:var(--bg,#f0f1f3);font-family:Inter,system-ui,sans-serif}.ds-nav a{text-decoration:none;font-size:.95rem}.ds-logo{color:var(--ink,#1d1e22);font-weight:600;font-size:1.1rem;letter-spacing:-.01em}.ds-right{display:flex;gap:24px}.ds-right a{color:var(--soft,#646873);transition:color .18s}.ds-right a.ds-on,.ds-right a:hover{color:var(--ink,#1d1e22)}.ds-nav a:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Accent Link",
+      "kind": "button",
+      "refersTo": "",
+      "description": "The burnt-amber action (get cv).",
+      "html": "<a class=\"ds-accent\" href=\"#\">get cv</a>",
+      "css": ".ds-accent{color:var(--accent,#8f5d00);text-decoration:none;font:400 .95rem Inter,system-ui,sans-serif;display:inline-flex;align-items:center;min-height:30px;transition:color .18s}.ds-accent:hover{color:var(--ink,#1d1e22)}.ds-accent:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    },
+    {
+      "name": "Theme Switch",
+      "kind": "button",
+      "refersTo": "theme-switch",
+      "description": "Light/dark toggle, fixed top right.",
+      "html": "<button class=\"ds-switch\" role=\"switch\" aria-checked=\"false\" aria-label=\"dark theme\"></button>",
+      "css": ".ds-switch{position:relative;width:48px;height:27px;border-radius:999px;border:0;background:var(--track,#3a3a40);cursor:pointer;padding:0;transition:background .26s ease,transform .16s cubic-bezier(.23,1,.32,1)}.ds-switch::after{content:\"\";position:absolute;top:3px;left:3px;width:21px;height:21px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .26s cubic-bezier(.23,1,.32,1)}.ds-switch[aria-checked=\"true\"]{background:var(--on,#34c759)}.ds-switch[aria-checked=\"true\"]::after{transform:translateX(21px)}.ds-switch:active{transform:scale(.94)}.ds-switch:focus-visible{outline:2px solid var(--ink,#1d1e22);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Study Model on a Quiet Desk",
+    "overview": "Etharic is one system with two registers. Every reading route (work, articles, about, 2026, contact) is a quiet desk: cool paper, graphite ink, hairline borders, Inter at reading sizes, one burnt-amber accent kept for the few actions that matter. The homepage sets a hand-built study model on that desk: four towers of cut white mount board on a basswood plate, lit by one raking light, one tower per audience. Both registers share the same ink, soft graphite, amber accent, hairlines and easing, so the model reads as an object placed on the site, not a second site.\n\nThe model is literal material, not illustration. Depth comes from three face fills of the same board (lit top, side, shade), from the plate's cut edge, and from a soft cast decal on the plate that skews with the light. At night (dark theme) the same model sits in a dim studio: board faces drop to graphite, basswood darkens, and only the selected tower's windows glow amber. Choosing an audience raises that tower one course, lights it, swings the light and turns the plate.\n\nThe voice is personal and playful (lowercase copy, a pixel dog, a live clock) but the surfaces are restrained. Rejected: corporate polish, glossy 3D blobs, glass, decorative gradients and glow halos.",
+    "keyCharacteristics": [
+      "Flat tonal surfaces with 1px hairlines; no elevation shadows on reading routes.",
+      "One accent (burnt amber) for the primary action of a view; one decorative amber (window glow) inside the model only.",
+      "Inter for everything readable; Archivo expanded only for the homepage name and the plaques.",
+      "The homepage model is built from real geometry: 28px courses, three face shades, a perspective plate.",
+      "Motion is short, ease-out and transform/opacity only; reduced motion keeps crossfades and drops movement."
+    ],
+    "rules": [
+      {
+        "name": "The One Amber Rule",
+        "body": "Burnt amber marks at most one or two actions per view. If a second thing wants amber, it gets graphite ink instead.",
+        "section": "colors"
+      },
+      {
+        "name": "The Raking Light Rule",
+        "body": "Model faces use exactly the three mount-board shades, lit top, side, shade, in that order. Depth in the model never comes from box-shadow or gradients.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Studio Rule",
+        "body": "Dark theme does not invert the model; it dims it. Faces go to graphite, basswood darkens, windows keep the same amber.",
+        "section": "colors"
+      },
+      {
+        "name": "The Archivo Fence Rule",
+        "body": "Archivo appears only on the homepage name and the plaques. Any other text, including the homepage intro, is Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Material Depth Rule",
+        "body": "If something looks raised, it is because it is built in 3D or has a lighter tone, not because it casts a box-shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do take every color from the tokens, with a dark value for each surface color.",
+      "Do keep burnt amber to one or two actions per view (get cv; the picked intro link).",
+      "Do build model depth from the three mount-board shades, the basswood edge and the cast decal.",
+      "Do animate only transform and opacity with `--ease-out` (`cubic-bezier(.23,1,.32,1)`), 160 to 420ms; keep a 200ms crossfade under reduced motion.",
+      "Do keep touch targets at 44px minimum and a 2px graphite ink focus ring on every control.",
+      "Do keep Archivo inside the Archivo fence (homepage name, plaques)."
+    ],
+    "donts": [
+      "Don't use box-shadows, glass, glow halos or decorative gradients to suggest depth.",
+      "Don't let the model take more than half the viewport width on desktop, or run an animation loop while idle, on touch, or in a hidden tab.",
+      "Don't light more than one tower; the other three stay plain card.",
+      "Don't model a real Frankfurt building; the towers stay abstract.",
+      "Don't use signal green for anything but the theme switch and the status dot."
+    ]
+  }
+}

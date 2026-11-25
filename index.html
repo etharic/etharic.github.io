@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap&text=abcdefghijklmnopqrstuvwxyz0123456789%21%2C%27%C2%B7%20" rel="stylesheet">
 <style>
 :root{--bg:#f0f1f3;--card:#f8f9fa;--ink:#1d1e22;--soft:#646873;--line:#dcdee3;--on:#34c759;--hover:rgba(29,30,34,.05);--accent:#8f5d00;--track:#3a3a40;--ease-out:cubic-bezier(.23,1,.32,1);--ease-in-out:cubic-bezier(.77,0,.175,1)}
 ::selection{background:var(--ink);color:var(--bg)}
@@ -311,6 +312,63 @@ body.about-route main{padding-bottom:8px}
  .work-article.clearline-article .clearline-feature-row:nth-of-type(even) .clearline-feature-copy{grid-column:1;grid-row:auto}
  .work-article.clearline-article .clearline-feature-copy{text-align:left}
 }
+/* ---------- homepage: the maquette ---------- */
+:root{--plaque:#f6f5f1;--plate:#cdb48a;--plate-edge:#ad9468;--face-1:#f6f5f1;--face-2:#e4e2db;--face-3:#cbc8bf;--window:#e9a93a;--cast:rgba(74,58,34,.2)}
+:root[data-theme="dark"]{--plate:#3a3127;--plate-edge:#2a231b;--face-1:#55585f;--face-2:#383a40;--face-3:#222428;--plaque:#1c1c1d;--cast:rgba(0,0,0,.4)}
+body.home .wrap{max-width:none;padding:0 24px}
+body.home .hero{min-height:100vh;padding:112px 0 104px;justify-content:center}
+body.home .hero h1.hero-name{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:118%;font-weight:700;font-size:clamp(2.6rem,5.4vw,5.5rem);line-height:.98;letter-spacing:-.02em;margin:0 0 30px;max-width:min(46rem,47vw);text-wrap:balance}
+.hero-name .nm{display:block}
+body.home .hero .for-intro{font-size:clamp(1.15rem,1.65vw,1.5rem);line-height:1.5;max-width:min(36rem,40vw);margin:0}
+body.home .hero .more-about{align-self:flex-start;margin-top:22px}
+.for-intro.picked a.intro-em:first-of-type{color:var(--accent);text-decoration-color:currentColor}
+.maq{position:absolute;right:clamp(8px,3vw,56px);top:max(96px,14vh);width:min(50vw,800px);height:70vh;z-index:0}
+.maq-stage{position:absolute;left:0;right:0;top:0;bottom:64px;perspective:1400px;perspective-origin:50% 25%;display:grid;place-items:center}
+.maq-scale{transform-style:preserve-3d}
+.maq-plate{position:relative;width:480px;height:300px;background:var(--plate);transform-style:preserve-3d;transform:rotateX(60deg) rotateZ(-30deg);transition:transform .42s var(--ease-out),background-color .3s ease}
+.maq-plate .pe{position:absolute;background:var(--plate-edge)}
+.maq-plate .pe-s{left:0;top:300px;width:480px;height:14px;transform-origin:50% 0;transform:rotateX(-90deg)}
+.maq-plate .pe-e{left:480px;top:0;width:14px;height:300px;transform-origin:0 50%;transform:rotateY(90deg)}
+.maq-plate .pe-w{left:-14px;top:0;width:14px;height:300px;transform-origin:100% 50%;transform:rotateY(-90deg)}
+.tw{position:absolute;transform-style:preserve-3d;cursor:pointer}
+.cu{position:absolute;transform-style:preserve-3d;transform:translateZ(var(--z));transition:transform .42s var(--ease-out),opacity .3s ease}
+.cu i{position:absolute;display:block}
+.cu .fs{left:0;transform-origin:50% 100%;transform:rotateX(-90deg);background:var(--face-3);--fc:var(--face-3)}
+.cu .fw{top:0;transform-origin:100% 50%;transform:rotateY(90deg);background:var(--face-2);--fc:var(--face-2)}
+.cu .ft{left:0;top:0;background:var(--face-1)}
+.cu .fs,.cu .fw{box-shadow:inset 0 -1px 0 rgba(0,0,0,.08)}
+.cu.c .fs::after,.cu.c .fw::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s ease;background-color:var(--window);background-image:linear-gradient(90deg,var(--fc) 0 5px,transparent 5px),linear-gradient(var(--fc) 0 8px,transparent 8px 20px,var(--fc) 20px);background-size:12px 100%,100% 28px}
+.tw.lit .cu.c .fs::after,.tw.lit .cu.c .fw::after{opacity:1}
+.cu.x{transform:translateZ(var(--z0));opacity:0}
+.tw.sel .cu.x{transform:translateZ(var(--z));opacity:1}
+.tw.sel .cu.hd{transform:translateZ(calc(var(--z) + 28px))}
+.casts{position:absolute;inset:0;overflow:hidden;transform:translateZ(.3px);pointer-events:none}
+.cast{position:absolute;background:var(--cast);transform-origin:0 0;transform:skewX(var(--lx,16deg));transition:transform .42s var(--ease-out);filter:blur(1.5px);pointer-events:none}
+.maq-lead{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.maq-lead path{fill:none;stroke:var(--soft);stroke-width:1;opacity:.55;transition:opacity .2s ease,stroke .2s ease}
+.maq-lead circle{fill:var(--soft);opacity:.7}
+.maq-lead path.on{stroke:var(--ink);opacity:1}
+.maq-lead circle.on{fill:var(--ink);opacity:1}
+.plaques{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:10px;margin:0;flex-wrap:nowrap}
+.plaques button{font-family:Archivo,Inter,system-ui,sans-serif;font-stretch:112%;font-weight:600;font-size:.8rem;letter-spacing:.01em;color:var(--ink);background:var(--plaque);border:1px solid var(--line);border-radius:3px;padding:0 14px;margin:0;min-height:44px;display:inline-grid;align-content:center;white-space:nowrap;transition:background-color .2s ease,color .2s ease,border-color .2s ease,transform .16s var(--ease-out)}
+.plaques button.active{color:var(--ink);font-weight:600;border-color:var(--ink)}
+.plaques button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.plaques button:active{transform:scale(.97)}
+.plaques button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){.maq-plate,.cu,.cast{transition:none}.plaques button:active{transform:none}}
+@supports not (transform-style:preserve-3d){.maq-plate{transform:none}}
+@media (max-width:1050px){.plaques button{padding:0 10px;font-size:.74rem}}
+@media (max-width:680px){
+  body.home .wrap{padding:0 20px}
+  body.home .hero{min-height:0;padding:28px 0 40px;justify-content:flex-start}
+  body.home .hero h1.hero-name{font-stretch:100%;font-size:clamp(2.2rem,10.4vw,2.8rem);max-width:none;margin:0 0 4px}
+  .maq{position:relative;right:auto;top:auto;width:auto;height:auto;margin:0 -20px 22px}
+  .maq-stage{position:relative;left:auto;right:auto;top:auto;bottom:auto;height:max(240px,34vh);overflow:clip}
+  .plaques{position:static;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 20px}
+  .plaques button{justify-content:center;font-size:.8rem}
+  .maq-lead{display:none}
+  body.home .hero .for-intro{max-width:none;font-size:1.15rem}
+}
 </style>
 </head>
 <body>
@@ -472,71 +530,162 @@ function initTile() {
   dots.forEach((d, k) => { d.onclick = () => sc.scrollTo({ top: k * h() }); });
 }
 let forLocked = 0;
-// drifting dots behind the greeting + intro; the whole field eases toward the cursor while it's inside
-let sporeStop = null;
-function initSpores() {
-  if (sporeStop) { sporeStop(); sporeStop = null; }
-  const hero = document.querySelector(".hero");
-  if (!hero) return;
-  const cv = document.createElement("canvas");
-  cv.className = "spores"; cv.setAttribute("aria-hidden", "true");
-  hero.prepend(cv);
-  const ctx = cv.getContext("2d");
-  const still = matchMedia("(prefers-reduced-motion:reduce)").matches;
-  const PAD = 90, CELL = 38;
-  let W = 0, H = 0, L = 0, T = 0, dots = [], raf = 0;
-  let mx = 0, my = 0, inside = false, ox = 0, oy = 0, visible = true;
-  let dotColor = "#999";
-  const readColor = () => { dotColor = getComputedStyle(document.documentElement).getPropertyValue("--soft").trim() || "#999"; };
-  readColor();
-  function layout() {
-    const parts = [".hero h1", ".for-bar", ".for-intro", ".more-about"].map(q => hero.querySelector(q)).filter(Boolean).map(e => e.getBoundingClientRect());
-    let x0 = Math.min(...parts.map(r => r.left)) - PAD; const y0 = Math.min(...parts.map(r => r.top)) - PAD;
-    let x1 = Math.max(...parts.map(r => r.right)) + PAD; const y1 = Math.max(...parts.map(r => r.bottom)) + PAD;
-    const vw = document.documentElement.clientWidth; x0 = Math.max(x0, 0); x1 = Math.min(x1, vw);
-    L = x0 + scrollX; T = y0 + scrollY; const nw = x1 - x0, nh = y1 - y0;
-    Object.assign(cv.style, { left: L + "px", top: T + "px", width: nw + "px", height: nh + "px" });
-    const dpr = window.devicePixelRatio || 1;
-    cv.width = nw * dpr; cv.height = nh * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    if (Math.abs(nw - W) > 40 || Math.abs(nh - H) > 40 || !dots.length) {
-      W = nw; H = nh; dots = [];
-      for (let gx = 0; gx < W; gx += CELL) for (let gy = 0; gy < H; gy += CELL) {
-        if (Math.random() < .35) continue;
-        const a = Math.random() * Math.PI * 2, sp = .08 + Math.random() * .17;
-        dots.push({ x: gx + Math.random() * CELL, y: gy + Math.random() * CELL, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, r: .8 + Math.random() * .6 });
+
+// ---------- the maquette: a card study model, one tower per audience ----------
+const MQ_H = 28;                                   // one course of card
+const MQ_TURN = [-30, -24, -18, -12];              // plate turn per audience (deg)
+const MQ_LIGHT = [16, 22, 28, 34];                 // light angle per audience: cast-shadow skew (deg)
+// x, y: footprint position on the 480x300 plate. stacks: courses as [w, d]; extra: the course a selection adds.
+const MQ_TOWERS = [
+  { x: 36,  y: 168, stacks: [{ ox: 48, oy: 40, courses: [[96, 80], [80, 64], [64, 48], [48, 32]], extra: [32, 20], stepped: true }] },   // for anyone: a low stepped tower
+  { x: 168, y: 150, stacks: [{ ox: 42, oy: 20, courses: Array(6).fill([84, 40]), extra: [84, 40] }] },                                    // recruiters: a clean slab
+  { x: 280, y: 104, stacks: [{ ox: 30, oy: 30, courses: Array(8).fill([60, 60]), extra: [60, 60], crown: true }] },                       // finance: the tallest, crowned
+  { x: 356, y: 70,  stacks: [{ ox: 20, oy: 20, courses: Array(5).fill([40, 40]), extra: [40, 40] },
+                             { ox: 96, oy: 20, courses: Array(5).fill([40, 40]), extra: [40, 40], anchor: true }], bridge: true }                     // engineers: twins joined by a bridge
+];
+function mqBox(w, d, h, cx, cy, z, cls, top, z0) {
+  const zs = z0 === undefined ? `--z:${z}px` : `--z:${z}px;--z0:${z0}px`;
+  return `<div class="cu ${cls}" style="left:${cx - w / 2}px;top:${cy - d / 2}px;width:${w}px;height:${d}px;${zs}" data-z="${z}">` +
+    `<i class="fs" style="top:${d - h}px;width:${w}px;height:${h}px"></i>` +
+    `<i class="fw" style="left:${-h}px;width:${h}px;height:${d}px"></i>` +
+    (top ? `<i class="ft" style="width:${w}px;height:${d}px;transform:translateZ(${h}px)"></i>` : "") + `</div>`;
+}
+function maquetteHtml() {
+  let casts = "";
+  const towers = MQ_TOWERS.map((t, ti) => {
+    let inner = "";
+    t.stacks.forEach(st => {
+      const n = st.courses.length, [bw, bd] = st.courses[0];
+      casts += `<div class="cast" style="left:${t.x + st.ox - bw / 2}px;top:${t.y + st.oy - bd / 2}px;width:${bw}px;height:${bd + n * MQ_H * .4}px"></div>`;
+      st.courses.forEach(([w, d], k) => {
+        const next = st.courses[k + 1];
+        const top = st.stepped ? true : false;
+        inner += mqBox(w, d, MQ_H, st.ox, st.oy, k * MQ_H, k === 0 && (st.anchor || t.stacks.length === 1) ? "c an" : "c", top && (!next || next[0] < w));
+      });
+      const [ew, ed] = st.extra;
+      inner += mqBox(ew, ed, MQ_H, st.ox, st.oy, n * MQ_H, "c x", st.stepped, (n - 1) * MQ_H);
+      if (!st.stepped) {
+        const [tw, td] = st.courses[n - 1];
+        inner += `<div class="cu hd" style="left:${st.ox - tw / 2}px;top:${st.oy - td / 2}px;width:${tw}px;height:${td}px;--z:${n * MQ_H}px" data-z="${n * MQ_H}"><i class="ft" style="width:${tw}px;height:${td}px"></i></div>`;
       }
-    } else { W = nw; H = nh; }
-  }
-  function frame() {
-    const tx = inside ? (mx - (L - scrollX) - W / 2) * .08 : 0, ty = inside ? (my - (T - scrollY) - H / 2) * .08 : 0;
-    ox += (tx - ox) * .05; oy += (ty - oy) * .05;
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = dotColor;
-    ctx.globalAlpha = .55;
-    const m = 20;
-    for (const d of dots) {
-      if (!still) {
-        d.x += d.vx; d.y += d.vy;
-        if (d.x < -m) d.x += W + 2 * m; else if (d.x > W + m) d.x -= W + 2 * m;
-        if (d.y < -m) d.y += H + 2 * m; else if (d.y > H + m) d.y -= H + 2 * m;
+      if (st.crown) {
+        inner += mqBox(40, 40, 20, st.ox, st.oy, n * MQ_H, "hd", true);
+        inner += mqBox(8, 8, 36, st.ox, st.oy, n * MQ_H + 20, "hd", true);
       }
-      ctx.beginPath(); ctx.arc(d.x + ox, d.y + oy, d.r, 0, Math.PI * 2); ctx.fill();
-    }
-    raf = (!still && visible && !document.hidden) ? requestAnimationFrame(frame) : 0;
+    });
+    if (t.bridge) inner += mqBox(36, 22, 14, 58, 20, 2 * MQ_H, "br", true);
+    return `<div class="tw" data-i="${ti}" style="left:${t.x}px;top:${t.y}px">${inner}</div>`;
+  }).join("");
+  return `<div class="maq-stage" aria-hidden="true"><div class="maq-scale"><div class="maq-plate"><i class="pe pe-s"></i><i class="pe pe-w"></i><i class="pe pe-e"></i><div class="casts">${casts}</div>${towers}</div></div></div>`;
+}
+let maqCleanup = null;
+function initMaquette() {
+  if (maqCleanup) { maqCleanup(); maqCleanup = null; }
+  const root = document.querySelector(".maq");
+  if (!root) return;
+  const stage = root.querySelector(".maq-stage"), scaleEl = root.querySelector(".maq-scale"), plate = root.querySelector(".maq-plate");
+  const bar = root.querySelector(".plaques"), tabs = [...bar.querySelectorAll("[role=tab]")];
+  const towers = [...root.querySelectorAll(".tw")], lead = root.querySelector(".maq-lead");
+  const still = REDUCED_MOTION.matches;
+  const fine = matchMedia("(hover:hover) and (pointer:fine)").matches && !still;
+  let s = 1, tx = 0, ty = 0, vx = 0, vy = 0, gx = 0, gy = 0, raf = 0, visible = true, sel = forLocked;
+  const applyScale = () => { scaleEl.style.transform = `scale(${s}) rotateX(${tx}deg) rotateY(${ty}deg)`; };
+  const fit = () => {
+    const r = stage.getBoundingClientRect();
+    s = Math.max(.4, Math.min(1.2, r.width / (r.width < 560 ? 780 : 700), r.height / 520));
+    applyScale(); drawLeads();
+  };
+  const show = i => {
+    towers.forEach((t, k) => t.classList.toggle("lit", k === i));
+    root.style.setProperty("--lx", MQ_LIGHT[i] + "deg");
+    drawLeads(i);
+  };
+  const select = i => {
+    sel = i;
+    towers.forEach((t, k) => t.classList.toggle("sel", k === i));
+    plate.style.transform = `rotateX(60deg) rotateZ(${MQ_TURN[i]}deg)`;
+    show(i);
+    settleLeads();
+  };
+  // leader lines from each plaque up to the foot of its tower (desktop only)
+  function drawLeads(on = sel) {
+    if (!lead || getComputedStyle(lead).display === "none") return;
+    const base = root.getBoundingClientRect();
+    let out = "";
+    towers.forEach((t, i) => {
+      const foot = t.querySelector(".cu.an .fs").getBoundingClientRect(), tab = tabs[i].getBoundingClientRect();
+      const x1 = tab.left + tab.width / 2 - base.left, y1 = tab.top - base.top;
+      const x2 = foot.left + foot.width / 2 - base.left, y2 = foot.bottom - base.top;
+      const c = i === on ? ' class="on"' : "";
+      out += `<path${c} d="M${x1.toFixed(1)} ${y1.toFixed(1)} V${((y1 + y2) / 2).toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)}"/><circle${c} cx="${x2.toFixed(1)}" cy="${y2.toFixed(1)}" r="2.5"/>`;
+    });
+    lead.innerHTML = out;
   }
-  const resume = () => { if (!still && !raf && visible && !document.hidden) raf = requestAnimationFrame(frame); };
-  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; resume(); });
-  io.observe(hero);
-  document.addEventListener("visibilitychange", resume);
-  const onMove = e => { mx = e.clientX; my = e.clientY; const r = cv.getBoundingClientRect(); inside = mx >= r.left && mx <= r.right && my >= r.top && my <= r.bottom; };
-  const onLeave = () => { inside = false; };
-  const ro = new ResizeObserver(() => { layout(); if (still) frame(); });
-  ro.observe(hero); window.addEventListener("resize", layout);
-  window.addEventListener("pointermove", onMove); document.addEventListener("pointerleave", onLeave);
-  layout(); frame();
-  const themeObs = new MutationObserver(() => { readColor(); if (still) frame(); });
-  themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  sporeStop = () => { cancelAnimationFrame(raf); ro.disconnect(); io.disconnect(); document.removeEventListener("visibilitychange", resume); themeObs.disconnect(); window.removeEventListener("resize", layout); window.removeEventListener("pointermove", onMove); document.removeEventListener("pointerleave", onLeave); cv.remove(); };
+  let leadTimer = 0;
+  function settleLeads() {               // redraw while the plate turns, then stop
+    const end = performance.now() + 480;
+    cancelAnimationFrame(leadTimer);
+    const step = () => { drawLeads(); if (performance.now() < end) leadTimer = requestAnimationFrame(step); };
+    leadTimer = requestAnimationFrame(step);
+  }
+  // pointer tilt: mouse only, within ±3°, on a spring; idles when settled
+  const frame = () => {
+    vx = (vx + (gx - tx) * .08) * .78; vy = (vy + (gy - ty) * .08) * .78;
+    tx += vx; ty += vy;
+    const settled = Math.abs(gx - tx) < .01 && Math.abs(gy - ty) < .01 && Math.abs(vx) < .01 && Math.abs(vy) < .01;
+    if (settled) { tx = gx; ty = gy; }
+    applyScale(); drawLeads();
+    raf = (!settled && visible && !document.hidden) ? requestAnimationFrame(frame) : 0;
+  };
+  const kick = () => { if (!raf && visible && !document.hidden) raf = requestAnimationFrame(frame); };
+  const onMove = e => {
+    gy = Math.max(-3, Math.min(3, (e.clientX / innerWidth - .5) * 6));
+    gx = Math.max(-3, Math.min(3, -(e.clientY / innerHeight - .5) * 6));
+    kick();
+  };
+  const onLeave = () => { gx = gy = 0; kick(); };
+  // the towers preview and select like their plaques
+  let hoverTower = null;
+  const towerOf = e => e.target.closest && e.target.closest(".tw");
+  const onOver = e => { const t = towerOf(e); if (t === hoverTower) return; if (hoverTower) tabs[+hoverTower.dataset.i].dispatchEvent(new Event("mouseleave")); hoverTower = t; if (t) tabs[+t.dataset.i].dispatchEvent(new Event("mouseenter")); };
+  const onOut = e => { if (!stage.contains(e.relatedTarget) && hoverTower) { tabs[+hoverTower.dataset.i].dispatchEvent(new Event("mouseleave")); hoverTower = null; } };
+  const onClick = e => { const t = towerOf(e); if (t) tabs[+t.dataset.i].click(); };
+  const onShow = e => show(e.detail), onSelect = e => select(e.detail);
+  bar.addEventListener("audience:show", onShow);
+  bar.addEventListener("audience:select", onSelect);
+  stage.addEventListener("pointerover", onOver);
+  stage.addEventListener("pointerout", onOut);
+  stage.addEventListener("click", onClick);
+  if (fine) { window.addEventListener("pointermove", onMove, { passive: true }); document.addEventListener("pointerleave", onLeave); }
+  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) kick(); });
+  io.observe(root);
+  const ro = new ResizeObserver(fit);
+  ro.observe(stage);
+  document.addEventListener("visibilitychange", kick);
+  // first state, then the entrance: once per browser session, courses rise out of the plate
+  select(sel);
+  fit();
+  let risen = true;
+  try { risen = sessionStorage.getItem("maq-risen") === "1"; sessionStorage.setItem("maq-risen", "1"); } catch (e) {}
+  if (!risen && !still) {
+    towers.forEach((t, ti) => {
+      [...t.querySelectorAll(".cu:not(.x)")].forEach(cu => {
+        const z = +cu.dataset.z;
+        if (!z) return;
+        const zEnd = getComputedStyle(cu).transform;
+        cu.animate([{ transform: "translateZ(0px)" }, { transform: zEnd }],
+          { duration: 420, delay: ti * 50 + (z / MQ_H) * 40, easing: "cubic-bezier(.23,1,.32,1)", fill: "backwards" });
+      });
+    });
+    setTimeout(drawLeads, 1000);
+  }
+  maqCleanup = () => {
+    cancelAnimationFrame(raf); cancelAnimationFrame(leadTimer);
+    io.disconnect(); ro.disconnect();
+    document.removeEventListener("visibilitychange", kick);
+    window.removeEventListener("pointermove", onMove);
+    document.removeEventListener("pointerleave", onLeave);
+  };
 }
 let forBarCleanup = null;
 function initForBar() {
@@ -559,6 +708,7 @@ function initForBar() {
   };
   let shown = forLocked;
   const activate = i => {
+    bar.dispatchEvent(new CustomEvent("audience:show", { detail: i }));
     if (i !== shown) {
       intro.innerHTML = formatForIntro(FOR_CATEGORIES[i].text);
       intro.animate(REDUCED_MOTION.matches
@@ -571,6 +721,8 @@ function initForBar() {
   };
   const select = i => {
     forLocked = i; activate(i);
+    intro.classList.add("picked");
+    bar.dispatchEvent(new CustomEvent("audience:select", { detail: i }));
     tabs.forEach((tab,k) => { tab.tabIndex = k === i ? 0 : -1; tab.setAttribute("aria-selected", k === i); });
     intro.setAttribute("aria-labelledby", tabs[i].id);
   };
@@ -633,7 +785,7 @@ function formatForIntro(text) {
 
 function home() {
   const forTabs = FOR_CATEGORIES.map((c, i) => `<button type="button" role="tab" id="for-tab-${i}" data-for="${i}" class="${i === forLocked ? "active" : ""}" aria-selected="${i === forLocked}" aria-controls="for-intro" tabindex="${i === forLocked ? 0 : -1}" data-label="${esc(c.label)}">${esc(c.label)}</button>`).join("");
-  let h = `<div class="hero"><h1>hey, i'm ${nameHtml()}<span class="fade">!</span></h1><div class="for-bar" role="tablist" aria-label="who is reading">${forTabs}</div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span><i class="arr" aria-hidden="true">&rarr;</i></a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
+  let h = `<div class="hero"><h1 class="hero-name">hey, i'm <span class="nm">${nameHtml()}<span class="fade">!</span></span></h1><div class="maq">${maquetteHtml()}<svg class="maq-lead" aria-hidden="true"></svg><div class="for-bar plaques" role="tablist" aria-label="who is reading">${forTabs}</div></div><p class="for-intro" id="for-intro" role="tabpanel" aria-labelledby="for-tab-${forLocked}">${formatForIntro(FOR_CATEGORIES[forLocked].text)}</p><a class="more-about" href="#about"><span>more about me</span><svg class="arr" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>${CITY ? `<div class="hero-where"><span>currently in ${esc(CITY)}</span><span class="clock"></span><span class="dot"></span>${dogSvg()}</div>` : ""}<div class="hero-actions"><a href="cv.pdf" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>get cv</a></div></div>`;
   if (FAVORITE_VIDEOS.length) h += `<div class="label">some of my favorite videos</div><div class="grid">` + FAVORITE_VIDEOS.map(v =>
     `<a class="card" href="${watch(v.id)}"><img src="${thumb(v.id)}" alt=""><div class="t">${esc(v.title)}</div></a>`).join("") + `</div>`;
   return h;
@@ -803,6 +955,7 @@ function renderWorkSection(key){
 }
 
 function route(forced) {
+  if (maqCleanup) { maqCleanup(); maqCleanup = null; }
   if (chapterRailCleanup) { chapterRailCleanup(); chapterRailCleanup = null; }
   let id = typeof forced === "string" ? forced : location.hash.slice(1);
   if (id.startsWith("notebook-")) {
@@ -832,7 +985,7 @@ function route(forced) {
   if (isHome) {
     initTile();
     initForBar();
-    initSpores();
+    initMaquette();
   }
   if (typeof tick === "function") tick();
   if (id === "blog") {
